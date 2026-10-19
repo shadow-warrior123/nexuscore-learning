@@ -391,10 +391,19 @@
       "norm_label": "dependencies"
     },
     {
-      "label": "canvas-confetti",
+      "label": "@monaco-editor/react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L17",
+      "id": "project_ml_learning_website_package_dependencies_monaco_editor_react",
+      "community": 39,
+      "norm_label": "@monaco-editor/react"
+    },
+    {
+      "label": "canvas-confetti",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
       "id": "project_ml_learning_website_package_dependencies_canvas_confetti",
       "community": 39,
       "norm_label": "canvas-confetti"
@@ -403,7 +412,7 @@
       "label": "clsx",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "id": "project_ml_learning_website_package_dependencies_clsx",
       "community": 39,
       "norm_label": "clsx"
@@ -412,7 +421,7 @@
       "label": "cors",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "project_ml_learning_website_package_dependencies_cors",
       "community": 39,
       "norm_label": "cors"
@@ -421,7 +430,7 @@
       "label": "express",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "id": "project_ml_learning_website_package_dependencies_express",
       "community": 39,
       "norm_label": "express"
@@ -430,7 +439,7 @@
       "label": "framer-motion",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "project_ml_learning_website_package_dependencies_framer_motion",
       "community": 39,
       "norm_label": "framer-motion"
@@ -439,16 +448,25 @@
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "id": "project_ml_learning_website_package_dependencies_lucide_react",
       "community": 39,
       "norm_label": "lucide-react"
     },
     {
+      "label": "prismjs",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "id": "project_ml_learning_website_package_dependencies_prismjs",
+      "community": 39,
+      "norm_label": "prismjs"
+    },
+    {
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "id": "project_ml_learning_website_package_dependencies_react",
       "community": 39,
       "norm_label": "react"
@@ -457,7 +475,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "id": "project_ml_learning_website_package_dependencies_react_dom",
       "community": 39,
       "norm_label": "react-dom"
@@ -466,7 +484,7 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "id": "project_ml_learning_website_package_dependencies_tailwind_merge",
       "community": 39,
       "norm_label": "tailwind-merge"
@@ -475,7 +493,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "id": "project_ml_learning_website_package_devdependencies",
       "community": 39,
       "norm_label": "devdependencies"
@@ -484,7 +502,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "id": "project_ml_learning_website_package_devdependencies_types_react",
       "community": 39,
       "norm_label": "@types/react"
@@ -493,7 +511,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "id": "project_ml_learning_website_package_devdependencies_types_react_dom",
       "community": 39,
       "norm_label": "@types/react-dom"
@@ -502,7 +520,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "id": "project_ml_learning_website_package_devdependencies_vitejs_plugin_react",
       "community": 39,
       "norm_label": "@vitejs/plugin-react"
@@ -511,7 +529,7 @@
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "id": "project_ml_learning_website_package_devdependencies_autoprefixer",
       "community": 39,
       "norm_label": "autoprefixer"
@@ -520,7 +538,7 @@
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "id": "project_ml_learning_website_package_devdependencies_postcss",
       "community": 39,
       "norm_label": "postcss"
@@ -529,7 +547,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "id": "project_ml_learning_website_package_devdependencies_tailwindcss",
       "community": 39,
       "norm_label": "tailwindcss"
@@ -538,7 +556,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "project_ml_learning_website_package_devdependencies_vite",
       "community": 39,
       "norm_label": "vite"
@@ -1033,7 +1051,7 @@
       "label": "GfgSolutionView()",
       "file_type": "code",
       "source_file": "src/components/GfgSolutionView.jsx",
-      "source_location": "L21",
+      "source_location": "L31",
       "id": "components_gfgsolutionview_gfgsolutionview",
       "community": 11,
       "norm_label": "gfgsolutionview()"
@@ -1087,7 +1105,7 @@
       "label": "ProblemListView()",
       "file_type": "code",
       "source_file": "src/components/ProblemListView.jsx",
-      "source_location": "L21",
+      "source_location": "L29",
       "id": "components_problemlistview_problemlistview",
       "community": 11,
       "norm_label": "problemlistview()"
@@ -1105,7 +1123,7 @@
       "label": "SUPPORTED_LANGUAGES",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L35",
+      "source_location": "L42",
       "id": "components_problemworkspace_supported_languages",
       "community": 11,
       "norm_label": "supported_languages"
@@ -1114,7 +1132,7 @@
       "label": "getDefaultStarterCode()",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L43",
+      "source_location": "L50",
       "id": "components_problemworkspace_getdefaultstartercode",
       "community": 11,
       "norm_label": "getdefaultstartercode()"
@@ -1123,7 +1141,7 @@
       "label": "ProblemWorkspace()",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L120",
+      "source_location": "L127",
       "id": "components_problemworkspace_problemworkspace",
       "community": 11,
       "norm_label": "problemworkspace()"
@@ -1159,7 +1177,7 @@
       "label": "RoadmapView()",
       "file_type": "code",
       "source_file": "src/components/RoadmapView.jsx",
-      "source_location": "L20",
+      "source_location": "L25",
       "id": "components_roadmapview_roadmapview",
       "community": 11,
       "norm_label": "roadmapview()"
@@ -14526,7 +14544,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18279",
       "id": "project_ml_learning_website_all_journey_questions_two_aggregate_functions",
-      "community": 65,
+      "community": 96,
       "norm_label": "two aggregate functions"
     },
     {
@@ -14535,7 +14553,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18281",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_549",
-      "community": 65,
+      "community": 96,
       "norm_label": "code:sql (select count(*) as total_rentals, round(sum(price), 2) as to)"
     },
     {
@@ -14544,7 +14562,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18288",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18288",
-      "community": 65,
+      "community": 97,
       "norm_label": "your task"
     },
     {
@@ -14553,7 +14571,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18301",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_550",
-      "community": 65,
+      "community": 97,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -14571,7 +14589,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18339",
       "id": "project_ml_learning_website_all_journey_questions_three_more_aggregates",
-      "community": 65,
+      "community": 98,
       "norm_label": "three more aggregates"
     },
     {
@@ -14580,7 +14598,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18341",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_551",
-      "community": 65,
+      "community": 98,
       "norm_label": "code:sql (select round(avg(price), 2) as avg_price, min(price) as chea)"
     },
     {
@@ -14634,7 +14652,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18410",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18410",
-      "community": 65,
+      "community": 99,
       "norm_label": "your task"
     },
     {
@@ -14643,7 +14661,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18424",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_554",
-      "community": 65,
+      "community": 99,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -14679,7 +14697,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18476",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18476",
-      "community": 65,
+      "community": 100,
       "norm_label": "your task"
     },
     {
@@ -14688,7 +14706,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18489",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_556",
-      "community": 65,
+      "community": 100,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -14706,7 +14724,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18529",
       "id": "project_ml_learning_website_all_journey_questions_sqlite_s_integer_division_trap",
-      "community": 65,
+      "community": 101,
       "norm_label": "sqlite's integer-division trap"
     },
     {
@@ -14715,7 +14733,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18531",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_557",
-      "community": 65,
+      "community": 101,
       "norm_label": "code:sql (select 7 / 2;        -- 3   (!) both operands are integer, s)"
     },
     {
@@ -14724,7 +14742,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18539",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18539",
-      "community": 65,
+      "community": 102,
       "norm_label": "your task"
     },
     {
@@ -14733,7 +14751,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18552",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_558",
-      "community": 65,
+      "community": 102,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -14751,7 +14769,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18593",
       "id": "project_ml_learning_website_all_journey_questions_a_full_aggregation_report",
-      "community": 65,
+      "community": 95,
       "norm_label": "a full aggregation report"
     },
     {
@@ -14760,7 +14778,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18595",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_559",
-      "community": 65,
+      "community": 95,
       "norm_label": "code:sql (select genre, count(*) as book_count, round(sum(revenue), 2))"
     },
     {
@@ -14769,7 +14787,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18606",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18606",
-      "community": 65,
+      "community": 103,
       "norm_label": "your task"
     },
     {
@@ -14778,7 +14796,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L18619",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_560",
-      "community": 65,
+      "community": 103,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -15084,7 +15102,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19049",
       "id": "project_ml_learning_website_all_journey_questions_a_query_inside_a_query",
-      "community": 118,
+      "community": 35,
       "norm_label": "a query inside a query"
     },
     {
@@ -15093,7 +15111,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19051",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_573",
-      "community": 118,
+      "community": 35,
       "norm_label": "code:sql (select title, pages)"
     },
     {
@@ -15102,7 +15120,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19060",
       "id": "project_ml_learning_website_all_journey_questions_your_task_19060",
-      "community": 120,
+      "community": 35,
       "norm_label": "your task"
     },
     {
@@ -15111,7 +15129,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19067",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_574",
-      "community": 120,
+      "community": 35,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -15129,7 +15147,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19105",
       "id": "project_ml_learning_website_all_journey_questions_filtering_against_a_set_of_values",
-      "community": 121,
+      "community": 35,
       "norm_label": "filtering against a set of values"
     },
     {
@@ -15138,7 +15156,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19107",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_575",
-      "community": 121,
+      "community": 35,
       "norm_label": "code:sql (select title, genre)"
     },
     {
@@ -15147,7 +15165,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19116",
       "id": "project_ml_learning_website_all_journey_questions_your_task_19116",
-      "community": 122,
+      "community": 35,
       "norm_label": "your task"
     },
     {
@@ -15156,7 +15174,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19123",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_576",
-      "community": 122,
+      "community": 35,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -15174,7 +15192,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19161",
       "id": "project_ml_learning_website_all_journey_questions_a_subquery_that_depends_on_the_outer_row",
-      "community": 119,
+      "community": 35,
       "norm_label": "a subquery that depends on the outer row"
     },
     {
@@ -15183,7 +15201,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19163",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_577",
-      "community": 119,
+      "community": 35,
       "norm_label": "code:sql (select b.title, b.genre, b.rating)"
     },
     {
@@ -15219,7 +15237,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19219",
       "id": "project_ml_learning_website_all_journey_questions_naming_a_subquery_with_with",
-      "community": 123,
+      "community": 35,
       "norm_label": "naming a subquery with with"
     },
     {
@@ -15228,7 +15246,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19221",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_579",
-      "community": 123,
+      "community": 35,
       "norm_label": "code:sql (with genre_totals as ()"
     },
     {
@@ -15264,7 +15282,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19282",
       "id": "project_ml_learning_website_all_journey_questions_two_named_steps_chained",
-      "community": 124,
+      "community": 35,
       "norm_label": "two named steps, chained"
     },
     {
@@ -15273,7 +15291,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19284",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_581",
-      "community": 124,
+      "community": 35,
       "norm_label": "code:sql (with genre_totals as ()"
     },
     {
@@ -15309,7 +15327,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19351",
       "id": "project_ml_learning_website_all_journey_questions_percent_of_total_computed_inside_the_query",
-      "community": 125,
+      "community": 35,
       "norm_label": "percent-of-total, computed inside the query"
     },
     {
@@ -15318,7 +15336,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19353",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_583",
-      "community": 125,
+      "community": 35,
       "norm_label": "code:sql (with step_counts as ()"
     },
     {
@@ -15327,7 +15345,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19370",
       "id": "project_ml_learning_website_all_journey_questions_your_task_19370",
-      "community": 126,
+      "community": 35,
       "norm_label": "your task"
     },
     {
@@ -15336,7 +15354,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L19377",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_584",
-      "community": 126,
+      "community": 35,
       "norm_label": "code:python (import sqlite3)"
     },
     {
@@ -16560,7 +16578,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21046",
       "id": "project_ml_learning_website_all_journey_questions_identity_vs_arrival",
-      "community": 95,
+      "community": 63,
       "norm_label": "identity vs. arrival"
     },
     {
@@ -16569,7 +16587,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21050",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_629",
-      "community": 95,
+      "community": 63,
       "norm_label": "code:python (records = [)"
     },
     {
@@ -16587,7 +16605,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21063",
       "id": "project_ml_learning_website_all_journey_questions_your_task_21063",
-      "community": 96,
+      "community": 63,
       "norm_label": "your task"
     },
     {
@@ -16596,7 +16614,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21068",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_630",
-      "community": 96,
+      "community": 63,
       "norm_label": "code:python (def dedup_by_key(records, key_field, timestamp_field):)"
     },
     {
@@ -16614,7 +16632,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21109",
       "id": "project_ml_learning_website_all_journey_questions_two_independent_steps",
-      "community": 97,
+      "community": 63,
       "norm_label": "two independent steps"
     },
     {
@@ -16623,7 +16641,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21116",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_631",
-      "community": 97,
+      "community": 63,
       "norm_label": "code:python (canonical_map = {\"us\": \"united states\", \"uk\": \"united kingdo)"
     },
     {
@@ -16641,7 +16659,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21126",
       "id": "project_ml_learning_website_all_journey_questions_your_task_21126",
-      "community": 98,
+      "community": 63,
       "norm_label": "your task"
     },
     {
@@ -16650,7 +16668,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21131",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_632",
-      "community": 98,
+      "community": 63,
       "norm_label": "code:python (def normalize_values(records, field, canonical_map, casing):)"
     },
     {
@@ -16668,7 +16686,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21173",
       "id": "project_ml_learning_website_all_journey_questions_three_strategies_declared_as_data",
-      "community": 102,
+      "community": 63,
       "norm_label": "three strategies, declared as data"
     },
     {
@@ -16677,7 +16695,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21175",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_633",
-      "community": 102,
+      "community": 63,
       "norm_label": "code:python (policy = {)"
     },
     {
@@ -16695,7 +16713,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21193",
       "id": "project_ml_learning_website_all_journey_questions_your_task_21193",
-      "community": 103,
+      "community": 63,
       "norm_label": "your task"
     },
     {
@@ -16704,7 +16722,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21198",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_634",
-      "community": 103,
+      "community": 63,
       "norm_label": "code:python (def apply_missing_policy(records, policy):)"
     },
     {
@@ -16722,7 +16740,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21246",
       "id": "project_ml_learning_website_all_journey_questions_two_ways_to_draw_the_fence",
-      "community": 99,
+      "community": 63,
       "norm_label": "two ways to draw the fence"
     },
     {
@@ -16731,7 +16749,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21248",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_635",
-      "community": 99,
+      "community": 63,
       "norm_label": "code:python (# fixed bounds \u2014 you already know the acceptable range)"
     },
     {
@@ -16749,7 +16767,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21262",
       "id": "project_ml_learning_website_all_journey_questions_your_task_21262",
-      "community": 104,
+      "community": 63,
       "norm_label": "your task"
     },
     {
@@ -16758,7 +16776,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21267",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_636",
-      "community": 104,
+      "community": 63,
       "norm_label": "code:python (import pandas as pd)"
     },
     {
@@ -16776,7 +16794,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21316",
       "id": "project_ml_learning_website_all_journey_questions_the_check_is_a_set_membership_test",
-      "community": 100,
+      "community": 63,
       "norm_label": "the check is a set membership test"
     },
     {
@@ -16785,7 +16803,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21318",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_637",
-      "community": 100,
+      "community": 63,
       "norm_label": "code:python (parent_ids = [\"c1\", \"c2\", \"c3\"])"
     },
     {
@@ -16803,7 +16821,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21330",
       "id": "project_ml_learning_website_all_journey_questions_your_task_21330",
-      "community": 105,
+      "community": 63,
       "norm_label": "your task"
     },
     {
@@ -16812,7 +16830,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21335",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_638",
-      "community": 105,
+      "community": 63,
       "norm_label": "code:python (def find_orphans(children, parent_ids, fk_field):)"
     },
     {
@@ -16830,7 +16848,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21375",
       "id": "project_ml_learning_website_all_journey_questions_the_pipeline_21375",
-      "community": 101,
+      "community": 63,
       "norm_label": "the pipeline"
     },
     {
@@ -16839,7 +16857,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21377",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_639",
-      "community": 101,
+      "community": 63,
       "norm_label": "code:block639 (records)"
     },
     {
@@ -16857,7 +16875,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21400",
       "id": "project_ml_learning_website_all_journey_questions_your_task_21400",
-      "community": 106,
+      "community": 63,
       "norm_label": "your task"
     },
     {
@@ -16866,7 +16884,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L21405",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_640",
-      "community": 106,
+      "community": 63,
       "norm_label": "code:python (def harden_feed(records, key_field, timestamp_field, normali)"
     },
     {
@@ -17577,7 +17595,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22305",
       "id": "project_ml_learning_website_all_journey_questions_the_shape_of_the_problem",
-      "community": 21,
+      "community": 104,
       "norm_label": "the shape of the problem"
     },
     {
@@ -17586,7 +17604,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22307",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_666",
-      "community": 21,
+      "community": 104,
       "norm_label": "code:python (events = [{\"id\": \"e1\", \"ref_key\": \"k1\", \"amount\": 5.0}])"
     },
     {
@@ -17604,7 +17622,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22318",
       "id": "project_ml_learning_website_all_journey_questions_your_task_22318",
-      "community": 21,
+      "community": 105,
       "norm_label": "your task"
     },
     {
@@ -17613,7 +17631,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22323",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_667",
-      "community": 21,
+      "community": 105,
       "norm_label": "code:python (def enrich_records(events, reference, miss_policy):)"
     },
     {
@@ -17631,7 +17649,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22369",
       "id": "project_ml_learning_website_all_journey_questions_three_questions_one_comparison",
-      "community": 21,
+      "community": 106,
       "norm_label": "three questions, one comparison"
     },
     {
@@ -17640,7 +17658,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22371",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_668",
-      "community": 21,
+      "community": 106,
       "norm_label": "code:python (yesterday = {\"u1\": {\"status\": \"active\", \"tier\": \"gold\"}})"
     },
     {
@@ -17658,7 +17676,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22382",
       "id": "project_ml_learning_website_all_journey_questions_your_task_22382",
-      "community": 21,
+      "community": 118,
       "norm_label": "your task"
     },
     {
@@ -17667,7 +17685,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22387",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_669",
-      "community": 21,
+      "community": 118,
       "norm_label": "code:python (def detect_changes(yesterday, today):)"
     },
     {
@@ -17685,7 +17703,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22433",
       "id": "project_ml_learning_website_all_journey_questions_one_entity_a_list_of_versions",
-      "community": 21,
+      "community": 119,
       "norm_label": "one entity, a list of versions"
     },
     {
@@ -17694,7 +17712,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22435",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_670",
-      "community": 21,
+      "community": 119,
       "norm_label": "code:python (history = {)"
     },
     {
@@ -17712,7 +17730,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22449",
       "id": "project_ml_learning_website_all_journey_questions_your_task_22449",
-      "community": 21,
+      "community": 120,
       "norm_label": "your task"
     },
     {
@@ -17721,7 +17739,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22454",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_671",
-      "community": 21,
+      "community": 120,
       "norm_label": "code:python (def apply_scd_lite(history, key, new_attributes, effective_d)"
     },
     {
@@ -17739,7 +17757,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22507",
       "id": "project_ml_learning_website_all_journey_questions_not_every_gap_is_a_bug",
-      "community": 21,
+      "community": 121,
       "norm_label": "not every gap is a bug"
     },
     {
@@ -17748,7 +17766,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22509",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_672",
-      "community": 21,
+      "community": 121,
       "norm_label": "code:python (source_a = {\"k1\": 100.0, \"k2\": 50.0})"
     },
     {
@@ -17766,7 +17784,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22520",
       "id": "project_ml_learning_website_all_journey_questions_your_task_22520",
-      "community": 21,
+      "community": 122,
       "norm_label": "your task"
     },
     {
@@ -17775,7 +17793,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22525",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_673",
-      "community": 21,
+      "community": 122,
       "norm_label": "code:python (def reconcile_sources(source_a, source_b, tolerance):)"
     },
     {
@@ -17793,7 +17811,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22569",
       "id": "project_ml_learning_website_all_journey_questions_three_rules_one_dispatch",
-      "community": 21,
+      "community": 123,
       "norm_label": "three rules, one dispatch"
     },
     {
@@ -17802,7 +17820,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22571",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_674",
-      "community": 21,
+      "community": 123,
       "norm_label": "code:python (record_a = {\"timestamp\": \"2024-01-01t00:00:00\", \"source\": \"s)"
     },
     {
@@ -17820,7 +17838,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22583",
       "id": "project_ml_learning_website_all_journey_questions_your_task_22583",
-      "community": 21,
+      "community": 124,
       "norm_label": "your task"
     },
     {
@@ -17829,7 +17847,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22588",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_675",
-      "community": 21,
+      "community": 124,
       "norm_label": "code:python (def resolve_conflicts(record_a, record_b, rules, source_prio)"
     },
     {
@@ -17847,7 +17865,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22643",
       "id": "project_ml_learning_website_all_journey_questions_every_tool_in_this_chapter_one_more_time_together",
-      "community": 21,
+      "community": 125,
       "norm_label": "every tool in this chapter, one more time, together"
     },
     {
@@ -17856,7 +17874,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22647",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_676",
-      "community": 21,
+      "community": 125,
       "norm_label": "code:python (ledger_a = {\"k1\": {\"value\": 100.0, \"timestamp\": \"2024-01-01t)"
     },
     {
@@ -17874,7 +17892,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22658",
       "id": "project_ml_learning_website_all_journey_questions_your_task_22658",
-      "community": 21,
+      "community": 126,
       "norm_label": "your task"
     },
     {
@@ -17883,7 +17901,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L22663",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_677",
-      "community": 21,
+      "community": 126,
       "norm_label": "code:python (def reconcile_pipelines(ledger_a, ledger_b, tolerance):)"
     },
     {
@@ -18081,7 +18099,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23012",
       "id": "project_ml_learning_website_all_journey_questions_your_task_23012",
-      "community": 29,
+      "community": 147,
       "norm_label": "your task"
     },
     {
@@ -18090,7 +18108,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23017",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_685",
-      "community": 29,
+      "community": 147,
       "norm_label": "code:python (import torch)"
     },
     {
@@ -18126,7 +18144,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23070",
       "id": "project_ml_learning_website_all_journey_questions_your_task_23070",
-      "community": 29,
+      "community": 148,
       "norm_label": "your task"
     },
     {
@@ -18135,7 +18153,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23075",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_687",
-      "community": 29,
+      "community": 148,
       "norm_label": "code:python (import torch)"
     },
     {
@@ -18216,7 +18234,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23175",
       "id": "project_ml_learning_website_all_journey_questions_crossing_the_bridge",
-      "community": 29,
+      "community": 149,
       "norm_label": "crossing the bridge"
     },
     {
@@ -18225,7 +18243,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23177",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_691",
-      "community": 29,
+      "community": 149,
       "norm_label": "code:python (import torch)"
     },
     {
@@ -18261,7 +18279,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23231",
       "id": "project_ml_learning_website_all_journey_questions_reshape_and_transpose",
-      "community": 29,
+      "community": 150,
       "norm_label": "reshape and transpose"
     },
     {
@@ -18270,7 +18288,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23233",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_693",
-      "community": 29,
+      "community": 150,
       "norm_label": "code:python (import torch)"
     },
     {
@@ -18297,7 +18315,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23249",
       "id": "project_ml_learning_website_all_journey_questions_your_task_23249",
-      "community": 29,
+      "community": 151,
       "norm_label": "your task"
     },
     {
@@ -18306,7 +18324,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23254",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_695",
-      "community": 29,
+      "community": 151,
       "norm_label": "code:python (import torch)"
     },
     {
@@ -18324,7 +18342,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23293",
       "id": "project_ml_learning_website_all_journey_questions_the_pipeline_stage_by_stage",
-      "community": 29,
+      "community": 267,
       "norm_label": "the pipeline, stage by stage"
     },
     {
@@ -18333,7 +18351,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L23295",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_696",
-      "community": 29,
+      "community": 267,
       "norm_label": "code:python (import torch)"
     },
     {
@@ -19341,7 +19359,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L24604",
       "id": "project_ml_learning_website_all_journey_questions_your_task_24604",
-      "community": 147,
+      "community": 45,
       "norm_label": "your task"
     },
     {
@@ -19350,7 +19368,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L24609",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_737",
-      "community": 147,
+      "community": 45,
       "norm_label": "code:python (import random)"
     },
     {
@@ -19629,7 +19647,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L24983",
       "id": "project_ml_learning_website_all_journey_questions_your_task_24983",
-      "community": 148,
+      "community": 43,
       "norm_label": "your task"
     },
     {
@@ -19638,7 +19656,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L24988",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_744",
-      "community": 148,
+      "community": 43,
       "norm_label": "code:python (import torch)"
     },
     {
@@ -21222,7 +21240,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27062",
       "id": "project_ml_learning_website_all_journey_questions_the_builder_pattern",
-      "community": 51,
+      "community": 268,
       "norm_label": "the builder pattern"
     },
     {
@@ -21231,7 +21249,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27064",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_811",
-      "community": 51,
+      "community": 268,
       "norm_label": "code:python (from pyspark.sql import sparksession)"
     },
     {
@@ -21240,7 +21258,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27072",
       "id": "project_ml_learning_website_all_journey_questions_your_task_27072",
-      "community": 51,
+      "community": 269,
       "norm_label": "your task"
     },
     {
@@ -21249,7 +21267,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27077",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_812",
-      "community": 51,
+      "community": 269,
       "norm_label": "code:python (from pyspark.sql import sparksession)"
     },
     {
@@ -21303,7 +21321,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27138",
       "id": "project_ml_learning_website_all_journey_questions_your_task_27138",
-      "community": 51,
+      "community": 270,
       "norm_label": "your task"
     },
     {
@@ -21312,7 +21330,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27143",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_815",
-      "community": 51,
+      "community": 270,
       "norm_label": "code:python (from pyspark.sql import sparksession)"
     },
     {
@@ -21330,7 +21348,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27187",
       "id": "project_ml_learning_website_all_journey_questions_the_three_actions",
-      "community": 51,
+      "community": 271,
       "norm_label": "the three actions"
     },
     {
@@ -21339,7 +21357,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27189",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_816",
-      "community": 51,
+      "community": 271,
       "norm_label": "code:python (df.collect()   # -> list[row], every row, pulled to the driv)"
     },
     {
@@ -21438,7 +21456,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27318",
       "id": "project_ml_learning_website_all_journey_questions_your_task_27318",
-      "community": 51,
+      "community": 272,
       "norm_label": "your task"
     },
     {
@@ -21447,7 +21465,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27323",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_821",
-      "community": 51,
+      "community": 272,
       "norm_label": "code:python (from pyspark.sql import sparksession)"
     },
     {
@@ -21483,7 +21501,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27383",
       "id": "project_ml_learning_website_all_journey_questions_your_task_27383",
-      "community": 51,
+      "community": 279,
       "norm_label": "your task"
     },
     {
@@ -21492,7 +21510,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L27388",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_823",
-      "community": 51,
+      "community": 279,
       "norm_label": "code:python (from pyspark.sql import sparksession)"
     },
     {
@@ -21969,7 +21987,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28041",
       "id": "project_ml_learning_website_all_journey_questions_the_mechanics",
-      "community": 149,
+      "community": 31,
       "norm_label": "the mechanics"
     },
     {
@@ -21978,7 +21996,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28043",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_846",
-      "community": 149,
+      "community": 31,
       "norm_label": "code:python (joined = orders_df.join(products_df, \"product_id\", how=\"inne)"
     },
     {
@@ -22095,7 +22113,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28179",
       "id": "project_ml_learning_website_all_journey_questions_the_one_rule_that_matters",
-      "community": 150,
+      "community": 31,
       "norm_label": "the one rule that matters"
     },
     {
@@ -22104,7 +22122,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28181",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_850",
-      "community": 150,
+      "community": 31,
       "norm_label": "code:python (combined = west_df.union(east_df))"
     },
     {
@@ -22122,7 +22140,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28191",
       "id": "project_ml_learning_website_all_journey_questions_your_task_28191",
-      "community": 151,
+      "community": 31,
       "norm_label": "your task"
     },
     {
@@ -22131,7 +22149,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28196",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_851",
-      "community": 151,
+      "community": 31,
       "norm_label": "code:python (from pyspark.sql import sparksession, row)"
     },
     {
@@ -22149,7 +22167,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28234",
       "id": "project_ml_learning_website_all_journey_questions_the_discipline_this_station_is_about",
-      "community": 267,
+      "community": 31,
       "norm_label": "the discipline this station is about"
     },
     {
@@ -22158,7 +22176,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28236",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_852",
-      "community": 267,
+      "community": 31,
       "norm_label": "code:python (kept = readings.orderby(\"timestamp\").dropduplicates(subset=[)"
     },
     {
@@ -22221,7 +22239,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28302",
       "id": "project_ml_learning_website_all_journey_questions_your_task_28302",
-      "community": 268,
+      "community": 31,
       "norm_label": "your task"
     },
     {
@@ -22230,7 +22248,7 @@
       "source_file": "all_journey_questions.md",
       "source_location": "L28307",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_854",
-      "community": 268,
+      "community": 31,
       "norm_label": "code:python (from pyspark.sql import sparksession, row)"
     },
     {
@@ -23513,6 +23531,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_monaco_editor_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -23568,6 +23596,16 @@
       "confidence_score": 1.0,
       "source": "project_ml_learning_website_package_dependencies",
       "target": "project_ml_learning_website_package_dependencies_lucide_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_prismjs",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -48961,5 +48999,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "abbdf3547f0c7555bab153965baa24a085ebce67"
+  "built_at_commit": "e5cca1b7998c01f9951019b9af5271c79a5ff6ad"
 }

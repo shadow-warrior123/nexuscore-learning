@@ -5,3 +5,11 @@ node_modules/
 Thumbs.db
 server/platform.db*
 *.log
+
+# Scraper scripts and raw extraction files (kept secret)
+scrape_neetcode.mjs
+scraper.mjs
+prepare_data.mjs
+all_journey_questions.*
+neetcode_dsa_questions.*
+neetcode_system_design.*
