@@ -1,0 +1,467 @@
+[
+  {
+    "courseId": "system-design-for-beginners",
+    "courseName": "System Design for Beginners",
+    "sections": [
+      {
+        "sectionName": "Background",
+        "questions": [
+          {
+            "title": "Computer Architecture",
+            "isFree": true,
+            "durationMinutes": 14,
+            "vimeoId": "758506440?h=3f0bf03331",
+            "codeSolutions": null
+          },
+          {
+            "title": "Application Architecture",
+            "isFree": true,
+            "durationMinutes": 11,
+            "vimeoId": "758448347?h=a63bd80851",
+            "codeSolutions": null
+          },
+          {
+            "title": "Design Requirements",
+            "isFree": false,
+            "durationMinutes": 26,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Networking",
+        "questions": [
+          {
+            "title": "Networking Basics",
+            "isFree": false,
+            "durationMinutes": 16,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "TCP and UDP",
+            "isFree": false,
+            "durationMinutes": 10,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "DNS",
+            "isFree": false,
+            "durationMinutes": 10,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "APIs",
+        "questions": [
+          {
+            "title": "HTTP",
+            "isFree": false,
+            "durationMinutes": 23,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "WebSockets",
+            "isFree": false,
+            "durationMinutes": 9,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "API Paradigms",
+            "isFree": false,
+            "durationMinutes": 29,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "API Design",
+            "isFree": false,
+            "durationMinutes": 21,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Caching Basics",
+        "questions": [
+          {
+            "title": "Caching",
+            "isFree": false,
+            "durationMinutes": 21,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "CDNs",
+            "isFree": false,
+            "durationMinutes": 11,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Proxies",
+        "questions": [
+          {
+            "title": "Proxies and Load Balancing",
+            "isFree": false,
+            "durationMinutes": 14,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Consistent Hashing",
+            "isFree": false,
+            "durationMinutes": 15,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Storage",
+        "questions": [
+          {
+            "title": "SQL",
+            "isFree": false,
+            "durationMinutes": 19,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "NoSQL",
+            "isFree": false,
+            "durationMinutes": 18,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Replication and Sharding",
+            "isFree": false,
+            "durationMinutes": 17,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "CAP Theorem",
+            "isFree": false,
+            "durationMinutes": 12,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Object Storage",
+            "isFree": false,
+            "durationMinutes": 6,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Big Data",
+        "questions": [
+          {
+            "title": "Message Queues",
+            "isFree": false,
+            "durationMinutes": 8,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "MapReduce",
+            "isFree": false,
+            "durationMinutes": 12,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "ood-interview",
+    "courseName": "Object-Oriented Design Interview",
+    "sections": [
+      {
+        "sectionName": "Interview Questions",
+        "questions": [
+          {
+            "title": "Design Connect Four",
+            "isFree": true,
+            "durationMinutes": 17,
+            "vimeoId": "793775253?h=97b3d8d1c2",
+            "codeSolutions": {
+              "python": "connect-four/code.py",
+              "javascript": "connect-four/code.js",
+              "java": "connect-four/code.java",
+              "cpp": "connect-four/code.cpp",
+              "csharp": "connect-four/code.cs",
+              "kotlin": "connect-four/code.kt"
+            }
+          },
+          {
+            "title": "Design Blackjack",
+            "isFree": false,
+            "durationMinutes": 19,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design a Parking Lot",
+            "isFree": false,
+            "durationMinutes": 17,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design a Bank",
+            "isFree": false,
+            "durationMinutes": 15,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design a Movie Recommendation System",
+            "isFree": false,
+            "durationMinutes": 17,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design an Elevator System",
+            "isFree": false,
+            "durationMinutes": 14,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design Chess",
+            "isFree": false,
+            "durationMinutes": 11,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "design-patterns",
+    "courseName": "Object-Oriented Design Patterns",
+    "sections": [
+      {
+        "sectionName": "Introduction",
+        "questions": [
+          {
+            "title": "Intro",
+            "isFree": true,
+            "durationMinutes": 2,
+            "vimeoId": "885349968?h=72b686ed64",
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Creational Patterns",
+        "questions": [
+          {
+            "title": "Factory Method",
+            "isFree": true,
+            "durationMinutes": 11,
+            "vimeoId": "881279241?h=ecbcc6850d",
+            "codeSolutions": {
+              "python": "factory-method/python/code.py",
+              "javascript": "factory-method/javascript/code.js",
+              "java": "factory-method/java/code.java",
+              "cpp": "factory-method/cpp/code.cpp",
+              "csharp": "factory-method/csharp/code.cs",
+              "kotlin": "factory-method/kotlin/code.kt"
+            }
+          },
+          {
+            "title": "Singleton",
+            "isFree": false,
+            "durationMinutes": 10,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Builder",
+            "isFree": false,
+            "durationMinutes": 9,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Prototype",
+            "isFree": true,
+            "durationMinutes": 8,
+            "vimeoId": null,
+            "codeSolutions": {
+              "python": "prototype/python/code.py",
+              "javascript": "prototype/javascript/code.js",
+              "java": "prototype/java/code.java",
+              "cpp": "prototype/cpp/code.cpp",
+              "csharp": "prototype/csharp/code.cs",
+              "kotlin": "prototype/kotlin/code.kt"
+            }
+          }
+        ]
+      },
+      {
+        "sectionName": "Structural Patterns",
+        "questions": [
+          {
+            "title": "Adapter",
+            "isFree": true,
+            "durationMinutes": 7,
+            "vimeoId": "884117193?h=89727b28e4",
+            "codeSolutions": {
+              "python": "adapter/python/code.py",
+              "javascript": "adapter/javascript/code.js",
+              "java": "adapter/java/code.java",
+              "cpp": "adapter/cpp/code.cpp",
+              "csharp": "adapter/csharp/code.cs",
+              "kotlin": "adapter/kotlin/code.kt"
+            }
+          },
+          {
+            "title": "Decorator",
+            "isFree": false,
+            "durationMinutes": 9,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Facade",
+            "isFree": false,
+            "durationMinutes": 6,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Behavioural Patterns",
+        "questions": [
+          {
+            "title": "Strategy",
+            "isFree": false,
+            "durationMinutes": 8,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Observer",
+            "isFree": false,
+            "durationMinutes": 11,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "State",
+            "isFree": false,
+            "durationMinutes": 7,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "system-design-interview",
+    "courseName": "System Design Interview",
+    "sections": [
+      {
+        "sectionName": "Background",
+        "questions": [
+          {
+            "title": "How to Approach",
+            "isFree": true,
+            "durationMinutes": 17,
+            "vimeoId": "770866274?h=e31bb17156",
+            "codeSolutions": null
+          }
+        ]
+      },
+      {
+        "sectionName": "Interview Questions",
+        "questions": [
+          {
+            "title": "Design a Rate Limiter",
+            "isFree": false,
+            "durationMinutes": 29,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design TinyUrl",
+            "isFree": false,
+            "durationMinutes": 27,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design Twitter",
+            "isFree": true,
+            "durationMinutes": 26,
+            "vimeoId": "773056317?h=2bd99c64f7",
+            "codeSolutions": null
+          },
+          {
+            "title": "Design Discord",
+            "isFree": false,
+            "durationMinutes": 23,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design Youtube",
+            "isFree": false,
+            "durationMinutes": 26,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design Google Drive",
+            "isFree": false,
+            "durationMinutes": 23,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design Google Maps",
+            "isFree": false,
+            "durationMinutes": 24,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design a Key-Value Store",
+            "isFree": false,
+            "durationMinutes": 31,
+            "vimeoId": null,
+            "codeSolutions": null
+          },
+          {
+            "title": "Design a Distributed Message Queue",
+            "isFree": false,
+            "durationMinutes": 23,
+            "vimeoId": null,
+            "codeSolutions": null
+          }
+        ]
+      }
+    ]
+  }
+]

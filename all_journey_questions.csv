@@ -1,0 +1,373 @@
+Track,Chapter,Question Number,Title,Difficulty,Slug,URL
+"ML Engineer Road","Foundations",1,"NumPy Arrays: The Foundation","easy","numpy-arrays",https://mlplayground.in/journey/ml-engineer/numpy-arrays
+"ML Engineer Road","Foundations",2,"NumPy Broadcasting","easy","numpy-broadcasting",https://mlplayground.in/journey/ml-engineer/numpy-broadcasting
+"ML Engineer Road","Foundations",3,"Slicing & Fancy Indexing","easy","numpy-slicing",https://mlplayground.in/journey/ml-engineer/numpy-slicing
+"ML Engineer Road","Foundations",4,"Pandas Basics","easy","pandas-basics",https://mlplayground.in/journey/ml-engineer/pandas-basics
+"ML Engineer Road","Foundations",5,"GroupBy & Joins","medium","pandas-groupby",https://mlplayground.in/journey/ml-engineer/pandas-groupby
+"ML Engineer Road","Foundations",6,"Linear Algebra in NumPy","medium","numpy-linalg",https://mlplayground.in/journey/ml-engineer/numpy-linalg
+"ML Engineer Road","Foundations",7,"Matrix Multiply — The Dense Layer","medium","matrix-multiply",https://mlplayground.in/journey/ml-engineer/matrix-multiply
+"ML Engineer Road","Statistics & Probability",1,"Mean, Variance & Std","easy","mean-variance",https://mlplayground.in/journey/ml-engineer/mean-variance
+"ML Engineer Road","Statistics & Probability",2,"Normal & Bernoulli Distributions","easy","distributions",https://mlplayground.in/journey/ml-engineer/distributions
+"ML Engineer Road","Statistics & Probability",3,"Bayes Rule, By Hand","medium","bayes-rule",https://mlplayground.in/journey/ml-engineer/bayes-rule
+"ML Engineer Road","Statistics & Probability",4,"Hypothesis Testing","medium","hypothesis-testing",https://mlplayground.in/journey/ml-engineer/hypothesis-testing
+"ML Engineer Road","Statistics & Probability",5,"Maximum Likelihood Estimation","medium","maximum-likelihood",https://mlplayground.in/journey/ml-engineer/maximum-likelihood
+"ML Engineer Road","Statistics & Probability",6,"Bootstrapping","medium","bootstrapping",https://mlplayground.in/journey/ml-engineer/bootstrapping
+"ML Engineer Road","Statistics & Probability",7,"Estimate a Coin's Bias","hard","coin-bias-boss",https://mlplayground.in/journey/ml-engineer/coin-bias-boss
+"ML Engineer Road","Loss & Optimization",1,"MSE Loss","easy","mse-loss",https://mlplayground.in/journey/ml-engineer/mse-loss
+"ML Engineer Road","Loss & Optimization",2,"MAE Loss","easy","mae-loss",https://mlplayground.in/journey/ml-engineer/mae-loss
+"ML Engineer Road","Loss & Optimization",3,"Binary Cross-Entropy Loss","medium","cross-entropy-loss",https://mlplayground.in/journey/ml-engineer/cross-entropy-loss
+"ML Engineer Road","Loss & Optimization",4,"Gradient Descent Step","easy","gradient-descent",https://mlplayground.in/journey/ml-engineer/gradient-descent
+"ML Engineer Road","Loss & Optimization",5,"Learning Rate Effects","easy","learning-rate",https://mlplayground.in/journey/ml-engineer/learning-rate
+"ML Engineer Road","Loss & Optimization",6,"Momentum & Adam","medium","momentum-adam",https://mlplayground.in/journey/ml-engineer/momentum-adam
+"ML Engineer Road","Loss & Optimization",7,"Mini-Batch Gradient Descent","medium","minibatch-gd",https://mlplayground.in/journey/ml-engineer/minibatch-gd
+"ML Engineer Road","Linear Regression",1,"Weight Initialisation","easy","linear-regression-weights",https://mlplayground.in/journey/ml-engineer/linear-regression-weights
+"ML Engineer Road","Linear Regression",2,"Forward Pass","easy","linear-regression-forward",https://mlplayground.in/journey/ml-engineer/linear-regression-forward
+"ML Engineer Road","Linear Regression",3,"Normal Equations","medium","normal-equations",https://mlplayground.in/journey/ml-engineer/normal-equations
+"ML Engineer Road","Linear Regression",4,"Multivariate Regression","medium","multivariate-regression",https://mlplayground.in/journey/ml-engineer/multivariate-regression
+"ML Engineer Road","Linear Regression",5,"R² & Residuals","easy","r2-residuals",https://mlplayground.in/journey/ml-engineer/r2-residuals
+"ML Engineer Road","Linear Regression",6,"Full Linear Regression","medium","linear-regression-full",https://mlplayground.in/journey/ml-engineer/linear-regression-full
+"ML Engineer Road","Regularization & Validation",1,"Bias-Variance Tradeoff","easy","bias-variance",https://mlplayground.in/journey/ml-engineer/bias-variance
+"ML Engineer Road","Regularization & Validation",2,"Ridge Regression (L2)","medium","ridge-l2",https://mlplayground.in/journey/ml-engineer/ridge-l2
+"ML Engineer Road","Regularization & Validation",3,"Lasso Regression (L1)","medium","lasso-l1",https://mlplayground.in/journey/ml-engineer/lasso-l1
+"ML Engineer Road","Regularization & Validation",4,"K-Fold Cross-Validation","medium","kfold-cv",https://mlplayground.in/journey/ml-engineer/kfold-cv
+"ML Engineer Road","Regularization & Validation",5,"Hyperparameter Search","medium","hyperparam-search",https://mlplayground.in/journey/ml-engineer/hyperparam-search
+"ML Engineer Road","Regularization & Validation",6,"Tune and Validate","hard","regularization-boss",https://mlplayground.in/journey/ml-engineer/regularization-boss
+"ML Engineer Road","Classification",1,"Sigmoid Gate","easy","sigmoid-function",https://mlplayground.in/journey/ml-engineer/sigmoid-function
+"ML Engineer Road","Classification",2,"Binary Cross-Entropy","easy","logistic-regression-loss",https://mlplayground.in/journey/ml-engineer/logistic-regression-loss
+"ML Engineer Road","Classification",3,"Full Logistic Regression","medium","logistic-regression-full",https://mlplayground.in/journey/ml-engineer/logistic-regression-full
+"ML Engineer Road","Classification",4,"Softmax & Multi-Class","medium","softmax-multiclass",https://mlplayground.in/journey/ml-engineer/softmax-multiclass
+"ML Engineer Road","Classification",5,"Precision, Recall & F1","easy","precision-recall",https://mlplayground.in/journey/ml-engineer/precision-recall
+"ML Engineer Road","Classification",6,"ROC Curves & AUC","medium","roc-auc",https://mlplayground.in/journey/ml-engineer/roc-auc
+"ML Engineer Road","Classification",7,"Gini Impurity","easy","gini-impurity",https://mlplayground.in/journey/ml-engineer/gini-impurity
+"ML Engineer Road","Classification",8,"Decision Tree Classifier","hard","decision-tree-full",https://mlplayground.in/journey/ml-engineer/decision-tree-full
+"ML Engineer Road","Ensembles",1,"Bootstrap","easy","bootstrap-sampling",https://mlplayground.in/journey/ml-engineer/bootstrap-sampling
+"ML Engineer Road","Ensembles",2,"K-Nearest Neighbors","easy","knn-classifier",https://mlplayground.in/journey/ml-engineer/knn-classifier
+"ML Engineer Road","Ensembles",3,"Naïve Bayes","medium","naive-bayes",https://mlplayground.in/journey/ml-engineer/naive-bayes
+"ML Engineer Road","Ensembles",4,"Random Forest","medium","random-forest",https://mlplayground.in/journey/ml-engineer/random-forest
+"ML Engineer Road","Ensembles",5,"AdaBoost","medium","adaboost",https://mlplayground.in/journey/ml-engineer/adaboost
+"ML Engineer Road","Ensembles",6,"Gradient Boosting","hard","gradient-boosting",https://mlplayground.in/journey/ml-engineer/gradient-boosting
+"ML Engineer Road","Unsupervised Learning",1,"Distance Metrics","easy","euclidean-distance",https://mlplayground.in/journey/ml-engineer/euclidean-distance
+"ML Engineer Road","Unsupervised Learning",2,"K-Means Step","medium","kmeans-assignment",https://mlplayground.in/journey/ml-engineer/kmeans-assignment
+"ML Engineer Road","Unsupervised Learning",3,"Full K-Means","medium","kmeans-full",https://mlplayground.in/journey/ml-engineer/kmeans-full
+"ML Engineer Road","Unsupervised Learning",4,"Choosing K","easy","kmeans-elbow",https://mlplayground.in/journey/ml-engineer/kmeans-elbow
+"ML Engineer Road","Unsupervised Learning",5,"ε-Neighborhoods","medium","dbscan-eps-neighbors",https://mlplayground.in/journey/ml-engineer/dbscan-eps-neighbors
+"ML Engineer Road","Unsupervised Learning",6,"PCA via Covariance","hard","pca-covariance",https://mlplayground.in/journey/ml-engineer/pca-covariance
+"ML Engineer Road","Unsupervised Learning",7,"t-SNE Intuition","medium","tsne-intuition",https://mlplayground.in/journey/ml-engineer/tsne-intuition
+"ML Engineer Road","Unsupervised Learning",8,"DBSCAN","hard","dbscan-full",https://mlplayground.in/journey/ml-engineer/dbscan-full
+"ML Engineer Road","Neural Networks",1,"The Perceptron","easy","perceptron",https://mlplayground.in/journey/ml-engineer/perceptron
+"ML Engineer Road","Neural Networks",2,"Activations","easy","activation-functions",https://mlplayground.in/journey/ml-engineer/activation-functions
+"ML Engineer Road","Neural Networks",3,"Weight Init","medium","weight-initialisation",https://mlplayground.in/journey/ml-engineer/weight-initialisation
+"ML Engineer Road","Neural Networks",4,"Full Forward Pass","medium","nn-forward-pass",https://mlplayground.in/journey/ml-engineer/nn-forward-pass
+"ML Engineer Road","Neural Networks",5,"Backprop I","medium","backprop-single-layer",https://mlplayground.in/journey/ml-engineer/backprop-single-layer
+"ML Engineer Road","Neural Networks",6,"Backprop II","hard","backprop-full",https://mlplayground.in/journey/ml-engineer/backprop-full
+"ML Engineer Road","Neural Networks",7,"Batch Normalisation","medium","batch-normalisation",https://mlplayground.in/journey/ml-engineer/batch-normalisation
+"ML Engineer Road","Neural Networks",8,"Dropout","easy","dropout",https://mlplayground.in/journey/ml-engineer/dropout
+"ML Engineer Road","Neural Networks",9,"Full MLP","hard","mlp-full",https://mlplayground.in/journey/ml-engineer/mlp-full
+"ML Engineer Road","Computer Vision",1,"Convolution","medium","convolution-scratch",https://mlplayground.in/journey/ml-engineer/convolution-scratch
+"ML Engineer Road","Computer Vision",2,"Pooling Layers","easy","pooling-layers",https://mlplayground.in/journey/ml-engineer/pooling-layers
+"ML Engineer Road","Computer Vision",3,"CNN Forward Pass","medium","cnn-forward",https://mlplayground.in/journey/ml-engineer/cnn-forward
+"ML Engineer Road","Computer Vision",4,"Data Augmentation","easy","data-augmentation",https://mlplayground.in/journey/ml-engineer/data-augmentation
+"ML Engineer Road","Computer Vision",5,"Transfer Learning","medium","transfer-learning",https://mlplayground.in/journey/ml-engineer/transfer-learning
+"ML Engineer Road","Computer Vision",6,"Fashion-MNIST","hard","fashion-mnist-boss",https://mlplayground.in/journey/ml-engineer/fashion-mnist-boss
+"ML Engineer Road","Sequences & RNNs",1,"Vanilla RNN Cell","medium","rnn-cell",https://mlplayground.in/journey/ml-engineer/rnn-cell
+"ML Engineer Road","Sequences & RNNs",2,"Backprop Through Time","hard","bptt",https://mlplayground.in/journey/ml-engineer/bptt
+"ML Engineer Road","Sequences & RNNs",3,"LSTM Gates","hard","lstm-gates",https://mlplayground.in/journey/ml-engineer/lstm-gates
+"ML Engineer Road","Sequences & RNNs",4,"Word Embeddings","medium","word-embeddings",https://mlplayground.in/journey/ml-engineer/word-embeddings
+"ML Engineer Road","Sequences & RNNs",5,"Tokenisation & BPE","medium","tokenisation-bpe",https://mlplayground.in/journey/ml-engineer/tokenisation-bpe
+"ML Engineer Road","Sequences & RNNs",6,"Sentiment Classifier","hard","sentiment-boss",https://mlplayground.in/journey/ml-engineer/sentiment-boss
+"ML Engineer Road","Attention",1,"Dot-Product Attn","medium","dot-product-attention",https://mlplayground.in/journey/ml-engineer/dot-product-attention
+"ML Engineer Road","Attention",2,"Scaled Attention","medium","scaled-attention",https://mlplayground.in/journey/ml-engineer/scaled-attention
+"ML Engineer Road","Attention",3,"Self-Attention","hard","self-attention",https://mlplayground.in/journey/ml-engineer/self-attention
+"ML Engineer Road","Attention",4,"Positional Enc.","medium","positional-encoding",https://mlplayground.in/journey/ml-engineer/positional-encoding
+"ML Engineer Road","Attention",5,"Causal Masking","medium","causal-masking",https://mlplayground.in/journey/ml-engineer/causal-masking
+"ML Engineer Road","Attention",6,"Multi-Head Attn","hard","multihead-attention",https://mlplayground.in/journey/ml-engineer/multihead-attention
+"ML Engineer Road","Attention",7,"LayerNorm & Skip","medium","layer-norm-residual",https://mlplayground.in/journey/ml-engineer/layer-norm-residual
+"ML Engineer Road","Attention",8,"Transformer Block","hard","transformer-block",https://mlplayground.in/journey/ml-engineer/transformer-block
+"ML Engineer Road","Data Engineering",1,"Feature Scaling","easy","feature-scaling",https://mlplayground.in/journey/ml-engineer/feature-scaling
+"ML Engineer Road","Data Engineering",2,"Encoding Categoricals","medium","categorical-encoding",https://mlplayground.in/journey/ml-engineer/categorical-encoding
+"ML Engineer Road","Data Engineering",3,"Missing Values","easy","missing-values",https://mlplayground.in/journey/ml-engineer/missing-values
+"ML Engineer Road","Data Engineering",4,"Feature Selection","medium","feature-selection",https://mlplayground.in/journey/ml-engineer/feature-selection
+"ML Engineer Road","Data Engineering",5,"Feature Engineering","medium","feature-engineering",https://mlplayground.in/journey/ml-engineer/feature-engineering
+"ML Engineer Road","Data Engineering",6,"Data Leakage","medium","data-leakage",https://mlplayground.in/journey/ml-engineer/data-leakage
+"ML Engineer Road","Data Engineering",7,"Prep a Messy Dataset","hard","data-pipeline-boss",https://mlplayground.in/journey/ml-engineer/data-pipeline-boss
+"ML Engineer Road","Time Series",1,"Datetime Indexing","easy","datetime-indexing",https://mlplayground.in/journey/ml-engineer/datetime-indexing
+"ML Engineer Road","Time Series",2,"Trend & Seasonality","easy","trend-seasonality",https://mlplayground.in/journey/ml-engineer/trend-seasonality
+"ML Engineer Road","Time Series",3,"Rolling Windows","medium","rolling-windows",https://mlplayground.in/journey/ml-engineer/rolling-windows
+"ML Engineer Road","Time Series",4,"ARIMA Intuition","medium","arima-intuition",https://mlplayground.in/journey/ml-engineer/arima-intuition
+"ML Engineer Road","Time Series",5,"Forecasting Metrics","easy","forecasting-metrics",https://mlplayground.in/journey/ml-engineer/forecasting-metrics
+"ML Engineer Road","Time Series",6,"Time-Based Features","medium","ts-feature-engineering",https://mlplayground.in/journey/ml-engineer/ts-feature-engineering
+"ML Engineer Road","Time Series",7,"Forecast Monthly Sales","hard","ts-forecast-boss",https://mlplayground.in/journey/ml-engineer/ts-forecast-boss
+"ML Engineer Road","Generative Models",1,"Autoencoder","medium","autoencoder",https://mlplayground.in/journey/ml-engineer/autoencoder
+"ML Engineer Road","Generative Models",2,"Latent Space","medium","latent-space",https://mlplayground.in/journey/ml-engineer/latent-space
+"ML Engineer Road","Generative Models",3,"Variational AE (VAE)","hard","variational-ae",https://mlplayground.in/journey/ml-engineer/variational-ae
+"ML Engineer Road","Generative Models",4,"Discriminator","medium","gan-discriminator",https://mlplayground.in/journey/ml-engineer/gan-discriminator
+"ML Engineer Road","Generative Models",5,"Generator","medium","gan-generator",https://mlplayground.in/journey/ml-engineer/gan-generator
+"ML Engineer Road","Generative Models",6,"Training Stability","hard","gan-training-tips",https://mlplayground.in/journey/ml-engineer/gan-training-tips
+"ML Engineer Road","Generative Models",7,"Generate MNIST Digits","hard","generate-mnist-boss",https://mlplayground.in/journey/ml-engineer/generate-mnist-boss
+"ML Engineer Road","Reinforcement Learning",1,"MDPs & Rewards","easy","mdp-rewards",https://mlplayground.in/journey/ml-engineer/mdp-rewards
+"ML Engineer Road","Reinforcement Learning",2,"Explore vs Exploit","easy","exploration-exploit",https://mlplayground.in/journey/ml-engineer/exploration-exploit
+"ML Engineer Road","Reinforcement Learning",3,"Q-Tables","medium","q-table",https://mlplayground.in/journey/ml-engineer/q-table
+"ML Engineer Road","Reinforcement Learning",4,"Q-Learning","medium","q-learning",https://mlplayground.in/journey/ml-engineer/q-learning
+"ML Engineer Road","Reinforcement Learning",5,"Deep Q-Network","hard","deep-q-network",https://mlplayground.in/journey/ml-engineer/deep-q-network
+"ML Engineer Road","Reinforcement Learning",6,"Policy Gradients","hard","policy-gradients",https://mlplayground.in/journey/ml-engineer/policy-gradients
+"ML Engineer Road","Reinforcement Learning",7,"Solve CartPole","hard","cartpole-boss",https://mlplayground.in/journey/ml-engineer/cartpole-boss
+"ML Engineer Road","LLMs & Beyond",1,"GPT Architecture","medium","gpt-architecture",https://mlplayground.in/journey/ml-engineer/gpt-architecture
+"ML Engineer Road","LLMs & Beyond",2,"Pretraining Loop","hard","pretraining-loop",https://mlplayground.in/journey/ml-engineer/pretraining-loop
+"ML Engineer Road","LLMs & Beyond",3,"Sampling Strategies","medium","sampling-strategies",https://mlplayground.in/journey/ml-engineer/sampling-strategies
+"ML Engineer Road","LLMs & Beyond",4,"RLHF Intuition","medium","rlhf-intuition",https://mlplayground.in/journey/ml-engineer/rlhf-intuition
+"ML Engineer Road","LLMs & Beyond",5,"RAG Basics","medium","rag-basics",https://mlplayground.in/journey/ml-engineer/rag-basics
+"ML Engineer Road","LLMs & Beyond",6,"Evals & Hallucination","medium","evals-hallucination",https://mlplayground.in/journey/ml-engineer/evals-hallucination
+"ML Engineer Road","LLMs & Beyond",7,"Finetune a Tiny GPT","hard","finetune-gpt-boss",https://mlplayground.in/journey/ml-engineer/finetune-gpt-boss
+"Pandas Road","Series — Labeled Data",1,"Build a Series","easy","pd-series-create",https://mlplayground.in/journey/pandas/pd-series-create
+"Pandas Road","Series — Labeled Data",2,"Label vs Position","easy","pd-series-index",https://mlplayground.in/journey/pandas/pd-series-index
+"Pandas Road","Series — Labeled Data",3,"Vectorized Ops","easy","pd-series-ops",https://mlplayground.in/journey/pandas/pd-series-ops
+"Pandas Road","Series — Labeled Data",4,"Boolean Masks","easy","pd-series-mask",https://mlplayground.in/journey/pandas/pd-series-mask
+"Pandas Road","Series — Labeled Data",5,"Series Statistics","easy","pd-series-stats",https://mlplayground.in/journey/pandas/pd-series-stats
+"Pandas Road","Series — Labeled Data",6,"Missing Values","medium","pd-series-nan",https://mlplayground.in/journey/pandas/pd-series-nan
+"Pandas Road","Series — Labeled Data",7,"Sensor Triage","medium","pd-series-boss",https://mlplayground.in/journey/pandas/pd-series-boss
+"Pandas Road","DataFrames — The Table",1,"Build a DataFrame","easy","pd-df-create",https://mlplayground.in/journey/pandas/pd-df-create
+"Pandas Road","DataFrames — The Table",2,"Column Selection","easy","pd-df-select",https://mlplayground.in/journey/pandas/pd-df-select
+"Pandas Road","DataFrames — The Table",3,".loc and .iloc","easy","pd-df-lociloc",https://mlplayground.in/journey/pandas/pd-df-lociloc
+"Pandas Road","DataFrames — The Table",4,"Row Filtering","medium","pd-df-filter",https://mlplayground.in/journey/pandas/pd-df-filter
+"Pandas Road","DataFrames — The Table",5,"Sorting Values","easy","pd-df-sort",https://mlplayground.in/journey/pandas/pd-df-sort
+"Pandas Road","DataFrames — The Table",6,"Derived Columns","medium","pd-df-newcols",https://mlplayground.in/journey/pandas/pd-df-newcols
+"Pandas Road","DataFrames — The Table",7,"Build an Inventory Table","medium","pd-df-boss",https://mlplayground.in/journey/pandas/pd-df-boss
+"Pandas Road","Transformation",1,"Apply & Map","medium","pd-apply-map",https://mlplayground.in/journey/pandas/pd-apply-map
+"Pandas Road","Transformation",2,"String Methods","medium","pd-strings",https://mlplayground.in/journey/pandas/pd-strings
+"Pandas Road","Transformation",3,"Parsing Dates","medium","pd-dates-parse",https://mlplayground.in/journey/pandas/pd-dates-parse
+"Pandas Road","Transformation",4,"Rename & Drop","easy","pd-rename-drop",https://mlplayground.in/journey/pandas/pd-rename-drop
+"Pandas Road","Transformation",5,"Binning with cut","medium","pd-bins-cut",https://mlplayground.in/journey/pandas/pd-bins-cut
+"Pandas Road","Transformation",6,"Reshape a Raw Export","hard","pd-transform-boss",https://mlplayground.in/journey/pandas/pd-transform-boss
+"Pandas Road","GroupBy — Split · Apply · Combine",1,"Your First GroupBy","easy","pd-groupby-basic",https://mlplayground.in/journey/pandas/pd-groupby-basic
+"Pandas Road","GroupBy — Split · Apply · Combine",2,"Aggregations","medium","pd-groupby-agg",https://mlplayground.in/journey/pandas/pd-groupby-agg
+"Pandas Road","GroupBy — Split · Apply · Combine",3,"Group Transforms","medium","pd-groupby-transform",https://mlplayground.in/journey/pandas/pd-groupby-transform
+"Pandas Road","GroupBy — Split · Apply · Combine",4,"Filtering Groups","medium","pd-groupby-filter",https://mlplayground.in/journey/pandas/pd-groupby-filter
+"Pandas Road","GroupBy — Split · Apply · Combine",5,"Multi-Key Grouping","medium","pd-groupby-multi",https://mlplayground.in/journey/pandas/pd-groupby-multi
+"Pandas Road","GroupBy — Split · Apply · Combine",6,"Sales by Region and Month","hard","pd-groupby-boss",https://mlplayground.in/journey/pandas/pd-groupby-boss
+"Pandas Road","Joins & Reshaping",1,"Concatenation","easy","pd-concat",https://mlplayground.in/journey/pandas/pd-concat
+"Pandas Road","Joins & Reshaping",2,"Inner Merge","medium","pd-merge-inner",https://mlplayground.in/journey/pandas/pd-merge-inner
+"Pandas Road","Joins & Reshaping",3,"Outer Merge","medium","pd-merge-outer",https://mlplayground.in/journey/pandas/pd-merge-outer
+"Pandas Road","Joins & Reshaping",4,"Pivot Tables","medium","pd-pivot-table",https://mlplayground.in/journey/pandas/pd-pivot-table
+"Pandas Road","Joins & Reshaping",5,"Melting Wide to Long","medium","pd-melt",https://mlplayground.in/journey/pandas/pd-melt
+"Pandas Road","Joins & Reshaping",6,"Merge Three Datasets","hard","pd-reshape-boss",https://mlplayground.in/journey/pandas/pd-reshape-boss
+"Pandas Road","Cleaning Messy Data",1,"Missing Data Strategies","medium","pd-missing-strategies",https://mlplayground.in/journey/pandas/pd-missing-strategies
+"Pandas Road","Cleaning Messy Data",2,"Duplicate Rows","easy","pd-duplicates",https://mlplayground.in/journey/pandas/pd-duplicates
+"Pandas Road","Cleaning Messy Data",3,"Cleaning Text Fields","medium","pd-string-cleaning",https://mlplayground.in/journey/pandas/pd-string-cleaning
+"Pandas Road","Cleaning Messy Data",4,"Outlier Detection","medium","pd-outliers",https://mlplayground.in/journey/pandas/pd-outliers
+"Pandas Road","Cleaning Messy Data",5,"Categorical Data","medium","pd-categorical",https://mlplayground.in/journey/pandas/pd-categorical
+"Pandas Road","Cleaning Messy Data",6,"Schema Validation","medium","pd-validate-schema",https://mlplayground.in/journey/pandas/pd-validate-schema
+"Pandas Road","Cleaning Messy Data",7,"Clean a Broken Export","hard","pd-clean-boss",https://mlplayground.in/journey/pandas/pd-clean-boss
+"Pandas Road","Time Series",1,"Datetime Parsing","easy","pd-datetime-parse",https://mlplayground.in/journey/pandas/pd-datetime-parse
+"Pandas Road","Time Series",2,"Datetime Indexing","medium","pd-datetime-index",https://mlplayground.in/journey/pandas/pd-datetime-index
+"Pandas Road","Time Series",3,"Resampling","medium","pd-resample",https://mlplayground.in/journey/pandas/pd-resample
+"Pandas Road","Time Series",4,"Rolling Windows","medium","pd-rolling",https://mlplayground.in/journey/pandas/pd-rolling
+"Pandas Road","Time Series",5,"Shift & Lag","medium","pd-shift-lag",https://mlplayground.in/journey/pandas/pd-shift-lag
+"Pandas Road","Time Series",6,"Analyze a Year of Transactions","hard","pd-ts-boss",https://mlplayground.in/journey/pandas/pd-ts-boss
+"Pandas Road","Capstones",1,"Retail Sales Capstone","hard","pd-capstone-sales",https://mlplayground.in/journey/pandas/pd-capstone-sales
+"Pandas Road","Capstones",2,"Server Log Capstone","hard","pd-capstone-logs",https://mlplayground.in/journey/pandas/pd-capstone-logs
+"Pandas Road","Capstones",3,"Survey Data Capstone","hard","pd-capstone-survey",https://mlplayground.in/journey/pandas/pd-capstone-survey
+"NumPy Road","Array Genesis",1,"Array Genesis","easy","np-create-basics",https://mlplayground.in/journey/numpy/np-create-basics
+"NumPy Road","Array Genesis",2,"Ranges & Grids","easy","np-arange-linspace",https://mlplayground.in/journey/numpy/np-arange-linspace
+"NumPy Road","Array Genesis",3,"Dtypes & Casting","easy","np-dtypes-casting",https://mlplayground.in/journey/numpy/np-dtypes-casting
+"NumPy Road","Array Genesis",4,"Shape Shifting","easy","np-shape-reshape",https://mlplayground.in/journey/numpy/np-shape-reshape
+"NumPy Road","Array Genesis",5,"Special Matrices","easy","np-special-arrays",https://mlplayground.in/journey/numpy/np-special-arrays
+"NumPy Road","Array Genesis",6,"Seeded Randomness","medium","np-random-seeded",https://mlplayground.in/journey/numpy/np-random-seeded
+"NumPy Road","Array Genesis",7,"Forge a Dataset","medium","np-genesis-boss",https://mlplayground.in/journey/numpy/np-genesis-boss
+"NumPy Road","Indexing & Slicing",1,"2D Slicing","easy","np-slicing-2d",https://mlplayground.in/journey/numpy/np-slicing-2d
+"NumPy Road","Indexing & Slicing",2,"Boolean Masks","easy","np-boolean-masks",https://mlplayground.in/journey/numpy/np-boolean-masks
+"NumPy Road","Indexing & Slicing",3,"Fancy Indexing","medium","np-fancy-indexing",https://mlplayground.in/journey/numpy/np-fancy-indexing
+"NumPy Road","Indexing & Slicing",4,"Views vs Copies","medium","np-views-copies",https://mlplayground.in/journey/numpy/np-views-copies
+"NumPy Road","Indexing & Slicing",5,"np.where & Selection","medium","np-where-select",https://mlplayground.in/journey/numpy/np-where-select
+"NumPy Road","Indexing & Slicing",6,"Extract a Subgrid","medium","np-indexing-boss",https://mlplayground.in/journey/numpy/np-indexing-boss
+"NumPy Road","Broadcasting & Ufuncs",1,"Universal Functions","easy","np-ufuncs",https://mlplayground.in/journey/numpy/np-ufuncs
+"NumPy Road","Broadcasting & Ufuncs",2,"Broadcasting Rules","medium","np-broadcasting-rules",https://mlplayground.in/journey/numpy/np-broadcasting-rules
+"NumPy Road","Broadcasting & Ufuncs",3,"Axis Aggregations","medium","np-axis-aggregations",https://mlplayground.in/journey/numpy/np-axis-aggregations
+"NumPy Road","Broadcasting & Ufuncs",4,"keepdims & Normalization","medium","np-keepdims-normalize",https://mlplayground.in/journey/numpy/np-keepdims-normalize
+"NumPy Road","Broadcasting & Ufuncs",5,"Normalize a Batch of Images","hard","np-broadcast-boss",https://mlplayground.in/journey/numpy/np-broadcast-boss
+"NumPy Road","Array Manipulation",1,"Concatenate & Stack","easy","np-concat-stack",https://mlplayground.in/journey/numpy/np-concat-stack
+"NumPy Road","Array Manipulation",2,"Splitting Arrays","medium","np-split-chunks",https://mlplayground.in/journey/numpy/np-split-chunks
+"NumPy Road","Array Manipulation",3,"Sort & Argsort","medium","np-sort-argsort",https://mlplayground.in/journey/numpy/np-sort-argsort
+"NumPy Road","Array Manipulation",4,"Unique & Counts","easy","np-unique-counts",https://mlplayground.in/journey/numpy/np-unique-counts
+"NumPy Road","Array Manipulation",5,"Rebuild a Corrupted Array","medium","np-manip-boss",https://mlplayground.in/journey/numpy/np-manip-boss
+"NumPy Road","Linear Algebra",1,"Dot Products & Matmul","medium","np-dot-matmul",https://mlplayground.in/journey/numpy/np-dot-matmul
+"NumPy Road","Linear Algebra",2,"Norms & Distances","medium","np-norms-distances",https://mlplayground.in/journey/numpy/np-norms-distances
+"NumPy Road","Linear Algebra",3,"Solve & Inverse","medium","np-solve-inverse",https://mlplayground.in/journey/numpy/np-solve-inverse
+"NumPy Road","Linear Algebra",4,"Eigenvalues & Eigenvectors","hard","np-eigen",https://mlplayground.in/journey/numpy/np-eigen
+"NumPy Road","Linear Algebra",5,"Solve a Linear System","hard","np-linalg-boss",https://mlplayground.in/journey/numpy/np-linalg-boss
+"NumPy Road","Statistics & Simulation",1,"Descriptive Statistics","easy","np-descriptive-stats",https://mlplayground.in/journey/numpy/np-descriptive-stats
+"NumPy Road","Statistics & Simulation",2,"Percentiles & Quantiles","medium","np-percentiles",https://mlplayground.in/journey/numpy/np-percentiles
+"NumPy Road","Statistics & Simulation",3,"Correlation & Covariance","medium","np-correlation-cov",https://mlplayground.in/journey/numpy/np-correlation-cov
+"NumPy Road","Statistics & Simulation",4,"Monte Carlo Simulation","medium","np-monte-carlo",https://mlplayground.in/journey/numpy/np-monte-carlo
+"NumPy Road","Statistics & Simulation",5,"Simulate a Random Walk","hard","np-stats-boss",https://mlplayground.in/journey/numpy/np-stats-boss
+"NumPy Road","Vectorization Mastery",1,"Loops to Vectors","medium","np-loops-to-vectors",https://mlplayground.in/journey/numpy/np-loops-to-vectors
+"NumPy Road","Vectorization Mastery",2,"Pairwise Distances","hard","np-pairwise-distances",https://mlplayground.in/journey/numpy/np-pairwise-distances
+"NumPy Road","Vectorization Mastery",3,"Sliding Windows","hard","np-sliding-windows",https://mlplayground.in/journey/numpy/np-sliding-windows
+"NumPy Road","Vectorization Mastery",4,"Vectorize a Slow Pipeline","hard","np-mastery-boss",https://mlplayground.in/journey/numpy/np-mastery-boss
+"SQL Road","SELECT — Ask the Database",1,"Pick Your Columns","easy","sql-select-columns",https://mlplayground.in/journey/sql/sql-select-columns
+"SQL Road","SELECT — Ask the Database",2,"Filter with WHERE","easy","sql-where-filter",https://mlplayground.in/journey/sql/sql-where-filter
+"SQL Road","SELECT — Ask the Database",3,"Order and Limit","easy","sql-order-limit",https://mlplayground.in/journey/sql/sql-order-limit
+"SQL Road","SELECT — Ask the Database",4,"Distinct Values","easy","sql-distinct",https://mlplayground.in/journey/sql/sql-distinct
+"SQL Road","SELECT — Ask the Database",5,"Compute and Alias","easy","sql-arithmetic-alias",https://mlplayground.in/journey/sql/sql-arithmetic-alias
+"SQL Road","SELECT — Ask the Database",6,"Build a Filtered Report","medium","sql-select-boss",https://mlplayground.in/journey/sql/sql-select-boss
+"SQL Road","Aggregation",1,"Count and Sum","easy","sql-count-sum",https://mlplayground.in/journey/sql/sql-count-sum
+"SQL Road","Aggregation",2,"Average, Min, Max","easy","sql-avg-minmax",https://mlplayground.in/journey/sql/sql-avg-minmax
+"SQL Road","Aggregation",3,"GROUP BY","medium","sql-group-by",https://mlplayground.in/journey/sql/sql-group-by
+"SQL Road","Aggregation",4,"Filter Groups with HAVING","medium","sql-having",https://mlplayground.in/journey/sql/sql-having
+"SQL Road","Aggregation",5,"Grouping by Expressions","medium","sql-group-expressions",https://mlplayground.in/journey/sql/sql-group-expressions
+"SQL Road","Aggregation",6,"Summarize a Sales Ledger","medium","sql-agg-boss",https://mlplayground.in/journey/sql/sql-agg-boss
+"SQL Road","Joins",1,"Inner Join","medium","sql-inner-join",https://mlplayground.in/journey/sql/sql-inner-join
+"SQL Road","Joins",2,"Left Join","medium","sql-left-join",https://mlplayground.in/journey/sql/sql-left-join
+"SQL Road","Joins",3,"Joining Three Tables","medium","sql-multi-join",https://mlplayground.in/journey/sql/sql-multi-join
+"SQL Road","Joins",4,"Self Join","medium","sql-self-join",https://mlplayground.in/journey/sql/sql-self-join
+"SQL Road","Joins",5,"Anti-Joins","medium","sql-antijoin-null",https://mlplayground.in/journey/sql/sql-antijoin-null
+"SQL Road","Joins",6,"Build a Customer Report","hard","sql-join-boss",https://mlplayground.in/journey/sql/sql-join-boss
+"SQL Road","Subqueries & CTEs",1,"Scalar Subqueries","medium","sql-scalar-subquery",https://mlplayground.in/journey/sql/sql-scalar-subquery
+"SQL Road","Subqueries & CTEs",2,"Filtering with IN","medium","sql-in-subquery",https://mlplayground.in/journey/sql/sql-in-subquery
+"SQL Road","Subqueries & CTEs",3,"Correlated Subqueries","medium","sql-correlated",https://mlplayground.in/journey/sql/sql-correlated
+"SQL Road","Subqueries & CTEs",4,"Your First CTE","medium","sql-cte-basics",https://mlplayground.in/journey/sql/sql-cte-basics
+"SQL Road","Subqueries & CTEs",5,"Chaining CTEs","medium","sql-cte-chain",https://mlplayground.in/journey/sql/sql-cte-chain
+"SQL Road","Subqueries & CTEs",6,"Diagnose a Sales Funnel","hard","sql-subquery-boss",https://mlplayground.in/journey/sql/sql-subquery-boss
+"SQL Road","Window Functions",1,"ROW_NUMBER","medium","sql-row-number",https://mlplayground.in/journey/sql/sql-row-number
+"SQL Road","Window Functions",2,"RANK and DENSE_RANK","medium","sql-rank-dense",https://mlplayground.in/journey/sql/sql-rank-dense
+"SQL Road","Window Functions",3,"PARTITION BY","medium","sql-partition-by",https://mlplayground.in/journey/sql/sql-partition-by
+"SQL Road","Window Functions",4,"LAG and LEAD","medium","sql-lag-lead",https://mlplayground.in/journey/sql/sql-lag-lead
+"SQL Road","Window Functions",5,"Running Totals","hard","sql-running-total",https://mlplayground.in/journey/sql/sql-running-total
+"SQL Road","Window Functions",6,"Rank a Leaderboard Over Time","hard","sql-window-boss",https://mlplayground.in/journey/sql/sql-window-boss
+"SQL Road","Shaping & Logic",1,"CASE WHEN","medium","sql-case-when",https://mlplayground.in/journey/sql/sql-case-when
+"SQL Road","Shaping & Logic",2,"COALESCE and NULLs","easy","sql-coalesce-null",https://mlplayground.in/journey/sql/sql-coalesce-null
+"SQL Road","Shaping & Logic",3,"String Functions","medium","sql-string-funcs",https://mlplayground.in/journey/sql/sql-string-funcs
+"SQL Road","Shaping & Logic",4,"Date Functions","medium","sql-date-funcs",https://mlplayground.in/journey/sql/sql-date-funcs
+"SQL Road","Shaping & Logic",5,"UNION and EXCEPT","medium","sql-union-except",https://mlplayground.in/journey/sql/sql-union-except
+"SQL Road","Shaping & Logic",6,"Reshape a Raw Extract","hard","sql-shaping-boss",https://mlplayground.in/journey/sql/sql-shaping-boss
+"SQL Road","Analytics Capstones",1,"Retention Capstone","hard","sql-capstone-retention",https://mlplayground.in/journey/sql/sql-capstone-retention
+"SQL Road","Analytics Capstones",2,"Funnel Capstone","hard","sql-capstone-funnel",https://mlplayground.in/journey/sql/sql-capstone-funnel
+"SQL Road","Analytics Capstones",3,"Cohort Analysis Capstone","hard","sql-capstone-cohort",https://mlplayground.in/journey/sql/sql-capstone-cohort
+"Data Engineering Road","Ingestion & Validation",1,"Parse Raw Records","easy","de-parse-records",https://mlplayground.in/journey/data-engineering/de-parse-records
+"Data Engineering Road","Ingestion & Validation",2,"Type Coercion","easy","de-type-coercion",https://mlplayground.in/journey/data-engineering/de-type-coercion
+"Data Engineering Road","Ingestion & Validation",3,"Schema Validation","medium","de-schema-validate",https://mlplayground.in/journey/data-engineering/de-schema-validate
+"Data Engineering Road","Ingestion & Validation",4,"Quarantine Malformed Records","medium","de-malformed-quarantine",https://mlplayground.in/journey/data-engineering/de-malformed-quarantine
+"Data Engineering Road","Ingestion & Validation",5,"Batch Metadata","easy","de-batch-metadata",https://mlplayground.in/journey/data-engineering/de-batch-metadata
+"Data Engineering Road","Ingestion & Validation",6,"Build an Ingestion Gate","medium","de-ingest-boss",https://mlplayground.in/journey/data-engineering/de-ingest-boss
+"Data Engineering Road","Cleaning at Scale",1,"Deduplicate by Key","easy","de-dedup-keys",https://mlplayground.in/journey/data-engineering/de-dedup-keys
+"Data Engineering Road","Cleaning at Scale",2,"Normalize Values","medium","de-normalize-values",https://mlplayground.in/journey/data-engineering/de-normalize-values
+"Data Engineering Road","Cleaning at Scale",3,"Missing Value Policy","medium","de-missing-policy",https://mlplayground.in/journey/data-engineering/de-missing-policy
+"Data Engineering Road","Cleaning at Scale",4,"Outlier Fences","medium","de-outlier-fences",https://mlplayground.in/journey/data-engineering/de-outlier-fences
+"Data Engineering Road","Cleaning at Scale",5,"Referential Integrity Checks","medium","de-referential-check",https://mlplayground.in/journey/data-engineering/de-referential-check
+"Data Engineering Road","Cleaning at Scale",6,"Harden a Feed Against Bad Data","hard","de-clean-boss",https://mlplayground.in/journey/data-engineering/de-clean-boss
+"Data Engineering Road","Transformation Pipelines",1,"Map and Enrich","easy","de-map-enrich",https://mlplayground.in/journey/data-engineering/de-map-enrich
+"Data Engineering Road","Transformation Pipelines",2,"Filter and Route","medium","de-filter-route",https://mlplayground.in/journey/data-engineering/de-filter-route
+"Data Engineering Road","Transformation Pipelines",3,"Derive Computed Fields","medium","de-derive-features",https://mlplayground.in/journey/data-engineering/de-derive-features
+"Data Engineering Road","Transformation Pipelines",4,"Idempotent Upserts","medium","de-idempotent-upsert",https://mlplayground.in/journey/data-engineering/de-idempotent-upsert
+"Data Engineering Road","Transformation Pipelines",5,"Compose a Pipeline","hard","de-pipeline-compose",https://mlplayground.in/journey/data-engineering/de-pipeline-compose
+"Data Engineering Road","Transformation Pipelines",6,"Build a Transformation Stage","hard","de-transform-boss",https://mlplayground.in/journey/data-engineering/de-transform-boss
+"Data Engineering Road","Aggregation & Rollups",1,"Incremental Aggregation","medium","de-incremental-agg",https://mlplayground.in/journey/data-engineering/de-incremental-agg
+"Data Engineering Road","Aggregation & Rollups",2,"Time Bucketing","medium","de-time-buckets",https://mlplayground.in/journey/data-engineering/de-time-buckets
+"Data Engineering Road","Aggregation & Rollups",3,"Handling Late-Arriving Data","hard","de-late-data",https://mlplayground.in/journey/data-engineering/de-late-data
+"Data Engineering Road","Aggregation & Rollups",4,"Rollup Hierarchies","medium","de-rollup-hierarchy",https://mlplayground.in/journey/data-engineering/de-rollup-hierarchy
+"Data Engineering Road","Aggregation & Rollups",5,"Metrics Consistency","medium","de-metrics-consistency",https://mlplayground.in/journey/data-engineering/de-metrics-consistency
+"Data Engineering Road","Aggregation & Rollups",6,"Build a Daily Rollup Job","hard","de-rollup-boss",https://mlplayground.in/journey/data-engineering/de-rollup-boss
+"Data Engineering Road","Joins & Reconciliation",1,"Enrichment Joins","medium","de-enrich-join",https://mlplayground.in/journey/data-engineering/de-enrich-join
+"Data Engineering Road","Joins & Reconciliation",2,"Change Detection","medium","de-change-detect",https://mlplayground.in/journey/data-engineering/de-change-detect
+"Data Engineering Road","Joins & Reconciliation",3,"Slowly Changing Dimensions","hard","de-scd-lite",https://mlplayground.in/journey/data-engineering/de-scd-lite
+"Data Engineering Road","Joins & Reconciliation",4,"Reconciling Two Sources","hard","de-two-source-reconcile",https://mlplayground.in/journey/data-engineering/de-two-source-reconcile
+"Data Engineering Road","Joins & Reconciliation",5,"Conflict Resolution","medium","de-conflict-resolve",https://mlplayground.in/journey/data-engineering/de-conflict-resolve
+"Data Engineering Road","Joins & Reconciliation",6,"Reconcile Two Pipelines","hard","de-reconcile-boss",https://mlplayground.in/journey/data-engineering/de-reconcile-boss
+"Data Engineering Road","Pipeline Capstones",1,"Event Pipeline Capstone","hard","de-capstone-events",https://mlplayground.in/journey/data-engineering/de-capstone-events
+"Data Engineering Road","Pipeline Capstones",2,"Warehouse Load Capstone","hard","de-capstone-warehouse",https://mlplayground.in/journey/data-engineering/de-capstone-warehouse
+"Data Engineering Road","Pipeline Capstones",3,"Data Quality Capstone","hard","de-capstone-quality",https://mlplayground.in/journey/data-engineering/de-capstone-quality
+"PyTorch Road","Tensors",1,"Create Your First Tensors","easy","pt-tensor-creation",https://mlplayground.in/journey/pytorch/pt-tensor-creation
+"PyTorch Road","Tensors",2,"Dtype and Casting","easy","pt-tensor-dtype",https://mlplayground.in/journey/pytorch/pt-tensor-dtype
+"PyTorch Road","Tensors",3,"Elementwise Ops and Broadcasting","medium","pt-tensor-ops",https://mlplayground.in/journey/pytorch/pt-tensor-ops
+"PyTorch Road","Tensors",4,"The NumPy Bridge","easy","pt-numpy-bridge",https://mlplayground.in/journey/pytorch/pt-numpy-bridge
+"PyTorch Road","Tensors",5,"Indexing and Reshaping","medium","pt-indexing-reshape",https://mlplayground.in/journey/pytorch/pt-indexing-reshape
+"PyTorch Road","Tensors",6,"Assemble a Tensor Pipeline","medium","pt-tensors-boss",https://mlplayground.in/journey/pytorch/pt-tensors-boss
+"PyTorch Road","Autograd",1,"Turn On requires_grad","easy","pt-requires-grad",https://mlplayground.in/journey/pytorch/pt-requires-grad
+"PyTorch Road","Autograd",2,"Backward on a Scalar","medium","pt-backward-scalar",https://mlplayground.in/journey/pytorch/pt-backward-scalar
+"PyTorch Road","Autograd",3,"Grad Accumulation and zero_grad","medium","pt-grad-accumulation",https://mlplayground.in/journey/pytorch/pt-grad-accumulation
+"PyTorch Road","Autograd",4,"no_grad and detach","easy","pt-no-grad",https://mlplayground.in/journey/pytorch/pt-no-grad
+"PyTorch Road","Autograd",5,"Vector-Jacobian Products","hard","pt-vector-jacobian",https://mlplayground.in/journey/pytorch/pt-vector-jacobian
+"PyTorch Road","Autograd",6,"Trace a Full Backward Pass","medium","pt-autograd-boss",https://mlplayground.in/journey/pytorch/pt-autograd-boss
+"PyTorch Road","nn.Modules",1,"Anatomy of nn.Linear","easy","pt-linear-anatomy",https://mlplayground.in/journey/pytorch/pt-linear-anatomy
+"PyTorch Road","nn.Modules",2,"Activations as Modules","easy","pt-activation-modules",https://mlplayground.in/journey/pytorch/pt-activation-modules
+"PyTorch Road","nn.Modules",3,"Composing with Sequential","medium","pt-sequential",https://mlplayground.in/journey/pytorch/pt-sequential
+"PyTorch Road","nn.Modules",4,"Your Own nn.Module","medium","pt-custom-module",https://mlplayground.in/journey/pytorch/pt-custom-module
+"PyTorch Road","nn.Modules",5,"Parameters and State","medium","pt-parameters-state",https://mlplayground.in/journey/pytorch/pt-parameters-state
+"PyTorch Road","nn.Modules",6,"Build a Small Network","medium","pt-modules-boss",https://mlplayground.in/journey/pytorch/pt-modules-boss
+"PyTorch Road","Training Loops",1,"Loss Modules","easy","pt-loss-modules",https://mlplayground.in/journey/pytorch/pt-loss-modules
+"PyTorch Road","Training Loops",2,"SGD, Step by Step","medium","pt-sgd-step",https://mlplayground.in/journey/pytorch/pt-sgd-step
+"PyTorch Road","Training Loops",3,"How Adam Moves","medium","pt-adam-optimizer",https://mlplayground.in/journey/pytorch/pt-adam-optimizer
+"PyTorch Road","Training Loops",4,"Anatomy of a Training Loop","medium","pt-training-loop",https://mlplayground.in/journey/pytorch/pt-training-loop
+"PyTorch Road","Training Loops",5,"Overfit a Single Batch","hard","pt-overfit-batch",https://mlplayground.in/journey/pytorch/pt-overfit-batch
+"PyTorch Road","Training Loops",6,"Train to Convergence","hard","pt-training-boss",https://mlplayground.in/journey/pytorch/pt-training-boss
+"PyTorch Road","Data & Batching",1,"The Dataset Protocol","easy","pt-dataset-protocol",https://mlplayground.in/journey/pytorch/pt-dataset-protocol
+"PyTorch Road","Data & Batching",2,"DataLoader Basics","easy","pt-dataloader-basics",https://mlplayground.in/journey/pytorch/pt-dataloader-basics
+"PyTorch Road","Data & Batching",3,"Seeded Shuffling","medium","pt-dataloader-seeded",https://mlplayground.in/journey/pytorch/pt-dataloader-seeded
+"PyTorch Road","Data & Batching",4,"Custom Collation","medium","pt-batch-collation",https://mlplayground.in/journey/pytorch/pt-batch-collation
+"PyTorch Road","Data & Batching",5,"Build a Batching Pipeline","medium","pt-data-boss",https://mlplayground.in/journey/pytorch/pt-data-boss
+"PyTorch Road","Architectures",1,"Conv2d Forward, By Hand","hard","pt-conv2d-forward",https://mlplayground.in/journey/pytorch/pt-conv2d-forward
+"PyTorch Road","Architectures",2,"Embedding Lookup","medium","pt-embedding-lookup",https://mlplayground.in/journey/pytorch/pt-embedding-lookup
+"PyTorch Road","Architectures",3,"Build an MLP","medium","pt-build-mlp",https://mlplayground.in/journey/pytorch/pt-build-mlp
+"PyTorch Road","Architectures",4,"Assemble a Tiny Classifier","medium","pt-tiny-classifier",https://mlplayground.in/journey/pytorch/pt-tiny-classifier
+"PyTorch Road","Architectures",5,"Design a Small Architecture","hard","pt-architectures-boss",https://mlplayground.in/journey/pytorch/pt-architectures-boss
+"PyTorch Road","Capstones",1,"Train a Regression Net","hard","pt-capstone-regression",https://mlplayground.in/journey/pytorch/pt-capstone-regression
+"PyTorch Road","Capstones",2,"Train a Classifier","hard","pt-capstone-classifier",https://mlplayground.in/journey/pytorch/pt-capstone-classifier
+"PyTorch Road","Capstones",3,"Train an Embedding Model","hard","pt-capstone-embedding",https://mlplayground.in/journey/pytorch/pt-capstone-embedding
+"TensorFlow Road","Tensors & Variables",1,"Create Tensors and Constants","easy","tf-tensor-creation",https://mlplayground.in/journey/tensorflow/tf-tensor-creation
+"TensorFlow Road","Tensors & Variables",2,"Dtype and Casting","easy","tf-tensor-dtype-cast",https://mlplayground.in/journey/tensorflow/tf-tensor-dtype-cast
+"TensorFlow Road","Tensors & Variables",3,"Ops and Broadcasting","medium","tf-tensor-ops",https://mlplayground.in/journey/tensorflow/tf-tensor-ops
+"TensorFlow Road","Tensors & Variables",4,"tf.Variable","medium","tf-variables",https://mlplayground.in/journey/tensorflow/tf-variables
+"TensorFlow Road","Tensors & Variables",5,"Indexing and tf.reshape","medium","tf-indexing-reshape",https://mlplayground.in/journey/tensorflow/tf-indexing-reshape
+"TensorFlow Road","Tensors & Variables",6,"Assemble a Tensor Pipeline","medium","tf-tensors-boss",https://mlplayground.in/journey/tensorflow/tf-tensors-boss
+"TensorFlow Road","GradientTape",1,"Your First GradientTape","easy","tf-tape-basics",https://mlplayground.in/journey/tensorflow/tf-tape-basics
+"TensorFlow Road","GradientTape",2,"Gradients for Multiple Variables","medium","tf-tape-multi-var",https://mlplayground.in/journey/tensorflow/tf-tape-multi-var
+"TensorFlow Road","GradientTape",3,"Persistent Tapes","medium","tf-tape-persistent",https://mlplayground.in/journey/tensorflow/tf-tape-persistent
+"TensorFlow Road","GradientTape",4,"Watching a Constant","medium","tf-tape-watch",https://mlplayground.in/journey/tensorflow/tf-tape-watch
+"TensorFlow Road","GradientTape",5,"Differentiate a Small Computation","medium","tf-tape-boss",https://mlplayground.in/journey/tensorflow/tf-tape-boss
+"TensorFlow Road","Keras Layers",1,"Anatomy of a Dense Layer","easy","tf-dense-layer",https://mlplayground.in/journey/tensorflow/tf-dense-layer
+"TensorFlow Road","Keras Layers",2,"build() and call()","medium","tf-layer-call",https://mlplayground.in/journey/tensorflow/tf-layer-call
+"TensorFlow Road","Keras Layers",3,"Composing with Sequential","medium","tf-sequential-model",https://mlplayground.in/journey/tensorflow/tf-sequential-model
+"TensorFlow Road","Keras Layers",4,"set_weights and get_weights","medium","tf-set-get-weights",https://mlplayground.in/journey/tensorflow/tf-set-get-weights
+"TensorFlow Road","Keras Layers",5,"Build a Small Keras Model","medium","tf-layers-boss",https://mlplayground.in/journey/tensorflow/tf-layers-boss
+"TensorFlow Road","Manual Training",1,"Keras Loss Functions","easy","tf-loss-functions",https://mlplayground.in/journey/tensorflow/tf-loss-functions
+"TensorFlow Road","Manual Training",2,"apply_gradients, Step by Step","medium","tf-optimizer-apply-gradients",https://mlplayground.in/journey/tensorflow/tf-optimizer-apply-gradients
+"TensorFlow Road","Manual Training",3,"Adam in TensorFlow","medium","tf-adam-tf",https://mlplayground.in/journey/tensorflow/tf-adam-tf
+"TensorFlow Road","Manual Training",4,"A Manual Training Loop","medium","tf-manual-training-loop",https://mlplayground.in/journey/tensorflow/tf-manual-training-loop
+"TensorFlow Road","Manual Training",5,"Train Without fit()","hard","tf-training-boss",https://mlplayground.in/journey/tensorflow/tf-training-boss
+"TensorFlow Road","Data Pipelines",1,"from_tensor_slices","easy","tf-tensor-slices",https://mlplayground.in/journey/tensorflow/tf-tensor-slices
+"TensorFlow Road","Data Pipelines",2,"Mapping Over a Dataset","medium","tf-dataset-map",https://mlplayground.in/journey/tensorflow/tf-dataset-map
+"TensorFlow Road","Data Pipelines",3,"Batching a Dataset","medium","tf-dataset-batch",https://mlplayground.in/journey/tensorflow/tf-dataset-batch
+"TensorFlow Road","Data Pipelines",4,"Seeded Shuffling","medium","tf-dataset-shuffle-seeded",https://mlplayground.in/journey/tensorflow/tf-dataset-shuffle-seeded
+"TensorFlow Road","Data Pipelines",5,"Build a Data Pipeline","medium","tf-pipelines-boss",https://mlplayground.in/journey/tensorflow/tf-pipelines-boss
+"TensorFlow Road","Capstones",1,"Train a Regression Model","hard","tf-capstone-regression",https://mlplayground.in/journey/tensorflow/tf-capstone-regression
+"TensorFlow Road","Capstones",2,"Train a Classifier","hard","tf-capstone-classifier",https://mlplayground.in/journey/tensorflow/tf-capstone-classifier
+"TensorFlow Road","Capstones",3,"Pipeline to Training","hard","tf-capstone-pipeline",https://mlplayground.in/journey/tensorflow/tf-capstone-pipeline
+"PySpark Road","Session & DataFrames",1,"Start a SparkSession","easy","ps-spark-session",https://mlplayground.in/journey/pyspark/ps-spark-session
+"PySpark Road","Session & DataFrames",2,"Create a DataFrame","easy","ps-create-dataframe",https://mlplayground.in/journey/pyspark/ps-create-dataframe
+"PySpark Road","Session & DataFrames",3,"Actions: collect, count, first","easy","ps-collect-count-first",https://mlplayground.in/journey/pyspark/ps-collect-count-first
+"PySpark Road","Session & DataFrames",4,"Transformations Are Lazy","medium","ps-laziness-plan",https://mlplayground.in/journey/pyspark/ps-laziness-plan
+"PySpark Road","Session & DataFrames",5,"Working with Row","easy","ps-row-objects",https://mlplayground.in/journey/pyspark/ps-row-objects
+"PySpark Road","Session & DataFrames",6,"Stand Up a DataFrame Pipeline","medium","ps-session-boss",https://mlplayground.in/journey/pyspark/ps-session-boss
+"PySpark Road","Transformations",1,"Select Columns","easy","ps-select-columns",https://mlplayground.in/journey/pyspark/ps-select-columns
+"PySpark Road","Transformations",2,"Filter Rows","easy","ps-filter-where",https://mlplayground.in/journey/pyspark/ps-filter-where
+"PySpark Road","Transformations",3,"withColumn and cast","medium","ps-withcolumn-cast",https://mlplayground.in/journey/pyspark/ps-withcolumn-cast
+"PySpark Road","Transformations",4,"when / otherwise","medium","ps-when-otherwise",https://mlplayground.in/journey/pyspark/ps-when-otherwise
+"PySpark Road","Transformations",5,"Rename and Drop Columns","medium","ps-rename-drop",https://mlplayground.in/journey/pyspark/ps-rename-drop
+"PySpark Road","Transformations",6,"Reshape a Raw DataFrame","medium","ps-transform-boss",https://mlplayground.in/journey/pyspark/ps-transform-boss
+"PySpark Road","Aggregations",1,"groupBy and agg","medium","ps-groupby-agg",https://mlplayground.in/journey/pyspark/ps-groupby-agg
+"PySpark Road","Aggregations",2,"Aliasing Aggregates","easy","ps-agg-aliases",https://mlplayground.in/journey/pyspark/ps-agg-aliases
+"PySpark Road","Aggregations",3,"Multiple Aggregations at Once","medium","ps-multi-agg",https://mlplayground.in/journey/pyspark/ps-multi-agg
+"PySpark Road","Aggregations",4,"countDistinct","medium","ps-count-distinct",https://mlplayground.in/journey/pyspark/ps-count-distinct
+"PySpark Road","Aggregations",5,"Summarize a Dataset","medium","ps-agg-boss",https://mlplayground.in/journey/pyspark/ps-agg-boss
+"PySpark Road","Joins & Sets",1,"Inner Join","medium","ps-inner-join",https://mlplayground.in/journey/pyspark/ps-inner-join
+"PySpark Road","Joins & Sets",2,"Left and Outer Joins","medium","ps-left-outer-join",https://mlplayground.in/journey/pyspark/ps-left-outer-join
+"PySpark Road","Joins & Sets",3,"union","easy","ps-union-dataframes",https://mlplayground.in/journey/pyspark/ps-union-dataframes
+"PySpark Road","Joins & Sets",4,"dropDuplicates","medium","ps-drop-duplicates",https://mlplayground.in/journey/pyspark/ps-drop-duplicates
+"PySpark Road","Joins & Sets",5,"Reconcile Two DataFrames","hard","ps-joins-boss",https://mlplayground.in/journey/pyspark/ps-joins-boss
+"PySpark Road","Windows & Advanced",1,"Partitioned Windows","medium","ps-window-partition",https://mlplayground.in/journey/pyspark/ps-window-partition
+"PySpark Road","Windows & Advanced",2,"row_number, rank, dense_rank","medium","ps-row-number-rank",https://mlplayground.in/journey/pyspark/ps-row-number-rank
+"PySpark Road","Windows & Advanced",3,"lag and lead","medium","ps-lag-lead",https://mlplayground.in/journey/pyspark/ps-lag-lead
+"PySpark Road","Windows & Advanced",4,"Laziness and Plans, Revisited","hard","ps-laziness-revisited",https://mlplayground.in/journey/pyspark/ps-laziness-revisited
+"PySpark Road","Windows & Advanced",5,"Rank a Dataset Over Time","hard","ps-windows-boss",https://mlplayground.in/journey/pyspark/ps-windows-boss
+"PySpark Road","Capstones",1,"Log Analytics Capstone","hard","ps-capstone-log-analytics",https://mlplayground.in/journey/pyspark/ps-capstone-log-analytics
+"PySpark Road","Capstones",2,"Sales Pipeline Capstone","hard","ps-capstone-sales-pipeline",https://mlplayground.in/journey/pyspark/ps-capstone-sales-pipeline
+"PySpark Road","Capstones",3,"Data Quality Capstone","hard","ps-capstone-data-quality",https://mlplayground.in/journey/pyspark/ps-capstone-data-quality

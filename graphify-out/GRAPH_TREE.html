@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>/ — graphify tree viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      margin: 20px 0 0 24px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1e3a56;
+    }
+    .controls {
+      margin: 20px 0 15px 24px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 18px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:active {
+      background: #004085;
+    }
+    #tree-container {
+      width: calc(100vw - 48px); /* Adjust for body margin/padding */
+      height: 85vh;
+      overflow: auto;
+      border-radius: 8px;
+      background: #fff;
+      margin-left: 24px;
+      margin-right: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+    }
+    svg {
+      background: #fff;
+      border-radius: 8px;
+      display: block; /* Important for D3 */
+    }
+    .node circle {
+      stroke-width: 2.5px;
+    }
+    .node text { /* Base style for the <text> container */
+      font: 13px 'Segoe UI', sans-serif;
+      paint-order: stroke fill; /* Ensures text is readable over lines */
+      stroke: #fff; /* White halo */
+      stroke-width: 3px; /* Halo thickness */
+      stroke-linejoin: round;
+      stroke-opacity: 0.85; /* Halo opacity */
+    }
+    .link {
+      fill: none;
+      stroke-opacity: 0.7;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>/ — Knowledge Graph</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="resetView()">Reset View</button>
+  </div>
+  <div id="tree-container">
+    <svg id="tree-svg" width="6000" height="8000"></svg>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    const initialJsonData = {"name":"/","total_count":2534,"children":[{"name":".agents","total_count":4,"children":[{"name":"rules","total_count":2,"children":[{"name":"graphify.md","total_count":2,"children":[{"name":"graphify","total_count":1,"children":[]},{"name":"graphify.md","total_count":1,"children":[]}]}]},{"name":"workflows","total_count":2,"children":[{"name":"graphify.md","total_count":2,"children":[{"name":"graphify.md","total_count":1,"children":[]},{"name":"Workflow: graphify","total_count":1,"children":[]}]}]}]},{"name":"all_journey_questions.md","total_count":2332,"children":[{"name":"(+2132 more)","total_count":2132,"children":[]},{"name":"1. 2D Slicing `[EASY]`","total_count":1,"children":[]},{"name":"1. Anatomy of a Dense Layer `[EASY]`","total_count":1,"children":[]},{"name":"1. Anatomy of nn.Linear `[EASY]`","total_count":1,"children":[]},{"name":"1. Apply & Map `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Array Genesis `[EASY]`","total_count":1,"children":[]},{"name":"1. Autoencoder `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Bias-Variance Tradeoff `[EASY]`","total_count":1,"children":[]},{"name":"1. Bootstrap `[EASY]`","total_count":1,"children":[]},{"name":"1. Build a DataFrame `[EASY]`","total_count":1,"children":[]},{"name":"1. Build a Series `[EASY]`","total_count":1,"children":[]},{"name":"1. CASE WHEN `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Concatenate & Stack `[EASY]`","total_count":1,"children":[]},{"name":"1. Concatenation `[EASY]`","total_count":1,"children":[]},{"name":"1. Conv2d Forward, By Hand `[HARD]`","total_count":1,"children":[]},{"name":"1. Convolution `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Count and Sum `[EASY]`","total_count":1,"children":[]},{"name":"1. Create Tensors and Constants `[EASY]`","total_count":1,"children":[]},{"name":"1. Create Your First Tensors `[EASY]`","total_count":1,"children":[]},{"name":"1. Datetime Indexing `[EASY]`","total_count":1,"children":[]},{"name":"1. Datetime Parsing `[EASY]`","total_count":1,"children":[]},{"name":"1. Deduplicate by Key `[EASY]`","total_count":1,"children":[]},{"name":"1. Descriptive Statistics `[EASY]`","total_count":1,"children":[]},{"name":"1. Distance Metrics `[EASY]`","total_count":1,"children":[]},{"name":"1. Dot Products & Matmul `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Dot-Product Attn `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Enrichment Joins `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Event Pipeline Capstone `[HARD]`","total_count":1,"children":[]},{"name":"1. Feature Scaling `[EASY]`","total_count":1,"children":[]},{"name":"1. from_tensor_slices `[EASY]`","total_count":1,"children":[]},{"name":"1. GPT Architecture `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. groupBy and agg `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Incremental Aggregation `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Inner Join `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Inner Join `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Keras Loss Functions `[EASY]`","total_count":1,"children":[]},{"name":"1. Log Analytics Capstone `[HARD]`","total_count":1,"children":[]},{"name":"1. Loops to Vectors `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Loss Modules `[EASY]`","total_count":1,"children":[]},{"name":"1. Map and Enrich `[EASY]`","total_count":1,"children":[]},{"name":"1. MDPs & Rewards `[EASY]`","total_count":1,"children":[]},{"name":"1. Mean, Variance & Std `[EASY]`","total_count":1,"children":[]},{"name":"1. Missing Data Strategies `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. MSE Loss `[EASY]`","total_count":1,"children":[]},{"name":"1. NumPy Arrays: The Foundation `[EASY]`","total_count":1,"children":[]},{"name":"1. Parse Raw Records `[EASY]`","total_count":1,"children":[]},{"name":"1. Partitioned Windows `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Pick Your Columns `[EASY]`","total_count":1,"children":[]},{"name":"1. Retail Sales Capstone `[HARD]`","total_count":1,"children":[]},{"name":"1. Retention Capstone `[HARD]`","total_count":1,"children":[]},{"name":"1. ROW_NUMBER `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Scalar Subqueries `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Select Columns `[EASY]`","total_count":1,"children":[]},{"name":"1. Sigmoid Gate `[EASY]`","total_count":1,"children":[]},{"name":"1. Start a SparkSession `[EASY]`","total_count":1,"children":[]},{"name":"1. The Dataset Protocol `[EASY]`","total_count":1,"children":[]},{"name":"1. The Perceptron `[EASY]`","total_count":1,"children":[]},{"name":"1. Train a Regression Model `[HARD]`","total_count":1,"children":[]},{"name":"1. Train a Regression Net `[HARD]`","total_count":1,"children":[]},{"name":"1. Turn On requires_grad `[EASY]`","total_count":1,"children":[]},{"name":"1. Universal Functions `[EASY]`","total_count":1,"children":[]},{"name":"1. Vanilla RNN Cell `[MEDIUM]`","total_count":1,"children":[]},{"name":"1. Weight Initialisation `[EASY]`","total_count":1,"children":[]},{"name":"1. Your First GradientTape `[EASY]`","total_count":1,"children":[]},{"name":"1. Your First GroupBy `[EASY]`","total_count":1,"children":[]},{"name":"2. Activations `[EASY]`","total_count":1,"children":[]},{"name":"2. Activations as Modules `[EASY]`","total_count":1,"children":[]},{"name":"2. Aggregations `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Aliasing Aggregates `[EASY]`","total_count":1,"children":[]},{"name":"2. apply_gradients, Step by Step `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Average, Min, Max `[EASY]`","total_count":1,"children":[]},{"name":"2. Backprop Through Time `[HARD]`","total_count":1,"children":[]},{"name":"2. Backward on a Scalar `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Binary Cross-Entropy `[EASY]`","total_count":1,"children":[]},{"name":"2. Boolean Masks `[EASY]`","total_count":1,"children":[]},{"name":"2. Broadcasting Rules `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. build() and call() `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Change Detection `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. COALESCE and NULLs `[EASY]`","total_count":1,"children":[]},{"name":"2. Column Selection `[EASY]`","total_count":1,"children":[]},{"name":"2. Create a DataFrame `[EASY]`","total_count":1,"children":[]},{"name":"2. DataLoader Basics `[EASY]`","total_count":1,"children":[]},{"name":"2. Datetime Indexing `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Dtype and Casting `[EASY]`","total_count":1,"children":[]},{"name":"2. Dtype and Casting `[EASY]`","total_count":1,"children":[]},{"name":"2. Duplicate Rows `[EASY]`","total_count":1,"children":[]},{"name":"2. Embedding Lookup `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Encoding Categoricals `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Explore vs Exploit `[EASY]`","total_count":1,"children":[]},{"name":"2. Filter and Route `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Filter Rows `[EASY]`","total_count":1,"children":[]},{"name":"2. Filter with WHERE `[EASY]`","total_count":1,"children":[]},{"name":"2. Filtering with IN `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Forward Pass `[EASY]`","total_count":1,"children":[]},{"name":"2. Funnel Capstone `[HARD]`","total_count":1,"children":[]},{"name":"2. Gradients for Multiple Variables `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Inner Merge `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. K-Means Step `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. K-Nearest Neighbors `[EASY]`","total_count":1,"children":[]},{"name":"2. Label vs Position `[EASY]`","total_count":1,"children":[]},{"name":"2. Latent Space `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Left and Outer Joins `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Left Join `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. MAE Loss `[EASY]`","total_count":1,"children":[]},{"name":"2. Mapping Over a Dataset `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Normal & Bernoulli Distributions `[EASY]`","total_count":1,"children":[]},{"name":"2. Normalize Values `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Norms & Distances `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. NumPy Broadcasting `[EASY]`","total_count":1,"children":[]},{"name":"2. Pairwise Distances `[HARD]`","total_count":1,"children":[]},{"name":"2. Percentiles & Quantiles `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Pooling Layers `[EASY]`","total_count":1,"children":[]},{"name":"2. Pretraining Loop `[HARD]`","total_count":1,"children":[]},{"name":"2. Ranges & Grids `[EASY]`","total_count":1,"children":[]},{"name":"2. RANK and DENSE_RANK `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Ridge Regression (L2) `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. row_number, rank, dense_rank `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Sales Pipeline Capstone `[HARD]`","total_count":1,"children":[]},{"name":"2. Scaled Attention `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Server Log Capstone `[HARD]`","total_count":1,"children":[]},{"name":"2. SGD, Step by Step `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Splitting Arrays `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. String Methods `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Time Bucketing `[MEDIUM]`","total_count":1,"children":[]},{"name":"2. Train a Classifier `[HARD]`","total_count":1,"children":[]},{"name":"2. Train a Classifier `[HARD]`","total_count":1,"children":[]},{"name":"2. Trend & Seasonality `[EASY]`","total_count":1,"children":[]},{"name":"2. Type Coercion `[EASY]`","total_count":1,"children":[]},{"name":"2. Warehouse Load Capstone `[HARD]`","total_count":1,"children":[]},{"name":"3. .loc and .iloc `[EASY]`","total_count":1,"children":[]},{"name":"3. Actions: collect, count, first `[EASY]`","total_count":1,"children":[]},{"name":"3. Adam in TensorFlow `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Axis Aggregations `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Batching a Dataset `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Bayes Rule, By Hand `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Binary Cross-Entropy Loss `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Build an MLP `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Cleaning Text Fields `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. CNN Forward Pass `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Cohort Analysis Capstone `[HARD]`","total_count":1,"children":[]},{"name":"3. Composing with Sequential `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Composing with Sequential `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Correlated Subqueries `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Correlation & Covariance `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Data Quality Capstone `[HARD]`","total_count":1,"children":[]},{"name":"3. Data Quality Capstone `[HARD]`","total_count":1,"children":[]},{"name":"3. Derive Computed Fields `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Dtypes & Casting `[EASY]`","total_count":1,"children":[]},{"name":"3. Elementwise Ops and Broadcasting `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Fancy Indexing `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Full K-Means `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Full Logistic Regression `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Grad Accumulation and zero_grad `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. GROUP BY `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Group Transforms `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Handling Late-Arriving Data `[HARD]`","total_count":1,"children":[]},{"name":"3. How Adam Moves `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Joining Three Tables `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. lag and lead `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Lasso Regression (L1) `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. LSTM Gates `[HARD]`","total_count":1,"children":[]},{"name":"3. Missing Value Policy `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Missing Values `[EASY]`","total_count":1,"children":[]},{"name":"3. Multiple Aggregations at Once `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Naïve Bayes `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Normal Equations `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Ops and Broadcasting `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Order and Limit `[EASY]`","total_count":1,"children":[]},{"name":"3. Outer Merge `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Parsing Dates `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. PARTITION BY `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Persistent Tapes `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Pipeline to Training `[HARD]`","total_count":1,"children":[]},{"name":"3. Q-Tables `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Resampling `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Rolling Windows `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Sampling Strategies `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Schema Validation `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Seeded Shuffling `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Self-Attention `[HARD]`","total_count":1,"children":[]},{"name":"3. Slicing & Fancy Indexing `[EASY]`","total_count":1,"children":[]},{"name":"3. Sliding Windows `[HARD]`","total_count":1,"children":[]},{"name":"3. Slowly Changing Dimensions `[HARD]`","total_count":1,"children":[]},{"name":"3. Solve & Inverse `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Sort & Argsort `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. String Functions `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. Survey Data Capstone `[HARD]`","total_count":1,"children":[]},{"name":"3. Train an Embedding Model `[HARD]`","total_count":1,"children":[]},{"name":"3. union `[EASY]`","total_count":1,"children":[]},{"name":"3. Variational AE (VAE) `[HARD]`","total_count":1,"children":[]},{"name":"3. Vectorized Ops `[EASY]`","total_count":1,"children":[]},{"name":"3. Weight Init `[MEDIUM]`","total_count":1,"children":[]},{"name":"3. withColumn and cast `[MEDIUM]`","total_count":1,"children":[]},{"name":"4. A Manual Training Loop `[MEDIUM]`","total_count":1,"children":[]},{"name":"4. Anatomy of a Training Loop `[MEDIUM]`","total_count":1,"children":[]},{"name":"4. ARIMA Intuition `[MEDIUM]`","total_count":1,"children":[]},{"name":"4. Assemble a Tiny Classifier `[MEDIUM]`","total_count":1,"children":[]},{"name":"4. Boolean Masks `[EASY]`","total_count":1,"children":[]},{"name":"4. Choosing K `[EASY]`","total_count":1,"children":[]},{"name":"4. countDistinct `[MEDIUM]`","total_count":1,"children":[]},{"name":"4. Custom Collation `[MEDIUM]`","total_count":1,"children":[]}]},{"name":"neetcode_dsa_questions.json","total_count":26,"children":[{"name":"1-D Dynamic Programming","total_count":1,"children":[]},{"name":"2-D Dynamic Programming","total_count":1,"children":[]},{"name":"Advanced Graphs","total_count":1,"children":[]},{"name":"Arrays & Hashing","total_count":1,"children":[]},{"name":"Backtracking","total_count":1,"children":[]},{"name":"Binary Search","total_count":1,"children":[]},{"name":"Bit Manipulation","total_count":1,"children":[]},{"name":"blind75Count","total_count":1,"children":[]},{"name":"categories","total_count":1,"children":[]},{"name":"categoriesCount","total_count":1,"children":[]},{"name":"Graphs","total_count":1,"children":[]},{"name":"Greedy","total_count":1,"children":[]},{"name":"Heap / Priority Queue","total_count":1,"children":[]},{"name":"Intervals","total_count":1,"children":[]},{"name":"JavaScript","total_count":1,"children":[]},{"name":"Linked List","total_count":1,"children":[]},{"name":"Math & Geometry","total_count":1,"children":[]},{"name":"neetcode150Count","total_count":1,"children":[]},{"name":"neetcode250Count","total_count":1,"children":[]},{"name":"Sliding Window","total_count":1,"children":[]},{"name":"Stack","total_count":1,"children":[]},{"name":"summary","total_count":1,"children":[]},{"name":"totalProblems","total_count":1,"children":[]},{"name":"Trees","total_count":1,"children":[]},{"name":"Tries","total_count":1,"children":[]},{"name":"Two Pointers","total_count":1,"children":[]}]},{"name":"neetcode_dsa_questions.md","total_count":22,"children":[{"name":"Categories","total_count":1,"children":[]},{"name":"Category: 1-D Dynamic Programming (61 problems)","total_count":1,"children":[]},{"name":"Category: 2-D Dynamic Programming (67 problems)","total_count":1,"children":[]},{"name":"Category: Advanced Graphs (36 problems)","total_count":1,"children":[]},{"name":"Category: Arrays & Hashing (208 problems)","total_count":1,"children":[]},{"name":"Category: Backtracking (45 problems)","total_count":1,"children":[]},{"name":"Category: Binary Search (49 problems)","total_count":1,"children":[]},{"name":"Category: Bit Manipulation (33 problems)","total_count":1,"children":[]},{"name":"Category: Graphs (76 problems)","total_count":1,"children":[]},{"name":"Category: Greedy (79 problems)","total_count":1,"children":[]},{"name":"Category: Heap / Priority Queue (36 problems)","total_count":1,"children":[]},{"name":"Category: Intervals (24 problems)","total_count":1,"children":[]},{"name":"Category: JavaScript (30 problems)","total_count":1,"children":[]},{"name":"Category: Linked List (41 problems)","total_count":1,"children":[]},{"name":"Category: Math & Geometry (76 problems)","total_count":1,"children":[]},{"name":"Category: Sliding Window (47 problems)","total_count":1,"children":[]},{"name":"Category: Stack (42 problems)","total_count":1,"children":[]},{"name":"Category: Trees (112 problems)","total_count":1,"children":[]},{"name":"Category: Tries (16 problems)","total_count":1,"children":[]},{"name":"Category: Two Pointers (48 problems)","total_count":1,"children":[]},{"name":"NeetCode Complete DSA Question Bank","total_count":1,"children":[]},{"name":"neetcode_dsa_questions.md","total_count":1,"children":[]}]},{"name":"neetcode_system_design.md","total_count":20,"children":[{"name":"Category: APIs","total_count":1,"children":[]},{"name":"Category: Background","total_count":1,"children":[]},{"name":"Category: Background","total_count":1,"children":[]},{"name":"Category: Behavioural Patterns","total_count":1,"children":[]},{"name":"Category: Big Data","total_count":1,"children":[]},{"name":"Category: Caching Basics","total_count":1,"children":[]},{"name":"Category: Creational Patterns","total_count":1,"children":[]},{"name":"Category: Interview Questions","total_count":1,"children":[]},{"name":"Category: Interview Questions","total_count":1,"children":[]},{"name":"Category: Introduction","total_count":1,"children":[]},{"name":"Category: Networking","total_count":1,"children":[]},{"name":"Category: Proxies","total_count":1,"children":[]},{"name":"Category: Storage","total_count":1,"children":[]},{"name":"Category: Structural Patterns","total_count":1,"children":[]},{"name":"NeetCode System Design & Architecture Question Bank","total_count":1,"children":[]},{"name":"neetcode_system_design.md","total_count":1,"children":[]},{"name":"Object-Oriented Design Interview","total_count":1,"children":[]},{"name":"Object-Oriented Design Patterns","total_count":1,"children":[]},{"name":"System Design for Beginners","total_count":1,"children":[]},{"name":"System Design Interview","total_count":1,"children":[]}]},{"name":"package.json","total_count":27,"children":[{"name":"@types/react","total_count":1,"children":[]},{"name":"@types/react-dom","total_count":1,"children":[]},{"name":"@vitejs/plugin-react","total_count":1,"children":[]},{"name":"autoprefixer","total_count":1,"children":[]},{"name":"build","total_count":1,"children":[]},{"name":"canvas-confetti","total_count":1,"children":[]},{"name":"clsx","total_count":1,"children":[]},{"name":"cors","total_count":1,"children":[]},{"name":"dependencies","total_count":1,"children":[]},{"name":"dev","total_count":1,"children":[]},{"name":"devDependencies","total_count":1,"children":[]},{"name":"express","total_count":1,"children":[]},{"name":"framer-motion","total_count":1,"children":[]},{"name":"lucide-react","total_count":1,"children":[]},{"name":"name","total_count":1,"children":[]},{"name":"postcss","total_count":1,"children":[]},{"name":"preview","total_count":1,"children":[]},{"name":"private","total_count":1,"children":[]},{"name":"react","total_count":1,"children":[]},{"name":"react-dom","total_count":1,"children":[]},{"name":"scripts","total_count":1,"children":[]},{"name":"server","total_count":1,"children":[]},{"name":"tailwind-merge","total_count":1,"children":[]},{"name":"tailwindcss","total_count":1,"children":[]},{"name":"type","total_count":1,"children":[]},{"name":"version","total_count":1,"children":[]},{"name":"vite","total_count":1,"children":[]}]},{"name":"prepare_data.mjs","total_count":6,"children":[{"name":"dsaData","total_count":1,"children":[]},{"name":"findPaperForQuestion()","total_count":1,"children":[]},{"name":"journeyData","total_count":1,"children":[]},{"name":"paper","total_count":1,"children":[]},{"name":"researchPapers","total_count":1,"children":[]},{"name":"sysdesData","total_count":1,"children":[]}]},{"name":"README.md","total_count":7,"children":[{"name":"1. NeetCode Question Banks","total_count":1,"children":[]},{"name":"2. ML Playground Journey (372 Total Questions)","total_count":1,"children":[]},{"name":"A. DSA Questions (1,126 Total Problems)","total_count":1,"children":[]},{"name":"B. System Design & Architecture Questions","total_count":1,"children":[]},{"name":"Learning & Interview Questions Bank","total_count":1,"children":[]},{"name":"README.md","total_count":1,"children":[]},{"name":"Standalone Re-run Scripts","total_count":1,"children":[]}]},{"name":"scrape_neetcode.mjs","total_count":5,"children":[{"name":"callFirebase()","total_count":1,"children":[]},{"name":"extractDSA()","total_count":1,"children":[]},{"name":"extractSystemDesign()","total_count":1,"children":[]},{"name":"httpGet()","total_count":1,"children":[]},{"name":"main()","total_count":1,"children":[]}]},{"name":"scraper.mjs","total_count":4,"children":[{"name":"fetchAllStations()","total_count":1,"children":[]},{"name":"getTracksRegistry()","total_count":1,"children":[]},{"name":"httpGet()","total_count":1,"children":[]},{"name":"main()","total_count":1,"children":[]}]},{"name":"server","total_count":21,"children":[{"name":"db.mjs","total_count":4,"children":[{"name":"__dirname","total_count":1,"children":[]},{"name":"__filename","total_count":1,"children":[]},{"name":"db","total_count":1,"children":[]},{"name":"dbPath","total_count":1,"children":[]}]},{"name":"index.mjs","total_count":17,"children":[{"name":"app","total_count":1,"children":[]},{"name":"byTrack","total_count":1,"children":[]},{"name":"parsedRows","total_count":1,"children":[]},{"name":"progStmt","total_count":1,"children":[]},{"name":"py","total_count":1,"children":[]},{"name":"query","total_count":1,"children":[]},{"name":"recentSubmissions","total_count":1,"children":[]},{"name":"result","total_count":1,"children":[]},{"name":"row","total_count":1,"children":[]},{"name":"rows","total_count":1,"children":[]},{"name":"solvedList","total_count":1,"children":[]},{"name":"startTime","total_count":1,"children":[]},{"name":"stmt","total_count":1,"children":[]},{"name":"streamPdfWithRedirects()","total_count":1,"children":[]},{"name":"subStmt","total_count":1,"children":[]},{"name":"timer","total_count":1,"children":[]},{"name":"totalXp","total_count":1,"children":[]}]}]},{"name":"src","total_count":56,"children":[{"name":"App.jsx","total_count":1,"children":[{"name":"App()","total_count":1,"children":[]}]},{"name":"components","total_count":11,"children":[{"name":"BackendGuideModal.jsx","total_count":1,"children":[{"name":"BackendGuideModal()","total_count":1,"children":[]}]},{"name":"GfgSolutionView.jsx","total_count":1,"children":[{"name":"GfgSolutionView()","total_count":1,"children":[]}]},{"name":"InAppPdfViewer.jsx","total_count":1,"children":[{"name":"InAppPdfViewer()","total_count":1,"children":[]}]},{"name":"Navbar.jsx","total_count":1,"children":[{"name":"Navbar()","total_count":1,"children":[]}]},{"name":"ProblemListView.jsx","total_count":1,"children":[{"name":"ProblemListView()","total_count":1,"children":[]}]},{"name":"ProblemWorkspace.jsx","total_count":3,"children":[{"name":"getDefaultStarterCode()","total_count":1,"children":[]},{"name":"ProblemWorkspace()","total_count":1,"children":[]},{"name":"SUPPORTED_LANGUAGES","total_count":1,"children":[]}]},{"name":"ResearchPapersView.jsx","total_count":1,"children":[{"name":"ResearchPapersView()","total_count":1,"children":[]}]},{"name":"RoadmapView.jsx","total_count":1,"children":[{"name":"RoadmapView()","total_count":1,"children":[]}]},{"name":"VideoModal.jsx","total_count":1,"children":[{"name":"VideoModal()","total_count":1,"children":[]}]}]},{"name":"data","total_count":28,"children":[{"name":"dsa.json","total_count":26,"children":[{"name":"1-D Dynamic Programming","total_count":1,"children":[]},{"name":"2-D Dynamic Programming","total_count":1,"children":[]},{"name":"Advanced Graphs","total_count":1,"children":[]},{"name":"Arrays & Hashing","total_count":1,"children":[]},{"name":"Backtracking","total_count":1,"children":[]},{"name":"Binary Search","total_count":1,"children":[]},{"name":"Bit Manipulation","total_count":1,"children":[]},{"name":"blind75Count","total_count":1,"children":[]},{"name":"categories","total_count":1,"children":[]},{"name":"categoriesCount","total_count":1,"children":[]},{"name":"Graphs","total_count":1,"children":[]},{"name":"Greedy","total_count":1,"children":[]},{"name":"Heap / Priority Queue","total_count":1,"children":[]},{"name":"Intervals","total_count":1,"children":[]},{"name":"JavaScript","total_count":1,"children":[]},{"name":"Linked List","total_count":1,"children":[]},{"name":"Math & Geometry","total_count":1,"children":[]},{"name":"neetcode150Count","total_count":1,"children":[]},{"name":"neetcode250Count","total_count":1,"children":[]},{"name":"Sliding Window","total_count":1,"children":[]},{"name":"Stack","total_count":1,"children":[]},{"name":"summary","total_count":1,"children":[]},{"name":"totalProblems","total_count":1,"children":[]},{"name":"Trees","total_count":1,"children":[]},{"name":"Tries","total_count":1,"children":[]},{"name":"Two Pointers","total_count":1,"children":[]}]},{"name":"research_papers.json","total_count":1,"children":[]},{"name":"system_design.json","total_count":1,"children":[]}]},{"name":"utils","total_count":15,"children":[{"name":"api.js","total_count":5,"children":[{"name":"checkBackendHealth()","total_count":1,"children":[]},{"name":"getBackendStats()","total_count":1,"children":[]},{"name":"getSubmissionHistory()","total_count":1,"children":[]},{"name":"saveCodeDraftToBackend()","total_count":1,"children":[]},{"name":"submitProblemToBackend()","total_count":1,"children":[]}]},{"name":"pyodideRunner.js","total_count":3,"children":[{"name":"getPyodide()","total_count":1,"children":[]},{"name":"runPythonCode()","total_count":1,"children":[]},{"name":"runTests()","total_count":1,"children":[]}]},{"name":"solutionGenerator.js","total_count":1,"children":[{"name":"generateNeetCodeSolution()","total_count":1,"children":[]}]},{"name":"storage.js","total_count":6,"children":[{"name":"getSavedCode()","total_count":1,"children":[]},{"name":"getSolvedProblems()","total_count":1,"children":[]},{"name":"getTotalXP()","total_count":1,"children":[]},{"name":"markProblemSolved()","total_count":1,"children":[]},{"name":"resetAllProgress()","total_count":1,"children":[]},{"name":"saveCode()","total_count":1,"children":[]}]}]},{"name":"main.jsx","total_count":1,"children":[]}]},{"name":"neetcode_system_design.json","total_count":1,"children":[]},{"name":"postcss.config.js","total_count":1,"children":[]},{"name":"tailwind.config.js","total_count":1,"children":[]},{"name":"vite.config.js","total_count":1,"children":[]}]};
+
+    function transformData(jsonData) {
+        // Helper function to recursively build the children structure
+        function processNode(node, parentL1StageName) {
+            let displayName = node.name;
+            // Append total_count if it exists and is not already in the name
+            if (node.total_count !== undefined) {
+                if (!/\(Total Count: \d+\)$/.test(displayName)) {
+                    displayName += ` (Total Count: ${node.total_count})`;
+                }
+            }
+
+            const newNode = { name: displayName };
+
+            if (parentL1StageName === "Root") {
+                 newNode.originalStageName = node.name;
+            } else {
+                newNode.originalStageName = parentL1StageName;
+            }
+
+            if (node.children && node.children.length > 0) {
+                const stageNameToPass = (parentL1StageName === "Root") ? node.name : parentL1StageName;
+                newNode.children = node.children.map(child => processNode(child, stageNameToPass));
+            }
+
+            return newNode;
+        }
+
+        let rootDisplayName = jsonData.name;
+        if (jsonData.total_count !== undefined && !/\(Total Count: \d+\)$/.test(rootDisplayName)) {
+            rootDisplayName += ` (Total Count: ${jsonData.total_count})`;
+        }
+
+        return {
+            name: rootDisplayName,
+            originalStageName: "Root",
+            children: (jsonData.children || []).map(child => processNode(child, "Root"))
+        };
+    }
+
+    const treeData = transformData(initialJsonData);
+
+    // Auto-populated phaseColors: every depth-1 child of the root gets
+    // a stable colour from a bigger palette so all top-level dirs are
+    // distinguishable.
+    const PALETTE = [
+      ["#3498DB","#2980B9","#AED6F1"], ["#2ECC71","#27AE60","#A9DFBF"],
+      ["#E74C3C","#C0392B","#F5B7B1"], ["#9B59B6","#8E44AD","#D7BDE2"],
+      ["#F39C12","#D68910","#FAD7A0"], ["#1ABC9C","#117864","#A2D9CE"],
+      ["#34495E","#1B2631","#ABB2B9"], ["#E67E22","#BA4A00","#F5CBA7"],
+      ["#16A085","#0E6655","#A2D9CE"], ["#D35400","#A04000","#EDBB99"],
+      ["#7F8C8D","#566573","#D5DBDB"], ["#C0392B","#7B241C","#F5B7B1"],
+      ["#2E86C1","#1B4F72","#A9CCE3"], ["#28B463","#196F3D","#A9DFBF"],
+      ["#AF7AC5","#6C3483","#D2B4DE"],
+    ];
+    const phaseColors = { "Root": { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+                          "Default": { fill: "#BDC3C7", stroke: "#95A5A6", collapsedFill: "#ECF0F1" } };
+    (initialJsonData.children || []).forEach((c, i) => {
+      const pal = PALETTE[i % PALETTE.length];
+      phaseColors[c.name] = { fill: pal[0], stroke: pal[1], collapsedFill: pal[2] };
+    });
+
+    const levelSpecificPalettes = {
+      0: { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+      2: { fill: "#6ab04c", stroke: "#508a38", collapsedFill: "#a3d391" },
+      3: { fill: "#f0932b", stroke: "#d0730f", collapsedFill: "#f6c07e" },
+      4: { fill: "#be2edd", stroke: "#a01cb3", collapsedFill: "#e08bf2" },
+      5: { fill: "#00a8ff", stroke: "#007ac1", collapsedFill: "#74d2ff" },
+      6: { fill: "#e55039", stroke: "#c23620", collapsedFill: "#f09a8d" },
+      default: { fill: "#747d8c", stroke: "#57606f", collapsedFill: "#a4b0be" }
+    };
+
+    const svgElement = d3.select("#tree-svg");
+    const initialSvgWidth = +svgElement.attr("width");
+    const initialSvgHeight = +svgElement.attr("height");
+    const margin = { top: 40, right: 120, bottom: 80, left: 450 };
+    let width = initialSvgWidth - margin.left - margin.right;
+    let height = initialSvgHeight - margin.top - margin.bottom;
+    const duration = 500;
+    let nodeCounter = 0;
+    const g = svgElement.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const treemap = d3.tree().nodeSize([40, 0]);
+    let rootNode = d3.hierarchy(treeData, d => d.children);
+    rootNode.x0 = 0;
+    rootNode.y0 = 0;
+
+    if (rootNode.children) {
+      rootNode.children.forEach(d_child => {
+        if (d_child.children) { collapseBranch(d_child); }
+      });
+    }
+    updateTree(rootNode);
+
+    function collapseBranch(d) { if (d.children) { d._children = d.children; d._children.forEach(collapseBranch); d.children = null; } }
+    function expandBranch(d) { if (d._children) { d.children = d._children; d._children = null; } if (d.children) { d.children.forEach(expandBranch); } }
+    window.expandAll = () => { expandBranch(rootNode); updateTree(rootNode); };
+    window.collapseAll = () => { if (rootNode.children) { rootNode.children.forEach(collapseBranch); } updateTree(rootNode); };
+    window.resetView = () => { if (rootNode.children) { rootNode.children.forEach(d_child => { if (d_child.children || d_child._children) { collapseBranch(d_child); } }); } if (rootNode._children && !rootNode.children) { rootNode.children = rootNode._children; rootNode._children = null; } updateTree(rootNode); };
+
+    function updateTree(source) {
+      const treeLayoutData = treemap(rootNode);
+      let nodes = treeLayoutData.descendants();
+      let links = treeLayoutData.descendants().slice(1);
+
+      let minX = 0;
+      let maxX = 0;
+      if (nodes.length > 0) {
+        minX = d3.min(nodes, d => d.x);
+        maxX = d3.max(nodes, d => d.x);
+      }
+
+      let neededHeight = Math.max(initialSvgHeight, maxX - minX + margin.top + margin.bottom + 100);
+      svgElement.transition().duration(duration / 2).attr("height", neededHeight);
+      g.transition().duration(duration / 2).attr("transform", `translate(${margin.left},${margin.top - minX + 40})`);
+
+      nodes.forEach(d => { d.y = d.depth * 400; }); // Adjust horizontal separation if needed
+
+      const node = g.selectAll('g.node').data(nodes, d => d.id || (d.id = ++nodeCounter));
+      const nodeEnter = node.enter().append('g')
+        .attr('class', d => "node" + (d.children || d._children ? " node--internal" : " node--leaf") + (d._children ? " _children" : ""))
+        .attr('transform', d => `translate(${source.y0},${source.x0})`)
+        .on('click', (event, d) => { if (d.children) { d._children = d.children; d.children = null; } else if (d._children) { d.children = d._children; d._children = null; } updateTree(d); })
+        .style('cursor', d => (d.children || d._children) ? 'pointer' : 'default');
+
+      nodeEnter.append('circle').attr('r', 1e-6);
+
+      nodeEnter.append('text')
+        .attr('dy', '.35em')
+        .attr('x', d => d.children || d._children ? -14 : 14)
+        .attr('text-anchor', d => d.children || d._children ? 'end' : 'start')
+        .style("fill-opacity", 1e-6)
+        .call(wrapText, 380);
+
+      const nodeUpdate = nodeEnter.merge(node);
+      nodeUpdate.transition().duration(duration)
+        .attr('transform', d => `translate(${d.y},${d.x})`)
+        .attr('class', d => "node" + (d.children ? " node--internal" : " node--leaf") + (d._children ? " node--internal _children" : ""));
+
+      nodeUpdate.select('circle').attr('r', 8.5)
+        .style('fill', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            if (d._children) return palette.collapsedFill;
+            if (d.children) return palette.fill;
+            return "#fff";
+        })
+        .style('stroke', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            return palette.stroke;
+        });
+      nodeUpdate.select('text').style("fill-opacity", 1).call(wrapText, 380);
+
+      const nodeExit = node.exit().transition().duration(duration).attr('transform', d => `translate(${source.y},${source.x})`).remove();
+      nodeExit.select('circle').attr('r', 1e-6);
+      nodeExit.select('text').style('fill-opacity', 1e-6);
+
+      const link = g.selectAll('path.link').data(links, d => d.id);
+      const linkEnter = link.enter().insert('path', "g").attr('class', 'link').attr('d', d => { const o = { x: source.x0, y: source.y0 }; return diagonal(o, o); });
+
+      linkEnter.merge(link).transition().duration(duration).attr('d', d => diagonal(d, d.parent))
+        .style('stroke', d => {
+            const sourceNode = d.parent;
+            if (!sourceNode) return phaseColors.Default.stroke;
+            const l1AncestorName = sourceNode.data.originalStageName;
+            const colorPalette = phaseColors[l1AncestorName] || phaseColors.Default;
+            return colorPalette.stroke;
+        });
+      link.exit().transition().duration(duration).attr('d', d => { const o = { x: source.x, y: source.y }; return diagonal(o, o); }).remove();
+      nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    }
+
+    function diagonal(s, d) { return `M ${s.y} ${s.x} C ${(s.y + d.y) / 2} ${s.x}, ${(s.y + d.y) / 2} ${d.x}, ${d.y} ${d.x}`; }
+
+    function wrapText(textElements, maxWidth) {
+        const textPartColors = {
+            name: '#343a40',
+            count: '#0056b3'
+        };
+        const countRegex = /(\s\(Total Count: \d+\))$/;
+
+        textElements.each(function () {
+            const textD3 = d3.select(this);
+            const originalNodeText = textD3.datum().data.name;
+            const x = parseFloat(textD3.attr("x") || 0);
+            const initialDy = textD3.attr("dy");
+            const textAnchor = textD3.attr("text-anchor");
+            const lineHeight = 1.1;
+
+            textD3.text(null);
+
+            let namePart = originalNodeText;
+            let countPartText = "";
+
+            const countMatch = originalNodeText.match(countRegex);
+            if (countMatch && originalNodeText.endsWith(countMatch[0])) {
+                namePart = originalNodeText.substring(0, originalNodeText.length - countMatch[0].length).trim();
+                countPartText = countMatch[0].trim();
+            }
+
+            const tokens = [];
+            namePart.split(/\s+/).filter(Boolean).forEach(word => {
+                tokens.push({ text: word, type: 'name' });
+            });
+            if (countPartText) {
+                tokens.push({ text: countPartText, type: 'count' });
+            }
+
+            if (tokens.length === 0 && originalNodeText) {
+                tokens.push({ text: originalNodeText, type: 'name' });
+            }
+
+            let currentTspan = textD3.append("tspan").attr("x", x).attr("dy", initialDy);
+            if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+
+            let lineTokens = [];
+
+            for (let i = 0; i < tokens.length; i++) {
+                const tokenObj = tokens[i];
+
+                lineTokens.push(tokenObj);
+                currentTspan.text(lineTokens.map(t => t.text).join(" "));
+
+                if (currentTspan.node().getComputedTextLength() > maxWidth && lineTokens.length > 1) {
+                    lineTokens.pop();
+
+                    currentTspan.text(null);
+                    lineTokens.forEach((prevToken, idx) => {
+                        currentTspan.append("tspan")
+                            .text((idx > 0 ? " " : "") + prevToken.text)
+                            .style("fill", textPartColors[prevToken.type] || textPartColors.name)
+                            .style("font-weight", prevToken.type === 'count' ? "bold" : "normal");
+                    });
+
+                    lineTokens = [tokenObj];
+                    currentTspan = textD3.append("tspan").attr("x", x).attr("dy", lineHeight + "em");
+                    if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+                }
+            }
+
+            currentTspan.text(null);
+            lineTokens.forEach((token, idx) => {
+                currentTspan.append("tspan")
+                    .text((idx > 0 ? " " : "") + token.text)
+                    .style("fill", textPartColors[token.type] || textPartColors.name)
+                    .style("font-weight", token.type === 'count' ? "bold" : "normal");
+            });
+
+            if (textD3.selectAll("tspan > tspan").empty() && textD3.select("tspan").text().length === 0 && originalNodeText) {
+                let t = textD3.select("tspan");
+                let displayText = originalNodeText;
+                t.text(displayText).style("fill", textPartColors.name);
+                if (t.node() && t.node().getComputedTextLength() > maxWidth && displayText.length > 20) {
+                    let estimatedChars = Math.floor(maxWidth / (t.node().getComputedTextLength()/displayText.length) );
+                    displayText = displayText.substring(0, Math.max(0, estimatedChars - 3)) + "...";
+                    t.text(displayText);
+                }
+            }
+        });
+    }
+  </script>
+</body>
+</html>
