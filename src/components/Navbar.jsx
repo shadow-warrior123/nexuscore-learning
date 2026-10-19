@@ -16,8 +16,6 @@ import {
   Activity
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { checkBackendHealth } from '../utils/api';
-
 export default function Navbar({ 
   activeTab, 
   setActiveTab, 
@@ -25,18 +23,8 @@ export default function Navbar({
   totalCount, 
   totalXp, 
   searchQuery, 
-  setSearchQuery,
-  onOpenGuide
+  setSearchQuery
 }) {
-  const [backendStatus, setBackendStatus] = useState({ isOnline: false });
-
-  useEffect(() => {
-    checkBackendHealth().then(status => setBackendStatus(status));
-    const interval = setInterval(() => {
-      checkBackendHealth().then(status => setBackendStatus(status));
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
 
   const navItems = [
     { id: 'roadmap', label: 'Roadmap Graph', icon: Compass },
@@ -98,20 +86,8 @@ export default function Navbar({
 
           {/* Right Metrics & Badges */}
           <div className="flex items-center gap-3">
-            {/* Live Backend Telemetry Pill */}
-            <div 
-              className={`hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono border transition-all ${
-                backendStatus.isOnline 
-                  ? 'bg-emerald-950/70 text-emerald-300 border-emerald-800/70'
-                  : 'bg-slate-900 text-slate-400 border-slate-800'
-              }`}
-            >
-              <span className={`w-2 h-2 rounded-full ${backendStatus.isOnline ? 'bg-emerald-400 animate-pulse' : 'bg-slate-600'}`}></span>
-              <span>{backendStatus.isOnline ? 'SQLite Live' : 'Client Mode'}</span>
-            </div>
-
             {/* Total XP & Solved */}
-            <div className="hidden lg:flex items-center gap-3 px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs shadow-inner">
+            <div className="flex items-center gap-3 px-3.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs shadow-inner">
               <div className="flex items-center gap-1.5 text-amber-400 font-mono font-bold">
                 <Trophy className="w-4 h-4" />
                 <span>{totalXp} XP</span>
@@ -123,13 +99,16 @@ export default function Navbar({
               </div>
             </div>
 
-            <button
-              onClick={onOpenGuide}
+            <a
+              href="https://github.com/shadow-warrior123/nexuscore-learning"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80 text-xs font-medium transition-all"
+              title="View on GitHub"
             >
-              <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
-              <span className="hidden sm:inline">Self-Host</span>
-            </button>
+              <Code2 className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="hidden sm:inline">GitHub</span>
+            </a>
           </div>
         </div>
 

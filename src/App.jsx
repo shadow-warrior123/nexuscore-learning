@@ -4,7 +4,6 @@ import RoadmapView from './components/RoadmapView';
 import ProblemListView from './components/ProblemListView';
 import ProblemWorkspace from './components/ProblemWorkspace';
 import ResearchPapersView from './components/ResearchPapersView';
-import BackendGuideModal from './components/BackendGuideModal';
 
 import journeyData from './data/journey.json';
 import dsaData from './data/dsa.json';
@@ -18,7 +17,6 @@ export default function App() {
   const [activeProblem, setActiveProblem] = useState(null);
   const [filterCategory, setFilterCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isGuideOpen, setIsGuideOpen] = useState(false);
 
   // Solved problems & XP state
   const [solvedProblems, setSolvedProblems] = useState(new Set());
@@ -80,7 +78,6 @@ export default function App() {
         totalXp={totalXp}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        onOpenGuide={() => setIsGuideOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -117,12 +114,6 @@ export default function App() {
           />
         )}
       </main>
-
-      {/* Backend & Self-Hosting Guide Modal */}
-      <BackendGuideModal
-        isOpen={isGuideOpen}
-        onClose={() => setIsGuideOpen(false)}
-      />
 
     </div>
   );
