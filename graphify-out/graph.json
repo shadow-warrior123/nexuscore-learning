@@ -988,7 +988,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "id": "src_app_app",
       "community": 11,
       "norm_label": "app()"
@@ -1069,7 +1069,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.jsx",
-      "source_location": "L21",
+      "source_location": "L19",
       "id": "components_navbar_navbar",
       "community": 11,
       "norm_label": "navbar()"
@@ -24239,17 +24239,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_backendguidemodal_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -24342,6 +24331,17 @@
       "confidence_score": 1.0,
       "source": "src_main_jsx",
       "target": "src_app_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_backendguidemodal_jsx"
     },
     {
       "relation": "contains",
@@ -24440,6 +24440,16 @@
       "target": "src_components_inapppdfviewer_jsx"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Navbar.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_navbar_jsx",
+      "target": "components_navbar_navbar"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -24460,16 +24470,6 @@
       "confidence_score": 1.0,
       "source": "src_components_navbar_jsx",
       "target": "utils_api_checkbackendhealth"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/Navbar.jsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_navbar_jsx",
-      "target": "components_navbar_navbar"
     },
     {
       "relation": "imports_from",
@@ -24961,9 +24961,9 @@
       "source_file": "src/utils/api.js",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_utils_api_js",
-      "target": "utils_api_getbackendurl",
-      "confidence_score": 1.0
+      "target": "utils_api_getbackendurl"
     },
     {
       "relation": "contains",
@@ -24971,9 +24971,9 @@
       "source_file": "src/utils/api.js",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_utils_api_js",
-      "target": "utils_api_backend_url",
-      "confidence_score": 1.0
+      "target": "utils_api_backend_url"
     },
     {
       "relation": "contains",
@@ -48960,5 +48960,6 @@
       "target": "workflows_graphify_workflow_graphify"
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "abbdf3547f0c7555bab153965baa24a085ebce67"
 }

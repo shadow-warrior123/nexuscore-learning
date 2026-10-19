@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\vite.config.js": {
-    "mtime": 1792439059.370709,
-    "ast_hash": "3bb4035815cebe07af0a0aa6ea598e74",
+    "mtime": 1792441936.9839654,
+    "ast_hash": "8544064c660a4115416fdeb59a074b91",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\server\\db.mjs": {
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\App.jsx": {
-    "mtime": 1792440163.1053987,
-    "ast_hash": "414e310879affa0745880a353dcba640",
+    "mtime": 1792442382.60908,
+    "ast_hash": "7f57cc32719e8485d7a058babc29725c",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\main.jsx": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\Navbar.jsx": {
-    "mtime": 1792440648.0998218,
-    "ast_hash": "f61a6e740110f8157da937087ae2be2f",
+    "mtime": 1792442330.9358385,
+    "ast_hash": "73e54947caaca05bce4ce5e5002e1f4c",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\ProblemListView.jsx": {
@@ -192,6 +192,11 @@
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\public\\favicon.svg": {
     "mtime": 1792439083.7397664,
     "ast_hash": "148dd3ab4cb232686d3611b165bad614",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\.github\\workflows\\deploy.yml": {
+    "mtime": 1792441961.858476,
+    "ast_hash": "17f9a011039880467380676d0c4d859d",
     "semantic_hash": ""
   }
 }

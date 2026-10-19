@@ -22,8 +22,15 @@ import {
   Eye,
   Maximize2,
   Code2,
-  Globe
+  Globe,
+  ZoomIn,
+  ZoomOut,
+  MapPin,
+  Settings2,
+  Sliders,
+  CheckCheck
 } from 'lucide-react';
+import Editor from '@monaco-editor/react';
 import confetti from 'canvas-confetti';
 import { runPythonCode, runTests } from '../utils/pyodideRunner';
 import { getSavedCode, saveCode, markProblemSolved } from '../utils/storage';
@@ -33,11 +40,11 @@ import VideoModal from './VideoModal';
 import InAppPdfViewer from './InAppPdfViewer';
 
 const SUPPORTED_LANGUAGES = [
-  { id: 'python', label: 'Python 3', engine: 'Pyodide Wasm', ext: '.py' },
-  { id: 'javascript', label: 'JavaScript', engine: 'V8 Engine', ext: '.js' },
-  { id: 'cpp', label: 'C++', engine: 'GCC 14 / Clang', ext: '.cpp' },
-  { id: 'java', label: 'Java', engine: 'OpenJDK 21', ext: '.java' },
-  { id: 'sql', label: 'SQL', engine: 'PostgreSQL / ANSI', ext: '.sql' }
+  { id: 'python', label: 'Python 3', monacoLang: 'python', engine: 'Pyodide Wasm', ext: '.py' },
+  { id: 'javascript', label: 'JavaScript', monacoLang: 'javascript', engine: 'V8 Engine', ext: '.js' },
+  { id: 'cpp', label: 'C++', monacoLang: 'cpp', engine: 'GCC 14 / Clang', ext: '.cpp' },
+  { id: 'java', label: 'Java', monacoLang: 'java', engine: 'OpenJDK 21', ext: '.java' },
+  { id: 'sql', label: 'SQL', monacoLang: 'sql', engine: 'PostgreSQL / ANSI', ext: '.sql' }
 ];
 
 function getDefaultStarterCode(lang, problem) {
@@ -126,6 +133,11 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
   const [submissions, setSubmissions] = useState([]);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isPdfViewerOpen, setIsPdfViewerOpen] = useState(false);
+
+  // Monaco Editor Settings
+  const [fontSize, setFontSize] = useState(13);
+  const [showMinimap, setShowMinimap] = useState(false);
+  const [editorTheme, setEditorTheme] = useState('vs-dark');
   
   // Terminal state
   const [terminalOutput, setTerminalOutput] = useState({
@@ -162,7 +174,6 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
   }, [problem, selectedLang]);
 
   const handleLanguageChange = (newLang) => {
-    // Save current code before switching
     if (problem) {
       saveCode(`${problem.id}_${selectedLang}`, code);
     }
@@ -293,7 +304,6 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
         stdout = testRes.stdout || (passed ? 'All test cases evaluated successfully.' : '');
         stderr = testRes.syntaxError || '';
       } else {
-        // Non-Python submission: record accepted implementation in SQLite
         passed = true;
         durationMs = 65;
         stdout = `Implementation in ${selectedLang.toUpperCase()} submitted successfully!`;
@@ -396,7 +406,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
             </button>
           )}
 
-          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+          <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 border border-slate-700 font-bold">
             {problem.difficulty || 'Easy'}
           </span>
         </div>
@@ -411,7 +421,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
         <div className="flex flex-col h-full bg-slate-900/40 overflow-hidden">
           
           {/* Left Tabs */}
-          <div className="flex items-center space-x-1 px-4 py-2 border-b border-slate-800 bg-slate-900/80 text-xs flex-shrink-0 overflow-x-auto">
+          <div className="flex items-center space-x-1.5 px-4 py-2 border-b border-slate-800 bg-slate-900/90 text-xs flex-shrink-0 overflow-x-auto">
             <button
               onClick={() => setActiveTab('description')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium whitespace-nowrap transition-all ${
@@ -447,7 +457,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
               }`}
             >
               <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>NeetCode & GFG Solutions</span>
+              <span>NeetCode Solutions</span>
             </button>
 
             <button
@@ -484,9 +494,9 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
             {activeTab === 'description' && (
               <div className="space-y-6">
                 <div>
-                  <h1 className="text-xl font-bold text-white tracking-tight">{problem.title}</h1>
+                  <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">{problem.title}</h1>
                   {problem.tagline && (
-                    <p className="text-xs text-cyan-400 mt-1 font-mono">{problem.tagline}</p>
+                    <p className="text-xs text-cyan-400 mt-1.5 font-mono">{problem.tagline}</p>
                   )}
                 </div>
 
@@ -495,7 +505,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
                 </div>
 
                 {problem.objective && (
-                  <div className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-1">
+                  <div className="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-1.5 shadow-md">
                     <h4 className="text-xs font-mono uppercase text-cyan-400 font-semibold tracking-wider">Goal</h4>
                     <p className="text-xs text-slate-300">{problem.objective}</p>
                   </div>
@@ -506,14 +516,14 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
             {/* TAB: RESEARCH PAPER & MATH FORMULATION */}
             {activeTab === 'paper' && paper && (
               <div className="space-y-6">
-                <div className="p-4 rounded-xl bg-pink-950/40 border border-pink-900/60 space-y-3">
+                <div className="p-5 rounded-xl bg-pink-950/40 border border-pink-900/60 space-y-3 shadow-lg">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-pink-900/60 text-pink-300 border border-pink-700/50">
+                    <span className="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded bg-pink-900/60 text-pink-300 border border-pink-700/50">
                       Foundational ArXiv Paper
                     </span>
                     <button
                       onClick={() => setIsPdfViewerOpen(true)}
-                      className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-pink-900 hover:bg-pink-800 text-pink-200 text-xs font-semibold shadow-sm transition-all"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-pink-900 hover:bg-pink-800 text-pink-200 text-xs font-semibold shadow-sm transition-all"
                     >
                       <Maximize2 className="w-3.5 h-3.5" />
                       <span>Open In-App PDF Reader</span>
@@ -537,7 +547,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
                   <h3 className="text-xs font-mono uppercase text-slate-400 tracking-wider font-semibold">
                     Architectural & Conceptual Takeaway
                   </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed bg-slate-800/40 p-3.5 rounded-xl border border-slate-800">
+                  <p className="text-xs text-slate-300 leading-relaxed bg-slate-800/40 p-4 rounded-xl border border-slate-800">
                     {paper.takeaway}
                   </p>
                 </div>
@@ -633,11 +643,11 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
         </div>
 
         {/* ============================================================== */}
-        {/* RIGHT PANE: CODE EDITOR + LIVE IN-BROWSER TERMINAL */}
+        {/* RIGHT PANE: MONACO IDE CODE EDITOR + LIVE TERMINAL */}
         {/* ============================================================== */}
         <div className="flex flex-col h-full bg-[#080c14] overflow-hidden">
           
-          {/* Editor Header Bar with Multi-Language Switcher */}
+          {/* Editor Header Bar with Multi-Language Switcher & IDE Tools */}
           <div className="flex items-center justify-between px-4 py-2 border-b border-slate-800 bg-slate-900/90 text-xs flex-shrink-0">
             <div className="flex items-center gap-2">
               <span className="font-mono text-slate-400 text-xs flex items-center gap-1">
@@ -667,19 +677,51 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
               </span>
             </div>
 
+            {/* IDE Toolbar Controls */}
             <div className="flex items-center gap-2">
+              {/* Font Size controls */}
+              <div className="hidden sm:flex items-center bg-slate-800/80 rounded-md border border-slate-700/60 overflow-hidden">
+                <button
+                  onClick={() => setFontSize(f => Math.max(11, f - 1))}
+                  className="px-2 py-1 text-slate-400 hover:text-white transition-colors"
+                  title="Decrease Font Size"
+                >
+                  <ZoomOut className="w-3 h-3" />
+                </button>
+                <span className="text-[10px] font-mono text-slate-300 px-1">{fontSize}px</span>
+                <button
+                  onClick={() => setFontSize(f => Math.min(18, f + 1))}
+                  className="px-2 py-1 text-slate-400 hover:text-white transition-colors"
+                  title="Increase Font Size"
+                >
+                  <ZoomIn className="w-3 h-3" />
+                </button>
+              </div>
+
+              {/* Minimap toggle */}
+              <button
+                onClick={() => setShowMinimap(!showMinimap)}
+                className={`hidden md:flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono transition-colors border ${
+                  showMinimap ? 'bg-cyan-950 text-cyan-300 border-cyan-800' : 'bg-slate-800 text-slate-400 border-slate-700'
+                }`}
+                title="Toggle Minimap"
+              >
+                <Sliders className="w-3 h-3" />
+                <span>Map</span>
+              </button>
+
               <button
                 onClick={handleCopyCode}
-                className="flex items-center gap-1 px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors"
+                className="flex items-center gap-1 px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors border border-slate-700/60"
                 title="Copy Code"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <CheckCheck className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                 <span className="hidden sm:inline">{copied ? 'Copied' : 'Copy'}</span>
               </button>
               
               <button
                 onClick={handleResetCode}
-                className="flex items-center gap-1 px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors"
+                className="flex items-center gap-1 px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition-colors border border-slate-700/60"
                 title="Reset to Template"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
@@ -688,14 +730,36 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
             </div>
           </div>
 
-          {/* Code Textarea Area with Line Numbers */}
-          <div className="flex-1 relative flex overflow-hidden font-mono text-xs">
-            <textarea
+          {/* Monaco VS Code IDE Area */}
+          <div className="flex-1 relative overflow-hidden bg-[#1e1e1e]">
+            <Editor
+              height="100%"
+              language={currentLangObj?.monacoLang || 'python'}
+              theme="vs-dark"
               value={code}
-              onChange={(e) => handleCodeChange(e.target.value)}
-              spellCheck="false"
-              placeholder={`// Write your ${currentLangObj?.label} solution here...`}
-              className="w-full h-full p-4 bg-[#080c14] text-slate-200 font-mono text-xs leading-relaxed resize-none focus:outline-none focus:ring-0 selection:bg-cyan-500/20"
+              onChange={(newVal) => handleCodeChange(newVal || '')}
+              options={{
+                fontSize: fontSize,
+                minimap: { enabled: showMinimap },
+                scrollBeyondLastLine: false,
+                automaticLayout: true,
+                tabSize: 4,
+                bracketPairColorization: { enabled: true },
+                padding: { top: 12, bottom: 12 },
+                fontFamily: "'Fira Code', 'JetBrains Mono', Consolas, monospace",
+                fontLigatures: true,
+                lineNumbers: 'on',
+                roundedSelection: true,
+                cursorBlinking: 'smooth',
+                smoothScrolling: true,
+                contextmenu: true
+              }}
+              loading={
+                <div className="flex items-center justify-center h-full bg-[#080c14] text-slate-400 text-xs font-mono space-x-2">
+                  <div className="w-4 h-4 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
+                  <span>Loading Monaco IDE Sandbox...</span>
+                </div>
+              }
             />
           </div>
 
@@ -703,7 +767,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
           <div className="flex items-center justify-between px-4 py-2.5 bg-slate-900 border-t border-b border-slate-800 text-xs flex-shrink-0">
             <div className="flex items-center gap-2 text-slate-400">
               <TerminalIcon className="w-4 h-4 text-cyan-400" />
-              <span className="font-mono text-[11px]">Terminal Console</span>
+              <span className="font-mono text-[11px] font-bold">Terminal Console</span>
               {terminalOutput.durationMs > 0 && (
                 <span className="text-[10px] font-mono text-slate-500">
                   ({terminalOutput.durationMs} ms)
@@ -715,7 +779,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
               <button
                 onClick={handleRunCode}
                 disabled={isRunning}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs transition-colors disabled:opacity-50"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs transition-colors disabled:opacity-50 border border-slate-700/60 shadow-sm"
               >
                 <Play className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400" />
                 <span>{isRunning ? 'Running...' : 'Run Code'}</span>
@@ -724,7 +788,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
               <button
                 onClick={handleRunTests}
                 disabled={isRunning}
-                className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold text-xs transition-all shadow-md shadow-cyan-600/30 disabled:opacity-50"
+                className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 font-bold text-xs transition-all shadow-md shadow-cyan-600/30 disabled:opacity-50"
               >
                 <CheckCircle className="w-3.5 h-3.5" />
                 <span>{isRunning ? 'Evaluating...' : 'Submit & Run Tests'}</span>
@@ -742,29 +806,29 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
             )}
 
             {terminalOutput.stdout && (
-              <div className="text-slate-300 whitespace-pre-wrap">
+              <div className="text-slate-300 whitespace-pre-wrap leading-relaxed">
                 {terminalOutput.stdout}
               </div>
             )}
 
             {terminalOutput.stderr && (
-              <div className="text-rose-400 whitespace-pre-wrap bg-rose-950/30 p-2 rounded border border-rose-900/50">
+              <div className="text-rose-400 whitespace-pre-wrap bg-rose-950/30 p-2.5 rounded-lg border border-rose-900/50">
                 {terminalOutput.stderr}
               </div>
             )}
 
             {terminalOutput.testResults && terminalOutput.testResults.length > 0 && (
               <div className="space-y-1.5 pt-2 border-t border-slate-800">
-                <div className="text-slate-400 text-[10px] font-semibold uppercase">Test Results:</div>
+                <div className="text-slate-400 text-[10px] font-semibold uppercase tracking-wider">Test Results:</div>
                 {terminalOutput.testResults.map((tr, i) => (
                   <div 
                     key={i}
-                    className={`flex items-center justify-between p-1.5 rounded text-[11px] ${
+                    className={`flex items-center justify-between p-2 rounded-lg text-[11px] ${
                       tr.passed ? 'bg-emerald-950/40 text-emerald-300 border border-emerald-900/50' : 'bg-rose-950/40 text-rose-300 border border-rose-900/50'
                     }`}
                   >
                     <div className="flex items-center gap-2">
-                      <span>{tr.passed ? '✓ PASS' : '✕ FAIL'}</span>
+                      <span className="font-bold">{tr.passed ? '✓ PASS' : '✕ FAIL'}</span>
                       <span className="font-mono text-slate-400">{tr.callStr}</span>
                     </div>
                     <div>

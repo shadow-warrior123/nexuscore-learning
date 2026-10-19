@@ -9,13 +9,18 @@ import {
   CheckCircle2, 
   Sparkles, 
   BookOpen, 
-  ChevronRight,
-  Flame,
-  Layers,
-  Terminal,
-  Cpu,
-  Workflow
+  ChevronRight, 
+  Flame, 
+  Layers, 
+  Terminal, 
+  Cpu, 
+  Workflow,
+  Zap,
+  Compass,
+  Trophy,
+  Check
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function RoadmapView({ onSelectCategory, solvedProblems }) {
   const [activeRoadmapTab, setActiveRoadmapTab] = useState('dsa_graph'); // dsa_graph, branches
@@ -27,8 +32,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Arrays & Hashing',
       count: 208,
       difficulty: 'Easy',
-      x: 1, y: 1,
-      connections: ['two-pointers', 'stack'],
+      tier: 'Foundation 01',
+      leadsTo: ['Two Pointers', 'Stack'],
       tagline: 'Hash maps, frequency counters, prefix sums'
     },
     {
@@ -36,8 +41,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Two Pointers',
       count: 48,
       difficulty: 'Medium',
-      x: 2, y: 1,
-      connections: ['sliding-window', 'binary-search', 'linked-list'],
+      tier: 'Intermediate 02',
+      leadsTo: ['Sliding Window', 'Binary Search', 'Linked List'],
       tagline: 'Left/right indices, converging pointers'
     },
     {
@@ -45,8 +50,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Stack',
       count: 42,
       difficulty: 'Medium',
-      x: 1, y: 2,
-      connections: [],
+      tier: 'Intermediate 02',
+      leadsTo: [],
       tagline: 'Monotonic stacks, parentheses matching'
     },
     {
@@ -54,8 +59,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Binary Search',
       count: 49,
       difficulty: 'Medium',
-      x: 3, y: 0,
-      connections: ['trees'],
+      tier: 'Intermediate 03',
+      leadsTo: ['Trees'],
       tagline: 'Logarithmic search space pruning'
     },
     {
@@ -63,8 +68,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Sliding Window',
       count: 47,
       difficulty: 'Medium',
-      x: 3, y: 1,
-      connections: [],
+      tier: 'Intermediate 03',
+      leadsTo: [],
       tagline: 'Variable-length & fixed-length sub-arrays'
     },
     {
@@ -72,8 +77,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Linked List',
       count: 41,
       difficulty: 'Medium',
-      x: 3, y: 2,
-      connections: ['trees'],
+      tier: 'Intermediate 03',
+      leadsTo: ['Trees'],
       tagline: 'Fast/slow pointers, list reversal'
     },
     {
@@ -81,8 +86,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Trees',
       count: 112,
       difficulty: 'Medium',
-      x: 4, y: 1,
-      connections: ['tries', 'heap', 'backtracking'],
+      tier: 'Core Structure 04',
+      leadsTo: ['Tries', 'Heap', 'Backtracking'],
       tagline: 'DFS/BFS, traversals, LCA, BST properties'
     },
     {
@@ -90,8 +95,8 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Tries',
       count: 16,
       difficulty: 'Medium',
-      x: 5, y: 0,
-      connections: [],
+      tier: 'Advanced 05',
+      leadsTo: [],
       tagline: 'Prefix trees, auto-complete'
     },
     {
@@ -99,102 +104,121 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       name: 'Heap / Priority Queue',
       count: 36,
       difficulty: 'Medium',
-      x: 5, y: 1,
-      connections: ['intervals'],
-      tagline: 'Min-heap, max-heap, top-k elements'
+      tier: 'Advanced 05',
+      leadsTo: ['Intervals'],
+      tagline: 'Top-K elements, streaming medians'
     },
     {
       id: 'backtracking',
       name: 'Backtracking',
       count: 45,
       difficulty: 'Medium',
-      x: 5, y: 2,
-      connections: ['graphs'],
-      tagline: 'State recursion, permutations, subsets'
+      tier: 'Advanced 05',
+      leadsTo: ['Graphs', '1-D DP'],
+      tagline: 'Combinations, permutations, pruning search trees'
     },
     {
       id: 'graphs',
       name: 'Graphs',
-      count: 76,
+      count: 138,
       difficulty: 'Medium',
-      x: 6, y: 1,
-      connections: ['1d-dp', 'advanced-graphs'],
-      tagline: 'Connected components, topological sort, BFS/DFS'
+      tier: 'Complex Systems 06',
+      leadsTo: ['Advanced Graphs'],
+      tagline: 'Adjacency lists, topological sort, flood fill'
+    },
+    {
+      id: '1-d-dp',
+      name: '1-D Dynamic Programming',
+      count: 61,
+      difficulty: 'Medium',
+      tier: 'Complex Systems 06',
+      leadsTo: ['2-D DP'],
+      tagline: 'Optimal substructure, memoization, tabulation'
     },
     {
       id: 'intervals',
       name: 'Intervals',
-      count: 24,
+      count: 22,
       difficulty: 'Medium',
-      x: 6, y: 0,
-      connections: [],
-      tagline: 'Merge, insert, sweep-line algorithms'
+      tier: 'Applied 07',
+      leadsTo: [],
+      tagline: 'Merging, inserting, and scheduling ranges'
     },
     {
-      id: '1d-dp',
-      name: '1-D Dynamic Programming',
-      count: 61,
-      difficulty: 'Medium-Hard',
-      x: 7, y: 1,
-      connections: ['2d-dp'],
-      tagline: 'Optimal substructure, memoization & tabulation'
+      id: 'greedy',
+      name: 'Greedy',
+      count: 43,
+      difficulty: 'Medium',
+      tier: 'Applied 07',
+      leadsTo: [],
+      tagline: 'Local optimal choices yielding global optimum'
     },
     {
       id: 'advanced-graphs',
       name: 'Advanced Graphs',
       count: 36,
       difficulty: 'Hard',
-      x: 7, y: 2,
-      connections: [],
-      tagline: "Dijkstra's, Prim's, Bellman-Ford, Network Flow"
+      tier: 'Mastery 08',
+      leadsTo: [],
+      tagline: "Dijkstra's, Bellman-Ford, Kruskal's MST, Network Flow"
     },
     {
-      id: '2d-dp',
+      id: '2-d-dp',
       name: '2-D Dynamic Programming',
       count: 67,
       difficulty: 'Hard',
-      x: 8, y: 1,
-      connections: ['bit-manipulation'],
-      tagline: 'LCS, Knapsack, Matrix DP, String edits'
+      tier: 'Mastery 08',
+      leadsTo: [],
+      tagline: 'Knapsack, edit distance, grid paths, game DP'
     },
     {
       id: 'bit-manipulation',
       name: 'Bit Manipulation',
       count: 33,
       difficulty: 'Medium',
-      x: 9, y: 1,
-      connections: [],
-      tagline: 'Bitwise XOR, shifts, two\'s complement'
+      tier: 'Low-Level 09',
+      leadsTo: [],
+      tagline: 'Bitmasks, XOR tricks, binary representations'
+    },
+    {
+      id: 'math-geometry',
+      name: 'Math & Geometry',
+      count: 31,
+      difficulty: 'Medium',
+      tier: 'Low-Level 09',
+      leadsTo: [],
+      tagline: 'GCD, primes, matrix rotation, spiral grids'
     }
   ];
 
+  // 4 Disciplines Roadmap Branches
   const branches = [
     {
       id: 'dsa',
-      title: 'Advanced DSA',
-      tagline: 'NeetCode 150 & 250, Blind 75, 19 Algorithmic Patterns',
+      title: 'Advanced DSA (NeetCode 1,126)',
+      tagline: 'Foundations → Two Pointers → Trees → Graphs → 2-D DP',
       icon: Code2,
       color: 'from-amber-500 to-orange-600',
+      badge: '1,126 Problems',
       levels: [
-        { name: 'Arrays, Hashing & Two Pointers', count: 256, category: 'Arrays & Hashing' },
-        { name: 'Sliding Window & Stack', count: 89, category: 'Sliding Window' },
-        { name: 'Binary Search & Linked Lists', count: 90, category: 'Binary Search' },
-        { name: 'Trees, Tries & Heap', count: 164, category: 'Trees' },
-        { name: 'Backtracking & Graphs', count: 157, category: 'Graphs' },
-        { name: '1D & 2D Dynamic Programming', count: 128, category: '1-D Dynamic Programming' }
+        { name: 'Foundations: Arrays, Hashing & Pointers', count: 256, category: 'Arrays & Hashing' },
+        { name: 'Core Structures: Trees & Linked Lists', count: 153, category: 'Trees' },
+        { name: 'Search & Recursion: Backtracking & Tries', count: 61, category: 'Backtracking' },
+        { name: 'Complex Networks: BFS/DFS & Graph Algorithms', count: 174, category: 'Graphs' },
+        { name: 'Optimal State: 1-D & 2-D Dynamic Programming', count: 128, category: '1-D Dynamic Programming' }
       ]
     },
     {
       id: 'sysdes',
-      title: 'System Design & Architecture',
-      tagline: 'High-Level Design (HLD), Low-Level Design (LLD), Design Patterns',
+      title: 'System Design (HLD & LLD)',
+      tagline: 'Scalability, Caching, Sharding, Microservices, Design Patterns',
       icon: Server,
-      color: 'from-blue-500 to-cyan-600',
+      color: 'from-blue-500 to-indigo-600',
+      badge: '35 Architectures',
       levels: [
-        { name: 'System Design Fundamentals', count: 21, category: 'System Design for Beginners' },
-        { name: 'High-Level Design (Twitter, YouTube, Rate Limiter)', count: 10, category: 'System Design Interview' },
-        { name: 'Object-Oriented Design (Elevator, Parking Lot, Chess)', count: 7, category: 'Object-Oriented Design Interview' },
-        { name: 'Design Patterns (Factory, Observer, Strategy)', count: 11, category: 'Object-Oriented Design Patterns' }
+        { name: 'High-Level Design (HLD) Distributed Systems', count: 18, category: 'Interview Questions' },
+        { name: 'Low-Level Design (LLD) Object Modeling', count: 9, category: 'Creational Patterns' },
+        { name: 'Architectural Patterns & Trade-offs', count: 8, category: 'Behavioural Patterns' }
       ]
     },
     {
@@ -203,6 +227,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       tagline: 'Optimization, PyTorch, Transformers, LLMs + Research Papers',
       icon: BrainCircuit,
       color: 'from-purple-500 to-pink-600',
+      badge: '119 + Papers',
       hasPapers: true,
       levels: [
         { name: 'Foundations & Statistics', count: 14, category: 'Foundations', paper: 'Pearson (1901) - PCA' },
@@ -219,6 +244,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       tagline: 'Pandas, NumPy, SQL, PySpark, Pipeline Orchestration',
       icon: Database,
       color: 'from-emerald-500 to-teal-600',
+      badge: '253 Problems',
       levels: [
         { name: 'NumPy Array Vectorization', count: 37, category: 'NumPy Road' },
         { name: 'Pandas Data Wrangling', count: 48, category: 'Pandas Road' },
@@ -234,24 +260,24 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       
       {/* Hero Header */}
       <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-800 text-cyan-300 text-xs font-mono">
-          <Workflow className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-800 text-cyan-300 text-xs font-mono shadow-lg shadow-cyan-950/40">
+          <Workflow className="w-4 h-4 text-cyan-400" />
           <span>Interactive Prerequisite Roadmap</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
           Visual <span className="bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Curriculum Map</span>
         </h1>
-        <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-          Navigate prerequisites in exact sequence. Click any node to instantly open all challenges and start coding.
+        <p className="text-slate-400 text-sm sm:text-base leading-relaxed font-sans">
+          Navigate prerequisites in exact pedagogical sequence. Click any node to instantly open all corresponding challenges and start coding.
         </p>
 
         {/* View Toggle */}
-        <div className="inline-flex p-1 rounded-xl bg-slate-900 border border-slate-800 text-xs font-medium">
+        <div className="inline-flex p-1 rounded-xl bg-slate-900 border border-slate-800 text-xs font-medium shadow-inner">
           <button
             onClick={() => setActiveRoadmapTab('dsa_graph')}
-            className={`flex items-center gap-2 px-4 py-1.5 rounded-lg transition-all ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
               activeRoadmapTab === 'dsa_graph'
-                ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold shadow-md'
+                ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold shadow-md shadow-cyan-500/20'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
@@ -260,9 +286,9 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
           </button>
           <button
             onClick={() => setActiveRoadmapTab('branches')}
-            className={`flex items-center gap-2 px-4 py-1.5 rounded-lg transition-all ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
               activeRoadmapTab === 'branches'
-                ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold shadow-md'
+                ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold shadow-md shadow-cyan-500/20'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
@@ -283,7 +309,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
                 <Code2 className="w-5 h-5 text-amber-400" />
                 <span>NeetCode Prerequisite Dependency Flow</span>
               </h2>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-400 mt-1">
                 Master each algorithmic pattern before unlocking downstream dependent topics.
               </p>
             </div>
@@ -293,44 +319,56 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
                 <span>Core Path</span>
               </span>
               <span className="flex items-center gap-1.5 text-cyan-400">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
                 <span>Unlocked</span>
               </span>
             </div>
           </div>
 
           {/* Grid Flow Graph */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {dsaGraphNodes.map((node, idx) => (
-              <div
+              <motion.div
                 key={node.id}
+                whileHover={{ y: -3, scale: 1.01 }}
                 onClick={() => onSelectCategory('dsa', node.name)}
-                className="group p-4 rounded-xl bg-slate-950/70 hover:bg-slate-800/80 border border-slate-800 hover:border-amber-500/50 cursor-pointer transition-all shadow-md relative overflow-hidden"
+                className="group p-5 rounded-xl bg-slate-950/70 hover:bg-slate-900 border border-slate-800 hover:border-cyan-500/50 cursor-pointer transition-all shadow-lg relative overflow-hidden"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <span className="text-[10px] font-mono font-bold text-slate-500 group-hover:text-amber-400 transition-colors">
-                    LEVEL {idx + 1}
+                  <span className="text-[10px] font-mono font-bold text-cyan-400 bg-cyan-950/80 border border-cyan-800/60 px-2 py-0.5 rounded">
+                    {node.tier}
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-900 text-amber-400 border border-amber-900/60 font-semibold">
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold border ${
+                    node.difficulty === 'Easy' ? 'bg-emerald-950/80 text-emerald-400 border-emerald-800' :
+                    node.difficulty === 'Medium' ? 'bg-amber-950/80 text-amber-400 border-amber-800' :
+                    'bg-rose-950/80 text-rose-400 border-rose-800'
+                  }`}>
                     {node.difficulty}
                   </span>
                 </div>
 
-                <h3 className="text-sm font-bold text-slate-100 group-hover:text-amber-300 transition-colors mt-2">
+                <h3 className="text-base font-bold text-slate-100 group-hover:text-cyan-300 transition-colors mt-3">
                   {node.name}
                 </h3>
-                <p className="text-[11px] text-slate-400 mt-1 line-clamp-2">
+                <p className="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
                   {node.tagline}
                 </p>
 
-                <div className="flex items-center justify-between mt-3 pt-2 border-t border-slate-900 text-[11px] font-mono text-slate-500">
+                {node.leadsTo && node.leadsTo.length > 0 && (
+                  <div className="mt-3 pt-2 border-t border-slate-900 flex items-center gap-1.5 text-[10px] font-mono text-slate-500 truncate">
+                    <ArrowRight className="w-3 h-3 text-cyan-500 flex-shrink-0" />
+                    <span className="text-slate-400 truncate">Unlocks: {node.leadsTo.join(', ')}</span>
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-slate-900 text-xs font-mono text-slate-400">
                   <span>{node.count} questions</span>
-                  <div className="flex items-center gap-1 text-cyan-400 group-hover:translate-x-0.5 transition-transform">
+                  <div className="flex items-center gap-1 text-cyan-400 font-bold group-hover:translate-x-1 transition-transform">
                     <span>Solve</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -346,59 +384,65 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
             return (
               <div
                 key={branch.id}
-                className="rounded-2xl bg-slate-900/90 border border-slate-800 p-6 shadow-xl flex flex-col justify-between"
+                className="rounded-2xl bg-slate-900/90 border border-slate-800 p-6 sm:p-7 shadow-2xl flex flex-col justify-between space-y-6"
               >
                 <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-tr ${branch.color} flex items-center justify-center text-white shadow-md`}>
-                      <Icon className="w-5 h-5" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-11 h-11 rounded-xl bg-gradient-to-tr ${branch.color} flex items-center justify-center text-white shadow-lg`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white tracking-tight">{branch.title}</h3>
+                        <p className="text-xs text-slate-400 mt-0.5">{branch.tagline}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-base font-bold text-white tracking-tight">{branch.title}</h3>
-                      <p className="text-xs text-slate-400">{branch.tagline}</p>
-                    </div>
+                    <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-slate-800 text-cyan-300 border border-slate-700">
+                      {branch.badge}
+                    </span>
                   </div>
 
-                  <div className="space-y-2 my-4">
+                  <div className="space-y-2.5 my-4">
                     {branch.levels.map((lvl, idx) => (
-                      <div
+                      <motion.div
                         key={idx}
+                        whileHover={{ x: 4 }}
                         onClick={() => onSelectCategory(branch.id, lvl.category)}
-                        className="group flex items-center justify-between p-3 rounded-xl bg-slate-800/40 hover:bg-slate-800 border border-slate-800/80 hover:border-slate-700 transition-all cursor-pointer"
+                        className="group flex items-center justify-between p-3.5 rounded-xl bg-slate-950/50 hover:bg-slate-800/80 border border-slate-800/80 hover:border-cyan-500/40 transition-all cursor-pointer shadow-sm"
                       >
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          <span className="w-5 h-5 rounded-full bg-slate-900 text-slate-400 group-hover:text-cyan-400 border border-slate-700 flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
+                        <div className="flex items-center gap-3 min-w-0">
+                          <span className="w-6 h-6 rounded-lg bg-slate-900 text-slate-400 group-hover:text-cyan-400 border border-slate-700/80 flex items-center justify-center text-[10px] font-mono font-bold flex-shrink-0">
                             {idx + 1}
                           </span>
                           <div className="min-w-0">
-                            <h4 className="text-xs font-medium text-slate-200 group-hover:text-cyan-300 truncate">
+                            <h4 className="text-xs font-semibold text-slate-200 group-hover:text-cyan-300 truncate">
                               {lvl.name}
                             </h4>
                             {lvl.paper && (
-                              <p className="text-[10px] text-pink-400/90 truncate flex items-center gap-1">
-                                <BookOpen className="w-2.5 h-2.5" />
+                              <p className="text-[11px] text-pink-400/90 truncate flex items-center gap-1 mt-0.5">
+                                <BookOpen className="w-3 h-3 flex-shrink-0" />
                                 <span>{lvl.paper}</span>
                               </p>
                             )}
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2 flex-shrink-0 ml-2">
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">
-                            {lvl.count} probs
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          <span className="text-[11px] font-mono text-slate-400 group-hover:text-slate-200">
+                            {lvl.count} questions
                           </span>
-                          <ChevronRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-400" />
+                          <ChevronRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-cyan-400" />
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
 
                 <button
-                  onClick={() => onSelectCategory(branch.id, null)}
-                  className="mt-4 w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700/80 text-xs font-semibold text-cyan-400 hover:text-cyan-300 border border-slate-700/60 flex items-center justify-center gap-1.5 transition-all"
+                  onClick={() => onSelectCategory(branch.id, '')}
+                  className="w-full py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-cyan-300 hover:text-white border border-slate-700 text-xs font-bold font-mono transition-all flex items-center justify-center gap-2 shadow-sm"
                 >
-                  <span>Explore {branch.title} Challenges</span>
+                  <span>Explore Full {branch.title.split(' ')[0]} Track</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

@@ -1,13 +1,18 @@
 # Graph Report - project-ML-learning-website  (2026-10-20)
 
 ## Corpus Check
-- 37 files · ~562,743 words
+- 37 files · ~562,729 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 2566 nodes · 2581 edges · 275 communities (99 shown, 176 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `abbdf354`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Community 0|Community 0]]
