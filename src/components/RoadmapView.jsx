@@ -25,7 +25,7 @@ import { motion } from 'framer-motion';
 export default function RoadmapView({ onSelectCategory, solvedProblems }) {
   const [activeRoadmapTab, setActiveRoadmapTab] = useState('dsa_graph'); // dsa_graph, branches
 
-  // Classic NeetCode Prerequisite Node Graph Structure
+  // Classic Algorithmic Prerequisite Node Graph Structure
   const dsaGraphNodes = [
     {
       id: 'arrays',
@@ -195,7 +195,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
   const branches = [
     {
       id: 'dsa',
-      title: 'Advanced DSA (NeetCode 1,126)',
+      title: 'Advanced Data Structures & Algorithms (1,126)',
       tagline: 'Foundations → Two Pointers → Trees → Graphs → 2-D DP',
       icon: Code2,
       color: 'from-amber-500 to-orange-600',
@@ -214,11 +214,12 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       tagline: 'Scalability, Caching, Sharding, Microservices, Design Patterns',
       icon: Server,
       color: 'from-blue-500 to-indigo-600',
-      badge: '35 Architectures',
+      badge: '49 Architectures',
       levels: [
-        { name: 'High-Level Design (HLD) Distributed Systems', count: 18, category: 'Interview Questions' },
-        { name: 'Low-Level Design (LLD) Object Modeling', count: 9, category: 'Creational Patterns' },
-        { name: 'Architectural Patterns & Trade-offs', count: 8, category: 'Behavioural Patterns' }
+        { name: 'System Design for Beginners', count: 21, category: 'System Design for Beginners' },
+        { name: 'Object-Oriented Design Interview', count: 7, category: 'Object-Oriented Design Interview' },
+        { name: 'Object-Oriented Design Patterns', count: 11, category: 'Object-Oriented Design Patterns' },
+        { name: 'High-Level Distributed System Design', count: 10, category: 'System Design Interview' }
       ]
     },
     {
@@ -282,7 +283,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
             }`}
           >
             <GitBranch className="w-3.5 h-3.5" />
-            <span>NeetCode DSA Graph</span>
+            <span>Algorithm Skill Tree</span>
           </button>
           <button
             onClick={() => setActiveRoadmapTab('branches')}
@@ -299,7 +300,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       </div>
 
       {/* ============================================================== */}
-      {/* NEETCODE INTERACTIVE DSA NODE GRAPH */}
+      {/* INTERACTIVE DSA NODE GRAPH */}
       {/* ============================================================== */}
       {activeRoadmapTab === 'dsa_graph' && (
         <div className="rounded-2xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 shadow-2xl space-y-6">
@@ -307,7 +308,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
             <div>
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
                 <Code2 className="w-5 h-5 text-amber-400" />
-                <span>NeetCode Prerequisite Dependency Flow</span>
+                <span>DSA Skill Tree & Prerequisite Flow</span>
               </h2>
               <p className="text-xs text-slate-400 mt-1">
                 Master each algorithmic pattern before unlocking downstream dependent topics.

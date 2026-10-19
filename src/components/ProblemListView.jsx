@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   CheckCircle2, 
   Circle, 
@@ -13,6 +13,9 @@ import {
   Star, 
   Terminal,
   Code2,
+  Server,
+  Database,
+  BrainCircuit,
   Trophy,
   ArrowRight,
   Bookmark,
@@ -21,7 +24,8 @@ import {
   Layers,
   FoldVertical,
   UnfoldVertical,
-  SlidersHorizontal
+  SlidersHorizontal,
+  X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import VideoModal from './VideoModal';
@@ -38,9 +42,15 @@ export default function ProblemListView({
   onToggleSolved
 }) {
   const [curatedListFilter, setCuratedListFilter] = useState('neetcode150'); // neetcode150, blind75, neetcode250, all
+  const [sysdesCourseFilter, setSysdesCourseFilter] = useState('all'); // all, beginners, ood, patterns, hld
+  const [activeCategoryFilter, setActiveCategoryFilter] = useState(initialCategory || null);
   const [difficultyFilter, setDifficultyFilter] = useState('all'); // all, easy, medium, hard
   const [statusFilter, setStatusFilter] = useState('all'); // all, solved, unsolved, starred
   const [collapsedCategories, setCollapsedCategories] = useState({});
+
+  useEffect(() => {
+    setActiveCategoryFilter(initialCategory || null);
+  }, [initialCategory]);
   const [starredProblems, setStarredProblems] = useState(() => {
     try {
       const saved = localStorage.getItem('nexus_starred_problems');
@@ -100,6 +110,9 @@ export default function ProblemListView({
           if (statusFilter === 'unsolved' && isSolved) return false;
           if (statusFilter === 'starred' && !isStarred) return false;
 
+          // Topic / Category filter
+          if (activeCategoryFilter && !category.toLowerCase().includes(activeCategoryFilter.toLowerCase())) return false;
+
           // Search query
           if (searchQuery) {
             const q = searchQuery.toLowerCase();
@@ -149,6 +162,11 @@ export default function ProblemListView({
             if (statusFilter === 'unsolved' && isSolved) return false;
             if (statusFilter === 'starred' && !isStarred) return false;
 
+            if (activeCategoryFilter) {
+              const initLower = activeCategoryFilter.toLowerCase();
+              if (!catKey.toLowerCase().includes(initLower) && !(track.trackTitle || '').toLowerCase().includes(initLower)) return false;
+            }
+
             if (searchQuery) {
               const query = searchQuery.toLowerCase();
               return q.title.toLowerCase().includes(query) || catKey.toLowerCase().includes(query) || (q.tagline || '').toLowerCase().includes(query);
@@ -181,44 +199,105 @@ export default function ProblemListView({
     }
 
     if (trackType === 'sysdes') {
-      for (const [category, items] of Object.entries(sysdesData.categories || {})) {
-        const filteredItems = items.filter(p => {
-          const problemId = `sysdes-${p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+      const courses = Array.isArray(sysdesData) ? sysdesData : (sysdesData.courses || []);
+      for (const course of courses) {
+        // Course filter
+        if (sysdesCourseFilter === 'beginners' && !course.courseName.toLowerCase().includes('beginners')) continue;
+        if (sysdesCourseFilter === 'ood' && !course.courseName.toLowerCase().includes('object-oriented design interview')) continue;
+        if (sysdesCourseFilter === 'patterns' && !course.courseName.toLowerCase().includes('patterns')) continue;
+        if (sysdesCourseFilter === 'hld' && !course.courseName.toLowerCase().includes('system design interview')) continue;
 
-          if (difficultyFilter !== 'all' && (p.difficulty || '').toLowerCase() !== difficultyFilter) return false;
+        for (const sec of (course.sections || [])) {
+          const catKey = `${course.courseName}: ${sec.sectionName}`;
           
-          const isSolved = solvedProblems.has(problemId);
-          const isStarred = starredProblems.has(problemId);
-          if (statusFilter === 'solved' && !isSolved) return false;
-          if (statusFilter === 'unsolved' && isSolved) return false;
-          if (statusFilter === 'starred' && !isStarred) return false;
+          const qList = (sec.questions || []).filter(p => {
+            const problemId = `sysdes-${(course.courseId || course.courseName).toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
-          if (searchQuery) {
-            const q = searchQuery.toLowerCase();
-            return p.title.toLowerCase().includes(q) || category.toLowerCase().includes(q);
+            // Calculate difficulty:
+            const diff = course.courseName.toLowerCase().includes('beginner') ? 'easy' :
+                         course.courseName.toLowerCase().includes('interview') ? 'hard' : 'medium';
+            if (difficultyFilter !== 'all' && diff !== difficultyFilter) return false;
+
+            const isSolved = solvedProblems.has(problemId);
+            const isStarred = starredProblems.has(problemId);
+            if (statusFilter === 'solved' && !isSolved) return false;
+            if (statusFilter === 'unsolved' && isSolved) return false;
+            if (statusFilter === 'starred' && !isStarred) return false;
+
+            if (activeCategoryFilter) {
+              const initLower = activeCategoryFilter.toLowerCase();
+              const matchCourse = course.courseName.toLowerCase().includes(initLower);
+              const matchSec = sec.sectionName.toLowerCase().includes(initLower);
+              const matchCat = catKey.toLowerCase().includes(initLower);
+              if (!matchCourse && !matchSec && !matchCat) return false;
+            }
+
+            if (searchQuery) {
+              const q = searchQuery.toLowerCase();
+              return p.title.toLowerCase().includes(q) || catKey.toLowerCase().includes(q);
+            }
+            return true;
+          }).map(p => {
+            const diff = course.courseName.toLowerCase().includes('beginner') ? 'Easy' :
+                         course.courseName.toLowerCase().includes('interview') ? 'Hard' : 'Medium';
+            const problemId = `sysdes-${(course.courseId || course.courseName).toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+            
+            return {
+              id: problemId,
+              title: p.title,
+              category: catKey,
+              courseName: course.courseName,
+              sectionName: sec.sectionName,
+              difficulty: diff,
+              durationMinutes: p.durationMinutes,
+              isFree: p.isFree,
+              vimeoId: p.vimeoId,
+              youtubeVideoId: p.vimeoId || null,
+              codeSolutions: p.codeSolutions,
+              tagline: `${course.courseName} • ${sec.sectionName}${p.durationMinutes ? ` • ${p.durationMinutes} min` : ''}`,
+              trackType: 'sysdes',
+              starter_code: `# System Architecture Blueprint for: ${p.title}
+"""
+Target System: ${p.title}
+Curriculum: ${course.courseName} > ${sec.sectionName}
+Estimated Architecture Deep-Dive: ${p.durationMinutes || 20} minutes
+
+Core Architectural Strategy:
+1. Requirements & Scale Estimation (DAU, Reads/Writes, Throughput, Storage)
+2. High-Level Design (Client -> CDN -> API Gateway -> Load Balancer)
+3. Data Model & Tier Partitioning (Relational vs NoSQL vs In-Memory Cache)
+4. Message Queuing & Streaming Pipelines (Event-Driven Architecture)
+5. Resilience, Fault Tolerance, Disaster Recovery & Bottlenecks
+"""
+
+class DistributedArchitecture:
+    def __init__(self):
+        self.gateway = "APIGateway-V2"
+        self.services = ["AuthService", "ComputeEngine", "NotificationService"]
+        self.database_shards = 4
+        self.cache_ttl_sec = 3600
+
+    def process_traffic(self, qps_volume):
+        # Calculate cluster capacity and routing
+        return {"status": "HEALTHY", "qps": qps_volume, "p99_latency_ms": 14}
+
+system = DistributedArchitecture()
+print(system.process_traffic(75000))
+`,
+              description: `### ${p.title}\n\n**Curriculum Track:** ${course.courseName}  \n**Section:** ${sec.sectionName}  \n**Difficulty:** ${diff}  \n**Duration:** ${p.durationMinutes || 20} mins  \n\nScalable real-world system architecture design challenge. Analyze traffic patterns, storage bounds, API interfaces, and trade-offs.`
+            };
+          });
+
+          if (qList.length > 0) {
+            map.set(catKey, qList);
           }
-          return true;
-        }).map(p => ({
-          id: `sysdes-${p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
-          title: p.title,
-          category,
-          difficulty: p.difficulty,
-          isFree: p.isFree,
-          youtubeVideoId: p.youtubeSolution ? p.youtubeSolution.split('v=')[1] : null,
-          trackType: 'sysdes',
-          starter_code: `# System Design Architecture Blueprint for: ${p.title}\n\n"""\nCore Components:\n1. Client Tier & Load Balancing\n2. API Gateway & Rate Limiting\n3. Storage Strategy (SQL vs NoSQL vs Cache)\n4. Asynchronous Queues & Event Streaming\n5. Consistency & Partition Tolerance\n"""\n`,
-          description: `### ${p.title}\n\n**Category:** ${category}  \n**Difficulty:** ${p.difficulty}  \n\nScalable real-world system architecture design challenge. Analyze traffic patterns, storage bounds, and trade-offs.`
-        }));
-
-        if (filteredItems.length > 0) {
-          map.set(category, filteredItems);
         }
       }
       return map;
     }
 
     return map;
-  }, [trackType, dsaData, journeyData, sysdesData, curatedListFilter, difficultyFilter, statusFilter, searchQuery, solvedProblems, starredProblems]);
+  }, [trackType, dsaData, journeyData, sysdesData, curatedListFilter, sysdesCourseFilter, activeCategoryFilter, difficultyFilter, statusFilter, searchQuery, solvedProblems, starredProblems]);
 
   // Overall totals for current filtered view
   const { totalShown, solvedShown } = useMemo(() => {
@@ -246,22 +325,25 @@ export default function ProblemListView({
   return (
     <div className="py-6 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-6">
       
-      {/* NeetCode Style Filter Bar */}
+      {/* Filter Bar */}
       <div className="bg-slate-900/90 rounded-2xl border border-slate-800 p-5 sm:p-6 shadow-2xl space-y-4">
         
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-              <Code2 className="w-6 h-6 text-cyan-400" />
+              {trackType === 'dsa' && <Code2 className="w-6 h-6 text-cyan-400" />}
+              {trackType === 'sysdes' && <Server className="w-6 h-6 text-indigo-400" />}
+              {trackType === 'ml' && <BrainCircuit className="w-6 h-6 text-purple-400" />}
+              {trackType === 'data' && <Database className="w-6 h-6 text-emerald-400" />}
               <span>
-                {trackType === 'dsa' && 'Data Structures & Algorithms (NeetCode)'}
+                {trackType === 'dsa' && 'Data Structures & Algorithms'}
                 {trackType === 'ml' && 'Machine Learning & Deep Learning'}
                 {trackType === 'data' && 'Data Engineering & Scaled Systems'}
                 {trackType === 'sysdes' && 'System Design & Distributed Architecture'}
               </span>
             </h1>
             <p className="text-xs text-slate-400 mt-1 font-sans">
-              Structured question sets with in-browser terminal execution and NeetCode 3-tier solutions.
+              Structured question sets with in-browser terminal execution and 3-tier progressive solutions.
             </p>
           </div>
 
@@ -283,13 +365,30 @@ export default function ProblemListView({
           </div>
         </div>
 
-        {/* DSA Curated Lists Pills (NeetCode 150, Blind 75, NeetCode 250) */}
+        {/* Active Filter Topic Dismiss Badge */}
+        {activeCategoryFilter && (
+          <div className="flex items-center gap-2 pt-2 border-t border-slate-800/80 text-xs">
+            <span className="text-slate-400 font-mono text-[11px]">Filtered Topic:</span>
+            <span className="px-2.5 py-1 rounded-lg bg-cyan-950/80 text-cyan-300 border border-cyan-800/80 flex items-center gap-1.5 font-mono text-xs shadow-sm">
+              <span>{activeCategoryFilter}</span>
+              <button
+                onClick={() => setActiveCategoryFilter(null)}
+                className="hover:text-white hover:bg-cyan-800/50 p-0.5 rounded transition-colors"
+                title="Clear topic filter"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </span>
+          </div>
+        )}
+
+        {/* DSA Curated Lists Pills (Core 150, Blind 75, Curated 250) */}
         {trackType === 'dsa' && (
           <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/80">
             {[
-              { id: 'neetcode150', label: '🚀 NeetCode 150', count: 150 },
+              { id: 'neetcode150', label: '🚀 Core 150', count: 150 },
               { id: 'blind75', label: '🧠 Blind 75', count: 75 },
-              { id: 'neetcode250', label: '🦄 NeetCode 250', count: 250 },
+              { id: 'neetcode250', label: '🦄 Curated 250', count: 250 },
               { id: 'all', label: '🌐 All Problems', count: 1126 }
             ].map(tab => (
               <button
@@ -304,6 +403,36 @@ export default function ProblemListView({
                 <span>{tab.label}</span>
                 <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
                   curatedListFilter === tab.id ? 'bg-white/20 text-white' : 'bg-slate-900 text-slate-500'
+                }`}>
+                  {tab.count}
+                </span>
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* System Design Course Filter Pills */}
+        {trackType === 'sysdes' && (
+          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/80">
+            {[
+              { id: 'all', label: '🌐 All Architectures', count: 49 },
+              { id: 'beginners', label: '🔰 Beginners Foundations', count: 21 },
+              { id: 'ood', label: '🧩 OOD Interview', count: 7 },
+              { id: 'patterns', label: '🏗 Design Patterns', count: 11 },
+              { id: 'hld', label: '⚡ Distributed HLD', count: 10 }
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setSysdesCourseFilter(tab.id)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                  sysdesCourseFilter === tab.id
+                    ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-md shadow-blue-500/20'
+                    : 'bg-slate-800/80 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-700/60'
+                }`}
+              >
+                <span>{tab.label}</span>
+                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
+                  sysdesCourseFilter === tab.id ? 'bg-white/20 text-white' : 'bg-slate-900 text-slate-500'
                 }`}>
                   {tab.count}
                 </span>
@@ -380,7 +509,7 @@ export default function ProblemListView({
 
       </div>
 
-      {/* Accordion Categories (NeetCode Style) */}
+      {/* Accordion Categories */}
       <div className="space-y-4">
         {Array.from(categorizedProblems.entries()).map(([categoryName, problems]) => {
           const isCollapsed = !!collapsedCategories[categoryName];
@@ -487,7 +616,7 @@ export default function ProblemListView({
                                 {problem.title}
                               </span>
 
-                              {/* Special NeetCode Badges */}
+                              {/* Special Track Badges */}
                               {problem.blind75 && (
                                 <span className="hidden md:inline text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-950/80 text-amber-300 border border-amber-800/80 font-bold">
                                   Blind 75
@@ -495,7 +624,7 @@ export default function ProblemListView({
                               )}
                               {problem.neetcode150 && (
                                 <span className="hidden md:inline text-[9px] font-mono px-1.5 py-0.2 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-800/80 font-bold">
-                                  NC 150
+                                  Core 150
                                 </span>
                               )}
                             </div>
@@ -531,7 +660,7 @@ export default function ProblemListView({
                             </button>
                           )}
 
-                          {/* LeetCode Direct Reference */}
+                          {/* Problem Direct Reference */}
                           {problem.leetcodeUrl && (
                             <a
                               href={problem.leetcodeUrl}
@@ -539,7 +668,7 @@ export default function ProblemListView({
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
                               className="p-1 rounded-md text-slate-500 hover:text-amber-400 hover:bg-slate-800 transition-colors hidden sm:block"
-                              title="View on LeetCode"
+                              title="Problem Reference"
                             >
                               <ExternalLink className="w-3.5 h-3.5" />
                             </a>

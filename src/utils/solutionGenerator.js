@@ -1,5 +1,5 @@
 /**
- * Intelligent Solution & NeetCode-Style Pedagogical Engine
+ * Intelligent Multi-Approach Pedagogical Solution Engine
  * Generates:
  * 1. Inspiration & Core Mental Model
  * 2. Approach 1: Brute Force (Naive)

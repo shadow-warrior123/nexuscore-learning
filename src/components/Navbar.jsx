@@ -27,9 +27,9 @@ export default function Navbar({
 }) {
 
   const navItems = [
-    { id: 'roadmap', label: 'Roadmap Graph', icon: Compass },
+    { id: 'roadmap', label: 'Skill Tree Roadmap', icon: Compass },
     { id: 'dsa', label: 'Algorithms & DSA', icon: Code2, count: 1126 },
-    { id: 'sysdes', label: 'System Design', icon: Server, count: 35 },
+    { id: 'sysdes', label: 'System Design', icon: Server, count: 49 },
     { id: 'ml', label: 'Machine Learning', icon: BrainCircuit, count: 119 },
     { id: 'data', label: 'Data Engineering', icon: Database, count: 253 },
     { id: 'papers', label: 'Research Papers', icon: BookOpen, badge: 'In-App PDF' },

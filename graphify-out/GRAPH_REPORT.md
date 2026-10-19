@@ -1,16 +1,16 @@
 # Graph Report - project-ML-learning-website  (2026-10-20)
 
 ## Corpus Check
-- 37 files · ~563,679 words
+- 28 files · ~205,250 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2568 nodes · 2583 edges · 280 communities (99 shown, 181 thin omitted)
+- 2590 nodes · 2605 edges · 276 communities (99 shown, 177 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e5cca1b7`
+- Built from commit: `086aa4f4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -285,12 +285,8 @@
 - [[_COMMUNITY_Community 267|Community 267]]
 - [[_COMMUNITY_Community 268|Community 268]]
 - [[_COMMUNITY_Community 269|Community 269]]
-- [[_COMMUNITY_Community 270|Community 270]]
-- [[_COMMUNITY_Community 271|Community 271]]
-- [[_COMMUNITY_Community 272|Community 272]]
 - [[_COMMUNITY_Community 273|Community 273]]
 - [[_COMMUNITY_Community 274|Community 274]]
-- [[_COMMUNITY_Community 279|Community 279]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Category / Chapter: Neural Networks` - 38 edges
@@ -308,7 +304,7 @@
 - `GfgSolutionView()` --calls--> `generateNeetCodeSolution()`  [EXTRACTED]
   src/components/GfgSolutionView.jsx → src/utils/solutionGenerator.js
 
-## Communities (280 total, 181 thin omitted)
+## Communities (276 total, 177 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.04
@@ -395,8 +391,8 @@ Cohesion: 0.05
 Nodes (38): 1. CASE WHEN `[MEDIUM]`, 2. COALESCE and NULLs `[EASY]`, 3. String Functions `[MEDIUM]`, 4. Date Functions `[MEDIUM]`, 5. UNION and EXCEPT `[MEDIUM]`, 6. Reshape a Raw Extract `[HARD]`, Category / Chapter: Shaping & Logic, code:sql (CASE) (+30 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.15
-Nodes (13): 1. Enrichment Joins `[MEDIUM]`, 2. Change Detection `[MEDIUM]`, 3. Slowly Changing Dimensions `[HARD]`, 4. Reconciling Two Sources `[HARD]`, 5. Conflict Resolution `[MEDIUM]`, 6. Reconcile Two Pipelines `[HARD]`, A field showing up on only one side still counts, A field with no rule still has to resolve (+5 more)
+Cohesion: 0.05
+Nodes (37): 1. Enrichment Joins `[MEDIUM]`, 2. Change Detection `[MEDIUM]`, 3. Slowly Changing Dimensions `[HARD]`, 4. Reconciling Two Sources `[HARD]`, 5. Conflict Resolution `[MEDIUM]`, 6. Reconcile Two Pipelines `[HARD]`, A field showing up on only one side still counts, A field with no rule still has to resolve (+29 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.05
@@ -427,8 +423,8 @@ Cohesion: 0.06
 Nodes (35): 1. Convolution `[MEDIUM]`, 2. Pooling Layers `[EASY]`, 3. CNN Forward Pass `[MEDIUM]`, 4. Data Augmentation `[EASY]`, 5. Transfer Learning `[MEDIUM]`, 6. Fashion-MNIST `[HARD]`, Category / Chapter: Computer Vision, code:block174 (out_size = floor((input_size - kernel_size) / stride) + 1) (+27 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.09
-Nodes (23): 1. Create Your First Tensors `[EASY]`, 2. Dtype and Casting `[EASY]`, 3. Elementwise Ops and Broadcasting `[MEDIUM]`, 4. The NumPy Bridge `[EASY]`, 5. Indexing and Reshaping `[MEDIUM]`, 6. Assemble a Tensor Pipeline `[MEDIUM]`, Broadcasting, Casting on the way in (+15 more)
+Cohesion: 0.06
+Nodes (35): 1. Create Your First Tensors `[EASY]`, 2. Dtype and Casting `[EASY]`, 3. Elementwise Ops and Broadcasting `[MEDIUM]`, 4. The NumPy Bridge `[EASY]`, 5. Indexing and Reshaping `[MEDIUM]`, 6. Assemble a Tensor Pipeline `[MEDIUM]`, Broadcasting, Casting on the way in (+27 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.06
@@ -439,8 +435,8 @@ Cohesion: 0.06
 Nodes (32): 1. Inner Join `[MEDIUM]`, 2. Left and Outer Joins `[MEDIUM]`, 3. union `[EASY]`, 4. dropDuplicates `[MEDIUM]`, 5. Reconcile Two DataFrames `[HARD]`, A quiet non-match, An honest limitation, Category / Chapter: Joins & Sets (+24 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.06
-Nodes (31): 1. Turn On requires_grad `[EASY]`, 2. Backward on a Scalar `[MEDIUM]`, 3. Grad Accumulation and zero_grad `[MEDIUM]`, 4. no_grad and detach `[EASY]`, 5. Vector-Jacobian Products `[HARD]`, 6. Trace a Full Backward Pass `[MEDIUM]`, Accumulation, then a manual reset, Backward on a vector (+23 more)
+Cohesion: 0.09
+Nodes (23): 1. Turn On requires_grad `[EASY]`, 2. Backward on a Scalar `[MEDIUM]`, 3. Grad Accumulation and zero_grad `[MEDIUM]`, 4. no_grad and detach `[EASY]`, 5. Vector-Jacobian Products `[HARD]`, 6. Trace a Full Backward Pass `[MEDIUM]`, Accumulation, then a manual reset, Category / Chapter: Autograd (+15 more)
 
 ### Community 33 - "Community 33"
 Cohesion: 0.06
@@ -463,8 +459,8 @@ Cohesion: 0.07
 Nodes (30): 1. Anatomy of a Dense Layer `[EASY]`, 2. build() and call() `[MEDIUM]`, 3. Composing with Sequential `[MEDIUM]`, 4. set_weights and get_weights `[MEDIUM]`, 5. Build a Small Keras Model `[MEDIUM]`, Category / Chapter: Keras Layers, code:python (import tensorflow as tf), code:python (import tensorflow as tf) (+22 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.07
-Nodes (28): 1. Select Columns `[EASY]`, 2. Filter Rows `[EASY]`, 3. withColumn and cast `[MEDIUM]`, 4. when / otherwise `[MEDIUM]`, 5. Rename and Drop Columns `[MEDIUM]`, 6. Reshape a Raw DataFrame `[MEDIUM]`, An honest note on `.cast(...)`, Category / Chapter: Transformations (+20 more)
+Cohesion: 0.09
+Nodes (22): 1. Select Columns `[EASY]`, 2. Filter Rows `[EASY]`, 3. withColumn and cast `[MEDIUM]`, 4. when / otherwise `[MEDIUM]`, 6. Reshape a Raw DataFrame `[MEDIUM]`, An honest note on `.cast(...)`, Category / Chapter: Transformations, code:python (df.select("id", "name")        # separate string arguments) (+14 more)
 
 ### Community 39 - "Community 39"
 Cohesion: 0.06
@@ -475,8 +471,8 @@ Cohesion: 0.07
 Nodes (26): categories, 1-D Dynamic Programming, 2-D Dynamic Programming, Advanced Graphs, Arrays & Hashing, Backtracking, Binary Search, Bit Manipulation (+18 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.07
-Nodes (27): 1. Partitioned Windows `[MEDIUM]`, 2. row_number, rank, dense_rank `[MEDIUM]`, 3. lag and lead `[MEDIUM]`, 4. Laziness and Plans, Revisited `[HARD]`, 5. Rank a Dataset Over Time `[HARD]`, Anatomy, Anatomy of a window, Category / Chapter: Windows & Advanced (+19 more)
+Cohesion: 0.08
+Nodes (25): 1. Partitioned Windows `[MEDIUM]`, 2. row_number, rank, dense_rank `[MEDIUM]`, 3. lag and lead `[MEDIUM]`, 4. Laziness and Plans, Revisited `[HARD]`, 5. Rank a Dataset Over Time `[HARD]`, Anatomy, Anatomy of a window, Category / Chapter: Windows & Advanced (+17 more)
 
 ### Community 42 - "Community 42"
 Cohesion: 0.07
@@ -515,8 +511,8 @@ Cohesion: 0.10
 Nodes (19): 1. groupBy and agg `[MEDIUM]`, 2. Aliasing Aggregates `[EASY]`, 3. Multiple Aggregations at Once `[MEDIUM]`, 4. countDistinct `[MEDIUM]`, 5. Summarize a Dataset `[MEDIUM]`, Category / Chapter: Aggregations, code:python (df.groupBy("region").agg(F.sum("amount").alias("total"))), code:python (from pyspark.sql import SparkSession) (+11 more)
 
 ### Community 51 - "Community 51"
-Cohesion: 0.10
-Nodes (19): 1. Start a SparkSession `[EASY]`, 2. Create a DataFrame `[EASY]`, 3. Actions: collect, count, first `[EASY]`, 4. Transformations Are Lazy `[MEDIUM]`, 5. Working with Row `[EASY]`, 6. Stand Up a DataFrame Pipeline `[MEDIUM]`, Category / Chapter: Session & DataFrames, code:python (from pyspark.sql import SparkSession) (+11 more)
+Cohesion: 0.06
+Nodes (31): 1. Start a SparkSession `[EASY]`, 2. Create a DataFrame `[EASY]`, 3. Actions: collect, count, first `[EASY]`, 4. Transformations Are Lazy `[MEDIUM]`, 5. Working with Row `[EASY]`, 6. Stand Up a DataFrame Pipeline `[MEDIUM]`, Category / Chapter: Session & DataFrames, code:python (from pyspark.sql import SparkSession) (+23 more)
 
 ### Community 52 - "Community 52"
 Cohesion: 0.10
@@ -563,8 +559,8 @@ Cohesion: 0.14
 Nodes (14): 1. Datetime Indexing `[EASY]`, 2. Trend & Seasonality `[EASY]`, 3. Rolling Windows `[MEDIUM]`, 4. ARIMA Intuition `[MEDIUM]`, 5. Forecasting Metrics `[EASY]`, 6. Time-Based Features `[MEDIUM]`, 7. Forecast Monthly Sales `[HARD]`, Backtest: hold out the last cycle, forecast it BOTH ways, compare (+6 more)
 
 ### Community 63 - "Community 63"
-Cohesion: 0.05
-Nodes (37): 1. Deduplicate by Key `[EASY]`, 2. Normalize Values `[MEDIUM]`, 3. Missing Value Policy `[MEDIUM]`, 4. Outlier Fences `[MEDIUM]`, 5. Referential Integrity Checks `[MEDIUM]`, 6. Harden a Feed Against Bad Data `[HARD]`, A documented keep-policy, Category / Chapter: Cleaning at Scale (+29 more)
+Cohesion: 0.15
+Nodes (13): 1. Deduplicate by Key `[EASY]`, 2. Normalize Values `[MEDIUM]`, 3. Missing Value Policy `[MEDIUM]`, 4. Outlier Fences `[MEDIUM]`, 5. Referential Integrity Checks `[MEDIUM]`, 6. Harden a Feed Against Bad Data `[HARD]`, A documented keep-policy, Category / Chapter: Cleaning at Scale (+5 more)
 
 ### Community 64 - "Community 64"
 Cohesion: 0.15
@@ -599,8 +595,8 @@ Cohesion: 0.29
 Nodes (5): dsaData, journeyData, paper, researchPapers, sysdesData
 
 ### Community 72 - "Community 72"
-Cohesion: 0.29
-Nodes (6): 1. NeetCode Question Banks, 2. ML Playground Journey (372 Total Questions), A. DSA Questions (1,126 Total Problems), B. System Design & Architecture Questions, Learning & Interview Questions Bank, Standalone Re-run Scripts
+Cohesion: 0.07
+Nodes (28): 1. Data Structures & Algorithms (1,126 Curated Problems), 1. In-Browser VS Code Monaco Editor, 1. NeetCode Question Banks, 2. Client-Side WebAssembly Execution, 2. Large-Scale System Design & Distributed Architecture, 2. ML Playground Journey (372 Total Questions), 3. Machine Learning & Deep Learning (with ArXiv Research Integration), 3. Pedagogical 3-Tier Multi-Approach Solutions (+20 more)
 
 ### Community 73 - "Community 73"
 Cohesion: 0.33
@@ -691,21 +687,21 @@ Cohesion: 0.67
 Nodes (3): code:python (result = []), code:python (import numpy as np), The Loop You're Replacing
 
 ## Knowledge Gaps
-- **1575 isolated node(s):** `totalProblems`, `blind75Count`, `neetcode150Count`, `neetcode250Count`, `categoriesCount` (+1570 more)
+- **1592 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+1587 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **181 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **177 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Track: ML Engineer Road` connect `Community 75` to `Community 1`, `Community 66`, `Community 3`, `Community 68`, `Community 69`, `Community 6`, `Community 5`, `Community 8`, `Community 4`, `Community 12`, `Community 28`, `Community 18`, `Community 24`, `Community 25`, `Community 60`, `Community 61`, `Community 62`?**
-  _High betweenness centrality (0.503) - this node is a cross-community bridge._
+  _High betweenness centrality (0.507) - this node is a cross-community bridge._
 - **Why does `Track: Pandas Road` connect `Community 57` to `Community 67`, `Community 70`, `Community 7`, `Community 9`, `Community 10`, `Community 75`, `Community 15`, `Community 22`?**
-  _High betweenness centrality (0.227) - this node is a cross-community bridge._
+  _High betweenness centrality (0.209) - this node is a cross-community bridge._
 - **Why does `Track: NumPy Road` connect `Community 52` to `Community 0`, `Community 2`, `Community 75`, `Community 13`, `Community 17`, `Community 58`, `Community 27`?**
-  _High betweenness centrality (0.192) - this node is a cross-community bridge._
-- **What connects `totalProblems`, `blind75Count`, `neetcode150Count` to the rest of the system?**
-  _1575 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.181) - this node is a cross-community bridge._
+- **What connects `name`, `private`, `version` to the rest of the system?**
+  _1592 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

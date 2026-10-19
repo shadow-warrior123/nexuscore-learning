@@ -33,7 +33,7 @@ export default function GfgSolutionView({ problem }) {
   const [selectedLang, setSelectedLang] = useState('python');
   const [copied, setCopied] = useState(false);
 
-  // Generate deep NeetCode-style pedagogical breakdown
+  // Generate deep multi-approach architectural breakdown
   const solutionData = generateNeetCodeSolution(problem);
   const { inspiration, approaches, dryRunTrace, pitfalls } = solutionData;
 
@@ -59,7 +59,7 @@ export default function GfgSolutionView({ problem }) {
   return (
     <div className="space-y-8 pb-10">
       
-      {/* 1. NEETCODE INSPIRATION & MENTAL MODEL */}
+      {/* 1. INSPIRATION & MENTAL MODEL */}
       <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-indigo-950/40 border border-slate-800 shadow-xl space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-indigo-400 text-xs font-mono font-bold uppercase tracking-wider">
@@ -67,7 +67,7 @@ export default function GfgSolutionView({ problem }) {
             <span>Inspiration & Mental Model</span>
           </div>
           <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950/80 text-indigo-300 border border-indigo-800/60">
-            NeetCode Pedagogical Standard
+            Architectural Solution Standard
           </span>
         </div>
 
@@ -262,7 +262,7 @@ export default function GfgSolutionView({ problem }) {
         </AnimatePresence>
       )}
 
-      {/* 4. NEETCODE DRY RUN TRACE WALKTHROUGH */}
+      {/* 4. EXECUTION DRY RUN TRACE WALKTHROUGH */}
       <div className="space-y-3">
         <h4 className="text-xs font-mono uppercase text-slate-400 font-bold tracking-wider flex items-center gap-1.5">
           <Table className="w-3.5 h-3.5 text-cyan-400" />

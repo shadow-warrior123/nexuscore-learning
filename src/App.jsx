@@ -59,8 +59,8 @@ export default function App() {
     setActiveProblem(null);
   };
 
-  // Total problems count across all curricula
-  const totalProblemsCount = 372 + (dsaData.summary?.totalProblems || 1126) + 38;
+  // Total problems count across all curricula (372 ML/Data + 1,126 DSA + 49 System Design = 1,547 Total)
+  const totalProblemsCount = 372 + (dsaData.summary?.totalProblems || 1126) + 49;
 
   return (
     <div className="min-h-screen bg-[#080c14] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300">

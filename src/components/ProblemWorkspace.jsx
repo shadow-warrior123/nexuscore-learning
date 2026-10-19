@@ -457,7 +457,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
               }`}
             >
               <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>NeetCode Solutions</span>
+              <span>Multi-Approach Solutions</span>
             </button>
 
             <button
@@ -554,7 +554,7 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
               </div>
             )}
 
-            {/* TAB: NEETCODE & GEEKSFORGEEKS MULTI-APPROACH SOLUTION */}
+            {/* TAB: MULTI-APPROACH ARCHITECTURAL SOLUTION */}
             {activeTab === 'solution' && (
               <GfgSolutionView problem={problem} />
             )}

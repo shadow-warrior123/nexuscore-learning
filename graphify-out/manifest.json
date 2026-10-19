@@ -1,19 +1,4 @@
 {
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\all_journey_questions.json": {
-    "mtime": 1792438291.6075315,
-    "ast_hash": "db4715d284c21b74e7957ef0079218d4",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\neetcode_dsa_questions.json": {
-    "mtime": 1792438953.454666,
-    "ast_hash": "f30f6570d39a44d49fbb319b449488c4",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\neetcode_system_design.json": {
-    "mtime": 1792438953.5018518,
-    "ast_hash": "b1018af52ee32a39850c72ee5d7b56d4",
-    "semantic_hash": ""
-  },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\package.json": {
     "mtime": 1792442523.7610202,
     "ast_hash": "f35cbc9684e5ec912bc4f6d48394f15a",
@@ -22,21 +7,6 @@
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\postcss.config.js": {
     "mtime": 1792439068.032718,
     "ast_hash": "ef3ba2a81ba19f8ea5ddf625521e96f0",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\prepare_data.mjs": {
-    "mtime": 1792439115.0083005,
-    "ast_hash": "bca783d57764673249439bab7f847a1d",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\scraper.mjs": {
-    "mtime": 1792438344.4346004,
-    "ast_hash": "3a109bfe9fafdf80e6899d1157ddc078",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\scrape_neetcode.mjs": {
-    "mtime": 1792438972.640729,
-    "ast_hash": "cd678ad06860f317bc16e766133408b4",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\tailwind.config.js": {
@@ -60,8 +30,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\App.jsx": {
-    "mtime": 1792442382.60908,
-    "ast_hash": "7f57cc32719e8485d7a058babc29725c",
+    "mtime": 1792443680.9873195,
+    "ast_hash": "d092ef9351be55ba2f6acb564de1990a",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\main.jsx": {
@@ -75,8 +45,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\GfgSolutionView.jsx": {
-    "mtime": 1792442617.6843452,
-    "ast_hash": "7ecd47844ee43d00dd6f40ecc12cabba",
+    "mtime": 1792443312.1602454,
+    "ast_hash": "7a7a42d3b5860de3f65a2003856fe0a9",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\InAppPdfViewer.jsx": {
@@ -85,18 +55,18 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\Navbar.jsx": {
-    "mtime": 1792442330.9358385,
-    "ast_hash": "73e54947caaca05bce4ce5e5002e1f4c",
+    "mtime": 1792443671.1747234,
+    "ast_hash": "3eb8c894de270977d0669218482f3608",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\ProblemListView.jsx": {
-    "mtime": 1792442749.2301571,
-    "ast_hash": "3b480b9ae87703232059b5c194cd3f54",
+    "mtime": 1792443632.7430866,
+    "ast_hash": "2fba140daf47419c299da52774dc417f",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\ProblemWorkspace.jsx": {
-    "mtime": 1792442684.7969365,
-    "ast_hash": "bcdab433e3278ec66df6d4a9792cc229",
+    "mtime": 1792443290.5175245,
+    "ast_hash": "686119decd25a9be30c7082b1d205808",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\ResearchPapersView.jsx": {
@@ -105,13 +75,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\RoadmapView.jsx": {
-    "mtime": 1792442795.7758782,
-    "ast_hash": "2ca1824a4b32932604d9b6411ae17374",
+    "mtime": 1792443660.6899602,
+    "ast_hash": "687f0fc030d0def8554bf65172b7b91d",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\components\\VideoModal.jsx": {
-    "mtime": 1792440009.353668,
-    "ast_hash": "b87ef17970571c9ce0367aaa7b8484b3",
+    "mtime": 1792443544.470642,
+    "ast_hash": "df92dcbe678205450f19b2003bb5b499",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\data\\dsa.json": {
@@ -145,8 +115,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\utils\\solutionGenerator.js": {
-    "mtime": 1792440747.2449026,
-    "ast_hash": "b7229655b6a900791f47f1623ce2a4d4",
+    "mtime": 1792443319.9975376,
+    "ast_hash": "eae9fa8cd0a56dde72530e3582aa9e11",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\src\\utils\\storage.js": {
@@ -154,29 +124,14 @@
     "ast_hash": "036e6fe5a47b6ab13cd6e40dc3681245",
     "semantic_hash": ""
   },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\all_journey_questions.md": {
-    "mtime": 1792438291.623976,
-    "ast_hash": "dcaf7f9938f30ee062e5d3598ee70799",
-    "semantic_hash": ""
-  },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\index.html": {
     "mtime": 1792439079.6819913,
     "ast_hash": "5f35d2aa43a13a4a4b25ba6bee57041c",
     "semantic_hash": ""
   },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\neetcode_dsa_questions.md": {
-    "mtime": 1792438953.4998841,
-    "ast_hash": "3500a83f6794a910349924156ae3c236",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\neetcode_system_design.md": {
-    "mtime": 1792438953.5035827,
-    "ast_hash": "670d118099e3607ef6f74a720f50c8d5",
-    "semantic_hash": ""
-  },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\README.md": {
-    "mtime": 1792439006.7612703,
-    "ast_hash": "3b7d2ec5f2c549b440d35e0c858da9a3",
+    "mtime": 1792442909.3644998,
+    "ast_hash": "eaf9ba568f3226124cf69220830d60e6",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\Desktop\\gemini\\project-ML-learning-website\\.agents\\rules\\graphify.md": {
