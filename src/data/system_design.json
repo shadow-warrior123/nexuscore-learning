@@ -11,21 +11,126 @@
             "isFree": true,
             "durationMinutes": 14,
             "vimeoId": "758506440?h=3f0bf03331",
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Computer Architecture\n# Course: System Design for Beginners \u00b7 Background\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Computer Architecture:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Computer Architecture\n\n**Track:** System Design for Beginners \u00b7 **Module:** Background\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Application Architecture",
             "isFree": true,
             "durationMinutes": 11,
             "vimeoId": "758448347?h=a63bd80851",
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Application Architecture\n# Course: System Design for Beginners \u00b7 Background\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Application Architecture:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Application Architecture\n\n**Track:** System Design for Beginners \u00b7 **Module:** Background\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Requirements",
             "isFree": false,
             "durationMinutes": 26,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Requirements\n# Course: System Design for Beginners \u00b7 Background\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Requirements:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Requirements\n\n**Track:** System Design for Beginners \u00b7 **Module:** Background\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -37,21 +142,126 @@
             "isFree": false,
             "durationMinutes": 16,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Networking Basics\n# Course: System Design for Beginners \u00b7 Networking\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Networking Basics:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Networking Basics\n\n**Track:** System Design for Beginners \u00b7 **Module:** Networking\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "TCP and UDP",
             "isFree": false,
             "durationMinutes": 10,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: TCP and UDP\n# Course: System Design for Beginners \u00b7 Networking\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for TCP and UDP:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: TCP and UDP\n\n**Track:** System Design for Beginners \u00b7 **Module:** Networking\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "DNS",
             "isFree": false,
             "durationMinutes": 10,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: DNS\n# Course: System Design for Beginners \u00b7 Networking\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for DNS:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: DNS\n\n**Track:** System Design for Beginners \u00b7 **Module:** Networking\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -63,28 +273,168 @@
             "isFree": false,
             "durationMinutes": 23,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: HTTP\n# Course: System Design for Beginners \u00b7 APIs\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for HTTP:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: HTTP\n\n**Track:** System Design for Beginners \u00b7 **Module:** APIs\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "WebSockets",
             "isFree": false,
             "durationMinutes": 9,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: WebSockets\n# Course: System Design for Beginners \u00b7 APIs\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for WebSockets:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: WebSockets\n\n**Track:** System Design for Beginners \u00b7 **Module:** APIs\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "API Paradigms",
             "isFree": false,
             "durationMinutes": 29,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: API Paradigms\n# Course: System Design for Beginners \u00b7 APIs\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for API Paradigms:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: API Paradigms\n\n**Track:** System Design for Beginners \u00b7 **Module:** APIs\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "API Design",
             "isFree": false,
             "durationMinutes": 21,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: API Design\n# Course: System Design for Beginners \u00b7 APIs\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for API Design:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: API Design\n\n**Track:** System Design for Beginners \u00b7 **Module:** APIs\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -96,14 +446,84 @@
             "isFree": false,
             "durationMinutes": 21,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Caching\n# Course: System Design for Beginners \u00b7 Caching Basics\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Caching:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Caching\n\n**Track:** System Design for Beginners \u00b7 **Module:** Caching Basics\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "CDNs",
             "isFree": false,
             "durationMinutes": 11,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: CDNs\n# Course: System Design for Beginners \u00b7 Caching Basics\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for CDNs:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: CDNs\n\n**Track:** System Design for Beginners \u00b7 **Module:** Caching Basics\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -115,14 +535,84 @@
             "isFree": false,
             "durationMinutes": 14,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Proxies and Load Balancing\n# Course: System Design for Beginners \u00b7 Proxies\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Proxies and Load Balancing:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Proxies and Load Balancing\n\n**Track:** System Design for Beginners \u00b7 **Module:** Proxies\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Consistent Hashing",
             "isFree": false,
             "durationMinutes": 15,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Consistent Hashing\n# Course: System Design for Beginners \u00b7 Proxies\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Consistent Hashing:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Consistent Hashing\n\n**Track:** System Design for Beginners \u00b7 **Module:** Proxies\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -134,35 +624,210 @@
             "isFree": false,
             "durationMinutes": 19,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: SQL\n# Course: System Design for Beginners \u00b7 Storage\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for SQL:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: SQL\n\n**Track:** System Design for Beginners \u00b7 **Module:** Storage\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "NoSQL",
             "isFree": false,
             "durationMinutes": 18,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: NoSQL\n# Course: System Design for Beginners \u00b7 Storage\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for NoSQL:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: NoSQL\n\n**Track:** System Design for Beginners \u00b7 **Module:** Storage\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Replication and Sharding",
             "isFree": false,
             "durationMinutes": 17,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Replication and Sharding\n# Course: System Design for Beginners \u00b7 Storage\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Replication and Sharding:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Replication and Sharding\n\n**Track:** System Design for Beginners \u00b7 **Module:** Storage\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "CAP Theorem",
             "isFree": false,
             "durationMinutes": 12,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: CAP Theorem\n# Course: System Design for Beginners \u00b7 Storage\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for CAP Theorem:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: CAP Theorem\n\n**Track:** System Design for Beginners \u00b7 **Module:** Storage\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Object Storage",
             "isFree": false,
             "durationMinutes": 6,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Object Storage\n# Course: System Design for Beginners \u00b7 Storage\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Object Storage:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Object Storage\n\n**Track:** System Design for Beginners \u00b7 **Module:** Storage\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -174,14 +839,84 @@
             "isFree": false,
             "durationMinutes": 8,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Message Queues\n# Course: System Design for Beginners \u00b7 Big Data\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Message Queues:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Message Queues\n\n**Track:** System Design for Beginners \u00b7 **Module:** Big Data\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "MapReduce",
             "isFree": false,
             "durationMinutes": 12,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: MapReduce\n# Course: System Design for Beginners \u00b7 Big Data\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for MapReduce:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: MapReduce\n\n**Track:** System Design for Beginners \u00b7 **Module:** Big Data\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       }
@@ -206,49 +941,294 @@
               "cpp": "connect-four/code.cpp",
               "csharp": "connect-four/code.cs",
               "kotlin": "connect-four/code.kt"
-            }
+            },
+            "starter_code": "# Distributed Architecture Simulation: Design Connect Four\n# Course: Object-Oriented Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Connect Four:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Connect Four\n\n**Track:** Object-Oriented Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Blackjack",
             "isFree": false,
             "durationMinutes": 19,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Blackjack\n# Course: Object-Oriented Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Blackjack:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Blackjack\n\n**Track:** Object-Oriented Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design a Parking Lot",
             "isFree": false,
             "durationMinutes": 17,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design a Parking Lot\n# Course: Object-Oriented Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design a Parking Lot:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design a Parking Lot\n\n**Track:** Object-Oriented Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design a Bank",
             "isFree": false,
             "durationMinutes": 15,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design a Bank\n# Course: Object-Oriented Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design a Bank:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design a Bank\n\n**Track:** Object-Oriented Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design a Movie Recommendation System",
             "isFree": false,
             "durationMinutes": 17,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design a Movie Recommendation System\n# Course: Object-Oriented Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design a Movie Recommendation System:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design a Movie Recommendation System\n\n**Track:** Object-Oriented Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design an Elevator System",
             "isFree": false,
             "durationMinutes": 14,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design an Elevator System\n# Course: Object-Oriented Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design an Elevator System:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design an Elevator System\n\n**Track:** Object-Oriented Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Chess",
             "isFree": false,
             "durationMinutes": 11,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Chess\n# Course: Object-Oriented Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Chess:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Chess\n\n**Track:** Object-Oriented Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       }
@@ -266,7 +1246,42 @@
             "isFree": true,
             "durationMinutes": 2,
             "vimeoId": "885349968?h=72b686ed64",
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Intro\n# Course: Object-Oriented Design Patterns \u00b7 Introduction\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Intro:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Intro\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Introduction\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -285,21 +1300,126 @@
               "cpp": "factory-method/cpp/code.cpp",
               "csharp": "factory-method/csharp/code.cs",
               "kotlin": "factory-method/kotlin/code.kt"
-            }
+            },
+            "starter_code": "# Distributed Architecture Simulation: Factory Method\n# Course: Object-Oriented Design Patterns \u00b7 Creational Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Factory Method:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Factory Method\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Creational Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Singleton",
             "isFree": false,
             "durationMinutes": 10,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Singleton\n# Course: Object-Oriented Design Patterns \u00b7 Creational Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Singleton:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Singleton\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Creational Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Builder",
             "isFree": false,
             "durationMinutes": 9,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Builder\n# Course: Object-Oriented Design Patterns \u00b7 Creational Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Builder:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Builder\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Creational Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Prototype",
@@ -313,7 +1433,42 @@
               "cpp": "prototype/cpp/code.cpp",
               "csharp": "prototype/csharp/code.cs",
               "kotlin": "prototype/kotlin/code.kt"
-            }
+            },
+            "starter_code": "# Distributed Architecture Simulation: Prototype\n# Course: Object-Oriented Design Patterns \u00b7 Creational Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Prototype:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Prototype\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Creational Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -332,21 +1487,126 @@
               "cpp": "adapter/cpp/code.cpp",
               "csharp": "adapter/csharp/code.cs",
               "kotlin": "adapter/kotlin/code.kt"
-            }
+            },
+            "starter_code": "# Distributed Architecture Simulation: Adapter\n# Course: Object-Oriented Design Patterns \u00b7 Structural Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Adapter:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Adapter\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Structural Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Decorator",
             "isFree": false,
             "durationMinutes": 9,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Decorator\n# Course: Object-Oriented Design Patterns \u00b7 Structural Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Decorator:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Decorator\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Structural Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Facade",
             "isFree": false,
             "durationMinutes": 6,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Facade\n# Course: Object-Oriented Design Patterns \u00b7 Structural Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Facade:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Facade\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Structural Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -358,21 +1618,126 @@
             "isFree": false,
             "durationMinutes": 8,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Strategy\n# Course: Object-Oriented Design Patterns \u00b7 Behavioural Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Strategy:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Strategy\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Behavioural Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Observer",
             "isFree": false,
             "durationMinutes": 11,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Observer\n# Course: Object-Oriented Design Patterns \u00b7 Behavioural Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Observer:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Observer\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Behavioural Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "State",
             "isFree": false,
             "durationMinutes": 7,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: State\n# Course: Object-Oriented Design Patterns \u00b7 Behavioural Patterns\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for State:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: State\n\n**Track:** Object-Oriented Design Patterns \u00b7 **Module:** Behavioural Patterns\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       }
@@ -390,7 +1755,42 @@
             "isFree": true,
             "durationMinutes": 17,
             "vimeoId": "770866274?h=e31bb17156",
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: How to Approach\n# Course: System Design Interview \u00b7 Background\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for How to Approach:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: How to Approach\n\n**Track:** System Design Interview \u00b7 **Module:** Background\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       },
@@ -402,63 +1802,378 @@
             "isFree": false,
             "durationMinutes": 29,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design a Rate Limiter\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design a Rate Limiter:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design a Rate Limiter\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design TinyUrl",
             "isFree": false,
             "durationMinutes": 27,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design TinyUrl\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design TinyUrl:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design TinyUrl\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Twitter",
             "isFree": true,
             "durationMinutes": 26,
             "vimeoId": "773056317?h=2bd99c64f7",
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Twitter\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Twitter:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Twitter\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Discord",
             "isFree": false,
             "durationMinutes": 23,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Discord\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Discord:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Discord\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Youtube",
             "isFree": false,
             "durationMinutes": 26,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Youtube\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Youtube:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Youtube\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Google Drive",
             "isFree": false,
             "durationMinutes": 23,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Google Drive\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Google Drive:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Google Drive\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design Google Maps",
             "isFree": false,
             "durationMinutes": 24,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design Google Maps\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design Google Maps:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design Google Maps\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design a Key-Value Store",
             "isFree": false,
             "durationMinutes": 31,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design a Key-Value Store\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design a Key-Value Store:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design a Key-Value Store\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           },
           {
             "title": "Design a Distributed Message Queue",
             "isFree": false,
             "durationMinutes": 23,
             "vimeoId": null,
-            "codeSolutions": null
+            "codeSolutions": null,
+            "starter_code": "# Distributed Architecture Simulation: Design a Distributed Message Queue\n# Course: System Design Interview \u00b7 Interview Questions\n\ndef evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    \"\"\"\n    Compute cluster metrics for Design a Distributed Message Queue:\n    - total_qps: read_qps + write_qps\n    - qps_per_shard: round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)\n    - p99_latency_ms: round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)\n    - healthy: True if p99_latency_ms < 25.0 and qps_per_shard < 5000 else False\n    \"\"\"\n    # Implement the capacity & latency calculation below\n    pass\n",
+            "solution_code": "def evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92):\n    total_qps = int(read_qps + write_qps)\n    qps_per_shard = round(float((read_qps * (1.0 - cache_hit_ratio) + write_qps) / shards), 2)\n    p99_latency_ms = round(float(2.0 + (1.0 - cache_hit_ratio) * 45.0), 2)\n    return {\n        'total_qps': total_qps,\n        'qps_per_shard': qps_per_shard,\n        'p99_latency_ms': p99_latency_ms,\n        'healthy': bool(p99_latency_ms < 25.0 and qps_per_shard < 5000)\n    }\n",
+            "testCases": [
+              {
+                "id": 1,
+                "input": "evaluate_architecture(50000, 5000, 8, 0.92)",
+                "expectedOutput": {
+                  "total_qps": 55000,
+                  "qps_per_shard": 1125.0,
+                  "p99_latency_ms": 5.6,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 2,
+                "input": "evaluate_architecture(120000, 15000, 16, 0.95)",
+                "expectedOutput": {
+                  "total_qps": 135000,
+                  "qps_per_shard": 1312.5,
+                  "p99_latency_ms": 4.25,
+                  "healthy": true
+                }
+              },
+              {
+                "id": 3,
+                "input": "evaluate_architecture(80000, 20000, 2, 0.50)",
+                "expectedOutput": {
+                  "total_qps": 100000,
+                  "qps_per_shard": 30000.0,
+                  "p99_latency_ms": 24.5,
+                  "healthy": false
+                }
+              }
+            ],
+            "description": "### Architectural Blueprint & Capacity Lab: Design a Distributed Message Queue\n\n**Track:** System Design Interview \u00b7 **Module:** Interview Questions\n\nIn production distributed systems, back-of-the-envelope capacity planning and tail-latency modeling determine how many shards and cache nodes are required before writing a single service.\n\n### Your Task\nComplete `evaluate_architecture(read_qps, write_qps, shards=8, cache_hit_ratio=0.92)` to model cache-offloaded database shard load and p99 latency:\n- `total_qps`: `read_qps + write_qps`\n- `qps_per_shard`: `round((read_qps * (1 - cache_hit_ratio) + write_qps) / shards, 2)`\n- `p99_latency_ms`: `round(2.0 + (1 - cache_hit_ratio) * 45.0, 2)`\n- `healthy`: `True` if `p99_latency_ms < 25.0` and `qps_per_shard < 5000` else `False`\n"
           }
         ]
       }

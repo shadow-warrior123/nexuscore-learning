@@ -4,34 +4,48 @@
 
 @layer base {
   body {
-    background-color: #080c14;
-    color: #e2e8f0;
-    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #09090b;
+    color: #f4f4f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
-/* Custom Scrollbars */
+/* Subtle Fanout-style architectural dot/grid backgrounds */
+.bg-topography-grid {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom Minimalist Scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b1120;
+  background: #09090b;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #27272a;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #3f3f46;
 }
 
 /* Terminal pulsing cursor */
 .terminal-cursor {
   display: inline-block;
-  width: 8px;
-  height: 15px;
-  background-color: #38bdf8;
+  width: 7px;
+  height: 14px;
+  background-color: #f59e0b;
   animation: blink 1s step-end infinite;
 }
 
@@ -40,17 +54,17 @@
   50% { opacity: 0; }
 }
 
-/* Cyber Dark Prism Syntax Highlighting Tokens */
+/* Editorial High-Contrast Prism Syntax Highlighting Tokens */
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #64748b;
+  color: #71717a;
   font-style: italic;
 }
 
 .token.punctuation {
-  color: #94a3b8;
+  color: #a1a1aa;
 }
 
 .token.property,
@@ -60,7 +74,7 @@
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #f43f5e;
+  color: #fb7185;
 }
 
 .token.selector,
@@ -77,42 +91,36 @@
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #38bdf8;
+  color: #f59e0b;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #c084fc;
+  color: #e4e4e7;
   font-weight: 600;
 }
 
 .token.function,
 .token.class-name {
-  color: #38bdf8;
+  color: #fcd34d;
   font-weight: 600;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: #fbbf24;
+  color: #38bdf8;
 }
 
-/* Glassmorphism & Cyber Card Effects */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(51, 65, 85, 0.5);
+/* Editorial Hairline Card Effects */
+.editorial-card {
+  background: #0f0f12;
+  border: 1px solid #1f1f24;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
-.glass-panel-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.editorial-card:hover {
+  border-color: #3f3f46;
+  background: #131317;
 }
-.glass-panel-hover:hover {
-  transform: translateY(-2px);
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 12px 28px -8px rgba(6, 182, 212, 0.15);
-}
-

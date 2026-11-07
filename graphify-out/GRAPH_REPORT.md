@@ -1,16 +1,16 @@
-# Graph Report - project-ML-learning-website  (2026-10-20)
+# Graph Report - DSA-ML learning website  (2026-11-07)
 
 ## Corpus Check
-- 28 files · ~205,250 words
+- 30 files · ~518,868 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2590 nodes · 2605 edges · 276 communities (99 shown, 177 thin omitted)
+- 2653 nodes · 2669 edges · 290 communities (112 shown, 178 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `086aa4f4`
+- Built from commit: `cf4c2e87`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -285,8 +285,22 @@
 - [[_COMMUNITY_Community 267|Community 267]]
 - [[_COMMUNITY_Community 268|Community 268]]
 - [[_COMMUNITY_Community 269|Community 269]]
+- [[_COMMUNITY_Community 270|Community 270]]
+- [[_COMMUNITY_Community 271|Community 271]]
+- [[_COMMUNITY_Community 272|Community 272]]
 - [[_COMMUNITY_Community 273|Community 273]]
 - [[_COMMUNITY_Community 274|Community 274]]
+- [[_COMMUNITY_Community 279|Community 279]]
+- [[_COMMUNITY_Community 280|Community 280]]
+- [[_COMMUNITY_Community 281|Community 281]]
+- [[_COMMUNITY_Community 282|Community 282]]
+- [[_COMMUNITY_Community 283|Community 283]]
+- [[_COMMUNITY_Community 284|Community 284]]
+- [[_COMMUNITY_Community 285|Community 285]]
+- [[_COMMUNITY_Community 286|Community 286]]
+- [[_COMMUNITY_Community 287|Community 287]]
+- [[_COMMUNITY_Community 288|Community 288]]
+- [[_COMMUNITY_Community 289|Community 289]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Category / Chapter: Neural Networks` - 38 edges
@@ -304,7 +318,7 @@
 - `GfgSolutionView()` --calls--> `generateNeetCodeSolution()`  [EXTRACTED]
   src/components/GfgSolutionView.jsx → src/utils/solutionGenerator.js
 
-## Communities (276 total, 177 thin omitted)
+## Communities (290 total, 178 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.04
@@ -351,8 +365,8 @@ Cohesion: 0.05
 Nodes (44): 1. Missing Data Strategies `[MEDIUM]`, 2. Duplicate Rows `[EASY]`, 3. Cleaning Text Fields `[MEDIUM]`, 4. Outlier Detection `[MEDIUM]`, 5. Categorical Data `[MEDIUM]`, 6. Schema Validation `[MEDIUM]`, 7. Clean a Broken Export `[HARD]`, Canonical form needs a lookup, not just cleanup (+36 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.07
-Nodes (16): GfgSolutionView(), SUPPORTED_LANGUAGES, BACKEND_URL, checkBackendHealth(), getSubmissionHistory(), saveCodeDraftToBackend(), submitProblemToBackend(), getPyodide() (+8 more)
+Cohesion: 0.06
+Nodes (17): GfgSolutionView(), SUPPORTED_LANGUAGES, BACKEND_URL, checkBackendHealth(), getSubmissionHistory(), saveCodeDraftToBackend(), submitProblemToBackend(), generateProblemSpec() (+9 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.05
@@ -431,16 +445,16 @@ Cohesion: 0.06
 Nodes (31): 1. Anatomy of nn.Linear `[EASY]`, 2. Activations as Modules `[EASY]`, 3. Composing with Sequential `[MEDIUM]`, 4. Your Own nn.Module `[MEDIUM]`, 5. Parameters and State `[MEDIUM]`, 6. Build a Small Network `[MEDIUM]`, Category / Chapter: nn.Modules, Clearing gradients (+23 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.06
-Nodes (32): 1. Inner Join `[MEDIUM]`, 2. Left and Outer Joins `[MEDIUM]`, 3. union `[EASY]`, 4. dropDuplicates `[MEDIUM]`, 5. Reconcile Two DataFrames `[HARD]`, A quiet non-match, An honest limitation, Category / Chapter: Joins & Sets (+24 more)
+Cohesion: 0.09
+Nodes (22): 1. Inner Join `[MEDIUM]`, 2. Left and Outer Joins `[MEDIUM]`, 3. union `[EASY]`, 4. dropDuplicates `[MEDIUM]`, 5. Reconcile Two DataFrames `[HARD]`, A quiet non-match, An honest limitation, Category / Chapter: Joins & Sets (+14 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.09
 Nodes (23): 1. Turn On requires_grad `[EASY]`, 2. Backward on a Scalar `[MEDIUM]`, 3. Grad Accumulation and zero_grad `[MEDIUM]`, 4. no_grad and detach `[EASY]`, 5. Vector-Jacobian Products `[HARD]`, 6. Trace a Full Backward Pass `[MEDIUM]`, Accumulation, then a manual reset, Category / Chapter: Autograd (+15 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.06
-Nodes (31): 1. Inner Join `[MEDIUM]`, 2. Left Join `[MEDIUM]`, 3. Joining Three Tables `[MEDIUM]`, 4. Self Join `[MEDIUM]`, 5. Anti-Joins `[MEDIUM]`, 6. Build a Customer Report `[HARD]`, Aggregating across a join, conditionally, Category / Chapter: Joins (+23 more)
+Cohesion: 0.15
+Nodes (13): 1. Inner Join `[MEDIUM]`, 2. Left Join `[MEDIUM]`, 3. Joining Three Tables `[MEDIUM]`, 4. Self Join `[MEDIUM]`, 5. Anti-Joins `[MEDIUM]`, 6. Build a Customer Report `[HARD]`, Aggregating across a join, conditionally, Category / Chapter: Joins (+5 more)
 
 ### Community 34 - "Community 34"
 Cohesion: 0.06
@@ -459,20 +473,20 @@ Cohesion: 0.07
 Nodes (30): 1. Anatomy of a Dense Layer `[EASY]`, 2. build() and call() `[MEDIUM]`, 3. Composing with Sequential `[MEDIUM]`, 4. set_weights and get_weights `[MEDIUM]`, 5. Build a Small Keras Model `[MEDIUM]`, Category / Chapter: Keras Layers, code:python (import tensorflow as tf), code:python (import tensorflow as tf) (+22 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.09
-Nodes (22): 1. Select Columns `[EASY]`, 2. Filter Rows `[EASY]`, 3. withColumn and cast `[MEDIUM]`, 4. when / otherwise `[MEDIUM]`, 6. Reshape a Raw DataFrame `[MEDIUM]`, An honest note on `.cast(...)`, Category / Chapter: Transformations, code:python (df.select("id", "name")        # separate string arguments) (+14 more)
+Cohesion: 0.07
+Nodes (28): 1. Select Columns `[EASY]`, 2. Filter Rows `[EASY]`, 3. withColumn and cast `[MEDIUM]`, 4. when / otherwise `[MEDIUM]`, 5. Rename and Drop Columns `[MEDIUM]`, 6. Reshape a Raw DataFrame `[MEDIUM]`, An honest note on `.cast(...)`, Category / Chapter: Transformations (+20 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.06
-Nodes (33): dependencies, canvas-confetti, clsx, cors, express, framer-motion, lucide-react, @monaco-editor/react (+25 more)
+Cohesion: 0.17
+Nodes (12): dependencies, canvas-confetti, clsx, cors, express, framer-motion, lucide-react, @monaco-editor/react (+4 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.07
 Nodes (26): categories, 1-D Dynamic Programming, 2-D Dynamic Programming, Advanced Graphs, Arrays & Hashing, Backtracking, Binary Search, Bit Manipulation (+18 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.08
-Nodes (25): 1. Partitioned Windows `[MEDIUM]`, 2. row_number, rank, dense_rank `[MEDIUM]`, 3. lag and lead `[MEDIUM]`, 4. Laziness and Plans, Revisited `[HARD]`, 5. Rank a Dataset Over Time `[HARD]`, Anatomy, Anatomy of a window, Category / Chapter: Windows & Advanced (+17 more)
+Cohesion: 0.07
+Nodes (27): 1. Partitioned Windows `[MEDIUM]`, 2. row_number, rank, dense_rank `[MEDIUM]`, 3. lag and lead `[MEDIUM]`, 4. Laziness and Plans, Revisited `[HARD]`, 5. Rank a Dataset Over Time `[HARD]`, Anatomy, Anatomy of a window, Category / Chapter: Windows & Advanced (+19 more)
 
 ### Community 42 - "Community 42"
 Cohesion: 0.07
@@ -567,8 +581,8 @@ Cohesion: 0.15
 Nodes (13): 1. Train a Regression Model `[HARD]`, 2. Train a Classifier `[HARD]`, 3. Pipeline to Training `[HARD]`, Category / Chapter: Capstones, code:python (import tensorflow as tf), code:python (import tensorflow as tf), code:python (import tensorflow as tf), code:python (import tensorflow as tf) (+5 more)
 
 ### Community 65 - "Community 65"
-Cohesion: 0.15
-Nodes (13): 1. Count and Sum `[EASY]`, 2. Average, Min, Max `[EASY]`, 3. GROUP BY `[MEDIUM]`, 4. Filter Groups with HAVING `[MEDIUM]`, 5. Grouping by Expressions `[MEDIUM]`, 6. Summarize a Sales Ledger `[MEDIUM]`, Category / Chapter: Aggregation, code:python (import sqlite3) (+5 more)
+Cohesion: 0.06
+Nodes (31): 1. Count and Sum `[EASY]`, 2. Average, Min, Max `[EASY]`, 3. GROUP BY `[MEDIUM]`, 4. Filter Groups with HAVING `[MEDIUM]`, 5. Grouping by Expressions `[MEDIUM]`, 6. Summarize a Sales Ledger `[MEDIUM]`, A full aggregation report, Category / Chapter: Aggregation (+23 more)
 
 ### Community 66 - "Community 66"
 Cohesion: 0.15
@@ -595,8 +609,8 @@ Cohesion: 0.29
 Nodes (5): dsaData, journeyData, paper, researchPapers, sysdesData
 
 ### Community 72 - "Community 72"
-Cohesion: 0.07
-Nodes (28): 1. Data Structures & Algorithms (1,126 Curated Problems), 1. In-Browser VS Code Monaco Editor, 1. NeetCode Question Banks, 2. Client-Side WebAssembly Execution, 2. Large-Scale System Design & Distributed Architecture, 2. ML Playground Journey (372 Total Questions), 3. Machine Learning & Deep Learning (with ArXiv Research Integration), 3. Pedagogical 3-Tier Multi-Approach Solutions (+20 more)
+Cohesion: 0.29
+Nodes (6): 1. NeetCode Question Banks, 2. ML Playground Journey (372 Total Questions), A. DSA Questions (1,126 Total Problems), B. System Design & Architecture Questions, Learning & Interview Questions Bank, Standalone Re-run Scripts
 
 ### Community 73 - "Community 73"
 Cohesion: 0.33
@@ -686,22 +700,74 @@ Nodes (3): AR(1): fit a line between today and yesterday, code:block247 (x_t = c
 Cohesion: 0.67
 Nodes (3): code:python (result = []), code:python (import numpy as np), The Loop You're Replacing
 
+### Community 95 - "Community 95"
+Cohesion: 0.17
+Nodes (12): dependencies, canvas-confetti, clsx, cors, express, framer-motion, lucide-react, @monaco-editor/react (+4 more)
+
+### Community 96 - "Community 96"
+Cohesion: 0.22
+Nodes (8): name, private, type, version, name, private, type, version
+
+### Community 97 - "Community 97"
+Cohesion: 0.22
+Nodes (9): scripts, build, dev, graph:query, graph:tree, graph:update, graph:watch, preview (+1 more)
+
+### Community 98 - "Community 98"
+Cohesion: 0.22
+Nodes (9): 1. In-Browser VS Code Monaco Editor, 2. Client-Side WebAssembly Execution, 3. Pedagogical 3-Tier Multi-Approach Solutions, 4. Interactive Prerequisite Skill-Tree, 💻 Interactive Features, 📄 License, 🌐 Live Deployment, NexusCore | Advanced Engineering, DSA & AI/ML Learning Platform (+1 more)
+
+### Community 99 - "Community 99"
+Cohesion: 0.22
+Nodes (9): scripts, build, dev, graph:query, graph:tree, graph:update, graph:watch, preview (+1 more)
+
+### Community 100 - "Community 100"
+Cohesion: 0.25
+Nodes (8): devDependencies, autoprefixer, postcss, tailwindcss, @types/react, @types/react-dom, vite, @vitejs/plugin-react
+
+### Community 101 - "Community 101"
+Cohesion: 0.25
+Nodes (8): code:bash (git clone https://github.com/shadow-warrior123/nexuscore-lea), code:bash (npm install), code:bash (npm run dev), code:bash (npm run build), code:bash (npm run server), 🚀 Getting Started Locally, Installation & Run, Prerequisites
+
+### Community 102 - "Community 102"
+Cohesion: 0.25
+Nodes (8): devDependencies, autoprefixer, postcss, tailwindcss, @types/react, @types/react-dom, vite, @vitejs/plugin-react
+
+### Community 103 - "Community 103"
+Cohesion: 0.33
+Nodes (6): code:bash (git clone https://github.com/shadow-warrior123/nexuscore-lea), code:bash (npm install), code:bash (npm run dev), code:bash (npm run build), code:bash (npm run server), Installation & Run
+
+### Community 104 - "Community 104"
+Cohesion: 0.33
+Nodes (6): 🚀 Getting Started Locally, 📄 License, 🌐 Live Deployment, NexusCore | Advanced Engineering, DSA & AI/ML Learning Platform, Prerequisites, 🛠️ Tech Stack & Architecture
+
+### Community 106 - "Community 106"
+Cohesion: 0.40
+Nodes (5): 1. Data Structures & Algorithms (1,126 Curated Problems), 2. Large-Scale System Design & Distributed Architecture, 3. Machine Learning & Deep Learning (with ArXiv Research Integration), 4. Data Engineering & Scaled Analytics, 🌟 Core Pillars & Curriculum
+
+### Community 268 - "Community 268"
+Cohesion: 0.40
+Nodes (5): 1. Data Structures & Algorithms (1,126 Curated Problems), 2. Large-Scale System Design & Distributed Architecture, 3. Machine Learning & Deep Learning (with ArXiv Research Integration), 4. Data Engineering & Scaled Analytics, 🌟 Core Pillars & Curriculum
+
+### Community 269 - "Community 269"
+Cohesion: 0.40
+Nodes (5): 1. In-Browser VS Code Monaco Editor, 2. Client-Side WebAssembly Execution, 3. Pedagogical 3-Tier Multi-Approach Solutions, 4. Interactive Prerequisite Skill-Tree, 💻 Interactive Features
+
 ## Knowledge Gaps
-- **1592 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+1587 more)
+- **1637 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+1632 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **177 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **178 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Track: ML Engineer Road` connect `Community 75` to `Community 1`, `Community 66`, `Community 3`, `Community 68`, `Community 69`, `Community 6`, `Community 5`, `Community 8`, `Community 4`, `Community 12`, `Community 28`, `Community 18`, `Community 24`, `Community 25`, `Community 60`, `Community 61`, `Community 62`?**
-  _High betweenness centrality (0.507) - this node is a cross-community bridge._
+  _High betweenness centrality (0.465) - this node is a cross-community bridge._
 - **Why does `Track: Pandas Road` connect `Community 57` to `Community 67`, `Community 70`, `Community 7`, `Community 9`, `Community 10`, `Community 75`, `Community 15`, `Community 22`?**
-  _High betweenness centrality (0.209) - this node is a cross-community bridge._
+  _High betweenness centrality (0.199) - this node is a cross-community bridge._
 - **Why does `Track: NumPy Road` connect `Community 52` to `Community 0`, `Community 2`, `Community 75`, `Community 13`, `Community 17`, `Community 58`, `Community 27`?**
-  _High betweenness centrality (0.181) - this node is a cross-community bridge._
+  _High betweenness centrality (0.173) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _1592 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1637 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

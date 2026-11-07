@@ -8,7 +8,6 @@ import ResearchPapersView from './components/ResearchPapersView';
 import journeyData from './data/journey.json';
 import dsaData from './data/dsa.json';
 import sysdesData from './data/system_design.json';
-import researchPapers from './data/research_papers.json';
 
 import { getSolvedProblems, getTotalXP, markProblemSolved } from './utils/storage';
 
@@ -18,7 +17,6 @@ export default function App() {
   const [filterCategory, setFilterCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Solved problems & XP state
   const [solvedProblems, setSolvedProblems] = useState(new Set());
   const [totalXp, setTotalXp] = useState(0);
 
@@ -27,7 +25,7 @@ export default function App() {
     setTotalXp(getTotalXP());
   }, []);
 
-  const handleProblemSolved = (problemId) => {
+  const handleProblemSolved = () => {
     setSolvedProblems(getSolvedProblems());
     setTotalXp(getTotalXP());
   };
@@ -44,7 +42,6 @@ export default function App() {
     setTotalXp(getTotalXP());
   };
 
-  // When clicking a node in the roadmap
   const handleSelectFromRoadmap = (branchId, categoryName) => {
     setFilterCategory(categoryName);
     setActiveTab(branchId);
@@ -59,13 +56,11 @@ export default function App() {
     setActiveProblem(null);
   };
 
-  // Total problems count across all curricula (372 ML/Data + 1,126 DSA + 49 System Design = 1,547 Total)
   const totalProblemsCount = 372 + (dsaData.summary?.totalProblems || 1126) + 49;
 
   return (
-    <div className="min-h-screen bg-[#080c14] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300">
+    <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-amber-500/20 selection:text-amber-200">
       
-      {/* Top Navbar */}
       <Navbar
         activeTab={activeProblem ? 'workspace' : activeTab}
         setActiveTab={(tab) => {
@@ -77,10 +72,14 @@ export default function App() {
         totalCount={totalProblemsCount}
         totalXp={totalXp}
         searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
+        setSearchQuery={(q) => {
+          setSearchQuery(q);
+          if (q && activeTab === 'roadmap') {
+            setActiveTab('dsa');
+          }
+        }}
       />
 
-      {/* Main Content Area */}
       <main className="flex-1">
         {activeProblem ? (
           <ProblemWorkspace

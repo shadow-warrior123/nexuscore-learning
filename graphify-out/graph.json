@@ -9,7 +9,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package_json",
-      "community": 39,
+      "community": 96,
       "norm_label": "package.json"
     },
     {
@@ -17,8 +17,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L2",
-      "id": "project_ml_learning_website_package_name",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_name",
+      "community": 96,
       "norm_label": "name"
     },
     {
@@ -26,8 +26,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L3",
-      "id": "project_ml_learning_website_package_private",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_private",
+      "community": 96,
       "norm_label": "private"
     },
     {
@@ -35,8 +35,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L4",
-      "id": "project_ml_learning_website_package_version",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_version",
+      "community": 96,
       "norm_label": "version"
     },
     {
@@ -44,8 +44,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L5",
-      "id": "project_ml_learning_website_package_type",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_type",
+      "community": 96,
       "norm_label": "type"
     },
     {
@@ -53,8 +53,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L6",
-      "id": "project_ml_learning_website_package_scripts",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts",
+      "community": 97,
       "norm_label": "scripts"
     },
     {
@@ -62,8 +62,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L7",
-      "id": "project_ml_learning_website_package_scripts_dev",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_dev",
+      "community": 97,
       "norm_label": "dev"
     },
     {
@@ -71,8 +71,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L8",
-      "id": "project_ml_learning_website_package_scripts_build",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_build",
+      "community": 97,
       "norm_label": "build"
     },
     {
@@ -80,8 +80,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L9",
-      "id": "project_ml_learning_website_package_scripts_preview",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_preview",
+      "community": 97,
       "norm_label": "preview"
     },
     {
@@ -89,8 +89,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L10",
-      "id": "project_ml_learning_website_package_scripts_server",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_server",
+      "community": 97,
       "norm_label": "server"
     },
     {
@@ -98,8 +98,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L11",
-      "id": "project_ml_learning_website_package_scripts_graph_update",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_graph_update",
+      "community": 97,
       "norm_label": "graph:update"
     },
     {
@@ -107,8 +107,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L12",
-      "id": "project_ml_learning_website_package_scripts_graph_query",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_graph_query",
+      "community": 97,
       "norm_label": "graph:query"
     },
     {
@@ -116,8 +116,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L13",
-      "id": "project_ml_learning_website_package_scripts_graph_tree",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_graph_tree",
+      "community": 97,
       "norm_label": "graph:tree"
     },
     {
@@ -125,8 +125,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L14",
-      "id": "project_ml_learning_website_package_scripts_graph_watch",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_scripts_graph_watch",
+      "community": 97,
       "norm_label": "graph:watch"
     },
     {
@@ -134,8 +134,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L16",
-      "id": "project_ml_learning_website_package_dependencies",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies",
+      "community": 95,
       "norm_label": "dependencies"
     },
     {
@@ -143,8 +143,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L17",
-      "id": "project_ml_learning_website_package_dependencies_monaco_editor_react",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_monaco_editor_react",
+      "community": 95,
       "norm_label": "@monaco-editor/react"
     },
     {
@@ -152,8 +152,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L18",
-      "id": "project_ml_learning_website_package_dependencies_canvas_confetti",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_canvas_confetti",
+      "community": 95,
       "norm_label": "canvas-confetti"
     },
     {
@@ -161,8 +161,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L19",
-      "id": "project_ml_learning_website_package_dependencies_clsx",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_clsx",
+      "community": 95,
       "norm_label": "clsx"
     },
     {
@@ -170,8 +170,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L20",
-      "id": "project_ml_learning_website_package_dependencies_cors",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_cors",
+      "community": 95,
       "norm_label": "cors"
     },
     {
@@ -179,8 +179,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L21",
-      "id": "project_ml_learning_website_package_dependencies_express",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_express",
+      "community": 95,
       "norm_label": "express"
     },
     {
@@ -188,8 +188,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L22",
-      "id": "project_ml_learning_website_package_dependencies_framer_motion",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_framer_motion",
+      "community": 95,
       "norm_label": "framer-motion"
     },
     {
@@ -197,8 +197,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L23",
-      "id": "project_ml_learning_website_package_dependencies_lucide_react",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_lucide_react",
+      "community": 95,
       "norm_label": "lucide-react"
     },
     {
@@ -206,8 +206,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L24",
-      "id": "project_ml_learning_website_package_dependencies_prismjs",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_prismjs",
+      "community": 95,
       "norm_label": "prismjs"
     },
     {
@@ -215,8 +215,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L25",
-      "id": "project_ml_learning_website_package_dependencies_react",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_react",
+      "community": 95,
       "norm_label": "react"
     },
     {
@@ -224,8 +224,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L26",
-      "id": "project_ml_learning_website_package_dependencies_react_dom",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_react_dom",
+      "community": 95,
       "norm_label": "react-dom"
     },
     {
@@ -233,8 +233,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L27",
-      "id": "project_ml_learning_website_package_dependencies_tailwind_merge",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_dependencies_tailwind_merge",
+      "community": 95,
       "norm_label": "tailwind-merge"
     },
     {
@@ -242,8 +242,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L29",
-      "id": "project_ml_learning_website_package_devdependencies",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies",
+      "community": 100,
       "norm_label": "devdependencies"
     },
     {
@@ -251,8 +251,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L30",
-      "id": "project_ml_learning_website_package_devdependencies_types_react",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies_types_react",
+      "community": 100,
       "norm_label": "@types/react"
     },
     {
@@ -260,8 +260,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L31",
-      "id": "project_ml_learning_website_package_devdependencies_types_react_dom",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies_types_react_dom",
+      "community": 100,
       "norm_label": "@types/react-dom"
     },
     {
@@ -269,8 +269,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L32",
-      "id": "project_ml_learning_website_package_devdependencies_vitejs_plugin_react",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies_vitejs_plugin_react",
+      "community": 100,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -278,8 +278,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L33",
-      "id": "project_ml_learning_website_package_devdependencies_autoprefixer",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies_autoprefixer",
+      "community": 100,
       "norm_label": "autoprefixer"
     },
     {
@@ -287,8 +287,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L34",
-      "id": "project_ml_learning_website_package_devdependencies_postcss",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies_postcss",
+      "community": 100,
       "norm_label": "postcss"
     },
     {
@@ -296,8 +296,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L35",
-      "id": "project_ml_learning_website_package_devdependencies_tailwindcss",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies_tailwindcss",
+      "community": 100,
       "norm_label": "tailwindcss"
     },
     {
@@ -305,8 +305,8 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L36",
-      "id": "project_ml_learning_website_package_devdependencies_vite",
-      "community": 39,
+      "id": "dsa_ml_learning_website_package_devdependencies_vite",
+      "community": 100,
       "norm_label": "vite"
     },
     {
@@ -592,7 +592,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L15",
+      "source_location": "L14",
       "id": "src_app_app",
       "community": 11,
       "norm_label": "app()"
@@ -637,7 +637,7 @@
       "label": "GfgSolutionView()",
       "file_type": "code",
       "source_file": "src/components/GfgSolutionView.jsx",
-      "source_location": "L31",
+      "source_location": "L25",
       "id": "components_gfgsolutionview_gfgsolutionview",
       "community": 11,
       "norm_label": "gfgsolutionview()"
@@ -661,6 +661,42 @@
       "norm_label": "inapppdfviewer()"
     },
     {
+      "label": "MarkdownRenderer.jsx",
+      "file_type": "code",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L1",
+      "id": "src_components_markdownrenderer_jsx",
+      "community": 11,
+      "norm_label": "markdownrenderer.jsx"
+    },
+    {
+      "label": "CodeBlock()",
+      "file_type": "code",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L10",
+      "id": "components_markdownrenderer_codeblock",
+      "community": 11,
+      "norm_label": "codeblock()"
+    },
+    {
+      "label": "renderInline()",
+      "file_type": "code",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L53",
+      "id": "components_markdownrenderer_renderinline",
+      "community": 11,
+      "norm_label": "renderinline()"
+    },
+    {
+      "label": "MarkdownRenderer()",
+      "file_type": "code",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L101",
+      "id": "components_markdownrenderer_markdownrenderer",
+      "community": 11,
+      "norm_label": "markdownrenderer()"
+    },
+    {
       "label": "Navbar.jsx",
       "file_type": "code",
       "source_file": "src/components/Navbar.jsx",
@@ -673,7 +709,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.jsx",
-      "source_location": "L19",
+      "source_location": "L15",
       "id": "components_navbar_navbar",
       "community": 11,
       "norm_label": "navbar()"
@@ -691,7 +727,7 @@
       "label": "ProblemListView()",
       "file_type": "code",
       "source_file": "src/components/ProblemListView.jsx",
-      "source_location": "L33",
+      "source_location": "L22",
       "id": "components_problemlistview_problemlistview",
       "community": 11,
       "norm_label": "problemlistview()"
@@ -709,7 +745,7 @@
       "label": "SUPPORTED_LANGUAGES",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L42",
+      "source_location": "L39",
       "id": "components_problemworkspace_supported_languages",
       "community": 11,
       "norm_label": "supported_languages"
@@ -718,7 +754,7 @@
       "label": "getDefaultStarterCode()",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L50",
+      "source_location": "L47",
       "id": "components_problemworkspace_getdefaultstartercode",
       "community": 11,
       "norm_label": "getdefaultstartercode()"
@@ -727,7 +763,7 @@
       "label": "ProblemWorkspace()",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L127",
+      "source_location": "L124",
       "id": "components_problemworkspace_problemworkspace",
       "community": 11,
       "norm_label": "problemworkspace()"
@@ -745,7 +781,7 @@
       "label": "ResearchPapersView()",
       "file_type": "code",
       "source_file": "src/components/ResearchPapersView.jsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "id": "components_researchpapersview_researchpapersview",
       "community": 11,
       "norm_label": "researchpapersview()"
@@ -763,7 +799,7 @@
       "label": "RoadmapView()",
       "file_type": "code",
       "source_file": "src/components/RoadmapView.jsx",
-      "source_location": "L25",
+      "source_location": "L22",
       "id": "components_roadmapview_roadmapview",
       "community": 11,
       "norm_label": "roadmapview()"
@@ -785,249 +821,6 @@
       "id": "components_videomodal_videomodal",
       "community": 11,
       "norm_label": "videomodal()"
-    },
-    {
-      "label": "dsa.json",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L1",
-      "id": "src_data_dsa_json",
-      "community": 40,
-      "norm_label": "dsa.json"
-    },
-    {
-      "label": "summary",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L2",
-      "id": "data_dsa_summary",
-      "community": 40,
-      "norm_label": "summary"
-    },
-    {
-      "label": "totalProblems",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L3",
-      "id": "data_dsa_summary_totalproblems",
-      "community": 40,
-      "norm_label": "totalproblems"
-    },
-    {
-      "label": "blind75Count",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L4",
-      "id": "data_dsa_summary_blind75count",
-      "community": 40,
-      "norm_label": "blind75count"
-    },
-    {
-      "label": "neetcode150Count",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L5",
-      "id": "data_dsa_summary_neetcode150count",
-      "community": 40,
-      "norm_label": "neetcode150count"
-    },
-    {
-      "label": "neetcode250Count",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L6",
-      "id": "data_dsa_summary_neetcode250count",
-      "community": 40,
-      "norm_label": "neetcode250count"
-    },
-    {
-      "label": "categoriesCount",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L7",
-      "id": "data_dsa_summary_categoriescount",
-      "community": 40,
-      "norm_label": "categoriescount"
-    },
-    {
-      "label": "categories",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L9",
-      "id": "data_dsa_categories",
-      "community": 40,
-      "norm_label": "categories"
-    },
-    {
-      "label": "Stack",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L10",
-      "id": "data_dsa_categories_stack",
-      "community": 40,
-      "norm_label": "stack"
-    },
-    {
-      "label": "Trees",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L558",
-      "id": "data_dsa_categories_trees",
-      "community": 40,
-      "norm_label": "trees"
-    },
-    {
-      "label": "Greedy",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L2016",
-      "id": "data_dsa_categories_greedy",
-      "community": 40,
-      "norm_label": "greedy"
-    },
-    {
-      "label": "1-D Dynamic Programming",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L3045",
-      "id": "data_dsa_categories_1_d_dynamic_programming",
-      "community": 40,
-      "norm_label": "1-d dynamic programming"
-    },
-    {
-      "label": "Heap / Priority Queue",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L3840",
-      "id": "data_dsa_categories_heap_priority_queue",
-      "community": 40,
-      "norm_label": "heap / priority queue"
-    },
-    {
-      "label": "Advanced Graphs",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L4310",
-      "id": "data_dsa_categories_advanced_graphs",
-      "community": 40,
-      "norm_label": "advanced graphs"
-    },
-    {
-      "label": "Arrays & Hashing",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L4780",
-      "id": "data_dsa_categories_arrays_hashing",
-      "community": 40,
-      "norm_label": "arrays & hashing"
-    },
-    {
-      "label": "Graphs",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L7486",
-      "id": "data_dsa_categories_graphs",
-      "community": 40,
-      "norm_label": "graphs"
-    },
-    {
-      "label": "Math & Geometry",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L8476",
-      "id": "data_dsa_categories_math_geometry",
-      "community": 40,
-      "norm_label": "math & geometry"
-    },
-    {
-      "label": "2-D Dynamic Programming",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L9466",
-      "id": "data_dsa_categories_2_d_dynamic_programming",
-      "community": 40,
-      "norm_label": "2-d dynamic programming"
-    },
-    {
-      "label": "Backtracking",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L10339",
-      "id": "data_dsa_categories_backtracking",
-      "community": 40,
-      "norm_label": "backtracking"
-    },
-    {
-      "label": "Intervals",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L10926",
-      "id": "data_dsa_categories_intervals",
-      "community": 40,
-      "norm_label": "intervals"
-    },
-    {
-      "label": "Binary Search",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L11240",
-      "id": "data_dsa_categories_binary_search",
-      "community": 40,
-      "norm_label": "binary search"
-    },
-    {
-      "label": "Sliding Window",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L11879",
-      "id": "data_dsa_categories_sliding_window",
-      "community": 40,
-      "norm_label": "sliding window"
-    },
-    {
-      "label": "Linked List",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L12492",
-      "id": "data_dsa_categories_linked_list",
-      "community": 40,
-      "norm_label": "linked list"
-    },
-    {
-      "label": "Two Pointers",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L13027",
-      "id": "data_dsa_categories_two_pointers",
-      "community": 40,
-      "norm_label": "two pointers"
-    },
-    {
-      "label": "Bit Manipulation",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L13653",
-      "id": "data_dsa_categories_bit_manipulation",
-      "community": 40,
-      "norm_label": "bit manipulation"
-    },
-    {
-      "label": "Tries",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L14084",
-      "id": "data_dsa_categories_tries",
-      "community": 40,
-      "norm_label": "tries"
-    },
-    {
-      "label": "JavaScript",
-      "file_type": "code",
-      "source_file": "src/data/dsa.json",
-      "source_location": "L14294",
-      "id": "data_dsa_categories_javascript",
-      "community": 40,
-      "norm_label": "javascript"
     },
     {
       "label": "research_papers.json",
@@ -1120,6 +913,24 @@
       "norm_label": "getbackendstats()"
     },
     {
+      "label": "problemSpecGenerator.js",
+      "file_type": "code",
+      "source_file": "src/utils/problemSpecGenerator.js",
+      "source_location": "L1",
+      "id": "src_utils_problemspecgenerator_js",
+      "community": 11,
+      "norm_label": "problemspecgenerator.js"
+    },
+    {
+      "label": "generateProblemSpec()",
+      "file_type": "code",
+      "source_file": "src/utils/problemSpecGenerator.js",
+      "source_location": "L11",
+      "id": "utils_problemspecgenerator_generateproblemspec",
+      "community": 11,
+      "norm_label": "generateproblemspec()"
+    },
+    {
       "label": "pyodideRunner.js",
       "file_type": "code",
       "source_file": "src/utils/pyodideRunner.js",
@@ -1132,7 +943,7 @@
       "label": "getPyodide()",
       "file_type": "code",
       "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L10",
+      "source_location": "L1155",
       "id": "utils_pyodiderunner_getpyodide",
       "community": 11,
       "norm_label": "getpyodide()"
@@ -1141,7 +952,7 @@
       "label": "runPythonCode()",
       "file_type": "code",
       "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L37",
+      "source_location": "L1182",
       "id": "utils_pyodiderunner_runpythoncode",
       "community": 11,
       "norm_label": "runpythoncode()"
@@ -1150,7 +961,7 @@
       "label": "runTests()",
       "file_type": "code",
       "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L77",
+      "source_location": "L1217",
       "id": "utils_pyodiderunner_runtests",
       "community": 11,
       "norm_label": "runtests()"
@@ -1250,8 +1061,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "project_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "community": 98,
       "norm_label": "nexuscore | advanced engineering, dsa & ai/ml learning platform"
     },
     {
@@ -1259,8 +1070,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L13",
-      "id": "project_ml_learning_website_readme_core_pillars_curriculum",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_core_pillars_curriculum",
+      "community": 106,
       "norm_label": "\ud83c\udf1f core pillars & curriculum"
     },
     {
@@ -1268,8 +1079,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L15",
-      "id": "project_ml_learning_website_readme_1_data_structures_algorithms_1_126_curated_problems",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_1_data_structures_algorithms_1_126_curated_problems",
+      "community": 106,
       "norm_label": "1. data structures & algorithms (1,126 curated problems)"
     },
     {
@@ -1277,8 +1088,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L27",
-      "id": "project_ml_learning_website_readme_2_large_scale_system_design_distributed_architecture",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_2_large_scale_system_design_distributed_architecture",
+      "community": 106,
       "norm_label": "2. large-scale system design & distributed architecture"
     },
     {
@@ -1286,8 +1097,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L37",
-      "id": "project_ml_learning_website_readme_3_machine_learning_deep_learning_with_arxiv_research_integration",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_3_machine_learning_deep_learning_with_arxiv_research_integration",
+      "community": 106,
       "norm_label": "3. machine learning & deep learning (with arxiv research integration)"
     },
     {
@@ -1295,8 +1106,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L53",
-      "id": "project_ml_learning_website_readme_4_data_engineering_scaled_analytics",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_4_data_engineering_scaled_analytics",
+      "community": 106,
       "norm_label": "4. data engineering & scaled analytics"
     },
     {
@@ -1304,8 +1115,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L61",
-      "id": "project_ml_learning_website_readme_interactive_features",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_interactive_features",
+      "community": 98,
       "norm_label": "\ud83d\udcbb interactive features"
     },
     {
@@ -1313,8 +1124,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L63",
-      "id": "project_ml_learning_website_readme_1_in_browser_vs_code_monaco_editor",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_1_in_browser_vs_code_monaco_editor",
+      "community": 98,
       "norm_label": "1. in-browser vs code monaco editor"
     },
     {
@@ -1322,8 +1133,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L69",
-      "id": "project_ml_learning_website_readme_2_client_side_webassembly_execution",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_2_client_side_webassembly_execution",
+      "community": 98,
       "norm_label": "2. client-side webassembly execution"
     },
     {
@@ -1331,8 +1142,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L74",
-      "id": "project_ml_learning_website_readme_3_pedagogical_3_tier_multi_approach_solutions",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_3_pedagogical_3_tier_multi_approach_solutions",
+      "community": 98,
       "norm_label": "3. pedagogical 3-tier multi-approach solutions"
     },
     {
@@ -1340,8 +1151,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L84",
-      "id": "project_ml_learning_website_readme_4_interactive_prerequisite_skill_tree",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_4_interactive_prerequisite_skill_tree",
+      "community": 98,
       "norm_label": "4. interactive prerequisite skill-tree"
     },
     {
@@ -1349,8 +1160,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L90",
-      "id": "project_ml_learning_website_readme_tech_stack_architecture",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_tech_stack_architecture",
+      "community": 98,
       "norm_label": "\ud83d\udee0\ufe0f tech stack & architecture"
     },
     {
@@ -1358,8 +1169,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L106",
-      "id": "project_ml_learning_website_readme_getting_started_locally",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_getting_started_locally",
+      "community": 101,
       "norm_label": "\ud83d\ude80 getting started locally"
     },
     {
@@ -1367,8 +1178,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L108",
-      "id": "project_ml_learning_website_readme_prerequisites",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_prerequisites",
+      "community": 101,
       "norm_label": "prerequisites"
     },
     {
@@ -1376,8 +1187,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L112",
-      "id": "project_ml_learning_website_readme_installation_run",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_installation_run",
+      "community": 101,
       "norm_label": "installation & run"
     },
     {
@@ -1385,8 +1196,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L115",
-      "id": "project_ml_learning_website_readme_codeblock_1",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_codeblock_1",
+      "community": 101,
       "norm_label": "code:bash (git clone https://github.com/shadow-warrior123/nexuscore-lea)"
     },
     {
@@ -1394,8 +1205,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L121",
-      "id": "project_ml_learning_website_readme_codeblock_2",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_codeblock_2",
+      "community": 101,
       "norm_label": "code:bash (npm install)"
     },
     {
@@ -1403,8 +1214,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L126",
-      "id": "project_ml_learning_website_readme_codeblock_3",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_codeblock_3",
+      "community": 101,
       "norm_label": "code:bash (npm run dev)"
     },
     {
@@ -1412,8 +1223,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L132",
-      "id": "project_ml_learning_website_readme_codeblock_4",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_codeblock_4",
+      "community": 101,
       "norm_label": "code:bash (npm run build)"
     },
     {
@@ -1421,8 +1232,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L137",
-      "id": "project_ml_learning_website_readme_codeblock_5",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_codeblock_5",
+      "community": 101,
       "norm_label": "code:bash (npm run server)"
     },
     {
@@ -1430,8 +1241,8 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L144",
-      "id": "project_ml_learning_website_readme_live_deployment",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_live_deployment",
+      "community": 98,
       "norm_label": "\ud83c\udf10 live deployment"
     },
     {
@@ -1439,23 +1250,23 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L152",
-      "id": "project_ml_learning_website_readme_license",
-      "community": 72,
+      "id": "dsa_ml_learning_website_readme_license",
+      "community": 98,
       "norm_label": "\ud83d\udcc4 license"
     },
     {
       "label": "graphify.md",
       "file_type": "document",
-      "source_file": ".agents/rules/graphify.md",
+      "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/rules/graphify.md",
       "source_location": "L1",
-      "id": "agents_rules_graphify_md",
+      "id": "c_users_ntry2_desktop_gemini_project_ml_learning_website_agents_rules_graphify_md",
       "community": 273,
       "norm_label": "graphify.md"
     },
     {
       "label": "graphify",
       "file_type": "document",
-      "source_file": ".agents/rules/graphify.md",
+      "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/rules/graphify.md",
       "source_location": "L6",
       "id": "rules_graphify_graphify",
       "community": 273,
@@ -1464,20 +1275,776 @@
     {
       "label": "graphify.md",
       "file_type": "document",
-      "source_file": ".agents/workflows/graphify.md",
+      "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/workflows/graphify.md",
       "source_location": "L1",
-      "id": "agents_workflows_graphify_md",
+      "id": "c_users_ntry2_desktop_gemini_project_ml_learning_website_agents_workflows_graphify_md",
       "community": 274,
       "norm_label": "graphify.md"
     },
     {
       "label": "Workflow: graphify",
       "file_type": "document",
-      "source_file": ".agents/workflows/graphify.md",
+      "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/workflows/graphify.md",
       "source_location": "L6",
       "id": "workflows_graphify_workflow_graphify",
       "community": 274,
       "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "community": 96,
+      "norm_label": "name",
+      "id": "project_ml_learning_website_package_name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "community": 96,
+      "norm_label": "private",
+      "id": "project_ml_learning_website_package_private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "community": 96,
+      "norm_label": "version",
+      "id": "project_ml_learning_website_package_version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "community": 96,
+      "norm_label": "type",
+      "id": "project_ml_learning_website_package_type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "community": 99,
+      "norm_label": "scripts",
+      "id": "project_ml_learning_website_package_scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "community": 99,
+      "norm_label": "dev",
+      "id": "project_ml_learning_website_package_scripts_dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "community": 99,
+      "norm_label": "build",
+      "id": "project_ml_learning_website_package_scripts_build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "community": 99,
+      "norm_label": "preview",
+      "id": "project_ml_learning_website_package_scripts_preview"
+    },
+    {
+      "label": "server",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "community": 99,
+      "norm_label": "server",
+      "id": "project_ml_learning_website_package_scripts_server"
+    },
+    {
+      "label": "graph:update",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "community": 99,
+      "norm_label": "graph:update",
+      "id": "project_ml_learning_website_package_scripts_graph_update"
+    },
+    {
+      "label": "graph:query",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "community": 99,
+      "norm_label": "graph:query",
+      "id": "project_ml_learning_website_package_scripts_graph_query"
+    },
+    {
+      "label": "graph:tree",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "community": 99,
+      "norm_label": "graph:tree",
+      "id": "project_ml_learning_website_package_scripts_graph_tree"
+    },
+    {
+      "label": "graph:watch",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "community": 99,
+      "norm_label": "graph:watch",
+      "id": "project_ml_learning_website_package_scripts_graph_watch"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "community": 39,
+      "norm_label": "dependencies",
+      "id": "project_ml_learning_website_package_dependencies"
+    },
+    {
+      "label": "@monaco-editor/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "community": 39,
+      "norm_label": "@monaco-editor/react",
+      "id": "project_ml_learning_website_package_dependencies_monaco_editor_react"
+    },
+    {
+      "label": "canvas-confetti",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "community": 39,
+      "norm_label": "canvas-confetti",
+      "id": "project_ml_learning_website_package_dependencies_canvas_confetti"
+    },
+    {
+      "label": "clsx",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "community": 39,
+      "norm_label": "clsx",
+      "id": "project_ml_learning_website_package_dependencies_clsx"
+    },
+    {
+      "label": "cors",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "community": 39,
+      "norm_label": "cors",
+      "id": "project_ml_learning_website_package_dependencies_cors"
+    },
+    {
+      "label": "express",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "community": 39,
+      "norm_label": "express",
+      "id": "project_ml_learning_website_package_dependencies_express"
+    },
+    {
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "community": 39,
+      "norm_label": "framer-motion",
+      "id": "project_ml_learning_website_package_dependencies_framer_motion"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "community": 39,
+      "norm_label": "lucide-react",
+      "id": "project_ml_learning_website_package_dependencies_lucide_react"
+    },
+    {
+      "label": "prismjs",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "community": 39,
+      "norm_label": "prismjs",
+      "id": "project_ml_learning_website_package_dependencies_prismjs"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "community": 39,
+      "norm_label": "react",
+      "id": "project_ml_learning_website_package_dependencies_react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "community": 39,
+      "norm_label": "react-dom",
+      "id": "project_ml_learning_website_package_dependencies_react_dom"
+    },
+    {
+      "label": "tailwind-merge",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "community": 39,
+      "norm_label": "tailwind-merge",
+      "id": "project_ml_learning_website_package_dependencies_tailwind_merge"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "community": 102,
+      "norm_label": "devdependencies",
+      "id": "project_ml_learning_website_package_devdependencies"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "community": 102,
+      "norm_label": "@types/react",
+      "id": "project_ml_learning_website_package_devdependencies_types_react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "community": 102,
+      "norm_label": "@types/react-dom",
+      "id": "project_ml_learning_website_package_devdependencies_types_react_dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "community": 102,
+      "norm_label": "@vitejs/plugin-react",
+      "id": "project_ml_learning_website_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "community": 102,
+      "norm_label": "autoprefixer",
+      "id": "project_ml_learning_website_package_devdependencies_autoprefixer"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "community": 102,
+      "norm_label": "postcss",
+      "id": "project_ml_learning_website_package_devdependencies_postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "community": 102,
+      "norm_label": "tailwindcss",
+      "id": "project_ml_learning_website_package_devdependencies_tailwindcss"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "community": 102,
+      "norm_label": "vite",
+      "id": "project_ml_learning_website_package_devdependencies_vite"
+    },
+    {
+      "label": "dsa.json",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L1",
+      "community": 40,
+      "norm_label": "dsa.json",
+      "id": "src_data_dsa_json"
+    },
+    {
+      "label": "summary",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L2",
+      "community": 40,
+      "norm_label": "summary",
+      "id": "data_dsa_summary"
+    },
+    {
+      "label": "totalProblems",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L3",
+      "community": 40,
+      "norm_label": "totalproblems",
+      "id": "data_dsa_summary_totalproblems"
+    },
+    {
+      "label": "blind75Count",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L4",
+      "community": 40,
+      "norm_label": "blind75count",
+      "id": "data_dsa_summary_blind75count"
+    },
+    {
+      "label": "neetcode150Count",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L5",
+      "community": 40,
+      "norm_label": "neetcode150count",
+      "id": "data_dsa_summary_neetcode150count"
+    },
+    {
+      "label": "neetcode250Count",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L6",
+      "community": 40,
+      "norm_label": "neetcode250count",
+      "id": "data_dsa_summary_neetcode250count"
+    },
+    {
+      "label": "categoriesCount",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L7",
+      "community": 40,
+      "norm_label": "categoriescount",
+      "id": "data_dsa_summary_categoriescount"
+    },
+    {
+      "label": "categories",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L9",
+      "community": 40,
+      "norm_label": "categories",
+      "id": "data_dsa_categories"
+    },
+    {
+      "label": "Stack",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L10",
+      "community": 40,
+      "norm_label": "stack",
+      "id": "data_dsa_categories_stack"
+    },
+    {
+      "label": "Trees",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L558",
+      "community": 40,
+      "norm_label": "trees",
+      "id": "data_dsa_categories_trees"
+    },
+    {
+      "label": "Greedy",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L2016",
+      "community": 40,
+      "norm_label": "greedy",
+      "id": "data_dsa_categories_greedy"
+    },
+    {
+      "label": "1-D Dynamic Programming",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L3045",
+      "community": 40,
+      "norm_label": "1-d dynamic programming",
+      "id": "data_dsa_categories_1_d_dynamic_programming"
+    },
+    {
+      "label": "Heap / Priority Queue",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L3840",
+      "community": 40,
+      "norm_label": "heap / priority queue",
+      "id": "data_dsa_categories_heap_priority_queue"
+    },
+    {
+      "label": "Advanced Graphs",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L4310",
+      "community": 40,
+      "norm_label": "advanced graphs",
+      "id": "data_dsa_categories_advanced_graphs"
+    },
+    {
+      "label": "Arrays & Hashing",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L4780",
+      "community": 40,
+      "norm_label": "arrays & hashing",
+      "id": "data_dsa_categories_arrays_hashing"
+    },
+    {
+      "label": "Graphs",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L7486",
+      "community": 40,
+      "norm_label": "graphs",
+      "id": "data_dsa_categories_graphs"
+    },
+    {
+      "label": "Math & Geometry",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L8476",
+      "community": 40,
+      "norm_label": "math & geometry",
+      "id": "data_dsa_categories_math_geometry"
+    },
+    {
+      "label": "2-D Dynamic Programming",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L9466",
+      "community": 40,
+      "norm_label": "2-d dynamic programming",
+      "id": "data_dsa_categories_2_d_dynamic_programming"
+    },
+    {
+      "label": "Backtracking",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L10339",
+      "community": 40,
+      "norm_label": "backtracking",
+      "id": "data_dsa_categories_backtracking"
+    },
+    {
+      "label": "Intervals",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L10926",
+      "community": 40,
+      "norm_label": "intervals",
+      "id": "data_dsa_categories_intervals"
+    },
+    {
+      "label": "Binary Search",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L11240",
+      "community": 40,
+      "norm_label": "binary search",
+      "id": "data_dsa_categories_binary_search"
+    },
+    {
+      "label": "Sliding Window",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L11879",
+      "community": 40,
+      "norm_label": "sliding window",
+      "id": "data_dsa_categories_sliding_window"
+    },
+    {
+      "label": "Linked List",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L12492",
+      "community": 40,
+      "norm_label": "linked list",
+      "id": "data_dsa_categories_linked_list"
+    },
+    {
+      "label": "Two Pointers",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L13027",
+      "community": 40,
+      "norm_label": "two pointers",
+      "id": "data_dsa_categories_two_pointers"
+    },
+    {
+      "label": "Bit Manipulation",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L13653",
+      "community": 40,
+      "norm_label": "bit manipulation",
+      "id": "data_dsa_categories_bit_manipulation"
+    },
+    {
+      "label": "Tries",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L14084",
+      "community": 40,
+      "norm_label": "tries",
+      "id": "data_dsa_categories_tries"
+    },
+    {
+      "label": "JavaScript",
+      "file_type": "code",
+      "source_file": "src/data/dsa.json",
+      "source_location": "L14294",
+      "community": 40,
+      "norm_label": "javascript",
+      "id": "data_dsa_categories_javascript"
+    },
+    {
+      "label": "NexusCore | Advanced Engineering, DSA & AI/ML Learning Platform",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "community": 104,
+      "norm_label": "nexuscore | advanced engineering, dsa & ai/ml learning platform",
+      "id": "project_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform"
+    },
+    {
+      "label": "\ud83c\udf1f Core Pillars & Curriculum",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L13",
+      "community": 268,
+      "norm_label": "\ud83c\udf1f core pillars & curriculum",
+      "id": "project_ml_learning_website_readme_core_pillars_curriculum"
+    },
+    {
+      "label": "1. Data Structures & Algorithms (1,126 Curated Problems)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "community": 268,
+      "norm_label": "1. data structures & algorithms (1,126 curated problems)",
+      "id": "project_ml_learning_website_readme_1_data_structures_algorithms_1_126_curated_problems"
+    },
+    {
+      "label": "2. Large-Scale System Design & Distributed Architecture",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L27",
+      "community": 268,
+      "norm_label": "2. large-scale system design & distributed architecture",
+      "id": "project_ml_learning_website_readme_2_large_scale_system_design_distributed_architecture"
+    },
+    {
+      "label": "3. Machine Learning & Deep Learning (with ArXiv Research Integration)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L37",
+      "community": 268,
+      "norm_label": "3. machine learning & deep learning (with arxiv research integration)",
+      "id": "project_ml_learning_website_readme_3_machine_learning_deep_learning_with_arxiv_research_integration"
+    },
+    {
+      "label": "4. Data Engineering & Scaled Analytics",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L53",
+      "community": 268,
+      "norm_label": "4. data engineering & scaled analytics",
+      "id": "project_ml_learning_website_readme_4_data_engineering_scaled_analytics"
+    },
+    {
+      "label": "\ud83d\udcbb Interactive Features",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L61",
+      "community": 269,
+      "norm_label": "\ud83d\udcbb interactive features",
+      "id": "project_ml_learning_website_readme_interactive_features"
+    },
+    {
+      "label": "1. In-Browser VS Code Monaco Editor",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L63",
+      "community": 269,
+      "norm_label": "1. in-browser vs code monaco editor",
+      "id": "project_ml_learning_website_readme_1_in_browser_vs_code_monaco_editor"
+    },
+    {
+      "label": "2. Client-Side WebAssembly Execution",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L69",
+      "community": 269,
+      "norm_label": "2. client-side webassembly execution",
+      "id": "project_ml_learning_website_readme_2_client_side_webassembly_execution"
+    },
+    {
+      "label": "3. Pedagogical 3-Tier Multi-Approach Solutions",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L74",
+      "community": 269,
+      "norm_label": "3. pedagogical 3-tier multi-approach solutions",
+      "id": "project_ml_learning_website_readme_3_pedagogical_3_tier_multi_approach_solutions"
+    },
+    {
+      "label": "4. Interactive Prerequisite Skill-Tree",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "community": 269,
+      "norm_label": "4. interactive prerequisite skill-tree",
+      "id": "project_ml_learning_website_readme_4_interactive_prerequisite_skill_tree"
+    },
+    {
+      "label": "\ud83d\udee0\ufe0f Tech Stack & Architecture",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L90",
+      "community": 104,
+      "norm_label": "\ud83d\udee0\ufe0f tech stack & architecture",
+      "id": "project_ml_learning_website_readme_tech_stack_architecture"
+    },
+    {
+      "label": "\ud83d\ude80 Getting Started Locally",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L106",
+      "community": 104,
+      "norm_label": "\ud83d\ude80 getting started locally",
+      "id": "project_ml_learning_website_readme_getting_started_locally"
+    },
+    {
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L108",
+      "community": 104,
+      "norm_label": "prerequisites",
+      "id": "project_ml_learning_website_readme_prerequisites"
+    },
+    {
+      "label": "Installation & Run",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L112",
+      "community": 103,
+      "norm_label": "installation & run",
+      "id": "project_ml_learning_website_readme_installation_run"
+    },
+    {
+      "label": "code:bash (git clone https://github.com/shadow-warrior123/nexuscore-lea)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L115",
+      "community": 103,
+      "norm_label": "code:bash (git clone https://github.com/shadow-warrior123/nexuscore-lea)",
+      "id": "project_ml_learning_website_readme_codeblock_1"
+    },
+    {
+      "label": "code:bash (npm install)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L121",
+      "community": 103,
+      "norm_label": "code:bash (npm install)",
+      "id": "project_ml_learning_website_readme_codeblock_2"
+    },
+    {
+      "label": "code:bash (npm run dev)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L126",
+      "community": 103,
+      "norm_label": "code:bash (npm run dev)",
+      "id": "project_ml_learning_website_readme_codeblock_3"
+    },
+    {
+      "label": "code:bash (npm run build)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L132",
+      "community": 103,
+      "norm_label": "code:bash (npm run build)",
+      "id": "project_ml_learning_website_readme_codeblock_4"
+    },
+    {
+      "label": "code:bash (npm run server)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L137",
+      "community": 103,
+      "norm_label": "code:bash (npm run server)",
+      "id": "project_ml_learning_website_readme_codeblock_5"
+    },
+    {
+      "label": "\ud83c\udf10 Live Deployment",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L144",
+      "community": 104,
+      "norm_label": "\ud83c\udf10 live deployment",
+      "id": "project_ml_learning_website_readme_live_deployment"
+    },
+    {
+      "label": "\ud83d\udcc4 License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L152",
+      "community": 104,
+      "norm_label": "\ud83d\udcc4 license",
+      "id": "project_ml_learning_website_readme_license"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L1",
+      "community": 273,
+      "norm_label": "graphify.md",
+      "id": "agents_rules_graphify_md"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L1",
+      "community": 274,
+      "norm_label": "graphify.md",
+      "id": "agents_workflows_graphify_md"
     },
     {
       "label": "neetcode_dsa_questions.json",
@@ -14786,7 +15353,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18279",
-      "community": 96,
+      "community": 65,
       "norm_label": "two aggregate functions",
       "id": "project_ml_learning_website_all_journey_questions_two_aggregate_functions"
     },
@@ -14795,7 +15362,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18281",
-      "community": 96,
+      "community": 65,
       "norm_label": "code:sql (select count(*) as total_rentals, round(sum(price), 2) as to)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_549"
     },
@@ -14804,7 +15371,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18288",
-      "community": 97,
+      "community": 65,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18288"
     },
@@ -14813,7 +15380,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18301",
-      "community": 97,
+      "community": 65,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_550"
     },
@@ -14831,7 +15398,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18339",
-      "community": 98,
+      "community": 65,
       "norm_label": "three more aggregates",
       "id": "project_ml_learning_website_all_journey_questions_three_more_aggregates"
     },
@@ -14840,7 +15407,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18341",
-      "community": 98,
+      "community": 65,
       "norm_label": "code:sql (select round(avg(price), 2) as avg_price, min(price) as chea)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_551"
     },
@@ -14894,7 +15461,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18410",
-      "community": 99,
+      "community": 65,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18410"
     },
@@ -14903,7 +15470,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18424",
-      "community": 99,
+      "community": 65,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_554"
     },
@@ -14939,7 +15506,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18476",
-      "community": 100,
+      "community": 65,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18476"
     },
@@ -14948,7 +15515,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18489",
-      "community": 100,
+      "community": 65,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_556"
     },
@@ -14966,7 +15533,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18529",
-      "community": 101,
+      "community": 65,
       "norm_label": "sqlite's integer-division trap",
       "id": "project_ml_learning_website_all_journey_questions_sqlite_s_integer_division_trap"
     },
@@ -14975,7 +15542,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18531",
-      "community": 101,
+      "community": 65,
       "norm_label": "code:sql (select 7 / 2;        -- 3   (!) both operands are integer, s)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_557"
     },
@@ -14984,7 +15551,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18539",
-      "community": 102,
+      "community": 65,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18539"
     },
@@ -14993,7 +15560,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18552",
-      "community": 102,
+      "community": 65,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_558"
     },
@@ -15011,7 +15578,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18593",
-      "community": 95,
+      "community": 65,
       "norm_label": "a full aggregation report",
       "id": "project_ml_learning_website_all_journey_questions_a_full_aggregation_report"
     },
@@ -15020,7 +15587,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18595",
-      "community": 95,
+      "community": 65,
       "norm_label": "code:sql (select genre, count(*) as book_count, round(sum(revenue), 2))",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_559"
     },
@@ -15029,7 +15596,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18606",
-      "community": 103,
+      "community": 65,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18606"
     },
@@ -15038,7 +15605,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18619",
-      "community": 103,
+      "community": 65,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_560"
     },
@@ -15065,7 +15632,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18664",
-      "community": 33,
+      "community": 271,
       "norm_label": "matching rows across tables",
       "id": "project_ml_learning_website_all_journey_questions_matching_rows_across_tables"
     },
@@ -15074,7 +15641,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18666",
-      "community": 33,
+      "community": 271,
       "norm_label": "code:sql (select authors.name, books.title)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_561"
     },
@@ -15083,7 +15650,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18675",
-      "community": 33,
+      "community": 272,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18675"
     },
@@ -15092,7 +15659,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18683",
-      "community": 33,
+      "community": 272,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_562"
     },
@@ -15110,7 +15677,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18725",
-      "community": 33,
+      "community": 279,
       "norm_label": "keeping every row on the left",
       "id": "project_ml_learning_website_all_journey_questions_keeping_every_row_on_the_left"
     },
@@ -15119,7 +15686,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18727",
-      "community": 33,
+      "community": 279,
       "norm_label": "code:sql (select authors.name, books.title)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_563"
     },
@@ -15128,7 +15695,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18736",
-      "community": 33,
+      "community": 280,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18736"
     },
@@ -15137,7 +15704,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18744",
-      "community": 33,
+      "community": 280,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_564"
     },
@@ -15155,7 +15722,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18788",
-      "community": 33,
+      "community": 270,
       "norm_label": "chaining joins",
       "id": "project_ml_learning_website_all_journey_questions_chaining_joins"
     },
@@ -15164,7 +15731,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18790",
-      "community": 33,
+      "community": 270,
       "norm_label": "code:sql (select authors.name, books.title, publishers.city)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_565"
     },
@@ -15200,7 +15767,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18856",
-      "community": 33,
+      "community": 281,
       "norm_label": "joining a table to itself",
       "id": "project_ml_learning_website_all_journey_questions_joining_a_table_to_itself"
     },
@@ -15209,7 +15776,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18858",
-      "community": 33,
+      "community": 281,
       "norm_label": "code:sql (select e.name as student, b.name as study_buddy)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_567"
     },
@@ -15245,7 +15812,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18914",
-      "community": 33,
+      "community": 282,
       "norm_label": "finding what has no match",
       "id": "project_ml_learning_website_all_journey_questions_finding_what_has_no_match"
     },
@@ -15254,7 +15821,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18916",
-      "community": 33,
+      "community": 282,
       "norm_label": "code:sql (select authors.name)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_569"
     },
@@ -15263,7 +15830,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18926",
-      "community": 33,
+      "community": 283,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18926"
     },
@@ -15272,7 +15839,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18934",
-      "community": 33,
+      "community": 283,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_570"
     },
@@ -15308,7 +15875,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18991",
-      "community": 33,
+      "community": 284,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_18991"
     },
@@ -15317,7 +15884,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L18999",
-      "community": 33,
+      "community": 284,
       "norm_label": "code:python (import sqlite3)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_572"
     },
@@ -21824,7 +22391,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27488",
-      "community": 268,
+      "community": 38,
       "norm_label": "combining conditions",
       "id": "project_ml_learning_website_all_journey_questions_combining_conditions"
     },
@@ -21833,7 +22400,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27490",
-      "community": 268,
+      "community": 38,
       "norm_label": "code:python (cond = (f.col(\"amount\") >= 100) & (f.col(\"region\") == \"east\")",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_826"
     },
@@ -21914,7 +22481,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27599",
-      "community": 106,
+      "community": 38,
       "norm_label": "chained branches",
       "id": "project_ml_learning_website_all_journey_questions_chained_branches"
     },
@@ -21923,7 +22490,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27601",
-      "community": 106,
+      "community": 38,
       "norm_label": "code:python (f.when(f.col(\"score\") >= 90, \"gold\"))",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_830"
     },
@@ -21950,7 +22517,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27642",
-      "community": 104,
+      "community": 38,
       "norm_label": "5. rename and drop columns `[medium]`",
       "id": "project_ml_learning_website_all_journey_questions_5_rename_and_drop_columns_medium"
     },
@@ -21959,7 +22526,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27653",
-      "community": 104,
+      "community": 38,
       "norm_label": "code:python (df.withcolumnrenamed(\"nm\", \"name\")   # rename one column)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_832"
     },
@@ -22229,7 +22796,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28041",
-      "community": 31,
+      "community": 285,
       "norm_label": "the mechanics",
       "id": "project_ml_learning_website_all_journey_questions_the_mechanics"
     },
@@ -22238,7 +22805,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28043",
-      "community": 31,
+      "community": 285,
       "norm_label": "code:python (joined = orders_df.join(products_df, \"product_id\", how=\"inne)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_846"
     },
@@ -22355,7 +22922,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28179",
-      "community": 31,
+      "community": 286,
       "norm_label": "the one rule that matters",
       "id": "project_ml_learning_website_all_journey_questions_the_one_rule_that_matters"
     },
@@ -22364,7 +22931,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28181",
-      "community": 31,
+      "community": 286,
       "norm_label": "code:python (combined = west_df.union(east_df))",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_850"
     },
@@ -22382,7 +22949,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28191",
-      "community": 31,
+      "community": 287,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_28191"
     },
@@ -22391,7 +22958,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28196",
-      "community": 31,
+      "community": 287,
       "norm_label": "code:python (from pyspark.sql import sparksession, row)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_851"
     },
@@ -22409,7 +22976,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28234",
-      "community": 31,
+      "community": 288,
       "norm_label": "the discipline this station is about",
       "id": "project_ml_learning_website_all_journey_questions_the_discipline_this_station_is_about"
     },
@@ -22418,7 +22985,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28236",
-      "community": 31,
+      "community": 288,
       "norm_label": "code:python (kept = readings.orderby(\"timestamp\").dropduplicates(subset=[)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_852"
     },
@@ -22481,7 +23048,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28302",
-      "community": 31,
+      "community": 289,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_28302"
     },
@@ -22490,7 +23057,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28307",
-      "community": 31,
+      "community": 289,
       "norm_label": "code:python (from pyspark.sql import sparksession, row)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_854"
     },
@@ -22661,7 +23228,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28580",
-      "community": 269,
+      "community": 41,
       "norm_label": "proving it without `.explain()`",
       "id": "project_ml_learning_website_all_journey_questions_proving_it_without_explain"
     },
@@ -22670,7 +23237,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28584",
-      "community": 269,
+      "community": 41,
       "norm_label": "code:python (from mlplay_pyspark import column)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_861"
     },
@@ -23321,6 +23888,76 @@
       "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "source": "package_json",
+      "target": "dsa_ml_learning_website_package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "dsa_ml_learning_website_package_private",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "dsa_ml_learning_website_package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "dsa_ml_learning_website_package_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "dsa_ml_learning_website_package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "dsa_ml_learning_website_package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "dsa_ml_learning_website_package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
       "target": "project_ml_learning_website_package_name"
@@ -23391,9 +24028,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_dev"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_dev",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23401,9 +24038,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_build"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_build",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23411,9 +24048,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_preview"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_preview",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23421,9 +24058,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_server"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_server",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23431,9 +24068,9 @@
       "source_file": "package.json",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_graph_update"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_graph_update",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23441,9 +24078,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_graph_query"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_graph_query",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23451,9 +24088,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_graph_tree"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_graph_tree",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23461,9 +24098,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_scripts",
-      "target": "project_ml_learning_website_package_scripts_graph_watch"
+      "source": "dsa_ml_learning_website_package_scripts",
+      "target": "dsa_ml_learning_website_package_scripts_graph_watch",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23471,59 +24108,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_monaco_editor_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_canvas_confetti"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_clsx"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_cors"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_express"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_framer_motion"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_monaco_editor_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23531,19 +24118,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_lucide_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_prismjs"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_canvas_confetti",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23551,9 +24128,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_react"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_clsx",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23561,9 +24138,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_react_dom"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_cors",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23571,9 +24148,29 @@
       "source_file": "package.json",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_dependencies",
-      "target": "project_ml_learning_website_package_dependencies_tailwind_merge"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_express",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_framer_motion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_lucide_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23581,9 +24178,9 @@
       "source_file": "package.json",
       "source_location": "L24",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_devdependencies",
-      "target": "project_ml_learning_website_package_devdependencies_types_react"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_prismjs",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23591,9 +24188,9 @@
       "source_file": "package.json",
       "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_devdependencies",
-      "target": "project_ml_learning_website_package_devdependencies_types_react_dom"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23601,9 +24198,9 @@
       "source_file": "package.json",
       "source_location": "L26",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_devdependencies",
-      "target": "project_ml_learning_website_package_devdependencies_vitejs_plugin_react"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_react_dom",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23611,29 +24208,9 @@
       "source_file": "package.json",
       "source_location": "L27",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_devdependencies",
-      "target": "project_ml_learning_website_package_devdependencies_autoprefixer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_devdependencies",
-      "target": "project_ml_learning_website_package_devdependencies_postcss"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_devdependencies",
-      "target": "project_ml_learning_website_package_devdependencies_tailwindcss"
+      "source": "dsa_ml_learning_website_package_dependencies",
+      "target": "dsa_ml_learning_website_package_dependencies_tailwind_merge",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23641,9 +24218,69 @@
       "source_file": "package.json",
       "source_location": "L30",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "project_ml_learning_website_package_devdependencies",
-      "target": "project_ml_learning_website_package_devdependencies_vite"
+      "source": "dsa_ml_learning_website_package_devdependencies",
+      "target": "dsa_ml_learning_website_package_devdependencies_types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_devdependencies",
+      "target": "dsa_ml_learning_website_package_devdependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_devdependencies",
+      "target": "dsa_ml_learning_website_package_devdependencies_vitejs_plugin_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_devdependencies",
+      "target": "dsa_ml_learning_website_package_devdependencies_autoprefixer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_devdependencies",
+      "target": "dsa_ml_learning_website_package_devdependencies_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_devdependencies",
+      "target": "dsa_ml_learning_website_package_devdependencies_tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_package_devdependencies",
+      "target": "dsa_ml_learning_website_package_devdependencies_vite",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23999,17 +24636,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_data_research_papers_json"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
       "source_location": "L14",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -24069,6 +24695,17 @@
       "confidence_score": 1.0,
       "source": "src_main_jsx",
       "target": "src_app_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_data_research_papers_json"
     },
     {
       "relation": "imports_from",
@@ -24176,6 +24813,47 @@
       "confidence_score": 1.0,
       "source": "src_components_researchpapersview_jsx",
       "target": "src_components_inapppdfviewer_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_markdownrenderer_jsx",
+      "target": "components_markdownrenderer_codeblock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "src_components_markdownrenderer_jsx",
+      "target": "components_markdownrenderer_renderinline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "src_components_markdownrenderer_jsx",
+      "target": "components_markdownrenderer_markdownrenderer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProblemWorkspace.jsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "src_components_problemworkspace_jsx",
+      "target": "src_components_markdownrenderer_jsx",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -24356,6 +25034,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ProblemWorkspace.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "src_components_problemworkspace_jsx",
+      "target": "src_utils_problemspecgenerator_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProblemWorkspace.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "src_components_problemworkspace_jsx",
+      "target": "utils_problemspecgenerator_generateproblemspec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProblemWorkspace.jsx",
       "source_location": "L32",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -24432,6 +25132,770 @@
       "confidence_score": 1.0,
       "source": "src_components_videomodal_jsx",
       "target": "components_videomodal_videomodal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_getbackendurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_backend_url"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_checkbackendhealth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_submitproblemtobackend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_getsubmissionhistory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_savecodedrafttobackend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_getbackendstats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/problemSpecGenerator.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_utils_problemspecgenerator_js",
+      "target": "utils_problemspecgenerator_generateproblemspec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_pyodiderunner_js",
+      "target": "utils_pyodiderunner_getpyodide"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_pyodiderunner_js",
+      "target": "utils_pyodiderunner_runpythoncode"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_pyodiderunner_js",
+      "target": "utils_pyodiderunner_runtests"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_pyodiderunner_runpythoncode",
+      "target": "utils_pyodiderunner_getpyodide"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_pyodiderunner_runtests",
+      "target": "utils_pyodiderunner_getpyodide"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/solutionGenerator.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_solutiongenerator_js",
+      "target": "utils_solutiongenerator_generateneetcodesolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_getsolvedproblems"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_markproblemsolved"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_gettotalxp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_getsavedcode"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_savecode"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_resetallprogress"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_markproblemsolved",
+      "target": "utils_storage_getsolvedproblems"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_markproblemsolved",
+      "target": "utils_storage_gettotalxp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme_md",
+      "target": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_md",
+      "target": "project_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_md",
+      "target": "project_ml_learning_website_readme_learning_interview_questions_bank"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "target": "dsa_ml_learning_website_readme_core_pillars_curriculum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "target": "dsa_ml_learning_website_readme_interactive_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "target": "dsa_ml_learning_website_readme_tech_stack_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "target": "dsa_ml_learning_website_readme_getting_started_locally",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "target": "dsa_ml_learning_website_readme_live_deployment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
+      "target": "dsa_ml_learning_website_readme_license",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
+      "target": "dsa_ml_learning_website_readme_1_data_structures_algorithms_1_126_curated_problems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
+      "target": "dsa_ml_learning_website_readme_2_large_scale_system_design_distributed_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
+      "target": "dsa_ml_learning_website_readme_3_machine_learning_deep_learning_with_arxiv_research_integration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
+      "target": "dsa_ml_learning_website_readme_4_data_engineering_scaled_analytics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_interactive_features",
+      "target": "dsa_ml_learning_website_readme_1_in_browser_vs_code_monaco_editor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_interactive_features",
+      "target": "dsa_ml_learning_website_readme_2_client_side_webassembly_execution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_interactive_features",
+      "target": "dsa_ml_learning_website_readme_3_pedagogical_3_tier_multi_approach_solutions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_interactive_features",
+      "target": "dsa_ml_learning_website_readme_4_interactive_prerequisite_skill_tree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_getting_started_locally",
+      "target": "dsa_ml_learning_website_readme_prerequisites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_getting_started_locally",
+      "target": "dsa_ml_learning_website_readme_installation_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_installation_run",
+      "target": "dsa_ml_learning_website_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_installation_run",
+      "target": "dsa_ml_learning_website_readme_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_installation_run",
+      "target": "dsa_ml_learning_website_readme_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_installation_run",
+      "target": "dsa_ml_learning_website_readme_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "dsa_ml_learning_website_readme_installation_run",
+      "target": "dsa_ml_learning_website_readme_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "c_users_ntry2_desktop_gemini_project_ml_learning_website_agents_rules_graphify_md",
+      "target": "rules_graphify_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_rules_graphify_md",
+      "target": "rules_graphify_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "c_users_ntry2_desktop_gemini_project_ml_learning_website_agents_workflows_graphify_md",
+      "target": "workflows_graphify_workflow_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_workflows_graphify_md",
+      "target": "workflows_graphify_workflow_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_server"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_graph_update"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_graph_query"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_graph_tree"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_scripts",
+      "target": "project_ml_learning_website_package_scripts_graph_watch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_monaco_editor_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_canvas_confetti"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_clsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_cors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_express"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_framer_motion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_lucide_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_prismjs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_dependencies",
+      "target": "project_ml_learning_website_package_dependencies_tailwind_merge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_devdependencies",
+      "target": "project_ml_learning_website_package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_devdependencies",
+      "target": "project_ml_learning_website_package_devdependencies_types_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_devdependencies",
+      "target": "project_ml_learning_website_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_devdependencies",
+      "target": "project_ml_learning_website_package_devdependencies_autoprefixer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_devdependencies",
+      "target": "project_ml_learning_website_package_devdependencies_postcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_devdependencies",
+      "target": "project_ml_learning_website_package_devdependencies_tailwindcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "project_ml_learning_website_package_devdependencies",
+      "target": "project_ml_learning_website_package_devdependencies_vite"
     },
     {
       "relation": "contains",
@@ -24696,240 +26160,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/utils/api.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_api_js",
-      "target": "utils_api_getbackendurl"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/api.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_api_js",
-      "target": "utils_api_backend_url"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/api.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_api_js",
-      "target": "utils_api_checkbackendhealth"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/api.js",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_api_js",
-      "target": "utils_api_submitproblemtobackend"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/api.js",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_api_js",
-      "target": "utils_api_getsubmissionhistory"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/api.js",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_api_js",
-      "target": "utils_api_savecodedrafttobackend"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/api.js",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_api_js",
-      "target": "utils_api_getbackendstats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_pyodiderunner_js",
-      "target": "utils_pyodiderunner_getpyodide"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_pyodiderunner_js",
-      "target": "utils_pyodiderunner_runpythoncode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_pyodiderunner_js",
-      "target": "utils_pyodiderunner_runtests"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_pyodiderunner_runpythoncode",
-      "target": "utils_pyodiderunner_getpyodide"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L78",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_pyodiderunner_runtests",
-      "target": "utils_pyodiderunner_getpyodide"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/solutionGenerator.js",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_solutiongenerator_js",
-      "target": "utils_solutiongenerator_generateneetcodesolution"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_storage_js",
-      "target": "utils_storage_getsolvedproblems"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_storage_js",
-      "target": "utils_storage_markproblemsolved"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_storage_js",
-      "target": "utils_storage_gettotalxp"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_storage_js",
-      "target": "utils_storage_getsavedcode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_storage_js",
-      "target": "utils_storage_savecode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_utils_storage_js",
-      "target": "utils_storage_resetallprogress"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_storage_markproblemsolved",
-      "target": "utils_storage_getsolvedproblems"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_storage_markproblemsolved",
-      "target": "utils_storage_gettotalxp"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_md",
-      "target": "project_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_md",
-      "target": "project_ml_learning_website_readme_learning_interview_questions_bank"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "README.md",
       "source_location": "L13",
       "weight": 1.0,
@@ -25136,26 +26366,6 @@
       "confidence_score": 1.0,
       "source": "project_ml_learning_website_readme_installation_run",
       "target": "project_ml_learning_website_readme_codeblock_5"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/rules/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_rules_graphify_md",
-      "target": "rules_graphify_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/workflows/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_workflows_graphify_md",
-      "target": "workflows_graphify_workflow_graphify"
     },
     {
       "relation": "contains",
@@ -49417,5 +50627,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "086aa4f4373ce7d9d4386b52c20ebc01422ab5c0"
+  "built_at_commit": "cf4c2e87b68db3c1061db149eca41169fde792e0"
 }

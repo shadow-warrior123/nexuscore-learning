@@ -4,30 +4,19 @@ import {
   Circle, 
   Video, 
   ExternalLink, 
-  BookOpen, 
-  Sparkles, 
   ChevronDown, 
   ChevronRight, 
-  Search, 
   Filter, 
   Star, 
-  Terminal,
   Code2,
   Server,
   Database,
   BrainCircuit,
   Trophy,
-  ArrowRight,
-  Bookmark,
-  Check,
-  Flame,
-  Layers,
   FoldVertical,
   UnfoldVertical,
-  SlidersHorizontal,
   X
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import VideoModal from './VideoModal';
 
 export default function ProblemListView({ 
@@ -51,6 +40,7 @@ export default function ProblemListView({
   useEffect(() => {
     setActiveCategoryFilter(initialCategory || null);
   }, [initialCategory]);
+
   const [starredProblems, setStarredProblems] = useState(() => {
     try {
       const saved = localStorage.getItem('nexus_starred_problems');
@@ -60,7 +50,6 @@ export default function ProblemListView({
     }
   });
 
-  // Video modal state
   const [videoModal, setVideoModal] = useState({ isOpen: false, videoId: null, title: '' });
 
   const toggleStar = (problemId, e) => {
@@ -95,25 +84,20 @@ export default function ProblemListView({
         const filteredItems = items.filter(p => {
           const problemId = `dsa-${p.githubCodeSlug || p.title}`;
 
-          // Curated list filter
           if (curatedListFilter === 'blind75' && !p.blind75) return false;
           if (curatedListFilter === 'neetcode150' && !p.neetcode150) return false;
           if (curatedListFilter === 'neetcode250' && !p.neetcode250) return false;
 
-          // Difficulty filter
           if (difficultyFilter !== 'all' && (p.difficulty || '').toLowerCase() !== difficultyFilter) return false;
 
-          // Status filter
           const isSolved = solvedProblems.has(problemId);
           const isStarred = starredProblems.has(problemId);
           if (statusFilter === 'solved' && !isSolved) return false;
           if (statusFilter === 'unsolved' && isSolved) return false;
           if (statusFilter === 'starred' && !isStarred) return false;
 
-          // Topic / Category filter
           if (activeCategoryFilter && !category.toLowerCase().includes(activeCategoryFilter.toLowerCase())) return false;
 
-          // Search query
           if (searchQuery) {
             const q = searchQuery.toLowerCase();
             return p.title.toLowerCase().includes(q) || category.toLowerCase().includes(q);
@@ -131,8 +115,12 @@ export default function ProblemListView({
           leetcodeUrl: p.leetcodeUrl,
           youtubeVideoId: p.youtubeSolution ? p.youtubeSolution.split('v=')[1] : null,
           trackType: 'dsa',
-          starter_code: `# Solution for: ${p.title}\nclass Solution:\n    def solve(self, *args):\n        # Write your code here\n        pass\n`,
-          description: `### ${p.title}\n\n**Category:** ${category}  \n**Difficulty:** ${p.difficulty}  \n\nClassic algorithmic interview problem. Implement your solution below, test it in the interactive Pyodide terminal, or review the multi-language optimal solutions.`
+          tagline: p.tagline || `${category} Invariant · Target Optimal Verification`,
+          starter_code: p.starter_code || `# First-Principles Implementation: ${p.title}\n# Pattern Invariant: ${category}\n\nclass Solution:\n    def solve(self, *args):\n        # Implement optimal invariant below\n        pass\n`,
+          solution_code: p.solution_code || null,
+          approach_summary: p.approach_summary || null,
+          testCases: p.testCases || [],
+          description: p.description || null
         }));
 
         if (filteredItems.length > 0) {
@@ -148,9 +136,10 @@ export default function ProblemListView({
         : ['pandas', 'numpy', 'sql', 'data-engineering', 'pyspark'];
 
       const targetTracks = journeyData.filter(t => allowedTracks.includes(t.trackSlug));
+
       for (const track of targetTracks) {
         for (const ch of track.chapters) {
-          const catKey = `${track.trackTitle} > ${ch.chapterTitle}`;
+          const catKey = `${track.trackTitle} · ${ch.chapterTitle}`;
           const qList = ch.questions.filter(q => {
             const problemId = `journey-${q.slug}`;
 
@@ -164,7 +153,7 @@ export default function ProblemListView({
 
             if (activeCategoryFilter) {
               const initLower = activeCategoryFilter.toLowerCase();
-              if (!catKey.toLowerCase().includes(initLower) && !(track.trackTitle || '').toLowerCase().includes(initLower)) return false;
+              if (!catKey.toLowerCase().includes(initLower) && !(track.trackTitle || '').toLowerCase().includes(initLower) && !(ch.chapterTitle || '').toLowerCase().includes(initLower)) return false;
             }
 
             if (searchQuery) {
@@ -182,12 +171,14 @@ export default function ProblemListView({
             xp: q.xp,
             tagline: q.tagline,
             objective: q.objective,
-            starter_code: q.starter_code,
-            solution_code: q.solution_code,
+            starter_code: q.starter_code ? q.starter_code.replace(/\r\r\n/g, '\n').replace(/\r\n/g, '\n') : '',
+            solution_code: q.solution_code ? q.solution_code.replace(/\r\r\n/g, '\n').replace(/\r\n/g, '\n') : null,
+            approach_summary: q.approach_summary || null,
+            researchPaper: q.researchPaper || null,
             hints: q.hints,
             testCases: q.testCases || [],
             trackType,
-            description: q.conceptual_brief ? `${q.conceptual_brief}\n\n**Objective:** ${q.objective}` : q.tagline
+            description: (q.question_description || q.conceptual_brief || q.tagline || '').replace(/\r\r\n/g, '\n').replace(/\r\n/g, '\n')
           }));
 
           if (qList.length > 0) {
@@ -201,19 +192,17 @@ export default function ProblemListView({
     if (trackType === 'sysdes') {
       const courses = Array.isArray(sysdesData) ? sysdesData : (sysdesData.courses || []);
       for (const course of courses) {
-        // Course filter
         if (sysdesCourseFilter === 'beginners' && !course.courseName.toLowerCase().includes('beginners')) continue;
         if (sysdesCourseFilter === 'ood' && !course.courseName.toLowerCase().includes('object-oriented design interview')) continue;
         if (sysdesCourseFilter === 'patterns' && !course.courseName.toLowerCase().includes('patterns')) continue;
         if (sysdesCourseFilter === 'hld' && !course.courseName.toLowerCase().includes('system design interview')) continue;
 
         for (const sec of (course.sections || [])) {
-          const catKey = `${course.courseName}: ${sec.sectionName}`;
+          const catKey = `${course.courseName} · ${sec.sectionName}`;
           
           const qList = (sec.questions || []).filter(p => {
             const problemId = `sysdes-${(course.courseId || course.courseName).toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
-            // Calculate difficulty:
             const diff = course.courseName.toLowerCase().includes('beginner') ? 'easy' :
                          course.courseName.toLowerCase().includes('interview') ? 'hard' : 'medium';
             if (difficultyFilter !== 'all' && diff !== difficultyFilter) return false;
@@ -254,37 +243,13 @@ export default function ProblemListView({
               vimeoId: p.vimeoId,
               youtubeVideoId: p.vimeoId || null,
               codeSolutions: p.codeSolutions,
-              tagline: `${course.courseName} • ${sec.sectionName}${p.durationMinutes ? ` • ${p.durationMinutes} min` : ''}`,
+              tagline: p.tagline || `${course.courseName} · ${sec.sectionName}${p.durationMinutes ? ` · ${p.durationMinutes}m` : ''}`,
               trackType: 'sysdes',
-              starter_code: `# System Architecture Blueprint for: ${p.title}
-"""
-Target System: ${p.title}
-Curriculum: ${course.courseName} > ${sec.sectionName}
-Estimated Architecture Deep-Dive: ${p.durationMinutes || 20} minutes
-
-Core Architectural Strategy:
-1. Requirements & Scale Estimation (DAU, Reads/Writes, Throughput, Storage)
-2. High-Level Design (Client -> CDN -> API Gateway -> Load Balancer)
-3. Data Model & Tier Partitioning (Relational vs NoSQL vs In-Memory Cache)
-4. Message Queuing & Streaming Pipelines (Event-Driven Architecture)
-5. Resilience, Fault Tolerance, Disaster Recovery & Bottlenecks
-"""
-
-class DistributedArchitecture:
-    def __init__(self):
-        self.gateway = "APIGateway-V2"
-        self.services = ["AuthService", "ComputeEngine", "NotificationService"]
-        self.database_shards = 4
-        self.cache_ttl_sec = 3600
-
-    def process_traffic(self, qps_volume):
-        # Calculate cluster capacity and routing
-        return {"status": "HEALTHY", "qps": qps_volume, "p99_latency_ms": 14}
-
-system = DistributedArchitecture()
-print(system.process_traffic(75000))
-`,
-              description: `### ${p.title}\n\n**Curriculum Track:** ${course.courseName}  \n**Section:** ${sec.sectionName}  \n**Difficulty:** ${diff}  \n**Duration:** ${p.durationMinutes || 20} mins  \n\nScalable real-world system architecture design challenge. Analyze traffic patterns, storage bounds, API interfaces, and trade-offs.`
+              starter_code: p.starter_code || `# Distributed Architecture Simulation: ${p.title}\n# Track: ${course.courseName} > ${sec.sectionName}\n`,
+              solution_code: p.solution_code || null,
+              approach_summary: p.approach_summary || null,
+              testCases: p.testCases || [],
+              description: p.description || null
             };
           });
 
@@ -299,7 +264,6 @@ print(system.process_traffic(75000))
     return map;
   }, [trackType, dsaData, journeyData, sysdesData, curatedListFilter, sysdesCourseFilter, activeCategoryFilter, difficultyFilter, statusFilter, searchQuery, solvedProblems, starredProblems]);
 
-  // Overall totals for current filtered view
   const { totalShown, solvedShown } = useMemo(() => {
     let tot = 0;
     let sol = 0;
@@ -315,398 +279,389 @@ print(system.process_traffic(75000))
   const getDifficultyBadge = (diff) => {
     const d = (diff || '').toLowerCase();
     if (d === 'easy') return 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30';
-    if (d === 'medium') return 'text-amber-400 bg-amber-500/10 border-amber-500/30';
+    if (d === 'medium') return 'text-amber-300 bg-amber-500/10 border-amber-500/30';
     if (d === 'hard' || d === 'boss') return 'text-rose-400 bg-rose-500/10 border-rose-500/30';
-    return 'text-cyan-400 bg-cyan-500/10 border-cyan-500/30';
+    return 'text-zinc-300 bg-zinc-800 border-zinc-700';
   };
 
   const allCategoryKeys = Array.from(categorizedProblems.keys());
 
+  const trackMeta = {
+    ml: { code: 'CURRICULUM 02', title: 'AI & Machine Learning Engineering', desc: 'From-scratch tensor mechanics, backpropagation, neural architectures, and multi-head attention.' },
+    dsa: { code: 'CURRICULUM 03', title: 'Data Structures & Algorithmic Primitives', desc: '1,126 specifications mapped to production latency constraints, memory bounds, and 3-tier solutions.' },
+    sysdes: { code: 'CURRICULUM 04', title: 'Distributed Systems & Architecture', desc: 'High-level distributed topology, sharding invariants, caching layers, and object-oriented state machines.' },
+    data: { code: 'CURRICULUM 05', title: 'Data Engineering & Vector Pipelines', desc: 'Zero-copy NumPy broadcasting, Pandas columnar joins, OLAP SQL window frames, and PySpark DAGs.' }
+  }[trackType] || { code: 'CURRICULUM', title: 'Engineering Specifications', desc: '' };
+
   return (
-    <div className="py-6 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-6">
-      
-      {/* Filter Bar */}
-      <div className="bg-slate-900/90 rounded-2xl border border-slate-800 p-5 sm:p-6 shadow-2xl space-y-4">
+    <div className="bg-topography-grid min-h-screen">
+      <div className="py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-6">
         
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-2.5">
-              {trackType === 'dsa' && <Code2 className="w-6 h-6 text-cyan-400" />}
-              {trackType === 'sysdes' && <Server className="w-6 h-6 text-indigo-400" />}
-              {trackType === 'ml' && <BrainCircuit className="w-6 h-6 text-purple-400" />}
-              {trackType === 'data' && <Database className="w-6 h-6 text-emerald-400" />}
-              <span>
-                {trackType === 'dsa' && 'Data Structures & Algorithms'}
-                {trackType === 'ml' && 'Machine Learning & Deep Learning'}
-                {trackType === 'data' && 'Data Engineering & Scaled Systems'}
-                {trackType === 'sysdes' && 'System Design & Distributed Architecture'}
-              </span>
-            </h1>
-            <p className="text-xs text-slate-400 mt-1 font-sans">
-              Structured question sets with in-browser terminal execution and 3-tier progressive solutions.
-            </p>
-          </div>
-
-          {/* Quick Progress Indicator */}
-          <div className="flex items-center gap-3 bg-slate-950/80 px-4 py-2.5 rounded-xl border border-slate-800 text-xs flex-shrink-0 shadow-inner">
-            <Trophy className="w-4 h-4 text-amber-400 flex-shrink-0" />
-            <div>
-              <div className="font-mono text-slate-200">
-                <span className="font-bold text-emerald-400">{solvedShown}</span>
-                <span className="text-slate-500 text-[11px]"> / {totalShown} Solved</span>
-              </div>
-              <div className="w-28 h-1.5 bg-slate-800 rounded-full mt-1.5 overflow-hidden">
-                <div 
-                  className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-500" 
-                  style={{ width: `${totalShown > 0 ? (solvedShown / totalShown) * 100 : 0}%` }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Active Filter Topic Dismiss Badge */}
-        {activeCategoryFilter && (
-          <div className="flex items-center gap-2 pt-2 border-t border-slate-800/80 text-xs">
-            <span className="text-slate-400 font-mono text-[11px]">Filtered Topic:</span>
-            <span className="px-2.5 py-1 rounded-lg bg-cyan-950/80 text-cyan-300 border border-cyan-800/80 flex items-center gap-1.5 font-mono text-xs shadow-sm">
-              <span>{activeCategoryFilter}</span>
-              <button
-                onClick={() => setActiveCategoryFilter(null)}
-                className="hover:text-white hover:bg-cyan-800/50 p-0.5 rounded transition-colors"
-                title="Clear topic filter"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            </span>
-          </div>
-        )}
-
-        {/* DSA Curated Lists Pills (Core 150, Blind 75, Curated 250) */}
-        {trackType === 'dsa' && (
-          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/80">
-            {[
-              { id: 'neetcode150', label: '🚀 Core 150', count: 150 },
-              { id: 'blind75', label: '🧠 Blind 75', count: 75 },
-              { id: 'neetcode250', label: '🦄 Curated 250', count: 250 },
-              { id: 'all', label: '🌐 All Problems', count: 1126 }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setCuratedListFilter(tab.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                  curatedListFilter === tab.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md shadow-cyan-500/20'
-                    : 'bg-slate-800/80 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-700/60'
-                }`}
-              >
-                <span>{tab.label}</span>
-                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
-                  curatedListFilter === tab.id ? 'bg-white/20 text-white' : 'bg-slate-900 text-slate-500'
-                }`}>
-                  {tab.count}
-                </span>
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* System Design Course Filter Pills */}
-        {trackType === 'sysdes' && (
-          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/80">
-            {[
-              { id: 'all', label: '🌐 All Architectures', count: 49 },
-              { id: 'beginners', label: '🔰 Beginners Foundations', count: 21 },
-              { id: 'ood', label: '🧩 OOD Interview', count: 7 },
-              { id: 'patterns', label: '🏗 Design Patterns', count: 11 },
-              { id: 'hld', label: '⚡ Distributed HLD', count: 10 }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setSysdesCourseFilter(tab.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                  sysdesCourseFilter === tab.id
-                    ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-md shadow-blue-500/20'
-                    : 'bg-slate-800/80 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-700/60'
-                }`}
-              >
-                <span>{tab.label}</span>
-                <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
-                  sysdesCourseFilter === tab.id ? 'bg-white/20 text-white' : 'bg-slate-900 text-slate-500'
-                }`}>
-                  {tab.count}
-                </span>
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Multi-Filters Bar: Status, Difficulty & Expand/Collapse */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-2 text-xs border-t border-slate-800/60">
+        {/* Editorial Header & Control Panel */}
+        <div className="bg-[#0f0f12] rounded-lg border border-zinc-800/90 p-6 space-y-5">
           
-          <div className="flex flex-wrap items-center gap-3">
-            {/* Status Filter */}
-            <div className="flex items-center gap-1.5 bg-slate-950 p-1 rounded-lg border border-slate-800">
-              {[
-                { id: 'all', label: 'All' },
-                { id: 'unsolved', label: 'Unsolved' },
-                { id: 'solved', label: 'Solved' },
-                { id: 'starred', label: '★ Starred' }
-              ].map(st => (
-                <button
-                  key={st.id}
-                  onClick={() => setStatusFilter(st.id)}
-                  className={`px-2.5 py-1 rounded-md text-[11px] font-mono transition-all ${
-                    statusFilter === st.id
-                      ? 'bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/40 shadow-sm'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  {st.label}
-                </button>
-              ))}
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-zinc-800/80 pb-5">
+            <div>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400">
+                {trackMeta.code}
+              </span>
+              <h1 className="font-serif text-3xl sm:text-4xl text-zinc-100 mt-1 tracking-tight">
+                {trackMeta.title}
+              </h1>
+              <p className="text-xs text-zinc-400 mt-1 max-w-2xl">
+                {trackMeta.desc}
+              </p>
             </div>
 
-            {/* Difficulty Filter Pills */}
-            <div className="flex items-center gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800">
-              {['all', 'easy', 'medium', 'hard'].map(diff => (
-                <button
-                  key={diff}
-                  onClick={() => setDifficultyFilter(diff)}
-                  className={`px-2.5 py-1 rounded-md capitalize font-mono text-[11px] transition-all ${
-                    difficultyFilter === diff
-                      ? 'bg-slate-800 text-white font-bold border border-slate-700 shadow-sm'
-                      : 'text-slate-400 hover:text-slate-200'
-                  }`}
-                >
-                  {diff}
-                </button>
-              ))}
+            {/* Progress Readout */}
+            <div className="flex items-center gap-3 bg-[#09090b] px-4 py-2.5 rounded-md border border-zinc-800/90 text-xs flex-shrink-0 font-mono">
+              <Trophy className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div>
+                <div className="text-zinc-300">
+                  <span className="font-semibold text-emerald-400">{solvedShown}</span>
+                  <span className="text-zinc-500 text-[11px]"> / {totalShown} VERIFIED</span>
+                </div>
+                <div className="w-28 h-1 bg-zinc-800 rounded-full mt-1.5 overflow-hidden">
+                  <div 
+                    className="h-full bg-amber-400 transition-all duration-500" 
+                    style={{ width: `${totalShown > 0 ? (solvedShown / totalShown) * 100 : 0}%` }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Expand / Collapse All Controls */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={expandAll}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-xs font-mono transition-colors border border-slate-700/60"
-              title="Expand All Categories"
-            >
-              <UnfoldVertical className="w-3 h-3 text-cyan-400" />
-              <span>Expand All</span>
-            </button>
-            <button
-              onClick={() => collapseAll(allCategoryKeys)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-xs font-mono transition-colors border border-slate-700/60"
-              title="Collapse All Categories"
-            >
-              <FoldVertical className="w-3 h-3 text-slate-400" />
-              <span>Collapse All</span>
-            </button>
+          {/* Active Topic Filter Pill */}
+          {activeCategoryFilter && (
+            <div className="flex items-center gap-2 text-xs font-mono">
+              <span className="text-zinc-500 text-[11px]">ACTIVE MODULE FILTER:</span>
+              <span className="px-2.5 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30 flex items-center gap-1.5 text-xs">
+                <span>{activeCategoryFilter}</span>
+                <button
+                  onClick={() => setActiveCategoryFilter(null)}
+                  className="hover:text-white p-0.5 rounded transition-colors"
+                  title="Clear module filter"
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              </span>
+            </div>
+          )}
+
+          {/* DSA Curated Track Switcher */}
+          {trackType === 'dsa' && (
+            <div className="flex flex-wrap items-center gap-2">
+              {[
+                { id: 'neetcode150', label: '01 / Core 150 Invariants', count: 150 },
+                { id: 'blind75', label: '02 / Essential 75', count: 75 },
+                { id: 'neetcode250', label: '03 / Extended 250', count: 250 },
+                { id: 'all', label: '04 / Complete Archive', count: 1126 }
+              ].map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setCuratedListFilter(tab.id)}
+                  className={`px-3 py-1.5 rounded text-xs font-mono transition-colors flex items-center gap-2 border ${
+                    curatedListFilter === tab.id
+                      ? 'bg-zinc-100 text-zinc-950 border-zinc-100 font-semibold'
+                      : 'bg-[#09090b] hover:bg-zinc-900 text-zinc-400 hover:text-zinc-200 border-zinc-800'
+                  }`}
+                >
+                  <span>{tab.label}</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded ${
+                    curatedListFilter === tab.id ? 'bg-zinc-900/15 text-zinc-900' : 'bg-zinc-900 text-zinc-500'
+                  }`}>
+                    {tab.count}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* System Design Course Switcher */}
+          {trackType === 'sysdes' && (
+            <div className="flex flex-wrap items-center gap-2">
+              {[
+                { id: 'all', label: '01 / All Architectures', count: 49 },
+                { id: 'beginners', label: '02 / Distributed Primitives', count: 21 },
+                { id: 'ood', label: '03 / OOD State Machines', count: 7 },
+                { id: 'patterns', label: '04 / Design Patterns', count: 11 },
+                { id: 'hld', label: '05 / Production HLD', count: 10 }
+              ].map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setSysdesCourseFilter(tab.id)}
+                  className={`px-3 py-1.5 rounded text-xs font-mono transition-colors flex items-center gap-2 border ${
+                    sysdesCourseFilter === tab.id
+                      ? 'bg-zinc-100 text-zinc-950 border-zinc-100 font-semibold'
+                      : 'bg-[#09090b] hover:bg-zinc-900 text-zinc-400 hover:text-zinc-200 border-zinc-800'
+                  }`}
+                >
+                  <span>{tab.label}</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded ${
+                    sysdesCourseFilter === tab.id ? 'bg-zinc-900/15 text-zinc-900' : 'bg-zinc-900 text-zinc-500'
+                  }`}>
+                    {tab.count}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Status, Difficulty & Accordion Controls */}
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-zinc-800/80 text-xs font-mono">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex items-center gap-1 bg-[#09090b] p-1 rounded border border-zinc-800">
+                {[
+                  { id: 'all', label: 'All' },
+                  { id: 'unsolved', label: 'Unsolved' },
+                  { id: 'solved', label: 'Verified' },
+                  { id: 'starred', label: '★ Bookmarked' }
+                ].map(st => (
+                  <button
+                    key={st.id}
+                    onClick={() => setStatusFilter(st.id)}
+                    className={`px-2.5 py-1 rounded text-[11px] transition-colors ${
+                      statusFilter === st.id
+                        ? 'bg-zinc-800 text-zinc-100 font-semibold'
+                        : 'text-zinc-500 hover:text-zinc-300'
+                    }`}
+                  >
+                    {st.label}
+                  </button>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-1 bg-[#09090b] p-1 rounded border border-zinc-800">
+                {['all', 'easy', 'medium', 'hard'].map(diff => (
+                  <button
+                    key={diff}
+                    onClick={() => setDifficultyFilter(diff)}
+                    className={`px-2.5 py-1 rounded capitalize text-[11px] transition-colors ${
+                      difficultyFilter === diff
+                        ? 'bg-zinc-800 text-zinc-100 font-semibold'
+                        : 'text-zinc-500 hover:text-zinc-300'
+                    }`}
+                  >
+                    {diff}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={expandAll}
+                className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#09090b] hover:bg-zinc-900 text-zinc-400 hover:text-zinc-200 text-[11px] border border-zinc-800 transition-colors"
+              >
+                <UnfoldVertical className="w-3 h-3 text-amber-400" />
+                <span>Expand</span>
+              </button>
+              <button
+                onClick={() => collapseAll(allCategoryKeys)}
+                className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#09090b] hover:bg-zinc-900 text-zinc-400 hover:text-zinc-200 text-[11px] border border-zinc-800 transition-colors"
+              >
+                <FoldVertical className="w-3 h-3 text-zinc-500" />
+                <span>Collapse</span>
+              </button>
+            </div>
           </div>
 
         </div>
 
-      </div>
+        {/* Category Sections */}
+        <div className="space-y-3">
+          {Array.from(categorizedProblems.entries()).map(([categoryName, problems], catIdx) => {
+            const isCollapsed = !!collapsedCategories[categoryName];
+            const categorySolved = problems.filter(p => solvedProblems.has(p.id)).length;
+            const percent = Math.round((categorySolved / problems.length) * 100);
 
-      {/* Accordion Categories */}
-      <div className="space-y-4">
-        {Array.from(categorizedProblems.entries()).map(([categoryName, problems]) => {
-          const isCollapsed = !!collapsedCategories[categoryName];
-          const categorySolved = problems.filter(p => solvedProblems.has(p.id)).length;
-          const percent = Math.round((categorySolved / problems.length) * 100);
-
-          return (
-            <div 
-              key={categoryName}
-              className="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden shadow-xl transition-all"
-            >
-              {/* Category Header */}
+            return (
               <div 
-                onClick={() => toggleCategoryCollapse(categoryName)}
-                className="flex items-center justify-between p-4 bg-slate-900/90 hover:bg-slate-850 cursor-pointer border-b border-slate-800/80 transition-colors"
+                key={categoryName}
+                className="rounded-lg border border-zinc-800/90 bg-[#0f0f12] overflow-hidden"
               >
-                <div className="flex items-center gap-3">
-                  <div className="text-slate-400">
-                    {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-cyan-400" />}
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white tracking-wide flex items-center gap-2">
+                {/* Category Header */}
+                <div 
+                  onClick={() => toggleCategoryCollapse(categoryName)}
+                  className="flex items-center justify-between px-4 py-3.5 bg-[#0f0f12] hover:bg-zinc-900/70 cursor-pointer border-b border-zinc-800/80 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="text-zinc-500">
+                      {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronDown className="w-4 h-4 text-amber-400" />}
+                    </div>
+                    <span className="text-[11px] font-mono text-zinc-500">
+                      {String(catIdx + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="text-xs sm:text-sm font-semibold text-zinc-100 tracking-tight flex items-center gap-2">
                       <span>{categoryName}</span>
-                      <span className="text-[11px] font-mono text-slate-400 font-normal">
-                        ({problems.length})
+                      <span className="text-[11px] font-mono text-zinc-500 font-normal">
+                        [{problems.length}]
                       </span>
                     </h3>
                   </div>
-                </div>
 
-                <div className="flex items-center gap-4">
-                  {/* Category Progress Bar */}
-                  <div className="hidden sm:flex items-center gap-2.5 font-mono text-xs">
-                    <span className={`text-[11px] font-bold ${percent === 100 ? 'text-emerald-400' : 'text-slate-400'}`}>
-                      {categorySolved} / {problems.length}
-                    </span>
-                    <div className="w-20 h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full transition-all duration-300 ${percent === 100 ? 'bg-emerald-400' : 'bg-cyan-500'}`}
-                        style={{ width: `${percent}%` }}
-                      />
+                  <div className="flex items-center gap-3 font-mono text-xs">
+                    <div className="hidden sm:flex items-center gap-2">
+                      <span className="text-[11px] text-zinc-400">
+                        {categorySolved}/{problems.length}
+                      </span>
+                      <div className="w-16 h-1 bg-zinc-800 rounded-full overflow-hidden">
+                        <div 
+                          className={`h-full transition-all duration-300 ${percent === 100 ? 'bg-emerald-400' : 'bg-amber-400'}`}
+                          style={{ width: `${percent}%` }}
+                        />
+                      </div>
                     </div>
+
+                    <span className={`text-[10px] px-2 py-0.5 rounded border ${
+                      percent === 100
+                        ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+                        : 'bg-zinc-900 text-zinc-400 border-zinc-800'
+                    }`}>
+                      {percent}%
+                    </span>
                   </div>
-
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full font-bold border ${
-                    percent === 100
-                      ? 'bg-emerald-950/80 text-emerald-300 border-emerald-800'
-                      : 'bg-slate-800 text-slate-400 border-slate-700'
-                  }`}>
-                    {percent}%
-                  </span>
                 </div>
-              </div>
 
-              {/* Problems Table / List */}
-              {!isCollapsed && (
-                <div className="divide-y divide-slate-800/60">
-                  {problems.map((problem) => {
-                    const isSolved = solvedProblems.has(problem.id);
-                    const isStarred = starredProblems.has(problem.id);
+                {/* Problems Table */}
+                {!isCollapsed && (
+                  <div className="divide-y divide-zinc-800/60">
+                    {problems.map((problem, pIdx) => {
+                      const isSolved = solvedProblems.has(problem.id);
+                      const isStarred = starredProblems.has(problem.id);
 
-                    return (
-                      <div
-                        key={problem.id}
-                        onClick={() => onSelectProblem(problem)}
-                        className={`flex items-center justify-between p-3.5 px-4 sm:px-6 hover:bg-slate-800/50 cursor-pointer transition-all group ${
-                          isSolved ? 'bg-emerald-950/10' : ''
-                        }`}
-                      >
-                        {/* Left: Status, Star, Title, Badges */}
-                        <div className="flex items-center gap-3.5 min-w-0 pr-4">
-                          
-                          {/* Solved Checkbox */}
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (onToggleSolved) onToggleSolved(problem.id);
-                            }}
-                            className="text-slate-500 hover:text-emerald-400 transition-colors flex-shrink-0"
-                            title={isSolved ? "Mark Unsolved" : "Mark Solved"}
-                          >
-                            {isSolved ? (
-                              <CheckCircle2 className="w-4 h-4 text-emerald-400 fill-emerald-500/20" />
-                            ) : (
-                              <Circle className="w-4 h-4 text-slate-600 hover:text-slate-400" />
-                            )}
-                          </button>
-
-                          {/* Star Bookmark */}
-                          <button
-                            onClick={(e) => toggleStar(problem.id, e)}
-                            className="text-slate-600 hover:text-amber-400 transition-colors flex-shrink-0"
-                            title={isStarred ? "Unstar" : "Star Problem"}
-                          >
-                            <Star className={`w-3.5 h-3.5 ${isStarred ? 'text-amber-400 fill-amber-400' : 'text-slate-600'}`} />
-                          </button>
-
-                          {/* Title & Tagline */}
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-2">
-                              <span className={`text-xs font-semibold truncate transition-colors ${
-                                isSolved ? 'text-slate-400 line-through' : 'text-slate-100 group-hover:text-cyan-300'
-                              }`}>
-                                {problem.title}
-                              </span>
-
-                              {/* Special Track Badges */}
-                              {problem.blind75 && (
-                                <span className="hidden md:inline text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-950/80 text-amber-300 border border-amber-800/80 font-bold">
-                                  Blind 75
-                                </span>
-                              )}
-                              {problem.neetcode150 && (
-                                <span className="hidden md:inline text-[9px] font-mono px-1.5 py-0.2 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-800/80 font-bold">
-                                  Core 150
-                                </span>
-                              )}
-                            </div>
-                            
-                            {problem.tagline && (
-                              <p className="text-[11px] text-slate-500 truncate font-mono mt-0.5">
-                                {problem.tagline}
-                              </p>
-                            )}
-                          </div>
-
-                        </div>
-
-                        {/* Right: Actions, Difficulty Pill, Video, Terminal Link */}
-                        <div className="flex items-center gap-2.5 flex-shrink-0">
-                          
-                          {/* Difficulty Pill */}
-                          <span className={`text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full border font-bold ${getDifficultyBadge(problem.difficulty)}`}>
-                            {problem.difficulty || 'Easy'}
-                          </span>
-
-                          {/* Video Solution Trigger */}
-                          {problem.youtubeVideoId && (
+                      return (
+                        <div
+                          key={problem.id}
+                          onClick={() => onSelectProblem(problem)}
+                          className={`flex items-center justify-between py-3 px-4 sm:px-5 hover:bg-zinc-900/70 cursor-pointer transition-colors group ${
+                            isSolved ? 'bg-emerald-950/[0.08]' : ''
+                          }`}
+                        >
+                          <div className="flex items-center gap-3 min-w-0 pr-4">
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();
-                                setVideoModal({ isOpen: true, videoId: problem.youtubeVideoId, title: problem.title });
+                                if (onToggleSolved) onToggleSolved(problem.id);
                               }}
-                              className="p-1 rounded-md text-slate-500 hover:text-red-400 hover:bg-slate-800 transition-colors"
-                              title="Watch Video Solution"
+                              className="text-zinc-600 hover:text-emerald-400 transition-colors flex-shrink-0"
+                              title={isSolved ? "Mark Unverified" : "Mark Verified"}
                             >
-                              <Video className="w-3.5 h-3.5" />
+                              {isSolved ? (
+                                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                              ) : (
+                                <Circle className="w-4 h-4 text-zinc-700 hover:text-zinc-400" />
+                              )}
                             </button>
-                          )}
 
-                          {/* Problem Direct Reference */}
-                          {problem.leetcodeUrl && (
-                            <a
-                              href={problem.leetcodeUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="p-1 rounded-md text-slate-500 hover:text-amber-400 hover:bg-slate-800 transition-colors hidden sm:block"
-                              title="Problem Reference"
+                            <button
+                              onClick={(e) => toggleStar(problem.id, e)}
+                              className="text-zinc-700 hover:text-amber-400 transition-colors flex-shrink-0"
+                              title={isStarred ? "Remove Bookmark" : "Bookmark Spec"}
                             >
-                              <ExternalLink className="w-3.5 h-3.5" />
-                            </a>
-                          )}
+                              <Star className={`w-3.5 h-3.5 ${isStarred ? 'text-amber-400 fill-amber-400' : 'text-zinc-700'}`} />
+                            </button>
 
-                          <ChevronRight className="w-4 h-4 text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-0.5 transition-all" />
+                            <span className="text-[10px] font-mono text-zinc-600 w-6 flex-shrink-0 hidden sm:inline">
+                              {String(pIdx + 1).padStart(2, '0')}
+                            </span>
+
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span className={`text-xs font-medium truncate transition-colors ${
+                                  isSolved ? 'text-zinc-500 line-through' : 'text-zinc-100 group-hover:text-amber-300'
+                                }`}>
+                                  {problem.title}
+                                </span>
+
+                                {problem.blind75 && (
+                                  <span className="hidden md:inline text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30">
+                                    BLIND-75
+                                  </span>
+                                )}
+                                {problem.neetcode150 && (
+                                  <span className="hidden md:inline text-[9px] font-mono px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
+                                    CORE-150
+                                  </span>
+                                )}
+                              </div>
+                              
+                              {problem.tagline && (
+                                <p className="text-[11px] text-zinc-500 truncate font-mono mt-0.5">
+                                  {problem.tagline}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-2.5 flex-shrink-0">
+                            {problem.testCases && problem.testCases.length > 0 && (
+                              <span className="hidden lg:inline text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/[0.08] text-emerald-400 border border-emerald-500/25">
+                                ✓ {problem.testCases.length} TESTS
+                              </span>
+                            )}
+                            <span className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded border ${getDifficultyBadge(problem.difficulty)}`}>
+                              {problem.difficulty || 'Easy'}
+                            </span>
+
+                            {problem.youtubeVideoId && (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setVideoModal({ isOpen: true, videoId: problem.youtubeVideoId, title: problem.title });
+                                }}
+                                className="p-1 rounded text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
+                                title="Video Walkthrough"
+                              >
+                                <Video className="w-3.5 h-3.5" />
+                              </button>
+                            )}
+
+                            {problem.leetcodeUrl && (
+                              <a
+                                href={problem.leetcodeUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="p-1 rounded text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors hidden sm:block"
+                                title="External Benchmark Reference"
+                              >
+                                <ExternalLink className="w-3.5 h-3.5" />
+                              </a>
+                            )}
+
+                            <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:text-amber-400 group-hover:translate-x-0.5 transition-all" />
+                          </div>
                         </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
 
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
+          {categorizedProblems.size === 0 && (
+            <div className="p-12 text-center text-zinc-500 rounded-lg bg-[#0f0f12] border border-dashed border-zinc-800 space-y-2">
+              <Filter className="w-6 h-6 mx-auto text-zinc-600" />
+              <h3 className="text-xs font-mono uppercase text-zinc-300">No specifications match the active filter</h3>
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto">
+                Reset difficulty, status, or search filters above to view all modules.
+              </p>
             </div>
-          );
-        })}
+          )}
+        </div>
 
-        {categorizedProblems.size === 0 && (
-          <div className="p-12 text-center text-slate-500 rounded-2xl bg-slate-900/40 border border-dashed border-slate-800 space-y-3">
-            <Filter className="w-8 h-8 mx-auto text-slate-600" />
-            <h3 className="text-sm font-semibold text-slate-300">No problems match the current filter</h3>
-            <p className="text-xs text-slate-500 max-w-sm mx-auto">
-              Try switching your difficulty filter to "All", resetting search, or changing curated lists.
-            </p>
-          </div>
+        {videoModal.isOpen && (
+          <VideoModal
+            isOpen={videoModal.isOpen}
+            videoId={videoModal.videoId}
+            problemTitle={videoModal.title}
+            onClose={() => setVideoModal({ isOpen: false, videoId: null, title: '' })}
+          />
         )}
+
       </div>
-
-      {/* Embedded Video Modal */}
-      {videoModal.isOpen && (
-        <VideoModal
-          isOpen={videoModal.isOpen}
-          videoId={videoModal.videoId}
-          problemTitle={videoModal.title}
-          onClose={() => setVideoModal({ isOpen: false, videoId: null, title: '' })}
-        />
-      )}
-
     </div>
   );
 }
