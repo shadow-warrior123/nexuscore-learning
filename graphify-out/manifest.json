@@ -180,23 +180,18 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\server\\index.mjs": {
-    "mtime": 1794064814.2237425,
-    "ast_hash": "c5e537c8bcb81b186212741054d9f3bb",
+    "mtime": 1794768410.366455,
+    "ast_hash": "41599316ba20b6342de762a463f25814",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\App.jsx": {
-    "mtime": 1794066272.3165188,
-    "ast_hash": "092f1cab3d91664caedae3f893d4203c",
+    "mtime": 1794768410.4223597,
+    "ast_hash": "bab76bb606f4d80cc852bd434574759b",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\main.jsx": {
     "mtime": 1794064814.2371256,
     "ast_hash": "cdd82b768936c02c7313ac2fa5218f43",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\BackendGuideModal.jsx": {
-    "mtime": 1794064814.2246115,
-    "ast_hash": "bf6d14bacf31b88bfcc7d03562be35b3",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\GfgSolutionView.jsx": {
@@ -205,38 +200,38 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\InAppPdfViewer.jsx": {
-    "mtime": 1794064814.2246115,
-    "ast_hash": "2973b38491fdf8b927395031b37b1582",
+    "mtime": 1794768410.5799892,
+    "ast_hash": "1971ad13346161eb53d39ce1ad4e1c20",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\MarkdownRenderer.jsx": {
-    "mtime": 1794066940.156906,
-    "ast_hash": "40d22fb910dd0754cdfe200560142a39",
+    "mtime": 1794768410.6486566,
+    "ast_hash": "8c5a5002c5a83d8aa6021fcd4cf795d6",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\Navbar.jsx": {
-    "mtime": 1794066272.4067576,
-    "ast_hash": "efe0d99f5bfb086f561843d287288af3",
+    "mtime": 1794768410.718229,
+    "ast_hash": "cb4bbc134d9bcedfb4e47260bfe8973e",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\ProblemListView.jsx": {
-    "mtime": 1794068381.1920776,
-    "ast_hash": "e5635c118246882708264d106216e752",
+    "mtime": 1794768410.755241,
+    "ast_hash": "de478802915621feaa60ce3eb5d1c320",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\ProblemWorkspace.jsx": {
-    "mtime": 1794068381.2603986,
-    "ast_hash": "dace394a36aa1193e4fe1fe92734eca4",
+    "mtime": 1794768873.947971,
+    "ast_hash": "dc00452c04a181c83acee54e6617984d",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\ResearchPapersView.jsx": {
-    "mtime": 1794066272.6783552,
-    "ast_hash": "7ccadfa0763195907f9567cd8342167f",
+    "mtime": 1794768410.8341558,
+    "ast_hash": "4e5384ec0de150cc01e23467c02d1a6a",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\RoadmapView.jsx": {
-    "mtime": 1794066272.8849313,
-    "ast_hash": "aec0ed34a2703813f300fbec01a672a7",
+    "mtime": 1794768410.865839,
+    "ast_hash": "42c9151e2f45f41475690692efa200ce",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\VideoModal.jsx": {
@@ -265,38 +260,38 @@
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\utils\\api.js": {
-    "mtime": 1794064814.2381237,
-    "ast_hash": "e5fb352dcd1e14c76989a8037e16c1d3",
+    "mtime": 1794768410.9033134,
+    "ast_hash": "f84a4e034252c23400165d30cb58d6a4",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\utils\\problemSpecGenerator.js": {
-    "mtime": 1794066124.74871,
-    "ast_hash": "aecefe8f7b849d953f65bd6440570b70",
+    "mtime": 1794768410.9475224,
+    "ast_hash": "1d704a20726515c1f2deb4a254085c71",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\utils\\pyodideRunner.js": {
-    "mtime": 1794069222.5958111,
-    "ast_hash": "77c7db9dbbcc74ec65cb92516e4eec30",
+    "mtime": 1794768958.8021817,
+    "ast_hash": "d0631df687067cc1e3ca912cc140fc94",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\utils\\solutionGenerator.js": {
-    "mtime": 1794068381.6252115,
-    "ast_hash": "413d11c8ec57167317558a495e4e306a",
+    "mtime": 1794768411.014749,
+    "ast_hash": "cabd0da3fce2ab77942f3fbd3f51520d",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\utils\\storage.js": {
-    "mtime": 1794064814.2391243,
-    "ast_hash": "201bc64a43e01c06f2e32e4c282a8df5",
+    "mtime": 1794768411.0520675,
+    "ast_hash": "31bf9ec3c625545071c0f1b0948579cc",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\index.html": {
-    "mtime": 1794066272.2279975,
-    "ast_hash": "d11c46fe26e09aec4a6984673c7820b4",
+    "mtime": 1794768039.2141004,
+    "ast_hash": "ac896f06dffbb1afae3812b0f16f278f",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\README.md": {
-    "mtime": 1794064814.1751835,
-    "ast_hash": "a70ca66ab43eba01f88b24a06fe17366",
+    "mtime": 1794768410.201151,
+    "ast_hash": "aaa55efae2c0baa7d1342380706c98bf",
     "semantic_hash": ""
   },
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\.agents\\rules\\graphify.md": {
@@ -317,6 +312,26 @@
   "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\public\\favicon.svg": {
     "mtime": 1794064814.2224631,
     "ast_hash": "12d4b64d19e6601344ed214a1c5353fe",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\AnalyticsModal.jsx": {
+    "mtime": 1794768158.282658,
+    "ast_hash": "50f963975c8e657bfec1fa867027254c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\CommandPalette.jsx": {
+    "mtime": 1794768156.5835204,
+    "ast_hash": "333eeee791714612e2b45cc17cc64017",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\components\\MathText.jsx": {
+    "mtime": 1794768118.4871962,
+    "ast_hash": "03894244a20c4256c2ee9818685fd2b6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\ntry2\\OneDrive\\Desktop\\DSA-ML learning website\\src\\utils\\catalog.js": {
+    "mtime": 1794768154.7812288,
+    "ast_hash": "a1e5f070f960ac114e3e6e5d35c3ec53",
     "semantic_hash": ""
   }
 }

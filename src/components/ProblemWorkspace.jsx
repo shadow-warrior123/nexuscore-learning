@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { 
   ArrowLeft, 
   Play, 
@@ -23,11 +23,12 @@ import {
   AlertTriangle,
   Cpu,
   Workflow,
-  ArrowRight
+  ArrowRight,
+  ExternalLink
 } from 'lucide-react';
 import Editor from '@monaco-editor/react';
 import confetti from 'canvas-confetti';
-import { runPythonCode, runTests } from '../utils/pyodideRunner';
+import { runPythonCode, runSqlCode, runTests, getPyodide, isPyodideReady } from '../utils/pyodideRunner';
 import { getSavedCode, saveCode, markProblemSolved } from '../utils/storage';
 import { submitProblemToBackend, getSubmissionHistory, saveCodeDraftToBackend } from '../utils/api';
 import { generateProblemSpec } from '../utils/problemSpecGenerator';
@@ -37,11 +38,11 @@ import InAppPdfViewer from './InAppPdfViewer';
 import MarkdownRenderer from './MarkdownRenderer';
 
 const SUPPORTED_LANGUAGES = [
-  { id: 'python', label: 'Python 3', monacoLang: 'python', engine: 'Pyodide WASM', ext: '.py' },
-  { id: 'javascript', label: 'JavaScript', monacoLang: 'javascript', engine: 'V8 Sandbox', ext: '.js' },
-  { id: 'cpp', label: 'C++ 20', monacoLang: 'cpp', engine: 'GCC / Clang AST', ext: '.cpp' },
-  { id: 'java', label: 'Java 21', monacoLang: 'java', engine: 'OpenJDK AST', ext: '.java' },
-  { id: 'sql', label: 'SQL', monacoLang: 'sql', engine: 'ANSI / OLAP', ext: '.sql' }
+  { id: 'python', label: 'Python 3', monacoLang: 'python', engine: 'Pyodide WASM', runnable: true, ext: '.py' },
+  { id: 'javascript', label: 'JavaScript', monacoLang: 'javascript', engine: 'V8 Sandbox', runnable: true, ext: '.js' },
+  { id: 'sql', label: 'SQL', monacoLang: 'sql', engine: 'SQLite3 WASM', runnable: true, ext: '.sql' },
+  { id: 'cpp', label: 'C++ 20', monacoLang: 'cpp', engine: 'Reference Only', runnable: false, ext: '.cpp' },
+  { id: 'java', label: 'Java 21', monacoLang: 'java', engine: 'Reference Only', runnable: false, ext: '.java' }
 ];
 
 function getDefaultStarterCode(lang, problem) {
@@ -135,6 +136,22 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
   const [showMinimap, setShowMinimap] = useState(false);
   const [consoleTab, setConsoleTab] = useState('output'); // 'output' | 'testcases'
   const [solutionLoadedToast, setSolutionLoadedToast] = useState(false);
+  const [pyodideStatus, setPyodideStatus] = useState(isPyodideReady() ? 'ready' : 'loading');
+  const saveDraftTimerRef = useRef(null);
+
+  useEffect(() => {
+    let mounted = true;
+    if (!isPyodideReady()) {
+      setPyodideStatus('loading');
+      getPyodide()
+        .then(() => { if (mounted) setPyodideStatus('ready'); })
+        .catch(() => { if (mounted) setPyodideStatus('error'); });
+    }
+    return () => {
+      mounted = false;
+      if (saveDraftTimerRef.current) clearTimeout(saveDraftTimerRef.current);
+    };
+  }, []);
   
   const [terminalOutput, setTerminalOutput] = useState({
     status: 'idle',
@@ -192,13 +209,18 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
     if (problem) {
       const storageKey = `${problem.id}_${selectedLang}`;
       saveCode(storageKey, newCode);
-      saveCodeDraftToBackend({
-        problemId: problem.id,
-        problemTitle: problem.title,
-        trackType: problem.trackType || 'general',
-        category: problem.category || '',
-        code: newCode
-      });
+      if (saveDraftTimerRef.current) {
+        clearTimeout(saveDraftTimerRef.current);
+      }
+      saveDraftTimerRef.current = setTimeout(() => {
+        saveCodeDraftToBackend({
+          problemId: problem.id,
+          problemTitle: problem.title,
+          trackType: problem.trackType || 'general',
+          category: problem.category || '',
+          code: newCode
+        });
+      }, 800);
     }
   };
 
@@ -268,17 +290,39 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
       return;
     }
 
-    if (selectedLang === 'cpp' || selectedLang === 'java' || selectedLang === 'sql') {
-      setTimeout(() => {
+    if (selectedLang === 'sql') {
+      try {
+        const res = await runSqlCode(code);
         setTerminalOutput({
-          status: 'success',
-          stdout: `[${selectedLang.toUpperCase()} Static & Structural Verifier]\nAST Syntax Check: PASSED\nInvariant Signature: Validated for ${SUPPORTED_LANGUAGES.find(l=>l.id===selectedLang)?.label}.\nNote: Python 3.13 (Pyodide WASM) and JavaScript (V8) execute natively in your browser. Click "Verify & Submit" to record this solution.`,
-          stderr: '',
-          durationMs: 38,
+          status: res.success ? 'success' : 'error',
+          stdout: res.stdout || 'Query executed cleanly.',
+          stderr: res.stderr || '',
+          durationMs: res.durationMs,
           testResults: []
         });
+      } catch (e) {
+        setTerminalOutput({
+          status: 'error',
+          stdout: '',
+          stderr: e.message,
+          durationMs: 0,
+          testResults: []
+        });
+      } finally {
         setIsRunning(false);
-      }, 250);
+      }
+      return;
+    }
+
+    if (selectedLang === 'cpp' || selectedLang === 'java') {
+      setTerminalOutput({
+        status: 'idle',
+        stdout: `[${SUPPORTED_LANGUAGES.find(l => l.id === selectedLang)?.label} — Reference Scratchpad Mode]\nC++20 and Java 21 cannot be compiled directly inside a static browser sandbox.\nSwitch to Python 3 (Pyodide WASM), JavaScript (V8), or SQL (SQLite3 WASM) to execute code live.`,
+        stderr: '',
+        durationMs: 0,
+        testResults: []
+      });
+      setIsRunning(false);
       return;
     }
 
@@ -322,12 +366,24 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
         stdout = testRes.stdout || (passed ? 'All specification assertions verified.' : '');
         stderr = testRes.syntaxError || '';
       } else {
-        passed = true;
-        durationMs = 54;
-        stdout = `Implementation in ${selectedLang.toUpperCase()} verified and logged.`;
-        testResults = [
-          { passed: true, callStr: `${selectedLang.toUpperCase()} Invariant Check`, actual: 'Verified', expected: 'Verified' }
-        ];
+        // Non-Python tabs are interactive/reference buffers; execute if runnable, but do not award fake assertion passes
+        if (selectedLang === 'sql') {
+          const sqlRes = await runSqlCode(code);
+          stdout = sqlRes.stdout;
+          stderr = sqlRes.stderr;
+          durationMs = sqlRes.durationMs;
+        } else if (selectedLang === 'javascript') {
+          await handleRunCode();
+        }
+        setTerminalOutput((prev) => ({
+          status: stderr ? 'error' : 'idle',
+          stdout: stdout || prev.stdout || `[${selectedLang.toUpperCase()} Scratchpad]`,
+          stderr: stderr || `Automated test-suite verification runs in Python 3 (Pyodide WASM). Switch to the Python 3 tab to verify all ${(problem.testCases || []).length} test cases and earn XP.`,
+          durationMs: durationMs || prev.durationMs || 0,
+          testResults: []
+        }));
+        setIsRunning(false);
+        return;
       }
 
       setTerminalOutput({
@@ -379,6 +435,18 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
 
   const paper = problem.researchPaper;
   const currentLangObj = SUPPORTED_LANGUAGES.find(l => l.id === selectedLang);
+
+  // Detect when a DSA/SysDes problem uses a shared category pattern template
+  const isPatternKernelLab = useMemo(() => {
+    if (!problem) return false;
+    if (problem.trackType === 'sysdes') return true;
+    if (problem.trackType !== 'dsa') return false;
+    const fnMatch = (problem.starter_code || '').match(/def\s+([a-zA-Z0-9_]+)/);
+    const fnName = fnMatch ? fnMatch[1].toLowerCase() : '';
+    const titleWords = (problem.title || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 2);
+    if (!fnName) return false;
+    return !titleWords.some(w => fnName.includes(w));
+  }, [problem]);
 
   return (
     <div className="flex flex-col h-[calc(100vh-5.75rem)] bg-[#09090b] overflow-hidden">
@@ -569,6 +637,29 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
                     </p>
                   </div>
                 </div>
+
+                {/* Pattern Kernel Lab Clarification (when DSA/SysDes uses shared pattern exercise) */}
+                {isPatternKernelLab && (
+                  <div className="p-3.5 rounded-lg bg-amber-500/[0.06] border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                    <div className="text-zinc-300 leading-relaxed">
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-amber-300 font-semibold mr-2">
+                        [Pattern Kernel Lab]
+                      </span>
+                      This workspace exercises the canonical <strong className="text-zinc-100">{problem.category}</strong> invariant kernel inside Pyodide.
+                    </div>
+                    {(problem.leetcodeUrl || problem.neetcodeUrl) && (
+                      <a
+                        href={problem.leetcodeUrl || problem.neetcodeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-mono text-amber-300 hover:text-amber-200 flex-shrink-0"
+                      >
+                        <span>Full Prompt</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                )}
 
                 {/* Detailed Task Description (if present in journey.json, dsa.json, or system_design.json) */}
                 {problem.description && (
@@ -857,8 +948,19 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
                   </button>
                 ))}
               </div>
-              <span className="hidden xl:inline text-[10px] text-zinc-500">
-                [{currentLangObj?.engine}]
+              <span className="hidden xl:inline-flex items-center gap-1.5 text-[10px] text-zinc-500">
+                <span>[{currentLangObj?.engine}]</span>
+                {(selectedLang === 'python' || selectedLang === 'sql') && (
+                  <span className={`px-1.5 py-0.5 rounded border ${
+                    pyodideStatus === 'ready'
+                      ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                      : pyodideStatus === 'error'
+                        ? 'bg-rose-500/10 text-rose-400 border-rose-500/30'
+                        : 'bg-amber-500/10 text-amber-300 border-amber-500/30'
+                  }`}>
+                    {pyodideStatus === 'ready' ? 'WASM Ready' : pyodideStatus === 'error' ? 'WASM Offline' : 'Warming WASM...'}
+                  </span>
+                )}
               </span>
             </div>
 
@@ -1027,22 +1129,34 @@ export default function ProblemWorkspace({ problem, onBack, onProblemSolved }) {
                     Structural runtime verification enabled for this module.
                   </div>
                 ) : (
-                  (problem.testCases || []).map((tc, idx) => (
-                    <div key={idx} className="p-2.5 rounded bg-[#0f0f12] border border-zinc-800/90 space-y-1">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] text-amber-400 font-semibold">CASE 0{idx + 1}</span>
-                        <span className="text-[10px] text-zinc-500">Deterministic Check</span>
+                  (problem.testCases || []).map((tc, idx) => {
+                    const pySource = (selectedLang === 'python' && code) ? code : (problem.starter_code || problem.starterCode || problem.solution_code || '');
+                    const entryFn = pySource.match(/^def\s+([a-zA-Z0-9_]+)\s*\(/m)?.[1] || pySource.match(/def\s+([a-zA-Z0-9_]+)\s*\(/)?.[1];
+                    const rawExpr = (tc.call || tc.input || '').trim();
+                    const looksLikeCall = /^[a-zA-Z_][a-zA-Z0-9_]*\s*\(/.test(rawExpr) ||
+                      (rawExpr.startsWith('[') && entryFn && rawExpr.includes(`${entryFn}(`));
+                    const callExpr = rawExpr
+                      ? (entryFn && !looksLikeCall ? `${entryFn}(${rawExpr})` : rawExpr)
+                      : (tc.input_data !== undefined ? JSON.stringify(tc.input_data) : '—');
+                    const expectedRaw = tc.expected !== undefined ? tc.expected : (tc.expectedOutput !== undefined ? tc.expectedOutput : tc.expected_output);
+                    const expectedStr = typeof expectedRaw === 'string' ? expectedRaw : JSON.stringify(expectedRaw);
+                    return (
+                      <div key={tc.id || idx} className="p-2.5 rounded bg-[#0f0f12] border border-zinc-800/90 space-y-1">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] text-amber-400 font-semibold">CASE 0{idx + 1}</span>
+                          <span className="text-[10px] text-zinc-500">Deterministic Check</span>
+                        </div>
+                        <div className="text-[11px] text-zinc-200 break-all">
+                          <span className="text-zinc-500 select-none">CALL:     </span>
+                          {callExpr}
+                        </div>
+                        <div className="text-[11px] text-emerald-400 break-all">
+                          <span className="text-zinc-500 select-none">EXPECTED: </span>
+                          {expectedStr}
+                        </div>
                       </div>
-                      <div className="text-[11px] text-zinc-200 break-all">
-                        <span className="text-zinc-500 select-none">CALL:     </span>
-                        {tc.call}
-                      </div>
-                      <div className="text-[11px] text-emerald-400 break-all">
-                        <span className="text-zinc-500 select-none">EXPECTED: </span>
-                        {tc.expected}
-                      </div>
-                    </div>
-                  ))
+                    );
+                  })
                 )}
               </div>
             ) : (

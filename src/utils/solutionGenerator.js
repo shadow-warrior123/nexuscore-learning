@@ -38,14 +38,32 @@ export function generateNeetCodeSolution(problem) {
     patternInsight: `Pattern Classification: ${category}. By enforcing the ${category} structural invariant, we eliminate redundant recomputation and guarantee deterministic verification across all test vectors.`
   };
 
+  const formatTraceVal = (val) => {
+    if (val === undefined || val === null) return 'None';
+    if (typeof val === 'string') return val;
+    try {
+      return JSON.stringify(val);
+    } catch {
+      return String(val);
+    }
+  };
+
   let approaches = [];
   let dryRunTrace = (problem?.testCases && problem.testCases.length > 0)
-    ? problem.testCases.map((tc, idx) => ({
-        step: idx + 1,
-        action: `Execute assertion: ${tc.call}`,
-        state: `Expected → ${tc.expected}`,
-        note: idx === 0 ? "Primary specification contract" : idx === 1 ? "Secondary boundary invariant" : "Stress & edge-case verification"
-      }))
+    ? problem.testCases.map((tc, idx) => {
+        const callExpr = tc.call || tc.input || (tc.input_data !== undefined ? formatTraceVal(tc.input_data) : `Case ${idx + 1}`);
+        const expectedVal = tc.expected !== undefined
+          ? tc.expected
+          : tc.expectedOutput !== undefined
+            ? tc.expectedOutput
+            : tc.expected_output;
+        return {
+          step: idx + 1,
+          action: `Execute assertion: ${callExpr}`,
+          state: `Expected → ${formatTraceVal(expectedVal)}`,
+          note: idx === 0 ? "Primary specification contract" : idx === 1 ? "Secondary boundary invariant" : "Stress & edge-case verification"
+        };
+      })
     : [
         { step: 1, action: "Initialize state invariant & pointers", state: "state = {}, ptr = 0", note: "Allocate bounded auxiliary state" },
         { step: 2, action: "Ingest element x[0] and check invariant", state: "Invariant holds", note: "O(1) state update without inner loop" },
@@ -282,10 +300,18 @@ export function generateNeetCodeSolution(problem) {
         spaceComplexity: 'O(N) Call Stack',
         spaceRationale: 'Unpruned recursion depth.',
         code: {
-          python: `class Solution:\n    def solveNaive(self, data):\n        def explore(idx):\n            if idx >= len(data):\n                return 0\n            # Branch without caching overlapping states\n            return max(explore(idx + 1), data[idx] + explore(idx + 2))\n        return explore(0)`,
-          cpp: `class Solution {\npublic:\n    int explore(int idx, const vector<int>& data) {\n        if (idx >= (int)data.size()) return 0;\n        return max(explore(idx + 1, data), data[idx] + explore(idx + 2, data));\n    }\n};`,
-          java: `class Solution {\n    public int explore(int idx, int[] data) {\n        if (idx >= data.length) return 0;\n        return Math.max(explore(idx + 1, data), data[idx] + explore(idx + 2, data));\n    }\n}`,
-          javascript: `function solveNaive(data) {\n    function explore(idx) {\n        if (idx >= data.length) return 0;\n        return Math.max(explore(idx + 1), data[idx] + explore(idx + 2));\n    }\n    return explore(0);\n}`
+          python: isDP
+            ? `class Solution:\n    def solveNaive(self, data):\n        def explore(idx):\n            if idx >= len(data):\n                return 0\n            # Branch without caching overlapping states\n            return max(explore(idx + 1), data[idx] + explore(idx + 2))\n        return explore(0)`
+            : `# Brute Force Baseline (${category}) for: ${title}\nclass Solution:\n    def solve_brute(self, items):\n        best = 0\n        n = len(items)\n        for i in range(n):\n            for j in range(i, n):\n                # Re-evaluates overlapping range [i..j] from scratch in O(N^2)\n                pass\n        return best`,
+          cpp: isDP
+            ? `class Solution {\npublic:\n    int explore(int idx, const vector<int>& data) {\n        if (idx >= (int)data.size()) return 0;\n        return max(explore(idx + 1, data), data[idx] + explore(idx + 2, data));\n    }\n};`
+            : `// Brute Force Baseline (${category}) — O(N^2) exhaustive scan\nfor (int i = 0; i < (int)items.size(); ++i) {\n    for (int j = i; j < (int)items.size(); ++j) {\n        // Evaluate candidate pair/range (i, j)\n    }\n}`,
+          java: isDP
+            ? `class Solution {\n    public int explore(int idx, int[] data) {\n        if (idx >= data.length) return 0;\n        return Math.max(explore(idx + 1, data), data[idx] + explore(idx + 2, data));\n    }\n}`
+            : `// Brute Force Baseline (${category}) — O(N^2) exhaustive scan\nfor (int i = 0; i < items.length; i++) {\n    for (int j = i; j < items.length; j++) {\n        // Evaluate candidate pair/range (i, j)\n    }\n}`,
+          javascript: isDP
+            ? `function solveNaive(data) {\n    function explore(idx) {\n        if (idx >= data.length) return 0;\n        return Math.max(explore(idx + 1), data[idx] + explore(idx + 2));\n    }\n    return explore(0);\n}`
+            : `// Brute Force Baseline (${category}) — O(N^2) exhaustive scan\nfunction solveBrute(items) {\n    for (let i = 0; i < items.length; i++) {\n        for (let j = i; j < items.length; j++) {\n            // Evaluate candidate pair/range (i, j)\n        }\n    }\n}`
         }
       },
       {
@@ -304,10 +330,18 @@ export function generateNeetCodeSolution(problem) {
         spaceComplexity: 'O(N)',
         spaceRationale: 'Memoization table + recursion stack frames.',
         code: {
-          python: `class Solution:\n    def solveMemo(self, data):\n        memo = {}\n        def dp(i):\n            if i in memo:\n                return memo[i]\n            if i >= len(data):\n                return 0\n            memo[i] = max(dp(i + 1), data[i] + dp(i + 2))\n            return memo[i]\n        return dp(0)`,
-          cpp: `class Solution {\npublic:\n    int dp(int i, const vector<int>& data, vector<int>& memo) {\n        if (i >= (int)data.size()) return 0;\n        if (memo[i] != -1) return memo[i];\n        return memo[i] = max(dp(i + 1, data, memo), data[i] + dp(i + 2, data, memo));\n    }\n};`,
-          java: `class Solution {\n    public int dp(int i, int[] data, Integer[] memo) {\n        if (i >= data.length) return 0;\n        if (memo[i] != null) return memo[i];\n        return memo[i] = Math.max(dp(i + 1, data, memo), data[i] + dp(i + 2, data, memo));\n    }\n}`,
-          javascript: `function solveMemo(data) {\n    const memo = new Map();\n    function dp(i) {\n        if (i >= data.length) return 0;\n        if (memo.has(i)) return memo.get(i);\n        const res = Math.max(dp(i + 1), data[i] + dp(i + 2));\n        memo.set(i, res);\n        return res;\n    }\n    return dp(0);\n}`
+          python: isDP
+            ? `class Solution:\n    def solveMemo(self, data):\n        memo = {}\n        def dp(i):\n            if i in memo:\n                return memo[i]\n            if i >= len(data):\n                return 0\n            memo[i] = max(dp(i + 1), data[i] + dp(i + 2))\n            return memo[i]\n        return dp(0)`
+            : `# Intermediate Pruning (${category}) for: ${title}\nclass Solution:\n    def solve_memo(self, items):\n        cache = {}\n        # Pre-sort or memoize intermediate state to prune O(N^2) -> O(N log N)\n        return cache`,
+          cpp: isDP
+            ? `class Solution {\npublic:\n    int dp(int i, const vector<int>& data, vector<int>& memo) {\n        if (i >= (int)data.size()) return 0;\n        if (memo[i] != -1) return memo[i];\n        return memo[i] = max(dp(i + 1, data, memo), data[i] + dp(i + 2, data, memo));\n    }\n};`
+            : `// Intermediate Pruning (${category}) — Sort or Memoize in O(N log N) / O(N)\nunordered_map<int, int> memo;`,
+          java: isDP
+            ? `class Solution {\n    public int dp(int i, int[] data, Integer[] memo) {\n        if (i >= data.length) return 0;\n        if (memo[i] != null) return memo[i];\n        return memo[i] = Math.max(dp(i + 1, data, memo), data[i] + dp(i + 2, data, memo));\n    }\n}`
+            : `// Intermediate Pruning (${category}) — Sort or Memoize in O(N log N) / O(N)\nMap<Integer, Integer> memo = new HashMap<>();`,
+          javascript: isDP
+            ? `function solveMemo(data) {\n    const memo = new Map();\n    function dp(i) {\n        if (i >= data.length) return 0;\n        if (memo.has(i)) return memo.get(i);\n        const res = Math.max(dp(i + 1), data[i] + dp(i + 2));\n        memo.set(i, res);\n        return res;\n    }\n    return dp(0);\n}`
+            : `// Intermediate Pruning (${category}) — Sort or Memoize in O(N log N) / O(N)\nconst memo = new Map();`
         }
       },
       {

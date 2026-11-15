@@ -302,7 +302,7 @@ export function generateProblemSpec(problem) {
     productionBottleneck = `In sequence alignment, speculative decoding verification trees, and compiler operator-fusion planners, overlapping subproblems cause naive recursion to recompute identical states O(2^N) times.`;
     firstPrinciplesSolution = `Formulate the Bellman recurrence relation over a minimal state tuple, prove optimal substructure, and evaluate bottom-up in topological state order—compressing auxiliary memory to only the active rolling frontier.`;
     schematicTitle = `Dynamic Programming State Transition Lattice`;
-    invariantFormula = `dp[i] =最优 Combine(dp[i - 1], dp[i - 2] + cost[i])   |   Rolling Frontier compresses Space: O(N) → O(1)`;
+    invariantFormula = `dp[i] = Combine(dp[i - 1], dp[i - 2] + cost[i])   |   Rolling Frontier compresses Space: O(N) → O(1)`;
     stages = [
       { step: '01', label: 'Define Minimal State Tuple', shape: 'dp[i] or dp[i][j]', detail: 'Capture only parameters required to make future decisions' },
       { step: '02', label: 'Establish Base Cases', shape: 'dp[0], dp[1]', detail: 'Anchor boundary conditions before transition loop' },

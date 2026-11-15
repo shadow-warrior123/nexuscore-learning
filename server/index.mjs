@@ -30,10 +30,38 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Helper function to stream URL following redirects
+// Allowed academic paper domains for the PDF proxy (prevents open SSRF)
+const ALLOWED_PDF_HOSTS = new Set([
+  'arxiv.org',
+  'export.arxiv.org',
+  'browse.arxiv.org',
+  'yann.lecun.com',
+  'www.iro.umontreal.ca',
+  'stat.ethz.ch',
+  'papers.nips.cc',
+  'proceedings.mlr.press',
+  'aclanthology.org',
+  'openreview.net',
+  'dl.acm.org'
+]);
+
+function isAllowedPdfUrl(rawUrl) {
+  try {
+    const parsed = new URL(rawUrl);
+    if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return false;
+    return ALLOWED_PDF_HOSTS.has(parsed.hostname.toLowerCase());
+  } catch {
+    return false;
+  }
+}
+
+// Helper function to stream URL following redirects safely
 function streamPdfWithRedirects(targetUrl, res, maxRedirects = 5) {
   if (maxRedirects <= 0) {
     return res.status(508).send('Too many redirects');
+  }
+  if (!isAllowedPdfUrl(targetUrl)) {
+    return res.status(403).send('Blocked: target host is not in the academic PDF allowlist');
   }
 
   try {
@@ -41,6 +69,7 @@ function streamPdfWithRedirects(targetUrl, res, maxRedirects = 5) {
     const client = urlObj.protocol === 'https:' ? https : http;
 
     const proxyReq = client.get(targetUrl, {
+      timeout: 15000,
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'application/pdf,*/*'
@@ -48,6 +77,7 @@ function streamPdfWithRedirects(targetUrl, res, maxRedirects = 5) {
     }, (proxyRes) => {
       // Follow redirect
       if (proxyRes.statusCode >= 300 && proxyRes.statusCode < 400 && proxyRes.headers.location) {
+        proxyRes.resume();
         const nextUrl = new URL(proxyRes.headers.location, targetUrl).toString();
         return streamPdfWithRedirects(nextUrl, res, maxRedirects - 1);
       }
@@ -61,8 +91,13 @@ function streamPdfWithRedirects(targetUrl, res, maxRedirects = 5) {
       proxyRes.pipe(res);
     });
 
+    proxyReq.on('timeout', () => {
+      proxyReq.destroy();
+      if (!res.headersSent) res.status(504).send('Upstream PDF request timed out');
+    });
+
     proxyReq.on('error', (err) => {
-      res.status(502).send('Error proxying PDF: ' + err.message);
+      if (!res.headersSent) res.status(502).send('Error proxying PDF: ' + err.message);
     });
   } catch (e) {
     res.status(400).send('Invalid URL: ' + e.message);
@@ -92,6 +127,28 @@ app.get('/api/progress', (req, res) => {
       solvedIds: solvedList.map(r => r.problem_id),
       progress: rows
     });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// 3b. Toggle Solved Status
+app.post('/api/progress/toggle', (req, res) => {
+  const { problemId, solved, problemTitle, category, trackType, xp } = req.body;
+  if (!problemId) return res.status(400).json({ error: 'problemId is required' });
+
+  try {
+    const nextStatus = solved ? 'solved' : 'attempted';
+    const stmt = db.prepare(`
+      INSERT INTO user_progress (problem_id, problem_title, category, track_type, status, xp_earned, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+      ON CONFLICT(problem_id) DO UPDATE SET
+        status = excluded.status,
+        xp_earned = excluded.xp_earned,
+        updated_at = CURRENT_TIMESTAMP
+    `);
+    stmt.run(problemId, problemTitle || '', category || '', trackType || '', nextStatus, solved ? (xp || 10) : 0);
+    res.json({ success: true, problemId, status: nextStatus });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
@@ -178,10 +235,18 @@ app.get('/api/submissions/:problemId', (req, res) => {
     `);
     const rows = stmt.all(req.params.problemId);
     
-    const parsedRows = rows.map(r => ({
-      ...r,
-      test_results: JSON.parse(r.test_results || '[]')
-    }));
+    const parsedRows = rows.map(r => {
+      let parsedResults = [];
+      try {
+        parsedResults = JSON.parse(r.test_results || '[]');
+      } catch {
+        parsedResults = [];
+      }
+      return {
+        ...r,
+        test_results: parsedResults
+      };
+    });
 
     res.json({ success: true, count: parsedRows.length, submissions: parsedRows });
   } catch (err) {
@@ -224,8 +289,14 @@ app.get('/api/stats', (req, res) => {
   }
 });
 
-// 9. Python Process Runner
+// 9. Python Process Runner (disabled by default; browser uses Pyodide WASM)
 app.post('/api/execute', (req, res) => {
+  if (process.env.ENABLE_HOST_PYTHON_EXEC !== 'true') {
+    return res.status(403).json({
+      success: false,
+      error: 'Host Python execution is disabled for security. Use the in-browser Pyodide WASM sandbox or set ENABLE_HOST_PYTHON_EXEC=true locally.'
+    });
+  }
   const { code, problemId } = req.body;
   if (!code) return res.status(400).json({ error: 'Code is required' });
 

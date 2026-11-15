@@ -39,7 +39,15 @@ export default function ProblemListView({
 
   useEffect(() => {
     setActiveCategoryFilter(initialCategory || null);
-  }, [initialCategory]);
+    if (initialCategory && trackType === 'dsa') {
+      const catEntry = Object.entries(dsaData.categories || {}).find(([cat]) =>
+        cat.toLowerCase().includes(initialCategory.toLowerCase())
+      );
+      if (catEntry && !catEntry[1].some(p => p.neetcode150)) {
+        setCuratedListFilter('all');
+      }
+    }
+  }, [initialCategory, trackType, dsaData]);
 
   const [starredProblems, setStarredProblems] = useState(() => {
     try {
@@ -80,13 +88,16 @@ export default function ProblemListView({
     const map = new Map();
 
     if (trackType === 'dsa') {
+      const isSearching = Boolean(searchQuery && searchQuery.trim());
       for (const [category, items] of Object.entries(dsaData.categories || {})) {
         const filteredItems = items.filter(p => {
           const problemId = `dsa-${p.githubCodeSlug || p.title}`;
 
-          if (curatedListFilter === 'blind75' && !p.blind75) return false;
-          if (curatedListFilter === 'neetcode150' && !p.neetcode150) return false;
-          if (curatedListFilter === 'neetcode250' && !p.neetcode250) return false;
+          if (!isSearching) {
+            if (curatedListFilter === 'blind75' && !p.blind75) return false;
+            if (curatedListFilter === 'neetcode150' && !p.neetcode150) return false;
+            if (curatedListFilter === 'neetcode250' && !p.neetcode250) return false;
+          }
 
           if (difficultyFilter !== 'all' && (p.difficulty || '').toLowerCase() !== difficultyFilter) return false;
 

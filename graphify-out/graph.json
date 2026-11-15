@@ -427,10 +427,28 @@
       "norm_label": "app"
     },
     {
-      "label": "streamPdfWithRedirects()",
+      "label": "ALLOWED_PDF_HOSTS",
       "file_type": "code",
       "source_file": "server/index.mjs",
       "source_location": "L34",
+      "id": "server_index_allowed_pdf_hosts",
+      "community": 46,
+      "norm_label": "allowed_pdf_hosts"
+    },
+    {
+      "label": "isAllowedPdfUrl()",
+      "file_type": "code",
+      "source_file": "server/index.mjs",
+      "source_location": "L48",
+      "id": "server_index_isallowedpdfurl",
+      "community": 46,
+      "norm_label": "isallowedpdfurl()"
+    },
+    {
+      "label": "streamPdfWithRedirects()",
+      "file_type": "code",
+      "source_file": "server/index.mjs",
+      "source_location": "L59",
       "id": "server_index_streampdfwithredirects",
       "community": 46,
       "norm_label": "streampdfwithredirects()"
@@ -439,7 +457,7 @@
       "label": "query",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L82",
+      "source_location": "L117",
       "id": "server_index_query",
       "community": 46,
       "norm_label": "query"
@@ -448,7 +466,7 @@
       "label": "rows",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L83",
+      "source_location": "L118",
       "id": "server_index_rows",
       "community": 46,
       "norm_label": "rows"
@@ -457,7 +475,7 @@
       "label": "solvedList",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L85",
+      "source_location": "L120",
       "id": "server_index_solvedlist",
       "community": 46,
       "norm_label": "solvedlist"
@@ -466,7 +484,7 @@
       "label": "totalXp",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L86",
+      "source_location": "L121",
       "id": "server_index_totalxp",
       "community": 46,
       "norm_label": "totalxp"
@@ -475,7 +493,7 @@
       "label": "stmt",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L106",
+      "source_location": "L142",
       "id": "server_index_stmt",
       "community": 46,
       "norm_label": "stmt"
@@ -484,7 +502,7 @@
       "label": "row",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L124",
+      "source_location": "L181",
       "id": "server_index_row",
       "community": 46,
       "norm_label": "row"
@@ -493,7 +511,7 @@
       "label": "subStmt",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L139",
+      "source_location": "L196",
       "id": "server_index_substmt",
       "community": 46,
       "norm_label": "substmt"
@@ -502,7 +520,7 @@
       "label": "result",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L143",
+      "source_location": "L200",
       "id": "server_index_result",
       "community": 46,
       "norm_label": "result"
@@ -511,7 +529,7 @@
       "label": "progStmt",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L146",
+      "source_location": "L203",
       "id": "server_index_progstmt",
       "community": 46,
       "norm_label": "progstmt"
@@ -520,7 +538,7 @@
       "label": "parsedRows",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L181",
+      "source_location": "L238",
       "id": "server_index_parsedrows",
       "community": 46,
       "norm_label": "parsedrows"
@@ -529,7 +547,7 @@
       "label": "byTrack",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L199",
+      "source_location": "L264",
       "id": "server_index_bytrack",
       "community": 46,
       "norm_label": "bytrack"
@@ -538,7 +556,7 @@
       "label": "recentSubmissions",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L206",
+      "source_location": "L271",
       "id": "server_index_recentsubmissions",
       "community": 46,
       "norm_label": "recentsubmissions"
@@ -547,7 +565,7 @@
       "label": "startTime",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L232",
+      "source_location": "L303",
       "id": "server_index_starttime",
       "community": 46,
       "norm_label": "starttime"
@@ -556,7 +574,7 @@
       "label": "py",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L233",
+      "source_location": "L304",
       "id": "server_index_py",
       "community": 46,
       "norm_label": "py"
@@ -565,7 +583,7 @@
       "label": "timer",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L239",
+      "source_location": "L310",
       "id": "server_index_timer",
       "community": 46,
       "norm_label": "timer"
@@ -574,7 +592,7 @@
       "label": "indexPath",
       "file_type": "code",
       "source_file": "server/index.mjs",
-      "source_location": "L299",
+      "source_location": "L370",
       "id": "server_index_indexpath",
       "community": 46,
       "norm_label": "indexpath"
@@ -585,16 +603,16 @@
       "source_file": "src/App.jsx",
       "source_location": "L1",
       "id": "src_app_jsx",
-      "community": 11,
+      "community": 105,
       "norm_label": "app.jsx"
     },
     {
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L14",
+      "source_location": "L24",
       "id": "src_app_app",
-      "community": 11,
+      "community": 105,
       "norm_label": "app()"
     },
     {
@@ -603,26 +621,53 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "id": "src_main_jsx",
-      "community": 11,
+      "community": 105,
       "norm_label": "main.jsx"
     },
     {
-      "label": "BackendGuideModal.jsx",
+      "label": "AnalyticsModal.jsx",
       "file_type": "code",
-      "source_file": "src/components/BackendGuideModal.jsx",
+      "source_file": "src/components/AnalyticsModal.jsx",
       "source_location": "L1",
-      "id": "src_components_backendguidemodal_jsx",
-      "community": 11,
-      "norm_label": "backendguidemodal.jsx"
+      "id": "src_components_analyticsmodal_jsx",
+      "community": 150,
+      "norm_label": "analyticsmodal.jsx"
     },
     {
-      "label": "BackendGuideModal()",
+      "label": "AnalyticsModal()",
       "file_type": "code",
-      "source_file": "src/components/BackendGuideModal.jsx",
-      "source_location": "L4",
-      "id": "components_backendguidemodal_backendguidemodal",
-      "community": 11,
-      "norm_label": "backendguidemodal()"
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L15",
+      "id": "components_analyticsmodal_analyticsmodal",
+      "community": 150,
+      "norm_label": "analyticsmodal()"
+    },
+    {
+      "label": "CommandPalette.jsx",
+      "file_type": "code",
+      "source_file": "src/components/CommandPalette.jsx",
+      "source_location": "L1",
+      "id": "src_components_commandpalette_jsx",
+      "community": 105,
+      "norm_label": "commandpalette.jsx"
+    },
+    {
+      "label": "TRACK_BADGES",
+      "file_type": "code",
+      "source_file": "src/components/CommandPalette.jsx",
+      "source_location": "L14",
+      "id": "components_commandpalette_track_badges",
+      "community": 105,
+      "norm_label": "track_badges"
+    },
+    {
+      "label": "CommandPalette()",
+      "file_type": "code",
+      "source_file": "src/components/CommandPalette.jsx",
+      "source_location": "L22",
+      "id": "components_commandpalette_commandpalette",
+      "community": 105,
+      "norm_label": "commandpalette()"
     },
     {
       "label": "GfgSolutionView.jsx",
@@ -630,7 +675,7 @@
       "source_file": "src/components/GfgSolutionView.jsx",
       "source_location": "L1",
       "id": "src_components_gfgsolutionview_jsx",
-      "community": 11,
+      "community": 286,
       "norm_label": "gfgsolutionview.jsx"
     },
     {
@@ -639,7 +684,7 @@
       "source_file": "src/components/GfgSolutionView.jsx",
       "source_location": "L25",
       "id": "components_gfgsolutionview_gfgsolutionview",
-      "community": 11,
+      "community": 286,
       "norm_label": "gfgsolutionview()"
     },
     {
@@ -648,16 +693,16 @@
       "source_file": "src/components/InAppPdfViewer.jsx",
       "source_location": "L1",
       "id": "src_components_inapppdfviewer_jsx",
-      "community": 11,
+      "community": 151,
       "norm_label": "inapppdfviewer.jsx"
     },
     {
       "label": "InAppPdfViewer()",
       "file_type": "code",
       "source_file": "src/components/InAppPdfViewer.jsx",
-      "source_location": "L20",
+      "source_location": "L14",
       "id": "components_inapppdfviewer_inapppdfviewer",
-      "community": 11,
+      "community": 151,
       "norm_label": "inapppdfviewer()"
     },
     {
@@ -666,35 +711,62 @@
       "source_file": "src/components/MarkdownRenderer.jsx",
       "source_location": "L1",
       "id": "src_components_markdownrenderer_jsx",
-      "community": 11,
+      "community": 267,
       "norm_label": "markdownrenderer.jsx"
     },
     {
       "label": "CodeBlock()",
       "file_type": "code",
       "source_file": "src/components/MarkdownRenderer.jsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "id": "components_markdownrenderer_codeblock",
-      "community": 11,
+      "community": 267,
       "norm_label": "codeblock()"
     },
     {
       "label": "renderInline()",
       "file_type": "code",
       "source_file": "src/components/MarkdownRenderer.jsx",
-      "source_location": "L53",
+      "source_location": "L54",
       "id": "components_markdownrenderer_renderinline",
-      "community": 11,
+      "community": 267,
       "norm_label": "renderinline()"
     },
     {
       "label": "MarkdownRenderer()",
       "file_type": "code",
       "source_file": "src/components/MarkdownRenderer.jsx",
-      "source_location": "L101",
+      "source_location": "L117",
       "id": "components_markdownrenderer_markdownrenderer",
-      "community": 11,
+      "community": 267,
       "norm_label": "markdownrenderer()"
+    },
+    {
+      "label": "MathText.jsx",
+      "file_type": "code",
+      "source_file": "src/components/MathText.jsx",
+      "source_location": "L1",
+      "id": "src_components_mathtext_jsx",
+      "community": 267,
+      "norm_label": "mathtext.jsx"
+    },
+    {
+      "label": "renderKatexHtml()",
+      "file_type": "code",
+      "source_file": "src/components/MathText.jsx",
+      "source_location": "L7",
+      "id": "components_mathtext_renderkatexhtml",
+      "community": 267,
+      "norm_label": "renderkatexhtml()"
+    },
+    {
+      "label": "MathText()",
+      "file_type": "code",
+      "source_file": "src/components/MathText.jsx",
+      "source_location": "L22",
+      "id": "components_mathtext_mathtext",
+      "community": 267,
+      "norm_label": "mathtext()"
     },
     {
       "label": "Navbar.jsx",
@@ -702,16 +774,16 @@
       "source_file": "src/components/Navbar.jsx",
       "source_location": "L1",
       "id": "src_components_navbar_jsx",
-      "community": 11,
+      "community": 151,
       "norm_label": "navbar.jsx"
     },
     {
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.jsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "id": "components_navbar_navbar",
-      "community": 11,
+      "community": 151,
       "norm_label": "navbar()"
     },
     {
@@ -720,7 +792,7 @@
       "source_file": "src/components/ProblemListView.jsx",
       "source_location": "L1",
       "id": "src_components_problemlistview_jsx",
-      "community": 11,
+      "community": 287,
       "norm_label": "problemlistview.jsx"
     },
     {
@@ -729,7 +801,7 @@
       "source_file": "src/components/ProblemListView.jsx",
       "source_location": "L22",
       "id": "components_problemlistview_problemlistview",
-      "community": 11,
+      "community": 287,
       "norm_label": "problemlistview()"
     },
     {
@@ -745,7 +817,7 @@
       "label": "SUPPORTED_LANGUAGES",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L39",
+      "source_location": "L40",
       "id": "components_problemworkspace_supported_languages",
       "community": 11,
       "norm_label": "supported_languages"
@@ -754,7 +826,7 @@
       "label": "getDefaultStarterCode()",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "components_problemworkspace_getdefaultstartercode",
       "community": 11,
       "norm_label": "getdefaultstartercode()"
@@ -763,7 +835,7 @@
       "label": "ProblemWorkspace()",
       "file_type": "code",
       "source_file": "src/components/ProblemWorkspace.jsx",
-      "source_location": "L124",
+      "source_location": "L125",
       "id": "components_problemworkspace_problemworkspace",
       "community": 11,
       "norm_label": "problemworkspace()"
@@ -774,7 +846,7 @@
       "source_file": "src/components/ResearchPapersView.jsx",
       "source_location": "L1",
       "id": "src_components_researchpapersview_jsx",
-      "community": 11,
+      "community": 105,
       "norm_label": "researchpapersview.jsx"
     },
     {
@@ -783,7 +855,7 @@
       "source_file": "src/components/ResearchPapersView.jsx",
       "source_location": "L6",
       "id": "components_researchpapersview_researchpapersview",
-      "community": 11,
+      "community": 105,
       "norm_label": "researchpapersview()"
     },
     {
@@ -792,7 +864,7 @@
       "source_file": "src/components/RoadmapView.jsx",
       "source_location": "L1",
       "id": "src_components_roadmapview_jsx",
-      "community": 11,
+      "community": 105,
       "norm_label": "roadmapview.jsx"
     },
     {
@@ -801,7 +873,7 @@
       "source_file": "src/components/RoadmapView.jsx",
       "source_location": "L22",
       "id": "components_roadmapview_roadmapview",
-      "community": 11,
+      "community": 105,
       "norm_label": "roadmapview()"
     },
     {
@@ -810,7 +882,7 @@
       "source_file": "src/components/VideoModal.jsx",
       "source_location": "L1",
       "id": "src_components_videomodal_jsx",
-      "community": 11,
+      "community": 287,
       "norm_label": "videomodal.jsx"
     },
     {
@@ -819,7 +891,7 @@
       "source_file": "src/components/VideoModal.jsx",
       "source_location": "L4",
       "id": "components_videomodal_videomodal",
-      "community": 11,
+      "community": 287,
       "norm_label": "videomodal()"
     },
     {
@@ -828,7 +900,7 @@
       "source_file": "src/data/research_papers.json",
       "source_location": "L1",
       "id": "src_data_research_papers_json",
-      "community": 11,
+      "community": 105,
       "norm_label": "research_papers.json"
     },
     {
@@ -837,7 +909,7 @@
       "source_file": "src/data/system_design.json",
       "source_location": "L1",
       "id": "src_data_system_design_json",
-      "community": 11,
+      "community": 105,
       "norm_label": "system_design.json"
     },
     {
@@ -846,7 +918,7 @@
       "source_file": "src/utils/api.js",
       "source_location": "L1",
       "id": "src_utils_api_js",
-      "community": 11,
+      "community": 151,
       "norm_label": "api.js"
     },
     {
@@ -855,7 +927,7 @@
       "source_file": "src/utils/api.js",
       "source_location": "L5",
       "id": "utils_api_getbackendurl",
-      "community": 11,
+      "community": 151,
       "norm_label": "getbackendurl()"
     },
     {
@@ -864,7 +936,7 @@
       "source_file": "src/utils/api.js",
       "source_location": "L11",
       "id": "utils_api_backend_url",
-      "community": 11,
+      "community": 151,
       "norm_label": "backend_url"
     },
     {
@@ -873,44 +945,98 @@
       "source_file": "src/utils/api.js",
       "source_location": "L13",
       "id": "utils_api_checkbackendhealth",
-      "community": 11,
+      "community": 151,
       "norm_label": "checkbackendhealth()"
+    },
+    {
+      "label": "fetchBackendProgress()",
+      "file_type": "code",
+      "source_file": "src/utils/api.js",
+      "source_location": "L26",
+      "id": "utils_api_fetchbackendprogress",
+      "community": 151,
+      "norm_label": "fetchbackendprogress()"
+    },
+    {
+      "label": "toggleProgressOnBackend()",
+      "file_type": "code",
+      "source_file": "src/utils/api.js",
+      "source_location": "L38",
+      "id": "utils_api_toggleprogressonbackend",
+      "community": 151,
+      "norm_label": "toggleprogressonbackend()"
     },
     {
       "label": "submitProblemToBackend()",
       "file_type": "code",
       "source_file": "src/utils/api.js",
-      "source_location": "L26",
+      "source_location": "L52",
       "id": "utils_api_submitproblemtobackend",
-      "community": 11,
+      "community": 151,
       "norm_label": "submitproblemtobackend()"
     },
     {
       "label": "getSubmissionHistory()",
       "file_type": "code",
       "source_file": "src/utils/api.js",
-      "source_location": "L41",
+      "source_location": "L67",
       "id": "utils_api_getsubmissionhistory",
-      "community": 11,
+      "community": 151,
       "norm_label": "getsubmissionhistory()"
     },
     {
       "label": "saveCodeDraftToBackend()",
       "file_type": "code",
       "source_file": "src/utils/api.js",
-      "source_location": "L56",
+      "source_location": "L82",
       "id": "utils_api_savecodedrafttobackend",
-      "community": 11,
+      "community": 151,
       "norm_label": "savecodedrafttobackend()"
     },
     {
       "label": "getBackendStats()",
       "file_type": "code",
       "source_file": "src/utils/api.js",
-      "source_location": "L70",
+      "source_location": "L96",
       "id": "utils_api_getbackendstats",
-      "community": 11,
+      "community": 150,
       "norm_label": "getbackendstats()"
+    },
+    {
+      "label": "catalog.js",
+      "file_type": "code",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L1",
+      "id": "src_utils_catalog_js",
+      "community": 105,
+      "norm_label": "catalog.js"
+    },
+    {
+      "label": "ML_TRACK_SLUGS",
+      "file_type": "code",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L6",
+      "id": "utils_catalog_ml_track_slugs",
+      "community": 105,
+      "norm_label": "ml_track_slugs"
+    },
+    {
+      "label": "DATA_TRACK_SLUGS",
+      "file_type": "code",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L7",
+      "id": "utils_catalog_data_track_slugs",
+      "community": 105,
+      "norm_label": "data_track_slugs"
+    },
+    {
+      "label": "buildAllProblems()",
+      "file_type": "code",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L9",
+      "id": "utils_catalog_buildallproblems",
+      "community": 105,
+      "norm_label": "buildallproblems()"
     },
     {
       "label": "problemSpecGenerator.js",
@@ -940,19 +1066,37 @@
       "norm_label": "pyodiderunner.js"
     },
     {
+      "label": "isPyodideReady()",
+      "file_type": "code",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L1215",
+      "id": "utils_pyodiderunner_ispyodideready",
+      "community": 11,
+      "norm_label": "ispyodideready()"
+    },
+    {
       "label": "getPyodide()",
       "file_type": "code",
       "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L1155",
+      "source_location": "L1219",
       "id": "utils_pyodiderunner_getpyodide",
       "community": 11,
       "norm_label": "getpyodide()"
     },
     {
+      "label": "runSqlCode()",
+      "file_type": "code",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L1249",
+      "id": "utils_pyodiderunner_runsqlcode",
+      "community": 11,
+      "norm_label": "runsqlcode()"
+    },
+    {
       "label": "runPythonCode()",
       "file_type": "code",
       "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L1182",
+      "source_location": "L1333",
       "id": "utils_pyodiderunner_runpythoncode",
       "community": 11,
       "norm_label": "runpythoncode()"
@@ -961,7 +1105,7 @@
       "label": "runTests()",
       "file_type": "code",
       "source_file": "src/utils/pyodideRunner.js",
-      "source_location": "L1217",
+      "source_location": "L1368",
       "id": "utils_pyodiderunner_runtests",
       "community": 11,
       "norm_label": "runtests()"
@@ -972,7 +1116,7 @@
       "source_file": "src/utils/solutionGenerator.js",
       "source_location": "L1",
       "id": "src_utils_solutiongenerator_js",
-      "community": 11,
+      "community": 286,
       "norm_label": "solutiongenerator.js"
     },
     {
@@ -981,7 +1125,7 @@
       "source_file": "src/utils/solutionGenerator.js",
       "source_location": "L13",
       "id": "utils_solutiongenerator_generateneetcodesolution",
-      "community": 11,
+      "community": 286,
       "norm_label": "generateneetcodesolution()"
     },
     {
@@ -990,41 +1134,77 @@
       "source_file": "src/utils/storage.js",
       "source_location": "L1",
       "id": "src_utils_storage_js",
-      "community": 11,
+      "community": 150,
       "norm_label": "storage.js"
+    },
+    {
+      "label": "getSolvedXpMap()",
+      "file_type": "code",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L12",
+      "id": "utils_storage_getsolvedxpmap",
+      "community": 150,
+      "norm_label": "getsolvedxpmap()"
+    },
+    {
+      "label": "saveSolvedXpMap()",
+      "file_type": "code",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L21",
+      "id": "utils_storage_savesolvedxpmap",
+      "community": 150,
+      "norm_label": "savesolvedxpmap()"
     },
     {
       "label": "getSolvedProblems()",
       "file_type": "code",
       "source_file": "src/utils/storage.js",
-      "source_location": "L10",
+      "source_location": "L29",
       "id": "utils_storage_getsolvedproblems",
-      "community": 11,
+      "community": 150,
       "norm_label": "getsolvedproblems()"
-    },
-    {
-      "label": "markProblemSolved()",
-      "file_type": "code",
-      "source_file": "src/utils/storage.js",
-      "source_location": "L19",
-      "id": "utils_storage_markproblemsolved",
-      "community": 11,
-      "norm_label": "markproblemsolved()"
     },
     {
       "label": "getTotalXP()",
       "file_type": "code",
       "source_file": "src/utils/storage.js",
-      "source_location": "L33",
+      "source_location": "L38",
       "id": "utils_storage_gettotalxp",
-      "community": 11,
+      "community": 150,
       "norm_label": "gettotalxp()"
+    },
+    {
+      "label": "markProblemSolved()",
+      "file_type": "code",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L44",
+      "id": "utils_storage_markproblemsolved",
+      "community": 150,
+      "norm_label": "markproblemsolved()"
+    },
+    {
+      "label": "toggleProblemSolved()",
+      "file_type": "code",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L61",
+      "id": "utils_storage_toggleproblemsolved",
+      "community": 150,
+      "norm_label": "toggleproblemsolved()"
+    },
+    {
+      "label": "syncSolvedFromBackend()",
+      "file_type": "code",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L84",
+      "id": "utils_storage_syncsolvedfrombackend",
+      "community": 150,
+      "norm_label": "syncsolvedfrombackend()"
     },
     {
       "label": "getSavedCode()",
       "file_type": "code",
       "source_file": "src/utils/storage.js",
-      "source_location": "L38",
+      "source_location": "L107",
       "id": "utils_storage_getsavedcode",
       "community": 11,
       "norm_label": "getsavedcode()"
@@ -1033,18 +1213,36 @@
       "label": "saveCode()",
       "file_type": "code",
       "source_file": "src/utils/storage.js",
-      "source_location": "L48",
+      "source_location": "L117",
       "id": "utils_storage_savecode",
       "community": 11,
       "norm_label": "savecode()"
     },
     {
+      "label": "exportProgressData()",
+      "file_type": "code",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L128",
+      "id": "utils_storage_exportprogressdata",
+      "community": 150,
+      "norm_label": "exportprogressdata()"
+    },
+    {
+      "label": "importProgressData()",
+      "file_type": "code",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L152",
+      "id": "utils_storage_importprogressdata",
+      "community": 150,
+      "norm_label": "importprogressdata()"
+    },
+    {
       "label": "resetAllProgress()",
       "file_type": "code",
       "source_file": "src/utils/storage.js",
-      "source_location": "L59",
+      "source_location": "L174",
       "id": "utils_storage_resetallprogress",
-      "community": 11,
+      "community": 150,
       "norm_label": "resetallprogress()"
     },
     {
@@ -1289,6 +1487,24 @@
       "id": "workflows_graphify_workflow_graphify",
       "community": 274,
       "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "BackendGuideModal.jsx",
+      "file_type": "code",
+      "source_file": "src/components/BackendGuideModal.jsx",
+      "source_location": "L1",
+      "community": 105,
+      "norm_label": "backendguidemodal.jsx",
+      "id": "src_components_backendguidemodal_jsx"
+    },
+    {
+      "label": "BackendGuideModal()",
+      "file_type": "code",
+      "source_file": "src/components/BackendGuideModal.jsx",
+      "source_location": "L4",
+      "community": 105,
+      "norm_label": "backendguidemodal()",
+      "id": "components_backendguidemodal_backendguidemodal"
     },
     {
       "label": "name",
@@ -1592,7 +1808,7 @@
       "file_type": "code",
       "source_file": "src/data/dsa.json",
       "source_location": "L1",
-      "community": 40,
+      "community": 105,
       "norm_label": "dsa.json",
       "id": "src_data_dsa_json"
     },
@@ -1601,7 +1817,7 @@
       "file_type": "code",
       "source_file": "src/data/dsa.json",
       "source_location": "L2",
-      "community": 40,
+      "community": 285,
       "norm_label": "summary",
       "id": "data_dsa_summary"
     },
@@ -1610,7 +1826,7 @@
       "file_type": "code",
       "source_file": "src/data/dsa.json",
       "source_location": "L3",
-      "community": 40,
+      "community": 285,
       "norm_label": "totalproblems",
       "id": "data_dsa_summary_totalproblems"
     },
@@ -1619,7 +1835,7 @@
       "file_type": "code",
       "source_file": "src/data/dsa.json",
       "source_location": "L4",
-      "community": 40,
+      "community": 285,
       "norm_label": "blind75count",
       "id": "data_dsa_summary_blind75count"
     },
@@ -1628,7 +1844,7 @@
       "file_type": "code",
       "source_file": "src/data/dsa.json",
       "source_location": "L5",
-      "community": 40,
+      "community": 285,
       "norm_label": "neetcode150count",
       "id": "data_dsa_summary_neetcode150count"
     },
@@ -1637,7 +1853,7 @@
       "file_type": "code",
       "source_file": "src/data/dsa.json",
       "source_location": "L6",
-      "community": 40,
+      "community": 285,
       "norm_label": "neetcode250count",
       "id": "data_dsa_summary_neetcode250count"
     },
@@ -1646,7 +1862,7 @@
       "file_type": "code",
       "source_file": "src/data/dsa.json",
       "source_location": "L7",
-      "community": 40,
+      "community": 285,
       "norm_label": "categoriescount",
       "id": "data_dsa_summary_categoriescount"
     },
@@ -18908,7 +19124,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23012",
-      "community": 29,
+      "community": 291,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_23012"
     },
@@ -18917,7 +19133,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23017",
-      "community": 29,
+      "community": 291,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_685"
     },
@@ -18953,7 +19169,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23070",
-      "community": 29,
+      "community": 292,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_23070"
     },
@@ -18962,7 +19178,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23075",
-      "community": 29,
+      "community": 292,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_687"
     },
@@ -19043,7 +19259,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23175",
-      "community": 29,
+      "community": 293,
       "norm_label": "crossing the bridge",
       "id": "project_ml_learning_website_all_journey_questions_crossing_the_bridge"
     },
@@ -19052,7 +19268,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23177",
-      "community": 29,
+      "community": 293,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_691"
     },
@@ -19088,7 +19304,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23231",
-      "community": 29,
+      "community": 294,
       "norm_label": "reshape and transpose",
       "id": "project_ml_learning_website_all_journey_questions_reshape_and_transpose"
     },
@@ -19097,7 +19313,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23233",
-      "community": 29,
+      "community": 294,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_693"
     },
@@ -19106,7 +19322,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23241",
-      "community": 29,
+      "community": 295,
       "norm_label": "slicing, the same way as a list",
       "id": "project_ml_learning_website_all_journey_questions_slicing_the_same_way_as_a_list"
     },
@@ -19115,7 +19331,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23243",
-      "community": 29,
+      "community": 295,
       "norm_label": "code:python (m[1]           # the whole 2nd row)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_694"
     },
@@ -19124,7 +19340,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23249",
-      "community": 29,
+      "community": 296,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_23249"
     },
@@ -19133,7 +19349,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23254",
-      "community": 29,
+      "community": 296,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_695"
     },
@@ -19340,7 +19556,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23547",
-      "community": 150,
+      "community": 32,
       "norm_label": "two ways to step outside the graph",
       "id": "project_ml_learning_website_all_journey_questions_two_ways_to_step_outside_the_graph"
     },
@@ -19349,7 +19565,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23549",
-      "community": 150,
+      "community": 32,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_704"
     },
@@ -19385,7 +19601,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23612",
-      "community": 105,
+      "community": 32,
       "norm_label": "backward on a vector",
       "id": "project_ml_learning_website_all_journey_questions_backward_on_a_vector"
     },
@@ -19394,7 +19610,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23614",
-      "community": 105,
+      "community": 32,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_706"
     },
@@ -19403,7 +19619,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23626",
-      "community": 151,
+      "community": 32,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_23626"
     },
@@ -19412,7 +19628,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23631",
-      "community": 151,
+      "community": 32,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_707"
     },
@@ -19430,7 +19646,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23679",
-      "community": 267,
+      "community": 32,
       "norm_label": "the expression",
       "id": "project_ml_learning_website_all_journey_questions_the_expression"
     },
@@ -19439,7 +19655,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L23681",
-      "community": 267,
+      "community": 32,
       "norm_label": "code:python (import torch)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_708"
     },
@@ -22022,7 +22238,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27044",
-      "community": 59,
+      "community": 50,
       "norm_label": "track: pyspark road",
       "id": "project_ml_learning_website_all_journey_questions_track_pyspark_road"
     },
@@ -22346,7 +22562,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27437",
-      "community": 38,
+      "community": 297,
       "norm_label": "two calling styles",
       "id": "project_ml_learning_website_all_journey_questions_two_calling_styles"
     },
@@ -22355,7 +22571,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27439",
-      "community": 38,
+      "community": 297,
       "norm_label": "code:python (df.select(\"id\", \"name\")        # separate string arguments)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_824"
     },
@@ -22427,7 +22643,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27534",
-      "community": 38,
+      "community": 288,
       "norm_label": "3. withcolumn and cast `[medium]`",
       "id": "project_ml_learning_website_all_journey_questions_3_withcolumn_and_cast_medium"
     },
@@ -22436,7 +22652,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27545",
-      "community": 38,
+      "community": 288,
       "norm_label": "code:python (df.withcolumn(\"doubled\", f.col(\"amount\") * 2))",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_828"
     },
@@ -22517,7 +22733,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27642",
-      "community": 38,
+      "community": 289,
       "norm_label": "5. rename and drop columns `[medium]`",
       "id": "project_ml_learning_website_all_journey_questions_5_rename_and_drop_columns_medium"
     },
@@ -22526,7 +22742,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27653",
-      "community": 38,
+      "community": 289,
       "norm_label": "code:python (df.withcolumnrenamed(\"nm\", \"name\")   # rename one column)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_832"
     },
@@ -22553,7 +22769,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27695",
-      "community": 38,
+      "community": 290,
       "norm_label": "6. reshape a raw dataframe `[medium]`",
       "id": "project_ml_learning_website_all_journey_questions_6_reshape_a_raw_dataframe_medium"
     },
@@ -22562,7 +22778,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L27706",
-      "community": 38,
+      "community": 290,
       "norm_label": "code:python (()",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_834"
     },
@@ -22796,7 +23012,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28041",
-      "community": 285,
+      "community": 31,
       "norm_label": "the mechanics",
       "id": "project_ml_learning_website_all_journey_questions_the_mechanics"
     },
@@ -22805,7 +23021,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28043",
-      "community": 285,
+      "community": 31,
       "norm_label": "code:python (joined = orders_df.join(products_df, \"product_id\", how=\"inne)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_846"
     },
@@ -22922,7 +23138,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28179",
-      "community": 286,
+      "community": 31,
       "norm_label": "the one rule that matters",
       "id": "project_ml_learning_website_all_journey_questions_the_one_rule_that_matters"
     },
@@ -22931,7 +23147,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28181",
-      "community": 286,
+      "community": 31,
       "norm_label": "code:python (combined = west_df.union(east_df))",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_850"
     },
@@ -22949,7 +23165,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28191",
-      "community": 287,
+      "community": 31,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_28191"
     },
@@ -22958,7 +23174,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28196",
-      "community": 287,
+      "community": 31,
       "norm_label": "code:python (from pyspark.sql import sparksession, row)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_851"
     },
@@ -22976,7 +23192,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28234",
-      "community": 288,
+      "community": 31,
       "norm_label": "the discipline this station is about",
       "id": "project_ml_learning_website_all_journey_questions_the_discipline_this_station_is_about"
     },
@@ -22985,7 +23201,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28236",
-      "community": 288,
+      "community": 31,
       "norm_label": "code:python (kept = readings.orderby(\"timestamp\").dropduplicates(subset=[)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_852"
     },
@@ -23048,7 +23264,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28302",
-      "community": 289,
+      "community": 31,
       "norm_label": "your task",
       "id": "project_ml_learning_website_all_journey_questions_your_task_28302"
     },
@@ -23057,7 +23273,7 @@
       "file_type": "document",
       "source_file": "all_journey_questions.md",
       "source_location": "L28307",
-      "community": 289,
+      "community": 31,
       "norm_label": "code:python (from pyspark.sql import sparksession, row)",
       "id": "project_ml_learning_website_all_journey_questions_codeblock_854"
     },
@@ -23888,9 +24104,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "dsa_ml_learning_website_package_name",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_name"
     },
     {
       "relation": "contains",
@@ -23898,9 +24114,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "dsa_ml_learning_website_package_private",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_private"
     },
     {
       "relation": "contains",
@@ -23908,9 +24124,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "dsa_ml_learning_website_package_version",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_version"
     },
     {
       "relation": "contains",
@@ -23918,9 +24134,9 @@
       "source_file": "package.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "dsa_ml_learning_website_package_type",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_type"
     },
     {
       "relation": "contains",
@@ -23928,9 +24144,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "dsa_ml_learning_website_package_scripts",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts"
     },
     {
       "relation": "contains",
@@ -23938,9 +24154,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "dsa_ml_learning_website_package_dependencies",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies"
     },
     {
       "relation": "contains",
@@ -23948,9 +24164,9 @@
       "source_file": "package.json",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_json",
-      "target": "dsa_ml_learning_website_package_devdependencies",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies"
     },
     {
       "relation": "contains",
@@ -24028,9 +24244,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_dev",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_dev"
     },
     {
       "relation": "contains",
@@ -24038,9 +24254,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_build",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_build"
     },
     {
       "relation": "contains",
@@ -24048,9 +24264,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_preview",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_preview"
     },
     {
       "relation": "contains",
@@ -24058,9 +24274,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_server",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_server"
     },
     {
       "relation": "contains",
@@ -24068,9 +24284,9 @@
       "source_file": "package.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_graph_update",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_graph_update"
     },
     {
       "relation": "contains",
@@ -24078,9 +24294,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_graph_query",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_graph_query"
     },
     {
       "relation": "contains",
@@ -24088,9 +24304,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_graph_tree",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_graph_tree"
     },
     {
       "relation": "contains",
@@ -24098,9 +24314,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_scripts",
-      "target": "dsa_ml_learning_website_package_scripts_graph_watch",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_scripts_graph_watch"
     },
     {
       "relation": "contains",
@@ -24108,9 +24324,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_monaco_editor_react",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_monaco_editor_react"
     },
     {
       "relation": "contains",
@@ -24118,9 +24334,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_canvas_confetti",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_canvas_confetti"
     },
     {
       "relation": "contains",
@@ -24128,9 +24344,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_clsx",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_clsx"
     },
     {
       "relation": "contains",
@@ -24138,9 +24354,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_cors",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_cors"
     },
     {
       "relation": "contains",
@@ -24148,9 +24364,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_express",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_express"
     },
     {
       "relation": "contains",
@@ -24158,9 +24374,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_framer_motion",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_framer_motion"
     },
     {
       "relation": "contains",
@@ -24168,9 +24384,9 @@
       "source_file": "package.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_lucide_react",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_lucide_react"
     },
     {
       "relation": "contains",
@@ -24178,9 +24394,9 @@
       "source_file": "package.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_prismjs",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_prismjs"
     },
     {
       "relation": "contains",
@@ -24188,9 +24404,9 @@
       "source_file": "package.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_react",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_react"
     },
     {
       "relation": "contains",
@@ -24198,9 +24414,9 @@
       "source_file": "package.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_react_dom",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_react_dom"
     },
     {
       "relation": "contains",
@@ -24208,9 +24424,9 @@
       "source_file": "package.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_dependencies",
-      "target": "dsa_ml_learning_website_package_dependencies_tailwind_merge",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_dependencies_tailwind_merge"
     },
     {
       "relation": "contains",
@@ -24218,9 +24434,9 @@
       "source_file": "package.json",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_devdependencies",
-      "target": "dsa_ml_learning_website_package_devdependencies_types_react",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies_types_react"
     },
     {
       "relation": "contains",
@@ -24228,9 +24444,9 @@
       "source_file": "package.json",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_devdependencies",
-      "target": "dsa_ml_learning_website_package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies_types_react_dom"
     },
     {
       "relation": "contains",
@@ -24238,9 +24454,9 @@
       "source_file": "package.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_devdependencies",
-      "target": "dsa_ml_learning_website_package_devdependencies_vitejs_plugin_react",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies_vitejs_plugin_react"
     },
     {
       "relation": "contains",
@@ -24248,9 +24464,9 @@
       "source_file": "package.json",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_devdependencies",
-      "target": "dsa_ml_learning_website_package_devdependencies_autoprefixer",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies_autoprefixer"
     },
     {
       "relation": "contains",
@@ -24258,9 +24474,9 @@
       "source_file": "package.json",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_devdependencies",
-      "target": "dsa_ml_learning_website_package_devdependencies_postcss",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies_postcss"
     },
     {
       "relation": "contains",
@@ -24268,9 +24484,9 @@
       "source_file": "package.json",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_devdependencies",
-      "target": "dsa_ml_learning_website_package_devdependencies_tailwindcss",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies_tailwindcss"
     },
     {
       "relation": "contains",
@@ -24278,9 +24494,9 @@
       "source_file": "package.json",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_package_devdependencies",
-      "target": "dsa_ml_learning_website_package_devdependencies_vite",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_package_devdependencies_vite"
     },
     {
       "relation": "contains",
@@ -24383,6 +24599,26 @@
       "confidence_score": 1.0,
       "source": "server_index_mjs",
       "target": "server_index_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/index.mjs",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_index_mjs",
+      "target": "server_index_allowed_pdf_hosts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/index.mjs",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_index_mjs",
+      "target": "server_index_isallowedpdfurl"
     },
     {
       "relation": "contains",
@@ -24555,6 +24791,17 @@
       "target": "server_index_indexpath"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/index.mjs",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_index_streampdfwithredirects",
+      "target": "server_index_isallowedpdfurl"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -24608,6 +24855,39 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_components_researchpapersview_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_commandpalette_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_analyticsmodal_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_inapppdfviewer_jsx"
     },
     {
       "relation": "imports_from",
@@ -24669,11 +24949,77 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "utils_storage_markproblemsolved"
+      "target": "utils_storage_toggleproblemsolved"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "utils_storage_syncsolvedfrombackend"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_utils_api_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "utils_api_fetchbackendprogress"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "utils_api_toggleprogressonbackend"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_utils_catalog_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "utils_catalog_buildallproblems"
     },
     {
       "relation": "contains",
@@ -24695,6 +25041,17 @@
       "confidence_score": 1.0,
       "source": "src_main_jsx",
       "target": "src_app_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "utils_storage_markproblemsolved"
     },
     {
       "relation": "imports_from",
@@ -24719,14 +25076,111 @@
       "target": "src_components_backendguidemodal_jsx"
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/BackendGuideModal.jsx",
-      "source_location": "L4",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_components_backendguidemodal_jsx",
-      "target": "components_backendguidemodal_backendguidemodal"
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "src_utils_api_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "utils_api_getbackendstats"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "utils_api_checkbackendhealth"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "src_utils_storage_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "utils_storage_exportprogressdata"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "utils_storage_importprogressdata"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "utils_storage_resetallprogress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AnalyticsModal.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_analyticsmodal_jsx",
+      "target": "components_analyticsmodal_analyticsmodal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/CommandPalette.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_commandpalette_jsx",
+      "target": "components_commandpalette_track_badges"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/CommandPalette.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_commandpalette_jsx",
+      "target": "components_commandpalette_commandpalette"
     },
     {
       "relation": "imports_from",
@@ -24783,6 +25237,39 @@
       "target": "utils_solutiongenerator_generateneetcodesolution"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/InAppPdfViewer.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_inapppdfviewer_jsx",
+      "target": "src_utils_api_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/InAppPdfViewer.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_inapppdfviewer_jsx",
+      "target": "utils_api_checkbackendhealth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/InAppPdfViewer.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_inapppdfviewer_jsx",
+      "target": "utils_api_backend_url"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/InAppPdfViewer.jsx",
@@ -24815,14 +25302,36 @@
       "target": "src_components_inapppdfviewer_jsx"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_markdownrenderer_jsx",
+      "target": "src_components_mathtext_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_markdownrenderer_jsx",
+      "target": "components_mathtext_renderkatexhtml"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/MarkdownRenderer.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_markdownrenderer_jsx",
-      "target": "components_markdownrenderer_codeblock",
-      "confidence_score": 1.0
+      "target": "components_markdownrenderer_codeblock"
     },
     {
       "relation": "contains",
@@ -24830,9 +25339,9 @@
       "source_file": "src/components/MarkdownRenderer.jsx",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_markdownrenderer_jsx",
-      "target": "components_markdownrenderer_renderinline",
-      "confidence_score": 1.0
+      "target": "components_markdownrenderer_renderinline"
     },
     {
       "relation": "contains",
@@ -24840,9 +25349,9 @@
       "source_file": "src/components/MarkdownRenderer.jsx",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_markdownrenderer_jsx",
-      "target": "components_markdownrenderer_markdownrenderer",
-      "confidence_score": 1.0
+      "target": "components_markdownrenderer_markdownrenderer"
     },
     {
       "relation": "imports_from",
@@ -24851,9 +25360,51 @@
       "source_file": "src/components/ProblemWorkspace.jsx",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_problemworkspace_jsx",
-      "target": "src_components_markdownrenderer_jsx",
-      "confidence_score": 1.0
+      "target": "src_components_markdownrenderer_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MarkdownRenderer.jsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_markdownrenderer_renderinline",
+      "target": "components_mathtext_renderkatexhtml"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MathText.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_mathtext_jsx",
+      "target": "components_mathtext_renderkatexhtml"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MathText.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_mathtext_jsx",
+      "target": "components_mathtext_mathtext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MathText.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_mathtext_mathtext",
+      "target": "components_mathtext_renderkatexhtml"
     },
     {
       "relation": "contains",
@@ -24935,11 +25486,44 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ProblemWorkspace.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_problemworkspace_jsx",
+      "target": "utils_pyodiderunner_runsqlcode"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProblemWorkspace.jsx",
       "source_location": "L28",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_components_problemworkspace_jsx",
       "target": "utils_pyodiderunner_runtests"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProblemWorkspace.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_problemworkspace_jsx",
+      "target": "utils_pyodiderunner_getpyodide"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProblemWorkspace.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_problemworkspace_jsx",
+      "target": "utils_pyodiderunner_ispyodideready"
     },
     {
       "relation": "imports_from",
@@ -25036,9 +25620,9 @@
       "source_file": "src/components/ProblemWorkspace.jsx",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_problemworkspace_jsx",
-      "target": "src_utils_problemspecgenerator_js",
-      "confidence_score": 1.0
+      "target": "src_utils_problemspecgenerator_js"
     },
     {
       "relation": "imports",
@@ -25047,9 +25631,9 @@
       "source_file": "src/components/ProblemWorkspace.jsx",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_problemworkspace_jsx",
-      "target": "utils_problemspecgenerator_generateproblemspec",
-      "confidence_score": 1.0
+      "target": "utils_problemspecgenerator_generateproblemspec"
     },
     {
       "relation": "imports_from",
@@ -25093,6 +25677,17 @@
       "target": "components_problemworkspace_problemworkspace"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ProblemWorkspace.jsx",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "components_problemworkspace_problemworkspace",
+      "target": "utils_pyodiderunner_ispyodideready"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -25134,6 +25729,28 @@
       "target": "components_videomodal_videomodal"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_catalog_js",
+      "target": "src_data_research_papers_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_catalog_js",
+      "target": "src_data_system_design_json"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/api.js",
@@ -25162,6 +25779,26 @@
       "confidence_score": 1.0,
       "source": "src_utils_api_js",
       "target": "utils_api_checkbackendhealth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_fetchbackendprogress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/api.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_api_js",
+      "target": "utils_api_toggleprogressonbackend"
     },
     {
       "relation": "contains",
@@ -25204,14 +25841,65 @@
       "target": "utils_api_getbackendstats"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_catalog_js",
+      "target": "src_data_dsa_json"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_catalog_js",
+      "target": "utils_catalog_ml_track_slugs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_catalog_js",
+      "target": "utils_catalog_data_track_slugs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/catalog.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_catalog_js",
+      "target": "utils_catalog_buildallproblems"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/problemSpecGenerator.js",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_utils_problemspecgenerator_js",
-      "target": "utils_problemspecgenerator_generateproblemspec",
-      "confidence_score": 1.0
+      "target": "utils_problemspecgenerator_generateproblemspec"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L1155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_pyodiderunner_js",
+      "target": "utils_pyodiderunner_ispyodideready"
     },
     {
       "relation": "contains",
@@ -25222,6 +25910,16 @@
       "confidence_score": 1.0,
       "source": "src_utils_pyodiderunner_js",
       "target": "utils_pyodiderunner_getpyodide"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L1189",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_pyodiderunner_js",
+      "target": "utils_pyodiderunner_runsqlcode"
     },
     {
       "relation": "contains",
@@ -25242,6 +25940,17 @@
       "confidence_score": 1.0,
       "source": "src_utils_pyodiderunner_js",
       "target": "utils_pyodiderunner_runtests"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/pyodideRunner.js",
+      "source_location": "L1190",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_pyodiderunner_runsqlcode",
+      "target": "utils_pyodiderunner_getpyodide"
     },
     {
       "relation": "calls",
@@ -25279,11 +25988,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/storage.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_getsolvedxpmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_savesolvedxpmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_utils_storage_js",
       "target": "utils_storage_getsolvedproblems"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_gettotalxp"
     },
     {
       "relation": "contains",
@@ -25299,11 +26038,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/storage.js",
-      "source_location": "L33",
+      "source_location": "L61",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_utils_storage_js",
-      "target": "utils_storage_gettotalxp"
+      "target": "utils_storage_toggleproblemsolved"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_syncsolvedfrombackend"
     },
     {
       "relation": "contains",
@@ -25329,11 +26078,119 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/storage.js",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_exportprogressdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_storage_js",
+      "target": "utils_storage_importprogressdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
       "source_location": "L59",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_utils_storage_js",
       "target": "utils_storage_resetallprogress"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_markproblemsolved",
+      "target": "utils_storage_getsolvedxpmap"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_toggleproblemsolved",
+      "target": "utils_storage_getsolvedxpmap"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L86",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_syncsolvedfrombackend",
+      "target": "utils_storage_getsolvedxpmap"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L133",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_exportprogressdata",
+      "target": "utils_storage_getsolvedxpmap"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_markproblemsolved",
+      "target": "utils_storage_savesolvedxpmap"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_toggleproblemsolved",
+      "target": "utils_storage_savesolvedxpmap"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_syncsolvedfrombackend",
+      "target": "utils_storage_savesolvedxpmap"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L163",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_importprogressdata",
+      "target": "utils_storage_savesolvedxpmap"
     },
     {
       "relation": "calls",
@@ -25351,10 +26208,76 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/utils/storage.js",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_toggleproblemsolved",
+      "target": "utils_storage_getsolvedproblems"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_syncsolvedfrombackend",
+      "target": "utils_storage_getsolvedproblems"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_exportprogressdata",
+      "target": "utils_storage_getsolvedproblems"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
       "source_location": "L26",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "utils_storage_markproblemsolved",
+      "target": "utils_storage_gettotalxp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_toggleproblemsolved",
+      "target": "utils_storage_gettotalxp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_syncsolvedfrombackend",
+      "target": "utils_storage_gettotalxp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/storage.js",
+      "source_location": "L134",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_storage_exportprogressdata",
       "target": "utils_storage_gettotalxp"
     },
     {
@@ -25363,9 +26286,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_md",
-      "target": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform"
     },
     {
       "relation": "contains",
@@ -25393,9 +26316,9 @@
       "source_file": "README.md",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "target": "dsa_ml_learning_website_readme_core_pillars_curriculum",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_core_pillars_curriculum"
     },
     {
       "relation": "contains",
@@ -25403,9 +26326,9 @@
       "source_file": "README.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "target": "dsa_ml_learning_website_readme_interactive_features",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_interactive_features"
     },
     {
       "relation": "contains",
@@ -25413,9 +26336,9 @@
       "source_file": "README.md",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "target": "dsa_ml_learning_website_readme_tech_stack_architecture",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_tech_stack_architecture"
     },
     {
       "relation": "contains",
@@ -25423,9 +26346,9 @@
       "source_file": "README.md",
       "source_location": "L106",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "target": "dsa_ml_learning_website_readme_getting_started_locally",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_getting_started_locally"
     },
     {
       "relation": "contains",
@@ -25433,9 +26356,9 @@
       "source_file": "README.md",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "target": "dsa_ml_learning_website_readme_live_deployment",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_live_deployment"
     },
     {
       "relation": "contains",
@@ -25443,9 +26366,9 @@
       "source_file": "README.md",
       "source_location": "L152",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_nexuscore_advanced_engineering_dsa_ai_ml_learning_platform",
-      "target": "dsa_ml_learning_website_readme_license",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_license"
     },
     {
       "relation": "contains",
@@ -25453,9 +26376,9 @@
       "source_file": "README.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
-      "target": "dsa_ml_learning_website_readme_1_data_structures_algorithms_1_126_curated_problems",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_1_data_structures_algorithms_1_126_curated_problems"
     },
     {
       "relation": "contains",
@@ -25463,9 +26386,9 @@
       "source_file": "README.md",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
-      "target": "dsa_ml_learning_website_readme_2_large_scale_system_design_distributed_architecture",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_2_large_scale_system_design_distributed_architecture"
     },
     {
       "relation": "contains",
@@ -25473,9 +26396,9 @@
       "source_file": "README.md",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
-      "target": "dsa_ml_learning_website_readme_3_machine_learning_deep_learning_with_arxiv_research_integration",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_3_machine_learning_deep_learning_with_arxiv_research_integration"
     },
     {
       "relation": "contains",
@@ -25483,9 +26406,9 @@
       "source_file": "README.md",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_core_pillars_curriculum",
-      "target": "dsa_ml_learning_website_readme_4_data_engineering_scaled_analytics",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_4_data_engineering_scaled_analytics"
     },
     {
       "relation": "contains",
@@ -25493,9 +26416,9 @@
       "source_file": "README.md",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_interactive_features",
-      "target": "dsa_ml_learning_website_readme_1_in_browser_vs_code_monaco_editor",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_1_in_browser_vs_code_monaco_editor"
     },
     {
       "relation": "contains",
@@ -25503,9 +26426,9 @@
       "source_file": "README.md",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_interactive_features",
-      "target": "dsa_ml_learning_website_readme_2_client_side_webassembly_execution",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_2_client_side_webassembly_execution"
     },
     {
       "relation": "contains",
@@ -25513,9 +26436,9 @@
       "source_file": "README.md",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_interactive_features",
-      "target": "dsa_ml_learning_website_readme_3_pedagogical_3_tier_multi_approach_solutions",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_3_pedagogical_3_tier_multi_approach_solutions"
     },
     {
       "relation": "contains",
@@ -25523,9 +26446,9 @@
       "source_file": "README.md",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_interactive_features",
-      "target": "dsa_ml_learning_website_readme_4_interactive_prerequisite_skill_tree",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_4_interactive_prerequisite_skill_tree"
     },
     {
       "relation": "contains",
@@ -25533,9 +26456,9 @@
       "source_file": "README.md",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_getting_started_locally",
-      "target": "dsa_ml_learning_website_readme_prerequisites",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_prerequisites"
     },
     {
       "relation": "contains",
@@ -25543,9 +26466,9 @@
       "source_file": "README.md",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_getting_started_locally",
-      "target": "dsa_ml_learning_website_readme_installation_run",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_installation_run"
     },
     {
       "relation": "contains",
@@ -25553,9 +26476,9 @@
       "source_file": "README.md",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_installation_run",
-      "target": "dsa_ml_learning_website_readme_codeblock_1",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_codeblock_1"
     },
     {
       "relation": "contains",
@@ -25563,9 +26486,9 @@
       "source_file": "README.md",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_installation_run",
-      "target": "dsa_ml_learning_website_readme_codeblock_2",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_codeblock_2"
     },
     {
       "relation": "contains",
@@ -25573,9 +26496,9 @@
       "source_file": "README.md",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_installation_run",
-      "target": "dsa_ml_learning_website_readme_codeblock_3",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_codeblock_3"
     },
     {
       "relation": "contains",
@@ -25583,9 +26506,9 @@
       "source_file": "README.md",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_installation_run",
-      "target": "dsa_ml_learning_website_readme_codeblock_4",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_codeblock_4"
     },
     {
       "relation": "contains",
@@ -25593,9 +26516,9 @@
       "source_file": "README.md",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dsa_ml_learning_website_readme_installation_run",
-      "target": "dsa_ml_learning_website_readme_codeblock_5",
-      "confidence_score": 1.0
+      "target": "dsa_ml_learning_website_readme_codeblock_5"
     },
     {
       "relation": "contains",
@@ -25603,9 +26526,9 @@
       "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/rules/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "c_users_ntry2_desktop_gemini_project_ml_learning_website_agents_rules_graphify_md",
-      "target": "rules_graphify_graphify",
-      "confidence_score": 1.0
+      "target": "rules_graphify_graphify"
     },
     {
       "relation": "contains",
@@ -25623,9 +26546,9 @@
       "source_file": "C:/Users/ntry2/Desktop/gemini/project-ML-learning-website/.agents/workflows/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "c_users_ntry2_desktop_gemini_project_ml_learning_website_agents_workflows_graphify_md",
-      "target": "workflows_graphify_workflow_graphify",
-      "confidence_score": 1.0
+      "target": "workflows_graphify_workflow_graphify"
     },
     {
       "relation": "contains",
@@ -25636,6 +26559,16 @@
       "confidence_score": 1.0,
       "source": "agents_workflows_graphify_md",
       "target": "workflows_graphify_workflow_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BackendGuideModal.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_backendguidemodal_jsx",
+      "target": "components_backendguidemodal_backendguidemodal"
     },
     {
       "relation": "contains",
@@ -50627,5 +51560,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "cf4c2e87b68db3c1061db149eca41169fde792e0"
+  "built_at_commit": "10bae5d960f52aa56a003b87a1ca2324cad78e85"
 }

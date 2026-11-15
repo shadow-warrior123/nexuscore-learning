@@ -6,6 +6,7 @@ import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-sql';
+import { renderKatexHtml } from './MathText';
 
 function CodeBlock({ lang, code }) {
   const [copied, setCopied] = useState(false);
@@ -52,12 +53,12 @@ function CodeBlock({ lang, code }) {
 
 function renderInline(text) {
   if (!text) return null;
-  // Tokenize inline code `...` and bold **...** and italic *...*
+  // Tokenize inline code `...`, KaTeX math $$...$$ / $...$, bold **...**, italic *...*
   const tokens = [];
   let remaining = text;
   let key = 0;
 
-  const regex = /(`[^`]+`|\*\*[^*]+\*\*|\*[^*\n]+\*)/g;
+  const regex = /(`[^`]+`|\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|\*\*[^*]+\*\*|\*[^*\n]+\*)/g;
   let lastIndex = 0;
   let match;
 
@@ -75,6 +76,21 @@ function renderInline(text) {
           {token.slice(1, -1)}
         </code>
       );
+    } else if ((token.startsWith('$$') && token.endsWith('$$')) || (token.startsWith('$') && token.endsWith('$'))) {
+      const isDisplay = token.startsWith('$$');
+      const expr = isDisplay ? token.slice(2, -2).trim() : token.slice(1, -1).trim();
+      const html = renderKatexHtml(expr, isDisplay);
+      if (html) {
+        tokens.push(
+          <span
+            key={key++}
+            className={isDisplay ? 'block my-2 overflow-x-auto' : 'inline-block align-middle mx-0.5'}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        );
+      } else {
+        tokens.push(<code key={key++} className="font-mono text-amber-300">{expr}</code>);
+      }
     } else if (token.startsWith('**') && token.endsWith('**')) {
       tokens.push(
         <strong key={key++} className="font-semibold text-zinc-100">

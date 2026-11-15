@@ -19,10 +19,11 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function RoadmapView({ onSelectCategory, solvedProblems }) {
+export default function RoadmapView({ onSelectCategory, solvedProblems, trackCounts }) {
   const [activeTopographyMode, setActiveTopographyMode] = useState('ai_topography'); // ai_topography, dsa_graph, branches
   const [selectedStackLayer, setSelectedStackLayer] = useState(0);
   const [hoveredNodeId, setHoveredNodeId] = useState('attention');
+  const counts = trackCounts || { ml: 185, dsa: 1126, sysdes: 49, data: 187, total: 1547 };
 
   // 4-Layer Floor-to-Ceiling AI Engineering Stack (Problem -> Solution Interactive Map)
   const engineeringStackLayers = [
@@ -314,14 +315,15 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
     { id: 'tries', name: 'Tries', count: 16, difficulty: 'Medium', tier: '05 / PREFIX TREE', leadsTo: [], tagline: 'Radix prefix caching & O(L) token lookup' },
     { id: 'heap', name: 'Heap / Priority Queue', count: 36, difficulty: 'Medium', tier: '05 / STREAM TOP-K', leadsTo: ['Intervals'], tagline: 'Bounded O(N log K) beam search & median streams' },
     { id: 'backtracking', name: 'Backtracking', count: 45, difficulty: 'Medium', tier: '05 / STATE SEARCH', leadsTo: ['Graphs', '1-D DP'], tagline: 'Constraint satisfaction & branch pruning' },
-    { id: 'graphs', name: 'Graphs', count: 138, difficulty: 'Medium', tier: '06 / TOPOLOGY', leadsTo: ['Advanced Graphs'], tagline: 'Kahn topological DAG sort, BFS/DFS, Union-Find' },
+    { id: 'graphs', name: 'Graphs', count: 76, difficulty: 'Medium', tier: '06 / TOPOLOGY', leadsTo: ['Advanced Graphs'], tagline: 'Kahn topological DAG sort, BFS/DFS, Union-Find' },
     { id: '1-d-dp', name: '1-D Dynamic Programming', count: 61, difficulty: 'Medium', tier: '06 / BELLMAN STATE', leadsTo: ['2-D DP'], tagline: 'Optimal substructure & O(1) rolling registers' },
-    { id: 'intervals', name: 'Intervals', count: 22, difficulty: 'Medium', tier: '07 / SCHEDULING', leadsTo: [], tagline: 'Sweep-line conflict resolution & span merging' },
-    { id: 'greedy', name: 'Greedy', count: 43, difficulty: 'Medium', tier: '07 / EXCHANGE PROOF', leadsTo: [], tagline: 'Locally optimal choices with global guarantee' },
+    { id: 'intervals', name: 'Intervals', count: 24, difficulty: 'Medium', tier: '07 / SCHEDULING', leadsTo: [], tagline: 'Sweep-line conflict resolution & span merging' },
+    { id: 'greedy', name: 'Greedy', count: 79, difficulty: 'Medium', tier: '07 / EXCHANGE PROOF', leadsTo: [], tagline: 'Locally optimal choices with global guarantee' },
     { id: 'advanced-graphs', name: 'Advanced Graphs', count: 36, difficulty: 'Hard', tier: '08 / NETWORK FLOW', leadsTo: [], tagline: 'Dijkstra, Bellman-Ford, Kruskal MST' },
     { id: '2-d-dp', name: '2-D Dynamic Programming', count: 67, difficulty: 'Hard', tier: '08 / STATE LATTICE', leadsTo: [], tagline: 'Sequence alignment, knapsack, edit distance' },
     { id: 'bit-manipulation', name: 'Bit Manipulation', count: 33, difficulty: 'Medium', tier: '09 / HARDWARE ALU', leadsTo: [], tagline: 'Bitmasks, XOR parity, register arithmetic' },
-    { id: 'math-geometry', name: 'Math & Geometry', count: 31, difficulty: 'Medium', tier: '09 / LINEAR ALGEBRA', leadsTo: [], tagline: 'Matrix rotation, modular arithmetic, combinatorics' }
+    { id: 'math-geometry', name: 'Math & Geometry', count: 76, difficulty: 'Medium', tier: '09 / LINEAR ALGEBRA', leadsTo: [], tagline: 'Matrix rotation, modular arithmetic, combinatorics' },
+    { id: 'javascript', name: 'JavaScript', count: 30, difficulty: 'Medium', tier: '10 / RUNTIME', leadsTo: [], tagline: 'Closures, promises, event loop, & async primitives' }
   ];
 
   // 4 Disciplines Overview
@@ -330,16 +332,16 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       id: 'ml',
       code: 'TRACK 01',
       title: 'AI & Machine Learning Engineering',
-      tagline: 'Linear Algebra → Autograd & Optimization → PyTorch Tensors → Transformers & LLMs',
+      tagline: 'Linear Algebra → Autograd & Optimization → PyTorch & TensorFlow → Transformers & LLMs',
       icon: BrainCircuit,
-      badge: '119 Labs + ArXiv Papers',
+      badge: `${counts.ml} Labs + ArXiv Papers`,
       levels: [
         { name: 'Mathematical Foundations & Statistics', count: 14, category: 'Foundations', paper: 'Pearson (1901) — PCA' },
-        { name: 'Loss Functions, Gradient Descent & Backprop', count: 19, category: 'Loss & Optimization', paper: 'Kingma & Ba (2014) — Adam' },
-        { name: 'Neural Networks & PyTorch Tensor Mechanics', count: 46, category: 'Neural Networks', paper: 'Ioffe & Szegedy (2015) — BatchNorm' },
-        { name: 'Computer Vision & Residual Architectures', count: 12, category: 'Computer Vision', paper: 'He et al. (2015) — ResNet' },
-        { name: 'Multi-Head Attention & Transformers', count: 15, category: 'Attention', paper: 'Vaswani et al. (2017) — Attention' },
-        { name: 'Generative Models, LLMs & Low-Rank Adaptation', count: 21, category: 'Generative Models', paper: 'Hu et al. (2021) — LoRA' }
+        { name: 'Loss Functions, Gradient Descent & Regression', count: 19, category: 'Loss & Optimization', paper: 'Kingma & Ba (2014) — Adam' },
+        { name: 'PyTorch & TensorFlow Tensor Mechanics', count: 66, category: 'PyTorch Road', paper: 'Ioffe & Szegedy (2015) — BatchNorm' },
+        { name: 'Neural Networks & Computer Vision', count: 15, category: 'Neural Networks', paper: 'He et al. (2015) — ResNet' },
+        { name: 'Multi-Head Attention & Transformers', count: 8, category: 'Attention', paper: 'Vaswani et al. (2017) — Attention' },
+        { name: 'Generative Models, LLMs & Low-Rank Adaptation', count: 14, category: 'Generative Models', paper: 'Hu et al. (2021) — LoRA' }
       ]
     },
     {
@@ -348,12 +350,12 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       title: 'Data Structures & Algorithmic Invariants',
       tagline: 'Arrays & Hashing → Sliding Window → Trees & Tries → Graphs → Dynamic Programming',
       icon: Code2,
-      badge: '1,126 Problems',
+      badge: `${counts.dsa.toLocaleString()} Problems`,
       levels: [
         { name: 'Foundations: Arrays, Hashing & Two Pointers', count: 256, category: 'Arrays & Hashing' },
         { name: 'Streaming & Scope: Sliding Window, Stack & Binary Search', count: 138, category: 'Sliding Window' },
         { name: 'Hierarchical State: Trees, Linked Lists & Radix Tries', count: 169, category: 'Trees' },
-        { name: 'Topology & Scheduling: Graphs, Heaps & Backtracking', count: 255, category: 'Graphs' },
+        { name: 'Topology & Scheduling: Graphs, Heaps & Backtracking', count: 193, category: 'Graphs' },
         { name: 'State Lattices: 1-D & 2-D Dynamic Programming', count: 128, category: '1-D Dynamic Programming' }
       ]
     },
@@ -363,7 +365,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       title: 'Distributed Systems & Architecture',
       tagline: 'Networking & Caching → Consistent Hashing → OOD Patterns → High-Scale HLD',
       icon: Server,
-      badge: '49 Architectures',
+      badge: `${counts.sysdes} Architectures`,
       levels: [
         { name: 'Distributed Primitives: DNS, TCP/UDP, Sharding & Caching', count: 21, category: 'System Design for Beginners' },
         { name: 'Object-Oriented State Machines & Concurrency', count: 7, category: 'Object-Oriented Design Interview' },
@@ -377,7 +379,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
       title: 'Data Engineering & Vector Pipelines',
       tagline: 'NumPy Broadcasting → Pandas GroupBy → SQL Window Functions → PySpark DAGs',
       icon: Database,
-      badge: '253 Labs',
+      badge: `${counts.data} Labs`,
       levels: [
         { name: 'NumPy Contiguous Memory & Broadcasting Kernels', count: 37, category: 'NumPy Road' },
         { name: 'Pandas Columnar Wrangling & Relational Merges', count: 48, category: 'Pandas Road' },
@@ -465,10 +467,10 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
                 className="px-4 py-2.5 rounded-md bg-[#0f0f12] hover:bg-zinc-900 text-zinc-200 border border-zinc-800 font-mono text-xs flex items-center gap-2 transition-colors"
               >
                 <Code2 className="w-3.5 h-3.5 text-amber-400" />
-                <span>Explore 1,126 Algorithmic Specs</span>
+                <span>Explore {counts.dsa.toLocaleString()} Algorithmic Specs</span>
               </button>
               <div className="text-[11px] font-mono text-zinc-500 pl-1">
-                1,547 Interactive Specs · In-Browser Python 3.13 WASM · Zero Login
+                {counts.total.toLocaleString()} Interactive Specs · In-Browser Python 3.13 WASM · Zero Login
               </div>
             </div>
           </div>
@@ -593,7 +595,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
                     : 'text-zinc-500 hover:text-zinc-300'
                 }`}
               >
-                02 / 18-Node DSA DAG
+                02 / 19-Node DSA DAG
               </button>
               <button
                 onClick={() => setActiveTopographyMode('branches')}
@@ -740,7 +742,7 @@ export default function RoadmapView({ onSelectCategory, solvedProblems }) {
                 <div>
                   <h3 className="text-base font-semibold text-zinc-100 flex items-center gap-2">
                     <GitBranch className="w-4 h-4 text-amber-400" />
-                    <span>18-Pattern Algorithmic Dependency Tree (1,126 Problems)</span>
+                    <span>19-Pattern Algorithmic Dependency Tree ({counts.dsa.toLocaleString()} Problems)</span>
                   </h3>
                   <p className="text-xs text-zinc-400 mt-0.5">
                     Sequenced by prerequisite invariants. Click any node to open its problem set and production specs.

@@ -20,6 +20,7 @@ def _nexus_install_shims():
         torch.float32 = np.float32
         torch.float64 = np.float64
         torch.int64 = np.int64
+        torch.long = np.int64
         torch.int32 = np.int32
         torch.bool = np.bool_
         _grad_enabled = [True]
@@ -63,6 +64,9 @@ def _nexus_install_shims():
             @property
             def dtype(self):
                 return self._data.dtype
+
+            def numel(self):
+                return int(self._data.size)
 
             @property
             def T(self):
@@ -129,7 +133,43 @@ def _nexus_install_shims():
                 return Tensor(np.expand_dims(self._data, axis=dim), dtype=self.dtype, requires_grad=self.requires_grad)
 
             def __getitem__(self, idx):
-                return Tensor(self._data[idx], dtype=self.dtype, requires_grad=self.requires_grad)
+                key = idx._data if isinstance(idx, Tensor) else idx
+                req = self.requires_grad and _grad_enabled[0]
+                out = Tensor(self._data[key], dtype=self.dtype, requires_grad=req, _op='getitem', _parents=(self,))
+                def _bw():
+                    if self.requires_grad and out.grad is not None:
+                        g = np.zeros_like(self._data, dtype=np.float32)
+                        np.add.at(g, key, out.grad._data)
+                        self.grad = Tensor(g) if self.grad is None else Tensor(self.grad._data + g)
+                out._backward_fn = _bw
+                return out
+
+            def __hash__(self):
+                return object.__hash__(self)
+
+            def __eq__(self, other):
+                o = other._data if isinstance(other, Tensor) else np.asarray(other)
+                return Tensor(self._data == o, dtype=np.bool_)
+
+            def __ne__(self, other):
+                o = other._data if isinstance(other, Tensor) else np.asarray(other)
+                return Tensor(self._data != o, dtype=np.bool_)
+
+            def __lt__(self, other):
+                o = other._data if isinstance(other, Tensor) else np.asarray(other)
+                return Tensor(self._data < o, dtype=np.bool_)
+
+            def __le__(self, other):
+                o = other._data if isinstance(other, Tensor) else np.asarray(other)
+                return Tensor(self._data <= o, dtype=np.bool_)
+
+            def __gt__(self, other):
+                o = other._data if isinstance(other, Tensor) else np.asarray(other)
+                return Tensor(self._data > o, dtype=np.bool_)
+
+            def __ge__(self, other):
+                o = other._data if isinstance(other, Tensor) else np.asarray(other)
+                return Tensor(self._data >= o, dtype=np.bool_)
 
             def __len__(self):
                 return len(self._data)
@@ -368,6 +408,7 @@ def _nexus_install_shims():
         torch.cat = _torch_cat
         torch.exp = lambda x: Tensor(np.exp(x._data), requires_grad=x.requires_grad)
         torch.log = lambda x: Tensor(np.log(x._data), requires_grad=x.requires_grad)
+        torch.argmax = lambda x, dim=None: x.argmax(dim=dim) if isinstance(x, Tensor) else Tensor(np.argmax(x, axis=dim), dtype=np.int64)
         torch.manual_seed = lambda s: np.random.seed(s)
 
         # torch.nn, torch.nn.functional, torch.optim
@@ -597,10 +638,22 @@ def _nexus_install_shims():
         torch_nn.CrossEntropyLoss = CrossEntropyLoss
         torch_nn.functional = torch_F
 
+        def _torch_cosine_similarity(x1, x2, dim=1, eps=1e-8):
+            a = x1._data if isinstance(x1, Tensor) else np.array(x1, dtype=np.float32)
+            b = x2._data if isinstance(x2, Tensor) else np.array(x2, dtype=np.float32)
+            a64 = a.astype(np.float64)
+            b64 = b.astype(np.float64)
+            dot = np.sum(a64 * b64, axis=dim)
+            na = np.sqrt(np.sum(a64 * a64, axis=dim))
+            nb = np.sqrt(np.sum(b64 * b64, axis=dim))
+            denom = np.maximum(na * nb, eps)
+            return Tensor(dot / denom, dtype=np.float32)
+
         torch_F.relu = lambda x: x.relu()
         torch_F.sigmoid = lambda x: x.sigmoid()
         torch_F.tanh = lambda x: x.tanh()
         torch_F.softmax = _torch_softmax
+        torch_F.cosine_similarity = _torch_cosine_similarity
         torch_F.mse_loss = lambda p, t: MSELoss()(p, t)
         torch_F.cross_entropy = lambda l, t: CrossEntropyLoss()(l, t)
 
@@ -654,6 +707,9 @@ def _nexus_install_shims():
             @property
             def dtype(self):
                 return self._data.dtype
+
+            def numel(self):
+                return int(self._data.size)
 
             def numpy(self):
                 return self._data
@@ -1139,9 +1195,13 @@ def _nexus_normalize(val):
     return val
 
 def _nexus_deep_equal(a, b, tol=1e-3):
-    if a is None and b is not None:
+    if (a is None) != (b is None):
         return False
-    if isinstance(a, (int, float, np.number)) and isinstance(b, (int, float, np.number)) and not isinstance(a, bool) and not isinstance(b, bool):
+    if a is None and b is None:
+        return True
+    if isinstance(a, bool) or isinstance(b, bool):
+        return isinstance(a, bool) and isinstance(b, bool) and a == b
+    if isinstance(a, (int, float, np.number)) and isinstance(b, (int, float, np.number)):
         return abs(float(a) - float(b)) <= tol * max(1.0, abs(float(b)))
     if isinstance(a, (list, tuple)) and isinstance(b, (list, tuple)):
         if len(a) != len(b): return False
@@ -1151,6 +1211,10 @@ def _nexus_deep_equal(a, b, tol=1e-3):
         return all(_nexus_deep_equal(a[k], b.get(k, b.get(str(k))), tol) for k in a)
     return str(a).strip() == str(b).strip()
 `;
+
+export function isPyodideReady() {
+  return Boolean(pyodideInstance);
+}
 
 export async function getPyodide() {
   if (pyodideInstance) return pyodideInstance;
@@ -1171,9 +1235,96 @@ export async function getPyodide() {
     await pyodide.runPythonAsync(PYTHON_SHIMS_AND_HARNESS);
     pyodideInstance = pyodide;
     return pyodide;
-  })();
+  })().catch((err) => {
+    initPromise = null;
+    throw err;
+  });
 
   return initPromise;
+}
+
+/**
+ * Execute raw SQL queries inside an in-memory SQLite3 sandbox via Pyodide
+ */
+export async function runSqlCode(sqlText) {
+  const pyodide = await getPyodide();
+  const startTime = performance.now();
+
+  const runnerScript = `
+import sqlite3, json
+
+_conn = sqlite3.connect(':memory:')
+_cur = _conn.cursor()
+
+# Seed realistic default tables so starter queries & OLAP experiments run immediately
+_cur.executescript("""
+CREATE TABLE IF NOT EXISTS telemetry_events (
+  id INTEGER PRIMARY KEY,
+  category TEXT,
+  metric_value REAL,
+  is_valid BOOLEAN,
+  created_at TEXT
+);
+INSERT INTO telemetry_events (id, category, metric_value, is_valid, created_at) VALUES
+  (1, 'latency_ms', 12.4, 1, '2026-11-01'),
+  (2, 'latency_ms', 14.1, 1, '2026-11-02'),
+  (3, 'latency_ms', 11.8, 1, '2026-11-03'),
+  (4, 'throughput', 8420.0, 1, '2026-11-01'),
+  (5, 'throughput', 9150.0, 1, '2026-11-02'),
+  (6, 'latency_ms', 999.0, 0, '2026-11-04');
+
+CREATE TABLE IF NOT EXISTS products (
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  category TEXT,
+  price REAL,
+  stock INTEGER
+);
+INSERT INTO products (id, name, category, price, stock) VALUES
+  (1, 'Desk', 'Office', 150.0, 5),
+  (2, 'Chair', 'Office', 85.0, 12),
+  (3, 'Lamp', 'Home', 30.0, 20),
+  (4, 'Monitor', 'Tech', 320.0, 8);
+""")
+
+_sql_raw = ${JSON.stringify(sqlText)}
+_statements = [s.strip() for s in _sql_raw.split(';') if s.strip() and not all(ln.strip().startswith('--') for ln in s.strip().splitlines())]
+_outputs = []
+
+for _stmt in _statements:
+    _cur.execute(_stmt)
+    if _cur.description:
+        _cols = [d[0] for d in _cur.description]
+        _rows = _cur.fetchall()
+        _widths = [max(len(str(c)), max((len(str(r[i])) for r in _rows), default=0)) for i, c in enumerate(_cols)]
+        _header = " | ".join(str(c).ljust(_widths[i]) for i, c in enumerate(_cols))
+        _sep = "-+-".join("-" * _widths[i] for i in range(len(_cols)))
+        _body = "\\n".join(" | ".join(str(r[i]).ljust(_widths[i]) for i in range(len(_cols))) for r in _rows)
+        _outputs.append(f"{_header}\\n{_sep}\\n{_body}\\n({len(_rows)} row(s))")
+    else:
+        _outputs.append(f"OK (rows affected: {_cur.rowcount})")
+
+_conn.commit()
+_conn.close()
+"\\n\\n".join(_outputs) if _outputs else "Executed 0 SQL statements."
+`;
+
+  try {
+    const out = await pyodide.runPythonAsync(runnerScript);
+    return {
+      success: true,
+      stdout: String(out || ''),
+      stderr: '',
+      durationMs: Math.round(performance.now() - startTime)
+    };
+  } catch (err) {
+    return {
+      success: false,
+      stdout: '',
+      stderr: err.message,
+      durationMs: Math.round(performance.now() - startTime)
+    };
+  }
 }
 
 /**
@@ -1236,7 +1387,7 @@ export async function runTests(userCode, testCases) {
     };
   }
 
-  const funcMatch = userCode.match(/def\s+([a-zA-Z0-9_]+)\s*\(/);
+  const funcMatch = userCode.match(/^def\s+([a-zA-Z0-9_]+)\s*\(/m) || userCode.match(/def\s+([a-zA-Z0-9_]+)\s*\(/);
   const funcName = funcMatch ? funcMatch[1] : null;
 
   if (!testCases || testCases.length === 0) {
@@ -1271,8 +1422,15 @@ export async function runTests(userCode, testCases) {
     const tc = testCases[i];
     try {
       let callStr = '';
-      if (tc.input) {
-        callStr = tc.input;
+      const rawInput = (tc.input || tc.call || '').trim();
+      if (rawInput) {
+        const looksLikeCall = /^[a-zA-Z_][a-zA-Z0-9_]*\s*\(/.test(rawInput) ||
+          (rawInput.startsWith('[') && funcName && rawInput.includes(`${funcName}(`));
+        if (funcName && !looksLikeCall) {
+          callStr = `${funcName}(${rawInput})`;
+        } else {
+          callStr = rawInput;
+        }
       } else if (funcName && tc.input_data !== undefined) {
         if (typeof tc.input_data === 'object' && !Array.isArray(tc.input_data) && tc.input_data !== null) {
           const args = Object.entries(tc.input_data).map(([k, v]) => `${k}=${JSON.stringify(v)}`).join(', ');
@@ -1285,16 +1443,29 @@ export async function runTests(userCode, testCases) {
       }
 
       const expectedRaw = tc.expectedOutput !== undefined ? tc.expectedOutput :
+                          tc.expected !== undefined ? tc.expected :
                           (tc.expected_output?.result !== undefined ? tc.expected_output.result : tc.expected_output);
+
+      // Parse expected output via json.loads so JSON booleans/null (true/false/null) become Python True/False/None
+      const expectedJsonLiteral = JSON.stringify(JSON.stringify(expectedRaw === undefined ? null : expectedRaw));
 
       // Run evaluation and comparison inside Python for exact structural & float tolerance matching
       const checkScript = `
+globals().setdefault('true', True)
+globals().setdefault('false', False)
+globals().setdefault('null', None)
 _actual_val = _nexus_normalize(${callStr})
-_expected_raw = ${JSON.stringify(expectedRaw)}
-try:
-    _expected_val = _nexus_normalize(eval(_expected_raw)) if isinstance(_expected_raw, str) else _nexus_normalize(_expected_raw)
-except Exception:
-    _expected_val = _expected_raw
+_expected_raw = json.loads(${expectedJsonLiteral})
+if isinstance(_expected_raw, str):
+    try:
+        _expected_val = _nexus_normalize(json.loads(_expected_raw))
+    except Exception:
+        try:
+            _expected_val = _nexus_normalize(eval(_expected_raw))
+        except Exception:
+            _expected_val = _expected_raw
+else:
+    _expected_val = _nexus_normalize(_expected_raw)
 
 _is_pass = bool(_nexus_deep_equal(_actual_val, _expected_val))
 json.dumps({

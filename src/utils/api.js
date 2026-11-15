@@ -8,11 +8,11 @@ const getBackendUrl = () => {
   return `${window.location.protocol}//${window.location.hostname}:3001`;
 };
 
-const BACKEND_URL = getBackendUrl();
+export const BACKEND_URL = getBackendUrl();
 
 export async function checkBackendHealth() {
   try {
-    const res = await fetch(`${BACKEND_URL}/api/health`, { signal: AbortSignal.timeout(1500) });
+    const res = await fetch(`${BACKEND_URL}/api/health`, { signal: AbortSignal.timeout(1000) });
     if (res.ok) {
       const data = await res.json();
       return { isOnline: true, ...data };
@@ -20,6 +20,32 @@ export async function checkBackendHealth() {
     return { isOnline: false };
   } catch (e) {
     return { isOnline: false };
+  }
+}
+
+export async function fetchBackendProgress() {
+  try {
+    const res = await fetch(`${BACKEND_URL}/api/progress`, { signal: AbortSignal.timeout(1500) });
+    if (res.ok) {
+      return await res.json();
+    }
+    return null;
+  } catch (e) {
+    return null;
+  }
+}
+
+export async function toggleProgressOnBackend(payload) {
+  try {
+    const res = await fetch(`${BACKEND_URL}/api/progress/toggle`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(2000)
+    });
+    return await res.json();
+  } catch (e) {
+    return null;
   }
 }
 
@@ -40,7 +66,7 @@ export async function submitProblemToBackend(payload) {
 
 export async function getSubmissionHistory(problemId) {
   try {
-    const res = await fetch(`${BACKEND_URL}/api/submissions/${problemId}`, {
+    const res = await fetch(`${BACKEND_URL}/api/submissions/${encodeURIComponent(problemId)}`, {
       signal: AbortSignal.timeout(2000)
     });
     if (res.ok) {

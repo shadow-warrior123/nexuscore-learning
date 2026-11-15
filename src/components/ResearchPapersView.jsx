@@ -111,9 +111,15 @@ export default function ResearchPapersView({ onSelectPaperTopic }) {
               <div className="flex items-center justify-between pt-3 border-t border-zinc-800/80">
                 <div className="flex flex-wrap gap-1.5">
                   {paper.topicMatch.slice(0, 3).map((t, i) => (
-                    <span key={i} className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => onSelectPaperTopic && onSelectPaperTopic(t)}
+                      title={`Filter AI & ML labs for "${t}"`}
+                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-amber-300 border border-zinc-800 transition-colors"
+                    >
                       #{t}
-                    </span>
+                    </button>
                   ))}
                 </div>
 

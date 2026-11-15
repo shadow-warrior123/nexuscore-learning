@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   Compass,
   Code2,
@@ -8,7 +8,8 @@ import {
   BookOpen,
   Terminal,
   Search,
-  ArrowUpRight
+  ArrowUpRight,
+  BarChart3
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -19,27 +20,30 @@ export default function Navbar({
   totalCount,
   totalXp,
   searchQuery,
-  setSearchQuery
+  setSearchQuery,
+  trackCounts,
+  onOpenCommandPalette,
+  onOpenAnalytics
 }) {
-  const searchInputRef = useRef(null);
-
   useEffect(() => {
     const handleKeyDown = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
-        searchInputRef.current?.focus();
+        if (onOpenCommandPalette) onOpenCommandPalette();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [onOpenCommandPalette]);
+
+  const counts = trackCounts || { ml: 185, dsa: 1126, sysdes: 49, data: 187, total: 1547 };
 
   const navItems = [
     { id: 'roadmap', index: '01', label: 'Knowledge Topography', icon: Compass },
-    { id: 'ml', index: '02', label: 'AI & ML Engineering', icon: BrainCircuit, count: 119 },
-    { id: 'dsa', index: '03', label: 'Algorithms & Primitives', icon: Code2, count: 1126 },
-    { id: 'sysdes', index: '04', label: 'Distributed Systems', icon: Server, count: 49 },
-    { id: 'data', index: '05', label: 'Data & Vector Pipelines', icon: Database, count: 253 },
+    { id: 'ml', index: '02', label: 'AI & ML Engineering', icon: BrainCircuit, count: counts.ml },
+    { id: 'dsa', index: '03', label: 'Algorithms & Primitives', icon: Code2, count: counts.dsa },
+    { id: 'sysdes', index: '04', label: 'Distributed Systems', icon: Server, count: counts.sysdes },
+    { id: 'data', index: '05', label: 'Data & Vector Pipelines', icon: Database, count: counts.data },
     { id: 'papers', index: '06', label: 'ArXiv Research Manual', icon: BookOpen, badge: 'PDF' },
   ];
 
@@ -73,33 +77,52 @@ export default function Navbar({
           <div className="hidden md:flex items-center relative max-w-md w-full mx-6">
             <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-3 pointer-events-none" />
             <input
-              ref={searchInputRef}
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Filter 1,547 labs, tensor kernels, papers, architectures..."
-              className="w-full bg-[#0f0f12] border border-zinc-800/90 rounded-md pl-8 pr-12 py-1.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-colors font-mono"
+              placeholder={`Filter ${counts.total.toLocaleString()} labs, or press ⌘K to search everything...`}
+              className="w-full bg-[#0f0f12] border border-zinc-800/90 rounded-md pl-8 pr-14 py-1.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-colors font-mono"
             />
-            <kbd className="absolute right-2.5 text-[10px] font-mono px-1.5 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 pointer-events-none">
+            <button
+              type="button"
+              onClick={onOpenCommandPalette}
+              title="Open Global Command Search (⌘K / Ctrl+K)"
+              className="absolute right-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-amber-300 border border-zinc-800 transition-colors"
+            >
               ⌘K
-            </kbd>
+            </button>
           </div>
 
           {/* Right Telemetry & Repository Link */}
           <div className="flex items-center gap-2.5">
-            <div className="flex items-center gap-3 px-3 py-1 rounded-md bg-[#0f0f12] border border-zinc-800/90 text-[11px] font-mono">
+            <button
+              type="button"
+              onClick={onOpenCommandPalette}
+              className="md:hidden p-1.5 rounded-md bg-[#0f0f12] hover:bg-zinc-900 text-zinc-400 hover:text-zinc-100 border border-zinc-800/90"
+              title="Global Search (⌘K)"
+            >
+              <Search className="w-3.5 h-3.5" />
+            </button>
+
+            <button
+              type="button"
+              onClick={onOpenAnalytics}
+              title="View Analytics & Progress Backup"
+              className="flex items-center gap-2.5 px-3 py-1 rounded-md bg-[#0f0f12] hover:bg-zinc-900 border border-zinc-800/90 hover:border-zinc-700 text-[11px] font-mono transition-colors"
+            >
+              <BarChart3 className="w-3.5 h-3.5 text-amber-400 hidden sm:inline" />
               <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 sm:hidden"></span>
                 <span className="text-zinc-400">XP</span>
                 <span className="text-zinc-100 font-semibold">{totalXp}</span>
               </div>
               <span className="text-zinc-800">|</span>
               <div className="flex items-center gap-1">
-                <span className="text-zinc-400">VERIFIED</span>
+                <span className="text-zinc-400 hidden sm:inline">VERIFIED</span>
                 <span className="text-emerald-400 font-semibold">{solvedCount}</span>
                 <span className="text-zinc-600">/{totalCount}</span>
               </div>
-            </div>
+            </button>
 
             <a
               href="https://github.com/shadow-warrior123/nexuscore-learning"
@@ -134,7 +157,7 @@ export default function Navbar({
                 <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-zinc-200' : 'text-zinc-500'}`} />
                 <span className="tracking-tight">{item.label}</span>
 
-                {item.count && (
+                {item.count !== undefined && (
                   <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${isActive ? 'bg-zinc-800 text-zinc-200' : 'text-zinc-600'
                     }`}>
                     {item.count}

@@ -106,7 +106,7 @@ Every challenge features a structured breakdown:
 ## 🚀 Getting Started Locally
 
 ### Prerequisites
-- Node.js (v18 or higher)
+- Node.js (v18+ for frontend; v22.5+ required if running the optional `node:sqlite` backend server)
 - npm or pnpm
 
 ### Installation & Run
